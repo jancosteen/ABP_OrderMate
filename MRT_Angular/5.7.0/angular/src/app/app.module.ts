@@ -39,6 +39,13 @@ import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
 
+//allergy
+import { AllergiesComponent} from './allergies/allergies.component';
+import { CreateAllergyDialogComponent} from './allergies/create-allergy/create-allergy-dialog.component';
+import { EditAllergyDialogComponent} from './allergies/edit-allergy/edit-allergy-dialog.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +74,11 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
     SidebarComponent,
     SidebarLogoComponent,
     SidebarUserPanelComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    //allergy
+    AllergiesComponent,
+    CreateAllergyDialogComponent,
+    EditAllergyDialogComponent
   ],
   imports: [
     CommonModule,
@@ -96,6 +107,9 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
     CreateUserDialogComponent,
     EditUserDialogComponent,
     ResetPasswordDialogComponent,
+    //allergy
+    CreateAllergyDialogComponent,
+    EditAllergyDialogComponent
   ],
 })
 export class AppModule {}

@@ -82,7 +82,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
       ),
       new MenuItem(
         this.l('Allergies'),
-        '/app/allergy',
+        '/app/allergies',
         'fas fa-users',
         'Pages.Al'
       ),
