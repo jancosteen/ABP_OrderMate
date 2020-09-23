@@ -44,6 +44,14 @@ import { AllergiesComponent} from './allergies/allergies.component';
 import { CreateAllergyDialogComponent} from './allergies/create-allergy/create-allergy-dialog.component';
 import { EditAllergyDialogComponent} from './allergies/edit-allergy/edit-allergy-dialog.component';
 
+//adv
+import { AdvPricesComponent } from './advPrices/advPrices.component';
+import { EditAdvPriceDialogComponent } from './advPrices/edit-advPrice/edit-advPrice-dialog.component';
+import { CreateAdvPriceDialogComponent } from './advPrices/create-advPrice/create-advPrice-dialog.component';
+import { AdvDatesComponent } from './advDates/advDates.component';
+import { EditAdvDateDialogComponent } from './advDates/edit-advDate/edit-advDate-dialog.component';
+import { CreateAdvDateDialogComponent } from './advDates/create-advDate/create-advDate-dialog.component';
+
 
 
 @NgModule({
@@ -78,7 +86,15 @@ import { EditAllergyDialogComponent} from './allergies/edit-allergy/edit-allergy
     //allergy
     AllergiesComponent,
     CreateAllergyDialogComponent,
-    EditAllergyDialogComponent
+    EditAllergyDialogComponent,
+    //adv
+    AdvPricesComponent,
+    EditAdvPriceDialogComponent,
+    CreateAdvPriceDialogComponent,
+    CreateAdvDateDialogComponent,
+    EditAdvDateDialogComponent,
+    AdvDatesComponent
+
   ],
   imports: [
     CommonModule,
@@ -109,7 +125,12 @@ import { EditAllergyDialogComponent} from './allergies/edit-allergy/edit-allergy
     ResetPasswordDialogComponent,
     //allergy
     CreateAllergyDialogComponent,
-    EditAllergyDialogComponent
+    EditAllergyDialogComponent,
+    //adv
+    EditAdvPriceDialogComponent,
+    CreateAdvPriceDialogComponent,
+    CreateAdvDateDialogComponent,
+    EditAdvDateDialogComponent
   ],
 })
 export class AppModule {}

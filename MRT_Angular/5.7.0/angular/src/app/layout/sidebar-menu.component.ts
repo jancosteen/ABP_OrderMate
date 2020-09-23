@@ -70,13 +70,13 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
       ),
       new MenuItem(
         this.l('Advertisement Dates'),
-        '/app/advertisementDate',
+        '/app/advDates',
         'fas fa-users',
         'Pages.AD'
       ),
       new MenuItem(
         this.l('Advertisement Prices'),
-        '/app/advertisementPrice',
+        '/app/advPrices',
         'fas fa-theater-masks',
         'Pages.AP'
       ),
