@@ -59,3 +59,414 @@ INFO  2020-09-22 13:10:28,483 [17   ] c.Infrastructure.ControllerActionInvoker -
 INFO  2020-09-22 13:10:28,498 [17   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host)'
 INFO  2020-09-22 13:10:28,507 [17   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1060.0851ms 200 application/json; charset=utf-8
 INFO  2020-09-22 13:10:28,660 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 873.2177ms 200 application/json;charset=utf-8
+DEBUG 2020-09-23 10:58:53,566 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-09-23 10:58:53,998 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-09-23 10:58:54,023 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.Web.Host.Startup.MDR_AngularWebHostModule, MDR_Angular.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,027 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularWebCoreModule, MDR_Angular.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,027 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularApplicationModule, MDR_Angular.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,028 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularCoreModule, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,028 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,028 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,029 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,029 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,029 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.EntityFrameworkCore.MDR_AngularEntityFrameworkModule, MDR_Angular.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,030 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,030 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,030 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,030 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,031 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,031 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 10:58:54,036 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-09-23 10:58:54,288 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 10:58:54,289 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 10:58:54,289 [1    ] o.Configuration.LanguageManagementConfig - Converted MDR_Angular (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 10:58:54,289 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 10:58:54,949 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: MDR_Angular.EntityFrameworkCore.MDR_AngularDbContext, MDR_Angular.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2020-09-23 10:58:55,891 [1    ] Abp.AbpBootstrapper                      - Abp.AbpException: There is already a permission with name: Pages.RS
+   at Abp.Authorization.PermissionDefinitionContextBase.CreatePermission(String name, ILocalizableString displayName, ILocalizableString description, MultiTenancySides multiTenancySides, IFeatureDependency featureDependency, Dictionary`2 properties)
+   at MDR_Angular.Authorization.MDR_AngularAuthorizationProvider.SetPermissions(IPermissionDefinitionContext context) in C:\Projects\ABP_OrderMate\MRT_Angular\5.7.0\aspnet-core\src\MDR_Angular.Core\Authorization\MDR_AngularAuthorizationProvider.cs:line 51
+   at Abp.Authorization.PermissionManager.Initialize()
+   at Abp.AbpKernelModule.PostInitialize()
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_2(AbpModuleInfo module)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+Abp.AbpException: There is already a permission with name: Pages.RS
+   at Abp.Authorization.PermissionDefinitionContextBase.CreatePermission(String name, ILocalizableString displayName, ILocalizableString description, MultiTenancySides multiTenancySides, IFeatureDependency featureDependency, Dictionary`2 properties)
+   at MDR_Angular.Authorization.MDR_AngularAuthorizationProvider.SetPermissions(IPermissionDefinitionContext context) in C:\Projects\ABP_OrderMate\MRT_Angular\5.7.0\aspnet-core\src\MDR_Angular.Core\Authorization\MDR_AngularAuthorizationProvider.cs:line 51
+   at Abp.Authorization.PermissionManager.Initialize()
+   at Abp.AbpKernelModule.PostInitialize()
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_2(AbpModuleInfo module)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+FATAL 2020-09-23 10:58:55,922 [1    ] Microsoft.AspNetCore.Hosting.WebHost     - Application startup exception
+Abp.AbpException: There is already a permission with name: Pages.RS
+   at Abp.Authorization.PermissionDefinitionContextBase.CreatePermission(String name, ILocalizableString displayName, ILocalizableString description, MultiTenancySides multiTenancySides, IFeatureDependency featureDependency, Dictionary`2 properties)
+   at MDR_Angular.Authorization.MDR_AngularAuthorizationProvider.SetPermissions(IPermissionDefinitionContext context) in C:\Projects\ABP_OrderMate\MRT_Angular\5.7.0\aspnet-core\src\MDR_Angular.Core\Authorization\MDR_AngularAuthorizationProvider.cs:line 51
+   at Abp.Authorization.PermissionManager.Initialize()
+   at Abp.AbpKernelModule.PostInitialize()
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_2(AbpModuleInfo module)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.InitializeAbp(IApplicationBuilder app)
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction)
+   at MDR_Angular.Web.Host.Startup.Startup.Configure(IApplicationBuilder app, ILoggerFactory loggerFactory) in C:\Projects\ABP_OrderMate\MRT_Angular\5.7.0\aspnet-core\src\MDR_Angular.Web.Host\Startup\Startup.cs:line 122
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.WebHost.BuildApplication()
+DEBUG 2020-09-23 11:00:18,099 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-09-23 11:00:18,273 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-09-23 11:00:18,323 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.Web.Host.Startup.MDR_AngularWebHostModule, MDR_Angular.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,327 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularWebCoreModule, MDR_Angular.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularApplicationModule, MDR_Angular.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularCoreModule, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.EntityFrameworkCore.MDR_AngularEntityFrameworkModule, MDR_Angular.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,333 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,333 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,334 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,334 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:18,339 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-09-23 11:00:18,426 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 11:00:18,426 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 11:00:18,426 [1    ] o.Configuration.LanguageManagementConfig - Converted MDR_Angular (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 11:00:18,426 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 11:00:19,022 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: MDR_Angular.EntityFrameworkCore.MDR_AngularDbContext, MDR_Angular.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 11:00:20,453 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-09-23 11:00:20,522 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-09-23 11:00:20,559 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-09-23 11:00:20,568 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MDR_Angular
+DEBUG 2020-09-23 11:00:20,578 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-09-23 11:00:20,687 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-09-23 11:00:20,754 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[MDR_Angular.MultiTenancy.Tenant, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[MDR_Angular.Authorization.Users.User, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-09-23 11:00:20,876 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 120 classes define auto mapping attributes
+DEBUG 2020-09-23 11:00:20,876 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-09-23 11:00:20,887 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Users.Dto.CreateUserDto
+DEBUG 2020-09-23 11:00:20,888 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Users.Dto.UserDto
+DEBUG 2020-09-23 11:00:20,888 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-09-23 11:00:20,888 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-09-23 11:00:20,888 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Roles.Dto.PermissionDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WrittenOffStocks.WrittenOffStockDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WrittenOffStocks.WrittenOffStockCandUDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WriteOffReasons.WriteOffReasonCandUDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WriteOffReasons.WriteOffReasonDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.UserComments.UserCommentCandUDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.UserComments.UserCommentDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Suppliers.SupplierCandUDto
+DEBUG 2020-09-23 11:00:20,889 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Suppliers.SupplierDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrders.SupplierOrderCandUDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrders.SupplierOrderDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrderLines.SupplierOrderLineCandUDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrderLines.SupplierOrderLineDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StockTakes.StockTakeCandUDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StockTakes.StockTakeDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StarRatings.StarRatingCandUDto
+DEBUG 2020-09-23 11:00:20,890 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StarRatings.StarRatingDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Specials.SpecialCandUDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Specials.SpecialDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SpecialPrices.SpecialPriceCandUDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SpecialPrices.SpecialPriceDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMediaTypes.SocialMediaTypeCandUDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMediaTypes.SocialMediaTypeDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMedias.SocialMediaCandU
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMedias.SocialMediaDto
+DEBUG 2020-09-23 11:00:20,891 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Shifts.ShiftCandUDto
+DEBUG 2020-09-23 11:00:20,892 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Shifts.ShiftDto
+DEBUG 2020-09-23 11:00:20,892 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ShiftStatusses.ShiftStatusCandUDto
+DEBUG 2020-09-23 11:00:20,892 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ShiftStatusses.ShiftStatusDto
+DEBUG 2020-09-23 11:00:20,892 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Seatings.SeatingCandUDto
+DEBUG 2020-09-23 11:00:20,892 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Seatings.SeatingDto
+DEBUG 2020-09-23 11:00:20,892 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SeatingLayouts.SeatingLayoutCandUDto
+DEBUG 2020-09-23 11:00:20,893 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SeatingLayouts.SeatingLayoutDto
+DEBUG 2020-09-23 11:00:20,893 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypes.RestaurantTypeCandUDto
+DEBUG 2020-09-23 11:00:20,893 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypes.RestaurantTypeDto
+DEBUG 2020-09-23 11:00:20,893 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypeReferences.RestaurantTypeRefCandUDto
+DEBUG 2020-09-23 11:00:20,893 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypeReferences.RestaurantTypeRefDto
+DEBUG 2020-09-23 11:00:20,893 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Restaurants.RestaurantCandUDto
+DEBUG 2020-09-23 11:00:20,894 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Restaurants.RestaurantDto
+DEBUG 2020-09-23 11:00:20,894 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantStatusses.RestaurantStatusCandUDto
+DEBUG 2020-09-23 11:00:20,894 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantStatusses.RestaurantStatusDto
+DEBUG 2020-09-23 11:00:20,894 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantRestaurantImages.RestaurantRestaurantImageCandUDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantRestaurantImages.RestaurantRestaurantImageDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantImages.RestaurantImageCandUDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantImages.RestaurantImageDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilityRefs.RestaurantFacilityRefCandUDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilityRefs.RestaurantFacilityRefDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilities.RestaurantFacilityCandUDto
+DEBUG 2020-09-23 11:00:20,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilities.RestaurantFacilityDto
+DEBUG 2020-09-23 11:00:20,896 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantAdvertisements.RestaurantAdvertisementCandUDto
+DEBUG 2020-09-23 11:00:20,896 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantAdvertisements.RestaurantAdvertisementDto
+DEBUG 2020-09-23 11:00:20,896 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Reservations.ReservationCandUDto
+DEBUG 2020-09-23 11:00:20,896 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Reservations.ReservationDto
+DEBUG 2020-09-23 11:00:20,896 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationStatusses.ReservationStatusCandUDto
+DEBUG 2020-09-23 11:00:20,896 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationStatusses.ReservationStatusDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationRestaurants.ReservationRestaurantCandUDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationRestaurants.ReservationRestaurantDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodes.QrCodeCandUDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodes.QrCode
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodeSeatings.QrCodeSeatingCandUDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodeSeatings.QrCodeSeatingDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductTypes.ProductTypeCandUDto
+DEBUG 2020-09-23 11:00:20,897 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductTypes.ProductTypeDto
+DEBUG 2020-09-23 11:00:20,898 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Products.ProductCandUDto
+DEBUG 2020-09-23 11:00:20,898 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Products.ProductDto
+DEBUG 2020-09-23 11:00:20,898 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductsWrittenOff.ProductWrittenOffCandUDto
+DEBUG 2020-09-23 11:00:20,898 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductsWrittenOff.ProductWrittenOffDto
+DEBUG 2020-09-23 11:00:20,898 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductStockTakes.ProductStockTakeCandUDto
+DEBUG 2020-09-23 11:00:20,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductStockTakes.ProductStockTakeDto
+DEBUG 2020-09-23 11:00:20,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductReorderFreqs.ProductReorderFreqCandUDto
+DEBUG 2020-09-23 11:00:20,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductReorderFreqs.ProductReorderFreqDto
+DEBUG 2020-09-23 11:00:20,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductCategories.Dto.ProductCategoryCandUDto
+DEBUG 2020-09-23 11:00:20,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductCategories.Dto.ProductCategoryDto
+DEBUG 2020-09-23 11:00:20,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Orders.Dto.OrderCandUDto
+DEBUG 2020-09-23 11:00:20,900 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Orders.Dto.OrderDto
+DEBUG 2020-09-23 11:00:20,900 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderStatusses.Dto.OrderStatusCandUDto
+DEBUG 2020-09-23 11:00:20,900 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderStatusses.Dto.OrderStatusDto
+DEBUG 2020-09-23 11:00:20,900 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderLines.Dto.OrderLineCandUDto
+DEBUG 2020-09-23 11:00:20,900 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderLines.Dto.OrderLineDto
+DEBUG 2020-09-23 11:00:20,901 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Menus.MenuCandUDto
+DEBUG 2020-09-23 11:00:20,901 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Menus.MenuDto
+DEBUG 2020-09-23 11:00:20,901 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuRestaurants.Dto.MenuRestaurantCandUDto
+DEBUG 2020-09-23 11:00:20,901 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuRestaurants.Dto.MenuRestaurantDto
+DEBUG 2020-09-23 11:00:20,901 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemTypes.Dto.MenuItemTypeCandUDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemTypes.Dto.MenuItemTypeDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItems.Dto.MenuItemCandUDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItems.Dto.MenuItemDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemSpecials.Dto.MenuItemSpecialCandUDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemSpecials.Dto.MenuItemSpecialDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemPrices.Dto.MenuItemPriceCandUDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemPrices.Dto.MenuItemPriceDto
+DEBUG 2020-09-23 11:00:20,902 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemCategories.Dto.MenuItemCategoryCandUDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemCategories.Dto.MenuItemCategoryDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemAllergies.Dto.MenuItemAllergyCandUDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemAllergies.Dto.MenuItemAllergyDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.LayoutTypes.Dto.LayoutTypeCandUDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.LayoutTypes.Dto.LayoutTypeDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ItemTypeMenuItems.Dto.ItemTypeMenuItemCandUDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ItemTypeMenuItems.Dto.ItemTypeMenuItemDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Employees.Dto.EmployeeCandUDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Employees.Dto.EmployeeDto
+DEBUG 2020-09-23 11:00:20,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.EmployeeShifts.Dto.EmployeeShiftCandUDto
+DEBUG 2020-09-23 11:00:20,904 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.EmployeeShifts.Dto.EmployeeShiftDto
+DEBUG 2020-09-23 11:00:20,904 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AttendanceSheets.AttendanceSheetCandUDto
+DEBUG 2020-09-23 11:00:20,904 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AttendanceSheets.AttendanceSheetDto
+DEBUG 2020-09-23 11:00:20,904 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Allergies.Dto.AllergyCandUDto
+DEBUG 2020-09-23 11:00:20,904 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Allergies.Dto.AllergyDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Advertisements.Dto.AdvertisementCandUDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Advertisements.Dto.AdvertisementDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementPrices.Dto.AdvertisementPriceCandUDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementPrices.Dto.AdvertisementPriceDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementDates.Dto.AdvertisementDateCandUDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementDates.Dto.AdvertisementDateDto
+DEBUG 2020-09-23 11:00:20,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-09-23 11:00:20,906 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.MultiTenancy.Dto.TenantDto
+INFO  2020-09-23 11:00:25,771 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-09-23 11:00:26,377 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\jsteenkamp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-09-23 11:00:26,459 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-09-23 11:00:26,688 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'MDR_Angular.Web.Host.Controllers.HomeController.Index (MDR_Angular.Web.Host)'
+INFO  2020-09-23 11:00:28,288 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MDR_Angular.Web.Host.Controllers.HomeController (MDR_Angular.Web.Host).
+INFO  2020-09-23 11:00:28,984 [11   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-09-23 11:00:28,990 [11   ] c.Infrastructure.ControllerActionInvoker - Executed action MDR_Angular.Web.Host.Controllers.HomeController.Index (MDR_Angular.Web.Host) in 697.5006ms
+INFO  2020-09-23 11:00:28,991 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'MDR_Angular.Web.Host.Controllers.HomeController.Index (MDR_Angular.Web.Host)'
+INFO  2020-09-23 11:00:29,013 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 2554.33ms 302 
+INFO  2020-09-23 11:00:29,016 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-09-23 11:00:29,094 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 77.0235ms 200 text/html;charset=utf-8
+INFO  2020-09-23 11:00:29,143 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2020-09-23 11:00:29,143 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2020-09-23 11:00:29,160 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'C:\Projects\ABP_OrderMate\MRT_Angular\5.7.0\aspnet-core\src\MDR_Angular.Web.Host\wwwroot\swagger\ui\abp.swagger.js'
+INFO  2020-09-23 11:00:29,160 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'C:\Projects\ABP_OrderMate\MRT_Angular\5.7.0\aspnet-core\src\MDR_Angular.Web.Host\wwwroot\swagger\ui\abp.js'
+INFO  2020-09-23 11:00:29,160 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 17.8747ms 200 application/javascript
+INFO  2020-09-23 11:00:29,160 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 17.9297ms 200 application/javascript
+INFO  2020-09-23 11:00:29,371 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-09-23 11:00:29,378 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host)'
+INFO  2020-09-23 11:00:29,388 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery", area = ""}. Executing controller action with signature Void SetCookie() on controller MDR_Angular.Web.Host.Controllers.AntiForgeryController (MDR_Angular.Web.Host).
+INFO  2020-09-23 11:00:29,413 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-09-23 11:00:29,475 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-09-23 11:00:29,587 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host) in 198.4728ms
+INFO  2020-09-23 11:00:29,587 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host)'
+INFO  2020-09-23 11:00:29,587 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 216.857ms 200 application/json; charset=utf-8
+INFO  2020-09-23 11:00:29,671 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 198.488ms 200 application/json;charset=utf-8
+INFO  2020-09-23 11:00:51,446 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/api/services/app/Configuration/ChangeUiTheme application/json-patch+json 18
+INFO  2020-09-23 11:00:51,454 [7    ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2020-09-23 11:00:51,454 [7    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2020-09-23 11:00:51,461 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'MDR_Angular.Configuration.ConfigurationAppService.ChangeUiTheme (MDR_Angular.Application)'
+INFO  2020-09-23 11:00:51,497 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "ChangeUiTheme", controller = "Configuration"}. Executing controller action with signature System.Threading.Tasks.Task ChangeUiTheme(MDR_Angular.Configuration.Dto.ChangeUiThemeInput) on controller MDR_Angular.Configuration.ConfigurationAppService (MDR_Angular.Application).
+WARN  2020-09-23 11:00:51,800 [7    ] Mvc.Authorization.AbpAuthorizationFilter - Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationHelper.CheckPermissionsAsync(MethodInfo methodInfo, Type type)
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type)
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationHelper.CheckPermissionsAsync(MethodInfo methodInfo, Type type)
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type)
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+INFO  2020-09-23 11:00:51,804 [7    ] c.Infrastructure.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter'.
+INFO  2020-09-23 11:00:51,805 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-09-23 11:00:51,822 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action MDR_Angular.Configuration.ConfigurationAppService.ChangeUiTheme (MDR_Angular.Application) in 324.8806ms
+INFO  2020-09-23 11:00:51,822 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'MDR_Angular.Configuration.ConfigurationAppService.ChangeUiTheme (MDR_Angular.Application)'
+INFO  2020-09-23 11:00:51,822 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 376.7442ms 401 application/json; charset=utf-8
+DEBUG 2020-09-23 12:14:56,782 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-09-23 12:14:56,877 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-09-23 12:14:56,912 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.Web.Host.Startup.MDR_AngularWebHostModule, MDR_Angular.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,915 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularWebCoreModule, MDR_Angular.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,916 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularApplicationModule, MDR_Angular.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,916 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.MDR_AngularCoreModule, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,916 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,918 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MDR_Angular.EntityFrameworkCore.MDR_AngularEntityFrameworkModule, MDR_Angular.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,918 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.10.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:56,925 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-09-23 12:14:57,024 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 12:14:57,024 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 12:14:57,024 [1    ] o.Configuration.LanguageManagementConfig - Converted MDR_Angular (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 12:14:57,024 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-09-23 12:14:57,675 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: MDR_Angular.EntityFrameworkCore.MDR_AngularDbContext, MDR_Angular.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-09-23 12:14:59,414 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-09-23 12:14:59,498 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-09-23 12:14:59,525 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-09-23 12:14:59,539 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MDR_Angular
+DEBUG 2020-09-23 12:14:59,553 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-09-23 12:14:59,691 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-09-23 12:14:59,756 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[MDR_Angular.MultiTenancy.Tenant, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[MDR_Angular.Authorization.Users.User, MDR_Angular.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-09-23 12:14:59,846 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 120 classes define auto mapping attributes
+DEBUG 2020-09-23 12:14:59,846 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-09-23 12:14:59,857 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Users.Dto.CreateUserDto
+DEBUG 2020-09-23 12:14:59,858 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Users.Dto.UserDto
+DEBUG 2020-09-23 12:14:59,859 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-09-23 12:14:59,860 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-09-23 12:14:59,860 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.Roles.Dto.PermissionDto
+DEBUG 2020-09-23 12:14:59,860 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WrittenOffStocks.WrittenOffStockDto
+DEBUG 2020-09-23 12:14:59,860 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WrittenOffStocks.WrittenOffStockCandUDto
+DEBUG 2020-09-23 12:14:59,860 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WriteOffReasons.WriteOffReasonCandUDto
+DEBUG 2020-09-23 12:14:59,861 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.WriteOffReasons.WriteOffReasonDto
+DEBUG 2020-09-23 12:14:59,861 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.UserComments.UserCommentCandUDto
+DEBUG 2020-09-23 12:14:59,861 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.UserComments.UserCommentDto
+DEBUG 2020-09-23 12:14:59,862 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Suppliers.SupplierCandUDto
+DEBUG 2020-09-23 12:14:59,862 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Suppliers.SupplierDto
+DEBUG 2020-09-23 12:14:59,862 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrders.SupplierOrderCandUDto
+DEBUG 2020-09-23 12:14:59,863 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrders.SupplierOrderDto
+DEBUG 2020-09-23 12:14:59,863 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrderLines.SupplierOrderLineCandUDto
+DEBUG 2020-09-23 12:14:59,863 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SupplierOrderLines.SupplierOrderLineDto
+DEBUG 2020-09-23 12:14:59,863 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StockTakes.StockTakeCandUDto
+DEBUG 2020-09-23 12:14:59,863 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StockTakes.StockTakeDto
+DEBUG 2020-09-23 12:14:59,864 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StarRatings.StarRatingCandUDto
+DEBUG 2020-09-23 12:14:59,864 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.StarRatings.StarRatingDto
+DEBUG 2020-09-23 12:14:59,864 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Specials.SpecialCandUDto
+DEBUG 2020-09-23 12:14:59,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Specials.SpecialDto
+DEBUG 2020-09-23 12:14:59,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SpecialPrices.SpecialPriceCandUDto
+DEBUG 2020-09-23 12:14:59,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SpecialPrices.SpecialPriceDto
+DEBUG 2020-09-23 12:14:59,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMediaTypes.SocialMediaTypeCandUDto
+DEBUG 2020-09-23 12:14:59,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMediaTypes.SocialMediaTypeDto
+DEBUG 2020-09-23 12:14:59,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMedias.SocialMediaCandU
+DEBUG 2020-09-23 12:14:59,866 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SocialMedias.SocialMediaDto
+DEBUG 2020-09-23 12:14:59,866 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Shifts.ShiftCandUDto
+DEBUG 2020-09-23 12:14:59,866 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Shifts.ShiftDto
+DEBUG 2020-09-23 12:14:59,866 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ShiftStatusses.ShiftStatusCandUDto
+DEBUG 2020-09-23 12:14:59,866 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ShiftStatusses.ShiftStatusDto
+DEBUG 2020-09-23 12:14:59,866 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Seatings.SeatingCandUDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Seatings.SeatingDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SeatingLayouts.SeatingLayoutCandUDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.SeatingLayouts.SeatingLayoutDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypes.RestaurantTypeCandUDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypes.RestaurantTypeDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypeReferences.RestaurantTypeRefCandUDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantTypeReferences.RestaurantTypeRefDto
+DEBUG 2020-09-23 12:14:59,867 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Restaurants.RestaurantCandUDto
+DEBUG 2020-09-23 12:14:59,868 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Restaurants.RestaurantDto
+DEBUG 2020-09-23 12:14:59,869 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantStatusses.RestaurantStatusCandUDto
+DEBUG 2020-09-23 12:14:59,870 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantStatusses.RestaurantStatusDto
+DEBUG 2020-09-23 12:14:59,870 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantRestaurantImages.RestaurantRestaurantImageCandUDto
+DEBUG 2020-09-23 12:14:59,871 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantRestaurantImages.RestaurantRestaurantImageDto
+DEBUG 2020-09-23 12:14:59,871 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantImages.RestaurantImageCandUDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantImages.RestaurantImageDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilityRefs.RestaurantFacilityRefCandUDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilityRefs.RestaurantFacilityRefDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilities.RestaurantFacilityCandUDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantFacilities.RestaurantFacilityDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantAdvertisements.RestaurantAdvertisementCandUDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.RestaurantAdvertisements.RestaurantAdvertisementDto
+DEBUG 2020-09-23 12:14:59,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Reservations.ReservationCandUDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Reservations.ReservationDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationStatusses.ReservationStatusCandUDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationStatusses.ReservationStatusDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationRestaurants.ReservationRestaurantCandUDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ReservationRestaurants.ReservationRestaurantDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodes.QrCodeCandUDto
+DEBUG 2020-09-23 12:14:59,873 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodes.QrCode
+DEBUG 2020-09-23 12:14:59,874 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodeSeatings.QrCodeSeatingCandUDto
+DEBUG 2020-09-23 12:14:59,875 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.QrCodeSeatings.QrCodeSeatingDto
+DEBUG 2020-09-23 12:14:59,875 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductTypes.ProductTypeCandUDto
+DEBUG 2020-09-23 12:14:59,875 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductTypes.ProductTypeDto
+DEBUG 2020-09-23 12:14:59,876 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Products.ProductCandUDto
+DEBUG 2020-09-23 12:14:59,876 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Products.ProductDto
+DEBUG 2020-09-23 12:14:59,876 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductsWrittenOff.ProductWrittenOffCandUDto
+DEBUG 2020-09-23 12:14:59,876 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductsWrittenOff.ProductWrittenOffDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductStockTakes.ProductStockTakeCandUDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductStockTakes.ProductStockTakeDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductReorderFreqs.ProductReorderFreqCandUDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductReorderFreqs.ProductReorderFreqDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductCategories.Dto.ProductCategoryCandUDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ProductCategories.Dto.ProductCategoryDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Orders.Dto.OrderCandUDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Orders.Dto.OrderDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderStatusses.Dto.OrderStatusCandUDto
+DEBUG 2020-09-23 12:14:59,877 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderStatusses.Dto.OrderStatusDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderLines.Dto.OrderLineCandUDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.OrderLines.Dto.OrderLineDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Menus.MenuCandUDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Menus.MenuDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuRestaurants.Dto.MenuRestaurantCandUDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuRestaurants.Dto.MenuRestaurantDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemTypes.Dto.MenuItemTypeCandUDto
+DEBUG 2020-09-23 12:14:59,878 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemTypes.Dto.MenuItemTypeDto
+DEBUG 2020-09-23 12:14:59,879 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItems.Dto.MenuItemCandUDto
+DEBUG 2020-09-23 12:14:59,879 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItems.Dto.MenuItemDto
+DEBUG 2020-09-23 12:14:59,879 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemSpecials.Dto.MenuItemSpecialCandUDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemSpecials.Dto.MenuItemSpecialDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemPrices.Dto.MenuItemPriceCandUDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemPrices.Dto.MenuItemPriceDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemCategories.Dto.MenuItemCategoryCandUDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemCategories.Dto.MenuItemCategoryDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemAllergies.Dto.MenuItemAllergyCandUDto
+DEBUG 2020-09-23 12:14:59,880 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.MenuItemAllergies.Dto.MenuItemAllergyDto
+DEBUG 2020-09-23 12:14:59,881 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.LayoutTypes.Dto.LayoutTypeCandUDto
+DEBUG 2020-09-23 12:14:59,881 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.LayoutTypes.Dto.LayoutTypeDto
+DEBUG 2020-09-23 12:14:59,881 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ItemTypeMenuItems.Dto.ItemTypeMenuItemCandUDto
+DEBUG 2020-09-23 12:14:59,881 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.ItemTypeMenuItems.Dto.ItemTypeMenuItemDto
+DEBUG 2020-09-23 12:14:59,881 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Employees.Dto.EmployeeCandUDto
+DEBUG 2020-09-23 12:14:59,881 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Employees.Dto.EmployeeDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.EmployeeShifts.Dto.EmployeeShiftCandUDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.EmployeeShifts.Dto.EmployeeShiftDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AttendanceSheets.AttendanceSheetCandUDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AttendanceSheets.AttendanceSheetDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Allergies.Dto.AllergyCandUDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Allergies.Dto.AllergyDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Advertisements.Dto.AdvertisementCandUDto
+DEBUG 2020-09-23 12:14:59,882 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.Advertisements.Dto.AdvertisementDto
+DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementPrices.Dto.AdvertisementPriceCandUDto
+DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementPrices.Dto.AdvertisementPriceDto
+DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementDates.Dto.AdvertisementDateCandUDto
+DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementDates.Dto.AdvertisementDateDto
+DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.MultiTenancy.Dto.TenantDto

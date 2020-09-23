@@ -12,5 +12,6 @@ namespace MDR_Angular.OrderMate.AdvertisementDates.Dto
     {
         public DateTime AdvertisementDateAcvtiveFrom { get; set; }
         public DateTime AdvertisementDateActiveTo { get; set; }
+
     }
 }

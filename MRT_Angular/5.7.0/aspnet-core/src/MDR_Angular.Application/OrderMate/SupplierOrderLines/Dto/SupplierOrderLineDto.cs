@@ -1,0 +1,27 @@
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Abp.Domain.Entities;
+using MDR_Angular.OrderMate.Products;
+using MDR_Angular.OrderMate.SupplierOrders;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
+
+namespace MDR_Angular.OrderMate.SupplierOrderLines
+{
+    [AutoMapFrom(typeof(SupplierOrderLine))]
+    [AutoMapTo(typeof(SupplierOrderLine))]
+    public class SupplierOrderLineDto: EntityDto<int>
+    {
+        //public int SupplierOrderLineId { get; set; }
+        public int ProductIdFk { get; set; }
+        public int SupplierOrderIdFk { get; set; }
+        public int DeliveryLeadTime { get; set; }
+        public double ProductStandardPrice { get; set; }
+        public double DiscountAgreement { get; set; }
+        public int OrderedQty { get; set; }
+
+        
+    }
+}

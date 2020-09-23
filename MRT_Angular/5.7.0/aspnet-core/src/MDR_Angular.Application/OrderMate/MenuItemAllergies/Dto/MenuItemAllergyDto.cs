@@ -1,13 +1,12 @@
-﻿using Abp.AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+
 
 namespace MDR_Angular.OrderMate.MenuItemAllergies.Dto
 {
     [AutoMapFrom(typeof(MenuItemAllergy))]
     [AutoMapTo(typeof(MenuItemAllergy))]
-    public class MenuItemAllergyDto
+    public class MenuItemAllergyDto:EntityDto<int>
     {
         public int MenuItemIdFk { get; set; }
         public int AllergyIdFk { get; set; }

@@ -8,7 +8,7 @@ namespace MDR_Angular.OrderMate.AttendanceSheets
 {
     [AutoMapFrom(typeof(AttendanceSheet))]
     [AutoMapTo(typeof(AttendanceSheet))]
-    class AttendanceSheetDto:EntityDto<int>
+    public class AttendanceSheetCandUDto
     {
         public DateTime ClockInDateTime { get; set; }
         public DateTime ClockOutDateTime { get; set; }
