@@ -470,3 +470,31 @@ DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       -
 DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.OrderMate.AdvertisementDates.Dto.AdvertisementDateDto
 DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.MultiTenancy.Dto.CreateTenantDto
 DEBUG 2020-09-23 12:14:59,883 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - MDR_Angular.MultiTenancy.Dto.TenantDto
+INFO  2020-09-23 12:15:04,485 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-09-23 12:15:04,738 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\jsteenkamp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-09-23 12:15:04,801 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-09-23 12:15:04,894 [16   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'MDR_Angular.Web.Host.Controllers.HomeController.Index (MDR_Angular.Web.Host)'
+INFO  2020-09-23 12:15:06,858 [16   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MDR_Angular.Web.Host.Controllers.HomeController (MDR_Angular.Web.Host).
+INFO  2020-09-23 12:15:07,972 [15   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-09-23 12:15:07,981 [15   ] c.Infrastructure.ControllerActionInvoker - Executed action MDR_Angular.Web.Host.Controllers.HomeController.Index (MDR_Angular.Web.Host) in 1116.0161ms
+INFO  2020-09-23 12:15:07,982 [15   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'MDR_Angular.Web.Host.Controllers.HomeController.Index (MDR_Angular.Web.Host)'
+INFO  2020-09-23 12:15:08,068 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3267.8777ms 302 
+INFO  2020-09-23 12:15:08,075 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-09-23 12:15:08,161 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 86.3465ms 200 text/html;charset=utf-8
+INFO  2020-09-23 12:15:08,208 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2020-09-23 12:15:08,208 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2020-09-23 12:15:08,215 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.swagger.js was not modified
+INFO  2020-09-23 12:15:08,215 [4    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.js was not modified
+INFO  2020-09-23 12:15:08,216 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 8.5165ms 304 application/javascript
+INFO  2020-09-23 12:15:08,217 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 8.1109ms 304 application/javascript
+INFO  2020-09-23 12:15:08,425 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-09-23 12:15:08,433 [16   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host)'
+INFO  2020-09-23 12:15:08,447 [16   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery", area = ""}. Executing controller action with signature Void SetCookie() on controller MDR_Angular.Web.Host.Controllers.AntiForgeryController (MDR_Angular.Web.Host).
+INFO  2020-09-23 12:15:08,486 [16   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-09-23 12:15:08,584 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-09-23 12:15:08,805 [16   ] c.Infrastructure.ControllerActionInvoker - Executed action MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host) in 357.5556ms
+INFO  2020-09-23 12:15:08,805 [16   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'MDR_Angular.Web.Host.Controllers.AntiForgeryController.SetCookie (MDR_Angular.Web.Host)'
+INFO  2020-09-23 12:15:08,805 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 380.6127ms 200 application/json; charset=utf-8
+INFO  2020-09-23 12:15:08,955 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 370.8233ms 200 application/json;charset=utf-8
+INFO  2020-09-23 12:19:26,989 [23   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-09-23 12:19:27,034 [23   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 44.6041ms 200 application/json;charset=utf-8

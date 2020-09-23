@@ -13,6 +13,11 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.TokenAuthServiceProxy,
         ApiServiceProxies.AccountServiceProxy,
         ApiServiceProxies.ConfigurationServiceProxy,
+        ApiServiceProxies.AdvertisementServiceProxy,
+        ApiServiceProxies.AdvertisementDateServiceProxy,
+        ApiServiceProxies.AdvertisementPriceServiceProxy,
+        ApiServiceProxies.AllergyServiceProxy,
+        ApiServiceProxies.AttendanceSheetServiceProxy,
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }
     ]
 })
