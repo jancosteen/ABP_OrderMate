@@ -18,6 +18,7 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.AdvertisementPriceServiceProxy,
         ApiServiceProxies.AllergyServiceProxy,
         ApiServiceProxies.AttendanceSheetServiceProxy,
+        ApiServiceProxies.RestaurantServiceProxy,
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }
     ]
 })

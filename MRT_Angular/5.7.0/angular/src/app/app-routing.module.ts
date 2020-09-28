@@ -11,6 +11,7 @@ import { ChangePasswordComponent } from './users/change-password/change-password
 import { AllergiesComponent } from './allergies/allergies.component';
 import { AdvPricesComponent } from './advPrices/advPrices.component';
 import { AdvDatesComponent } from './advDates/advDates.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 @NgModule({
     imports: [
@@ -28,6 +29,8 @@ import { AdvDatesComponent } from './advDates/advDates.component';
                     { path: 'allergies', component: AllergiesComponent, data: { permission: 'Pages.Al' }, canActivate: [AppRouteGuard] },
                     { path: 'advPrices', component: AdvPricesComponent, data: { permission: 'Pages.AP' }, canActivate: [AppRouteGuard] },
                     { path: 'advDates', component: AdvDatesComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
+                    { path: 'restaurants', component: RestaurantsComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
+
 
 
 

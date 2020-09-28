@@ -51,7 +51,9 @@ import { CreateAdvPriceDialogComponent } from './advPrices/create-advPrice/creat
 import { AdvDatesComponent } from './advDates/advDates.component';
 import { EditAdvDateDialogComponent } from './advDates/edit-advDate/edit-advDate-dialog.component';
 import { CreateAdvDateDialogComponent } from './advDates/create-advDate/create-advDate-dialog.component';
-
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { EditRestaurantDialogComponent } from './restaurants/edit-restaurant/edit-restaurant-dialog.component';
+import { CreateRestaurantDialogComponent } from './restaurants/create-restaurant/create-restaurant-dialog.component';
 
 
 @NgModule({
@@ -93,8 +95,10 @@ import { CreateAdvDateDialogComponent } from './advDates/create-advDate/create-a
     CreateAdvPriceDialogComponent,
     CreateAdvDateDialogComponent,
     EditAdvDateDialogComponent,
-    AdvDatesComponent
-
+    AdvDatesComponent,
+    RestaurantsComponent,
+    CreateRestaurantDialogComponent,
+    EditRestaurantDialogComponent
   ],
   imports: [
     CommonModule,
@@ -110,6 +114,7 @@ import { CreateAdvDateDialogComponent } from './advDates/create-advDate/create-a
     ServiceProxyModule,
     SharedModule,
     NgxPaginationModule,
+
   ],
   providers: [],
   entryComponents: [
@@ -130,7 +135,9 @@ import { CreateAdvDateDialogComponent } from './advDates/create-advDate/create-a
     EditAdvPriceDialogComponent,
     CreateAdvPriceDialogComponent,
     CreateAdvDateDialogComponent,
-    EditAdvDateDialogComponent
+    EditAdvDateDialogComponent,
+    CreateRestaurantDialogComponent,
+    EditRestaurantDialogComponent
   ],
 })
 export class AppModule {}
