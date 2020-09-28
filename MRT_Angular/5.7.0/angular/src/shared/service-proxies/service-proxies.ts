@@ -28,7 +28,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     isTenantAvailable(body: IsTenantAvailableInput | undefined): Observable<IsTenantAvailableOutput> {
@@ -84,7 +84,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     register(body: RegisterInput | undefined): Observable<RegisterOutput> {
@@ -152,7 +152,7 @@ export class AdvertisementServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<AdvertisementDto> {
@@ -208,9 +208,9 @@ export class AdvertisementServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<AdvertisementDtoPagedResultDto> {
@@ -272,7 +272,7 @@ export class AdvertisementServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: AdvertisementDto | undefined): Observable<AdvertisementDto> {
@@ -328,7 +328,7 @@ export class AdvertisementServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: AdvertisementDto | undefined): Observable<AdvertisementDto> {
@@ -384,7 +384,7 @@ export class AdvertisementServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -448,7 +448,7 @@ export class AdvertisementDateServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<AdvertisementDateDto> {
@@ -504,9 +504,9 @@ export class AdvertisementDateServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<AdvertisementDateDtoPagedResultDto> {
@@ -568,7 +568,7 @@ export class AdvertisementDateServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: AdvertisementDateDto | undefined): Observable<AdvertisementDateDto> {
@@ -624,7 +624,7 @@ export class AdvertisementDateServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: AdvertisementDateDto | undefined): Observable<AdvertisementDateDto> {
@@ -680,7 +680,7 @@ export class AdvertisementDateServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -744,7 +744,7 @@ export class AdvertisementPriceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<AdvertisementPriceDto> {
@@ -800,9 +800,9 @@ export class AdvertisementPriceServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<AdvertisementPriceDtoPagedResultDto> {
@@ -864,7 +864,7 @@ export class AdvertisementPriceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: AdvertisementPriceDto | undefined): Observable<AdvertisementPriceDto> {
@@ -920,7 +920,7 @@ export class AdvertisementPriceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: AdvertisementPriceDto | undefined): Observable<AdvertisementPriceDto> {
@@ -976,7 +976,7 @@ export class AdvertisementPriceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -1040,7 +1040,7 @@ export class AllergyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<AllergyDto> {
@@ -1096,9 +1096,9 @@ export class AllergyServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<AllergyDtoPagedResultDto> {
@@ -1160,7 +1160,7 @@ export class AllergyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: AllergyDto | undefined): Observable<AllergyDto> {
@@ -1216,7 +1216,7 @@ export class AllergyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: AllergyDto | undefined): Observable<AllergyDto> {
@@ -1272,7 +1272,7 @@ export class AllergyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -1336,7 +1336,7 @@ export class AttendanceSheetServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<AttendanceSheetDto> {
@@ -1392,9 +1392,9 @@ export class AttendanceSheetServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<AttendanceSheetDtoPagedResultDto> {
@@ -1456,7 +1456,7 @@ export class AttendanceSheetServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: AttendanceSheetDto | undefined): Observable<AttendanceSheetDto> {
@@ -1512,7 +1512,7 @@ export class AttendanceSheetServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: AttendanceSheetDto | undefined): Observable<AttendanceSheetDto> {
@@ -1568,7 +1568,7 @@ export class AttendanceSheetServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -1632,7 +1632,7 @@ export class ConfigurationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     changeUiTheme(body: ChangeUiThemeInput | undefined): Observable<void> {
@@ -1696,7 +1696,7 @@ export class MenuServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuDto> {
@@ -1752,9 +1752,9 @@ export class MenuServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuDtoPagedResultDto> {
@@ -1816,7 +1816,7 @@ export class MenuServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuDto | undefined): Observable<MenuDto> {
@@ -1872,7 +1872,7 @@ export class MenuServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuDto | undefined): Observable<MenuDto> {
@@ -1928,7 +1928,7 @@ export class MenuServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -1992,7 +1992,7 @@ export class MenuItemServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuItemDto> {
@@ -2048,9 +2048,9 @@ export class MenuItemServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuItemDtoPagedResultDto> {
@@ -2112,7 +2112,7 @@ export class MenuItemServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuItemDto | undefined): Observable<MenuItemDto> {
@@ -2168,7 +2168,7 @@ export class MenuItemServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuItemDto | undefined): Observable<MenuItemDto> {
@@ -2224,7 +2224,7 @@ export class MenuItemServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -2288,7 +2288,7 @@ export class MenuItemAllergyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuItemAllergyDto> {
@@ -2344,9 +2344,9 @@ export class MenuItemAllergyServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuItemAllergyDtoPagedResultDto> {
@@ -2408,7 +2408,7 @@ export class MenuItemAllergyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuItemAllergyDto | undefined): Observable<MenuItemAllergyDto> {
@@ -2464,7 +2464,7 @@ export class MenuItemAllergyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuItemAllergyDto | undefined): Observable<MenuItemAllergyDto> {
@@ -2520,7 +2520,7 @@ export class MenuItemAllergyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -2584,7 +2584,7 @@ export class MenuItemCategoryServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuItemCategoryDto> {
@@ -2640,9 +2640,9 @@ export class MenuItemCategoryServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuItemCategoryDtoPagedResultDto> {
@@ -2704,7 +2704,7 @@ export class MenuItemCategoryServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuItemCategoryDto | undefined): Observable<MenuItemCategoryDto> {
@@ -2760,7 +2760,7 @@ export class MenuItemCategoryServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuItemCategoryDto | undefined): Observable<MenuItemCategoryDto> {
@@ -2816,7 +2816,7 @@ export class MenuItemCategoryServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -2880,7 +2880,7 @@ export class MenuItemPriceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuItemPriceDto> {
@@ -2936,9 +2936,9 @@ export class MenuItemPriceServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuItemPriceDtoPagedResultDto> {
@@ -3000,7 +3000,7 @@ export class MenuItemPriceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuItemPriceDto | undefined): Observable<MenuItemPriceDto> {
@@ -3056,7 +3056,7 @@ export class MenuItemPriceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuItemPriceDto | undefined): Observable<MenuItemPriceDto> {
@@ -3112,7 +3112,7 @@ export class MenuItemPriceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -3176,7 +3176,7 @@ export class MenuItemSpecialServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuItemSpecialDto> {
@@ -3232,9 +3232,9 @@ export class MenuItemSpecialServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuItemSpecialDtoPagedResultDto> {
@@ -3296,7 +3296,7 @@ export class MenuItemSpecialServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuItemSpecialDto | undefined): Observable<MenuItemSpecialDto> {
@@ -3352,7 +3352,7 @@ export class MenuItemSpecialServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuItemSpecialDto | undefined): Observable<MenuItemSpecialDto> {
@@ -3408,7 +3408,7 @@ export class MenuItemSpecialServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -3472,7 +3472,7 @@ export class MenuItemTypeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuItemTypeDto> {
@@ -3528,9 +3528,9 @@ export class MenuItemTypeServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuItemTypeDtoPagedResultDto> {
@@ -3592,7 +3592,7 @@ export class MenuItemTypeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuItemTypeDto | undefined): Observable<MenuItemTypeDto> {
@@ -3648,7 +3648,7 @@ export class MenuItemTypeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuItemTypeDto | undefined): Observable<MenuItemTypeDto> {
@@ -3704,7 +3704,7 @@ export class MenuItemTypeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -3768,7 +3768,7 @@ export class MenuRestaurantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<MenuRestaurantDto> {
@@ -3824,9 +3824,9 @@ export class MenuRestaurantServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<MenuRestaurantDtoPagedResultDto> {
@@ -3888,7 +3888,7 @@ export class MenuRestaurantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: MenuRestaurantDto | undefined): Observable<MenuRestaurantDto> {
@@ -3944,7 +3944,7 @@ export class MenuRestaurantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: MenuRestaurantDto | undefined): Observable<MenuRestaurantDto> {
@@ -4000,7 +4000,7 @@ export class MenuRestaurantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -4064,7 +4064,7 @@ export class OrderServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<OrderDto> {
@@ -4120,9 +4120,9 @@ export class OrderServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<OrderDtoPagedResultDto> {
@@ -4184,7 +4184,7 @@ export class OrderServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: OrderDto | undefined): Observable<OrderDto> {
@@ -4240,7 +4240,7 @@ export class OrderServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: OrderDto | undefined): Observable<OrderDto> {
@@ -4296,7 +4296,7 @@ export class OrderServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -4360,7 +4360,7 @@ export class OrderLineServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<OrderLineDto> {
@@ -4416,9 +4416,9 @@ export class OrderLineServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<OrderLineDtoPagedResultDto> {
@@ -4480,7 +4480,7 @@ export class OrderLineServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: OrderLineDto | undefined): Observable<OrderLineDto> {
@@ -4536,7 +4536,7 @@ export class OrderLineServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: OrderLineDto | undefined): Observable<OrderLineDto> {
@@ -4592,7 +4592,7 @@ export class OrderLineServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -4656,7 +4656,7 @@ export class OrderStatusServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<OrderStatusDto> {
@@ -4712,9 +4712,9 @@ export class OrderStatusServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<OrderStatusDtoPagedResultDto> {
@@ -4776,7 +4776,7 @@ export class OrderStatusServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: OrderStatusDto | undefined): Observable<OrderStatusDto> {
@@ -4832,7 +4832,7 @@ export class OrderStatusServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: OrderStatusDto | undefined): Observable<OrderStatusDto> {
@@ -4888,7 +4888,7 @@ export class OrderStatusServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -4952,7 +4952,7 @@ export class QrCodeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<QrCodeDto> {
@@ -5008,9 +5008,9 @@ export class QrCodeServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<QrCodeDtoPagedResultDto> {
@@ -5072,7 +5072,7 @@ export class QrCodeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: QrCodeDto | undefined): Observable<QrCodeDto> {
@@ -5128,7 +5128,7 @@ export class QrCodeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: QrCodeDto | undefined): Observable<QrCodeDto> {
@@ -5184,7 +5184,7 @@ export class QrCodeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -5248,7 +5248,7 @@ export class QrCodeSeatingServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<QrCodeSeatingDto> {
@@ -5304,9 +5304,9 @@ export class QrCodeSeatingServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<QrCodeSeatingDtoPagedResultDto> {
@@ -5368,7 +5368,7 @@ export class QrCodeSeatingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: QrCodeSeatingDto | undefined): Observable<QrCodeSeatingDto> {
@@ -5424,7 +5424,7 @@ export class QrCodeSeatingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: QrCodeSeatingDto | undefined): Observable<QrCodeSeatingDto> {
@@ -5480,7 +5480,7 @@ export class QrCodeSeatingServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -5544,7 +5544,7 @@ export class ReservationServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<ReservationDto> {
@@ -5600,9 +5600,9 @@ export class ReservationServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<ReservationDtoPagedResultDto> {
@@ -5664,7 +5664,7 @@ export class ReservationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: ReservationDto | undefined): Observable<ReservationDto> {
@@ -5720,7 +5720,7 @@ export class ReservationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: ReservationDto | undefined): Observable<ReservationDto> {
@@ -5776,7 +5776,7 @@ export class ReservationServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -5840,7 +5840,7 @@ export class ReservationRestaurantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<ReservationRestaurantDto> {
@@ -5896,9 +5896,9 @@ export class ReservationRestaurantServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<ReservationRestaurantDtoPagedResultDto> {
@@ -5960,7 +5960,7 @@ export class ReservationRestaurantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: ReservationRestaurantDto | undefined): Observable<ReservationRestaurantDto> {
@@ -6016,7 +6016,7 @@ export class ReservationRestaurantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: ReservationRestaurantDto | undefined): Observable<ReservationRestaurantDto> {
@@ -6072,7 +6072,7 @@ export class ReservationRestaurantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -6136,7 +6136,7 @@ export class ReservationStatusServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<ReservationStatusDto> {
@@ -6192,9 +6192,9 @@ export class ReservationStatusServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<ReservationStatusDtoPagedResultDto> {
@@ -6256,7 +6256,7 @@ export class ReservationStatusServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: ReservationStatusDto | undefined): Observable<ReservationStatusDto> {
@@ -6312,7 +6312,7 @@ export class ReservationStatusServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: ReservationStatusDto | undefined): Observable<ReservationStatusDto> {
@@ -6368,7 +6368,7 @@ export class ReservationStatusServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -6432,7 +6432,7 @@ export class RestaurantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantDto> {
@@ -6488,9 +6488,9 @@ export class RestaurantServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantDtoPagedResultDto> {
@@ -6552,7 +6552,7 @@ export class RestaurantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantDto | undefined): Observable<RestaurantDto> {
@@ -6608,7 +6608,7 @@ export class RestaurantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantDto | undefined): Observable<RestaurantDto> {
@@ -6664,7 +6664,7 @@ export class RestaurantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -6728,7 +6728,7 @@ export class RestaurantAdvertisementServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantAdvertisementDto> {
@@ -6784,9 +6784,9 @@ export class RestaurantAdvertisementServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantAdvertisementDtoPagedResultDto> {
@@ -6848,7 +6848,7 @@ export class RestaurantAdvertisementServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantAdvertisementDto | undefined): Observable<RestaurantAdvertisementDto> {
@@ -6904,7 +6904,7 @@ export class RestaurantAdvertisementServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantAdvertisementDto | undefined): Observable<RestaurantAdvertisementDto> {
@@ -6960,7 +6960,7 @@ export class RestaurantAdvertisementServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -7024,7 +7024,7 @@ export class RestaurantFacilityServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantFacilityDto> {
@@ -7080,9 +7080,9 @@ export class RestaurantFacilityServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantFacilityDtoPagedResultDto> {
@@ -7144,7 +7144,7 @@ export class RestaurantFacilityServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantFacilityDto | undefined): Observable<RestaurantFacilityDto> {
@@ -7200,7 +7200,7 @@ export class RestaurantFacilityServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantFacilityDto | undefined): Observable<RestaurantFacilityDto> {
@@ -7256,7 +7256,7 @@ export class RestaurantFacilityServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -7320,7 +7320,7 @@ export class RestaurantFacilityRefServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantFacilityRefDto> {
@@ -7376,9 +7376,9 @@ export class RestaurantFacilityRefServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantFacilityRefDtoPagedResultDto> {
@@ -7440,7 +7440,7 @@ export class RestaurantFacilityRefServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantFacilityRefDto | undefined): Observable<RestaurantFacilityRefDto> {
@@ -7496,7 +7496,7 @@ export class RestaurantFacilityRefServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantFacilityRefDto | undefined): Observable<RestaurantFacilityRefDto> {
@@ -7552,7 +7552,7 @@ export class RestaurantFacilityRefServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -7616,7 +7616,7 @@ export class RestaurantImageServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantImageDto> {
@@ -7672,9 +7672,9 @@ export class RestaurantImageServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantImageDtoPagedResultDto> {
@@ -7736,7 +7736,7 @@ export class RestaurantImageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantImageDto | undefined): Observable<RestaurantImageDto> {
@@ -7792,7 +7792,7 @@ export class RestaurantImageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantImageDto | undefined): Observable<RestaurantImageDto> {
@@ -7848,7 +7848,7 @@ export class RestaurantImageServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -7912,7 +7912,7 @@ export class RestaurantRestaurantImageServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantRestaurantImageDto> {
@@ -7968,9 +7968,9 @@ export class RestaurantRestaurantImageServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantRestaurantImageDtoPagedResultDto> {
@@ -8032,7 +8032,7 @@ export class RestaurantRestaurantImageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantRestaurantImageDto | undefined): Observable<RestaurantRestaurantImageDto> {
@@ -8088,7 +8088,7 @@ export class RestaurantRestaurantImageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantRestaurantImageDto | undefined): Observable<RestaurantRestaurantImageDto> {
@@ -8144,7 +8144,7 @@ export class RestaurantRestaurantImageServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -8208,7 +8208,7 @@ export class RestaurantStatusServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantStatusDto> {
@@ -8264,9 +8264,9 @@ export class RestaurantStatusServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantStatusDtoPagedResultDto> {
@@ -8328,7 +8328,7 @@ export class RestaurantStatusServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantStatusDto | undefined): Observable<RestaurantStatusDto> {
@@ -8384,7 +8384,7 @@ export class RestaurantStatusServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantStatusDto | undefined): Observable<RestaurantStatusDto> {
@@ -8440,7 +8440,7 @@ export class RestaurantStatusServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -8504,7 +8504,7 @@ export class RestaurantTypeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantTypeDto> {
@@ -8560,9 +8560,9 @@ export class RestaurantTypeServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantTypeDtoPagedResultDto> {
@@ -8624,7 +8624,7 @@ export class RestaurantTypeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantTypeDto | undefined): Observable<RestaurantTypeDto> {
@@ -8680,7 +8680,7 @@ export class RestaurantTypeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantTypeDto | undefined): Observable<RestaurantTypeDto> {
@@ -8736,7 +8736,7 @@ export class RestaurantTypeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -8800,7 +8800,7 @@ export class RestaurantTypeReferenceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RestaurantTypeRefDto> {
@@ -8856,9 +8856,9 @@ export class RestaurantTypeReferenceServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RestaurantTypeRefDtoPagedResultDto> {
@@ -8920,7 +8920,7 @@ export class RestaurantTypeReferenceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: RestaurantTypeRefDto | undefined): Observable<RestaurantTypeRefDto> {
@@ -8976,7 +8976,7 @@ export class RestaurantTypeReferenceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RestaurantTypeRefDto | undefined): Observable<RestaurantTypeRefDto> {
@@ -9032,7 +9032,7 @@ export class RestaurantTypeReferenceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -9096,7 +9096,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: CreateRoleDto | undefined): Observable<RoleDto> {
@@ -9152,7 +9152,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param permission (optional) 
+     * @param permission (optional)
      * @return Success
      */
     getRoles(permission: string | null | undefined): Observable<RoleListDtoListResultDto> {
@@ -9206,7 +9206,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: RoleDto | undefined): Observable<RoleDto> {
@@ -9262,7 +9262,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -9365,7 +9365,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getRoleForEdit(id: number | undefined): Observable<GetRoleForEditOutput> {
@@ -9421,7 +9421,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<RoleDto> {
@@ -9477,9 +9477,9 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param keyword (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param keyword (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(keyword: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<RoleDtoPagedResultDto> {
@@ -9553,7 +9553,7 @@ export class SeatingServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<SeatingDto> {
@@ -9609,9 +9609,9 @@ export class SeatingServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<SeatingDtoPagedResultDto> {
@@ -9673,7 +9673,7 @@ export class SeatingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: SeatingDto | undefined): Observable<SeatingDto> {
@@ -9729,7 +9729,7 @@ export class SeatingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: SeatingDto | undefined): Observable<SeatingDto> {
@@ -9785,7 +9785,7 @@ export class SeatingServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -9849,7 +9849,7 @@ export class SeatingLayoutServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<SeatingLayoutDto> {
@@ -9905,9 +9905,9 @@ export class SeatingLayoutServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<SeatingLayoutDtoPagedResultDto> {
@@ -9969,7 +9969,7 @@ export class SeatingLayoutServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: SeatingLayoutDto | undefined): Observable<SeatingLayoutDto> {
@@ -10025,7 +10025,7 @@ export class SeatingLayoutServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: SeatingLayoutDto | undefined): Observable<SeatingLayoutDto> {
@@ -10081,7 +10081,7 @@ export class SeatingLayoutServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -10208,7 +10208,7 @@ export class SocialMediaServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<SocialMediaDto> {
@@ -10264,9 +10264,9 @@ export class SocialMediaServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<SocialMediaDtoPagedResultDto> {
@@ -10328,7 +10328,7 @@ export class SocialMediaServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: SocialMediaDto | undefined): Observable<SocialMediaDto> {
@@ -10384,7 +10384,7 @@ export class SocialMediaServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: SocialMediaDto | undefined): Observable<SocialMediaDto> {
@@ -10440,7 +10440,7 @@ export class SocialMediaServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -10504,7 +10504,7 @@ export class SocialMediaTypeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<SocialMediaTypeDto> {
@@ -10560,9 +10560,9 @@ export class SocialMediaTypeServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<SocialMediaTypeDtoPagedResultDto> {
@@ -10624,7 +10624,7 @@ export class SocialMediaTypeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: SocialMediaTypeDto | undefined): Observable<SocialMediaTypeDto> {
@@ -10680,7 +10680,7 @@ export class SocialMediaTypeServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: SocialMediaTypeDto | undefined): Observable<SocialMediaTypeDto> {
@@ -10736,7 +10736,7 @@ export class SocialMediaTypeServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -10800,7 +10800,7 @@ export class SpecialServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<SpecialDto> {
@@ -10856,9 +10856,9 @@ export class SpecialServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<SpecialDtoPagedResultDto> {
@@ -10920,7 +10920,7 @@ export class SpecialServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: SpecialDto | undefined): Observable<SpecialDto> {
@@ -10976,7 +10976,7 @@ export class SpecialServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: SpecialDto | undefined): Observable<SpecialDto> {
@@ -11032,7 +11032,7 @@ export class SpecialServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -11096,7 +11096,7 @@ export class SpecialPriceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<SpecialPriceDto> {
@@ -11152,9 +11152,9 @@ export class SpecialPriceServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<SpecialPriceDtoPagedResultDto> {
@@ -11216,7 +11216,7 @@ export class SpecialPriceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: SpecialPriceDto | undefined): Observable<SpecialPriceDto> {
@@ -11272,7 +11272,7 @@ export class SpecialPriceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: SpecialPriceDto | undefined): Observable<SpecialPriceDto> {
@@ -11328,7 +11328,7 @@ export class SpecialPriceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -11392,7 +11392,7 @@ export class StarRatingServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<StarRatingDto> {
@@ -11448,9 +11448,9 @@ export class StarRatingServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<StarRatingDtoPagedResultDto> {
@@ -11512,7 +11512,7 @@ export class StarRatingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: StarRatingDto | undefined): Observable<StarRatingDto> {
@@ -11568,7 +11568,7 @@ export class StarRatingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: StarRatingDto | undefined): Observable<StarRatingDto> {
@@ -11624,7 +11624,7 @@ export class StarRatingServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -11688,7 +11688,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: CreateTenantDto | undefined): Observable<TenantDto> {
@@ -11744,7 +11744,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -11796,7 +11796,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<TenantDto> {
@@ -11852,10 +11852,10 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param keyword (optional) 
-     * @param isActive (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param keyword (optional)
+     * @param isActive (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(keyword: string | null | undefined, isActive: boolean | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<TenantDtoPagedResultDto> {
@@ -11919,7 +11919,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: TenantDto | undefined): Observable<TenantDto> {
@@ -11987,7 +11987,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     authenticate(body: AuthenticateModel | undefined): Observable<AuthenticateResultModel> {
@@ -12098,7 +12098,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     externalAuthenticate(body: ExternalAuthenticateModel | undefined): Observable<ExternalAuthenticateResultModel> {
@@ -12166,7 +12166,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: CreateUserDto | undefined): Observable<UserDto> {
@@ -12222,7 +12222,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: UserDto | undefined): Observable<UserDto> {
@@ -12278,7 +12278,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -12381,7 +12381,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     changeLanguage(body: ChangeUserLanguageDto | undefined): Observable<void> {
@@ -12433,7 +12433,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     changePassword(body: ChangePasswordDto | undefined): Observable<boolean> {
@@ -12489,7 +12489,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     resetPassword(body: ResetPasswordDto | undefined): Observable<boolean> {
@@ -12545,7 +12545,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<UserDto> {
@@ -12601,10 +12601,10 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param keyword (optional) 
-     * @param isActive (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param keyword (optional)
+     * @param isActive (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(keyword: string | null | undefined, isActive: boolean | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<UserDtoPagedResultDto> {
@@ -12680,7 +12680,7 @@ export class UserCommentServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<UserCommentDto> {
@@ -12736,9 +12736,9 @@ export class UserCommentServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param skipCount (optional) 
-     * @param maxResultCount (optional) 
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
      * @return Success
      */
     getAll(sorting: string | null | undefined, skipCount: number | undefined, maxResultCount: number | undefined): Observable<UserCommentDtoPagedResultDto> {
@@ -12800,7 +12800,7 @@ export class UserCommentServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     create(body: UserCommentDto | undefined): Observable<UserCommentDto> {
@@ -12856,7 +12856,7 @@ export class UserCommentServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: UserCommentDto | undefined): Observable<UserCommentDto> {
@@ -12912,7 +12912,7 @@ export class UserCommentServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -12992,7 +12992,7 @@ export class IsTenantAvailableInput implements IIsTenantAvailableInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["tenancyName"] = this.tenancyName;
-        return data; 
+        return data;
     }
 
     clone(): IsTenantAvailableInput {
@@ -13044,7 +13044,7 @@ export class IsTenantAvailableOutput implements IIsTenantAvailableOutput {
         data = typeof data === 'object' ? data : {};
         data["state"] = this.state;
         data["tenantId"] = this.tenantId;
-        return data; 
+        return data;
     }
 
     clone(): IsTenantAvailableOutput {
@@ -13103,7 +13103,7 @@ export class RegisterInput implements IRegisterInput {
         data["emailAddress"] = this.emailAddress;
         data["password"] = this.password;
         data["captchaResponse"] = this.captchaResponse;
-        return data; 
+        return data;
     }
 
     clone(): RegisterInput {
@@ -13151,7 +13151,7 @@ export class RegisterOutput implements IRegisterOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["canLogin"] = this.canLogin;
-        return data; 
+        return data;
     }
 
     clone(): RegisterOutput {
@@ -13230,7 +13230,7 @@ export class AdvertisementDto implements IAdvertisementDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): AdvertisementDto {
@@ -13296,7 +13296,7 @@ export class AdvertisementDtoPagedResultDto implements IAdvertisementDtoPagedRes
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): AdvertisementDtoPagedResultDto {
@@ -13313,8 +13313,8 @@ export interface IAdvertisementDtoPagedResultDto {
 }
 
 export class AdvertisementDateDto implements IAdvertisementDateDto {
-    advertisementDateAcvtiveFrom: moment.Moment;
-    advertisementDateActiveTo: moment.Moment;
+    advertisementDateAcvtiveFrom: Date;
+    advertisementDateActiveTo: Date;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -13335,8 +13335,8 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
 
     init(_data?: any) {
         if (_data) {
-            this.advertisementDateAcvtiveFrom = _data["advertisementDateAcvtiveFrom"] ? moment(_data["advertisementDateAcvtiveFrom"].toString()) : <any>undefined;
-            this.advertisementDateActiveTo = _data["advertisementDateActiveTo"] ? moment(_data["advertisementDateActiveTo"].toString()) : <any>undefined;
+            this.advertisementDateAcvtiveFrom = _data["advertisementDateAcvtiveFrom"];// ? moment(_data["advertisementDateAcvtiveFrom"].toString()) : <any>undefined;
+            this.advertisementDateActiveTo = _data["advertisementDateActiveTo"];// ? moment(_data["advertisementDateActiveTo"].toString()) : <any>undefined;
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
@@ -13357,8 +13357,8 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["advertisementDateAcvtiveFrom"] = this.advertisementDateAcvtiveFrom ? this.advertisementDateAcvtiveFrom.toISOString() : <any>undefined;
-        data["advertisementDateActiveTo"] = this.advertisementDateActiveTo ? this.advertisementDateActiveTo.toISOString() : <any>undefined;
+        data["advertisementDateAcvtiveFrom"] = this.advertisementDateAcvtiveFrom;// ? this.advertisementDateAcvtiveFrom.toISOString() : <any>undefined;
+        data["advertisementDateActiveTo"] = this.advertisementDateActiveTo;// ? this.advertisementDateActiveTo.toISOString() : <any>undefined;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
@@ -13367,7 +13367,7 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): AdvertisementDateDto {
@@ -13379,8 +13379,8 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
 }
 
 export interface IAdvertisementDateDto {
-    advertisementDateAcvtiveFrom: moment.Moment;
-    advertisementDateActiveTo: moment.Moment;
+    advertisementDateAcvtiveFrom: Date;
+    advertisementDateActiveTo: Date;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -13430,7 +13430,7 @@ export class AdvertisementDateDtoPagedResultDto implements IAdvertisementDateDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): AdvertisementDateDtoPagedResultDto {
@@ -13501,7 +13501,7 @@ export class AdvertisementPriceDto implements IAdvertisementPriceDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): AdvertisementPriceDto {
@@ -13564,7 +13564,7 @@ export class AdvertisementPriceDtoPagedResultDto implements IAdvertisementPriceD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): AdvertisementPriceDtoPagedResultDto {
@@ -13632,7 +13632,7 @@ export class AllergyDto implements IAllergyDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): AllergyDto {
@@ -13694,7 +13694,7 @@ export class AllergyDtoPagedResultDto implements IAllergyDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): AllergyDtoPagedResultDto {
@@ -13768,7 +13768,7 @@ export class AttendanceSheetDto implements IAttendanceSheetDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): AttendanceSheetDto {
@@ -13832,7 +13832,7 @@ export class AttendanceSheetDtoPagedResultDto implements IAttendanceSheetDtoPage
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): AttendanceSheetDtoPagedResultDto {
@@ -13876,7 +13876,7 @@ export class ChangeUiThemeInput implements IChangeUiThemeInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["theme"] = this.theme;
-        return data; 
+        return data;
     }
 
     clone(): ChangeUiThemeInput {
@@ -13949,7 +13949,7 @@ export class TimeSpan implements ITimeSpan {
         data["totalMilliseconds"] = this.totalMilliseconds;
         data["totalMinutes"] = this.totalMinutes;
         data["totalSeconds"] = this.totalSeconds;
-        return data; 
+        return data;
     }
 
     clone(): TimeSpan {
@@ -14038,7 +14038,7 @@ export class MenuDto implements IMenuDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuDto {
@@ -14104,7 +14104,7 @@ export class MenuDtoPagedResultDto implements IMenuDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuDtoPagedResultDto {
@@ -14181,7 +14181,7 @@ export class MenuItemDto implements IMenuItemDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuItemDto {
@@ -14246,7 +14246,7 @@ export class MenuItemDtoPagedResultDto implements IMenuItemDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuItemDtoPagedResultDto {
@@ -14317,7 +14317,7 @@ export class MenuItemAllergyDto implements IMenuItemAllergyDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuItemAllergyDto {
@@ -14380,7 +14380,7 @@ export class MenuItemAllergyDtoPagedResultDto implements IMenuItemAllergyDtoPage
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuItemAllergyDtoPagedResultDto {
@@ -14448,7 +14448,7 @@ export class MenuItemCategoryDto implements IMenuItemCategoryDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuItemCategoryDto {
@@ -14510,7 +14510,7 @@ export class MenuItemCategoryDtoPagedResultDto implements IMenuItemCategoryDtoPa
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuItemCategoryDtoPagedResultDto {
@@ -14584,7 +14584,7 @@ export class MenuItemPriceDto implements IMenuItemPriceDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuItemPriceDto {
@@ -14648,7 +14648,7 @@ export class MenuItemPriceDtoPagedResultDto implements IMenuItemPriceDtoPagedRes
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuItemPriceDtoPagedResultDto {
@@ -14719,7 +14719,7 @@ export class MenuItemSpecialDto implements IMenuItemSpecialDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuItemSpecialDto {
@@ -14782,7 +14782,7 @@ export class MenuItemSpecialDtoPagedResultDto implements IMenuItemSpecialDtoPage
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuItemSpecialDtoPagedResultDto {
@@ -14850,7 +14850,7 @@ export class MenuItemTypeDto implements IMenuItemTypeDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuItemTypeDto {
@@ -14912,7 +14912,7 @@ export class MenuItemTypeDtoPagedResultDto implements IMenuItemTypeDtoPagedResul
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuItemTypeDtoPagedResultDto {
@@ -14986,7 +14986,7 @@ export class MenuRestaurantDto implements IMenuRestaurantDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): MenuRestaurantDto {
@@ -15050,7 +15050,7 @@ export class MenuRestaurantDtoPagedResultDto implements IMenuRestaurantDtoPagedR
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): MenuRestaurantDtoPagedResultDto {
@@ -15127,7 +15127,7 @@ export class OrderDto implements IOrderDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): OrderDto {
@@ -15192,7 +15192,7 @@ export class OrderDtoPagedResultDto implements IOrderDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): OrderDtoPagedResultDto {
@@ -15275,7 +15275,7 @@ export class OrderLineDto implements IOrderLineDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): OrderLineDto {
@@ -15342,7 +15342,7 @@ export class OrderLineDtoPagedResultDto implements IOrderLineDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): OrderLineDtoPagedResultDto {
@@ -15410,7 +15410,7 @@ export class OrderStatusDto implements IOrderStatusDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): OrderStatusDto {
@@ -15472,7 +15472,7 @@ export class OrderStatusDtoPagedResultDto implements IOrderStatusDtoPagedResultD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): OrderStatusDtoPagedResultDto {
@@ -15540,7 +15540,7 @@ export class QrCodeDto implements IQrCodeDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): QrCodeDto {
@@ -15602,7 +15602,7 @@ export class QrCodeDtoPagedResultDto implements IQrCodeDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): QrCodeDtoPagedResultDto {
@@ -15679,7 +15679,7 @@ export class QrCodeSeatingDto implements IQrCodeSeatingDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): QrCodeSeatingDto {
@@ -15744,7 +15744,7 @@ export class QrCodeSeatingDtoPagedResultDto implements IQrCodeSeatingDtoPagedRes
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): QrCodeSeatingDtoPagedResultDto {
@@ -15827,7 +15827,7 @@ export class ReservationDto implements IReservationDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): ReservationDto {
@@ -15894,7 +15894,7 @@ export class ReservationDtoPagedResultDto implements IReservationDtoPagedResultD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): ReservationDtoPagedResultDto {
@@ -15965,7 +15965,7 @@ export class ReservationRestaurantDto implements IReservationRestaurantDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): ReservationRestaurantDto {
@@ -16028,7 +16028,7 @@ export class ReservationRestaurantDtoPagedResultDto implements IReservationResta
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): ReservationRestaurantDtoPagedResultDto {
@@ -16096,7 +16096,7 @@ export class ReservationStatusDto implements IReservationStatusDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): ReservationStatusDto {
@@ -16158,7 +16158,7 @@ export class ReservationStatusDtoPagedResultDto implements IReservationStatusDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): ReservationStatusDtoPagedResultDto {
@@ -16256,7 +16256,7 @@ export class RestaurantDto implements IRestaurantDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantDto {
@@ -16328,7 +16328,7 @@ export class RestaurantDtoPagedResultDto implements IRestaurantDtoPagedResultDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantDtoPagedResultDto {
@@ -16399,7 +16399,7 @@ export class RestaurantAdvertisementDto implements IRestaurantAdvertisementDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantAdvertisementDto {
@@ -16462,7 +16462,7 @@ export class RestaurantAdvertisementDtoPagedResultDto implements IRestaurantAdve
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantAdvertisementDtoPagedResultDto {
@@ -16530,7 +16530,7 @@ export class RestaurantFacilityDto implements IRestaurantFacilityDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantFacilityDto {
@@ -16592,7 +16592,7 @@ export class RestaurantFacilityDtoPagedResultDto implements IRestaurantFacilityD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantFacilityDtoPagedResultDto {
@@ -16663,7 +16663,7 @@ export class RestaurantFacilityRefDto implements IRestaurantFacilityRefDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantFacilityRefDto {
@@ -16726,7 +16726,7 @@ export class RestaurantFacilityRefDtoPagedResultDto implements IRestaurantFacili
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantFacilityRefDtoPagedResultDto {
@@ -16800,7 +16800,7 @@ export class RestaurantImageDto implements IRestaurantImageDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantImageDto {
@@ -16864,7 +16864,7 @@ export class RestaurantImageDtoPagedResultDto implements IRestaurantImageDtoPage
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantImageDtoPagedResultDto {
@@ -16935,7 +16935,7 @@ export class RestaurantRestaurantImageDto implements IRestaurantRestaurantImageD
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantRestaurantImageDto {
@@ -16998,7 +16998,7 @@ export class RestaurantRestaurantImageDtoPagedResultDto implements IRestaurantRe
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantRestaurantImageDtoPagedResultDto {
@@ -17066,7 +17066,7 @@ export class RestaurantStatusDto implements IRestaurantStatusDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantStatusDto {
@@ -17128,7 +17128,7 @@ export class RestaurantStatusDtoPagedResultDto implements IRestaurantStatusDtoPa
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantStatusDtoPagedResultDto {
@@ -17196,7 +17196,7 @@ export class RestaurantTypeDto implements IRestaurantTypeDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantTypeDto {
@@ -17258,7 +17258,7 @@ export class RestaurantTypeDtoPagedResultDto implements IRestaurantTypeDtoPagedR
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantTypeDtoPagedResultDto {
@@ -17329,7 +17329,7 @@ export class RestaurantTypeRefDto implements IRestaurantTypeRefDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RestaurantTypeRefDto {
@@ -17392,7 +17392,7 @@ export class RestaurantTypeRefDtoPagedResultDto implements IRestaurantTypeRefDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RestaurantTypeRefDtoPagedResultDto {
@@ -17456,7 +17456,7 @@ export class CreateRoleDto implements ICreateRoleDto {
             for (let item of this.grantedPermissions)
                 data["grantedPermissions"].push(item);
         }
-        return data; 
+        return data;
     }
 
     clone(): CreateRoleDto {
@@ -17526,7 +17526,7 @@ export class RoleDto implements IRoleDto {
                 data["grantedPermissions"].push(item);
         }
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RoleDto {
@@ -17589,7 +17589,7 @@ export class RoleListDto implements IRoleListDto {
         data["isDefault"] = this.isDefault;
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RoleListDto {
@@ -17645,7 +17645,7 @@ export class RoleListDtoListResultDto implements IRoleListDtoListResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RoleListDtoListResultDto {
@@ -17697,7 +17697,7 @@ export class PermissionDto implements IPermissionDto {
         data["displayName"] = this.displayName;
         data["description"] = this.description;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): PermissionDto {
@@ -17751,7 +17751,7 @@ export class PermissionDtoListResultDto implements IPermissionDtoListResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): PermissionDtoListResultDto {
@@ -17806,7 +17806,7 @@ export class RoleEditDto implements IRoleEditDto {
         data["description"] = this.description;
         data["isStatic"] = this.isStatic;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): RoleEditDto {
@@ -17859,7 +17859,7 @@ export class FlatPermissionDto implements IFlatPermissionDto {
         data["name"] = this.name;
         data["displayName"] = this.displayName;
         data["description"] = this.description;
-        return data; 
+        return data;
     }
 
     clone(): FlatPermissionDto {
@@ -17926,7 +17926,7 @@ export class GetRoleForEditOutput implements IGetRoleForEditOutput {
             for (let item of this.grantedPermissionNames)
                 data["grantedPermissionNames"].push(item);
         }
-        return data; 
+        return data;
     }
 
     clone(): GetRoleForEditOutput {
@@ -17982,7 +17982,7 @@ export class RoleDtoPagedResultDto implements IRoleDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RoleDtoPagedResultDto {
@@ -18056,7 +18056,7 @@ export class SeatingDto implements ISeatingDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): SeatingDto {
@@ -18120,7 +18120,7 @@ export class SeatingDtoPagedResultDto implements ISeatingDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): SeatingDtoPagedResultDto {
@@ -18194,7 +18194,7 @@ export class SeatingLayoutDto implements ISeatingLayoutDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): SeatingLayoutDto {
@@ -18258,7 +18258,7 @@ export class SeatingLayoutDtoPagedResultDto implements ISeatingLayoutDtoPagedRes
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): SeatingLayoutDtoPagedResultDto {
@@ -18320,7 +18320,7 @@ export class ApplicationInfoDto implements IApplicationInfoDto {
                     data["features"][key] = this.features[key];
             }
         }
-        return data; 
+        return data;
     }
 
     clone(): ApplicationInfoDto {
@@ -18377,7 +18377,7 @@ export class UserLoginInfoDto implements IUserLoginInfoDto {
         data["userName"] = this.userName;
         data["emailAddress"] = this.emailAddress;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): UserLoginInfoDto {
@@ -18430,7 +18430,7 @@ export class TenantLoginInfoDto implements ITenantLoginInfoDto {
         data["tenancyName"] = this.tenancyName;
         data["name"] = this.name;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): TenantLoginInfoDto {
@@ -18481,7 +18481,7 @@ export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInform
         data["application"] = this.application ? this.application.toJSON() : <any>undefined;
         data["user"] = this.user ? this.user.toJSON() : <any>undefined;
         data["tenant"] = this.tenant ? this.tenant.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 
     clone(): GetCurrentLoginInformationsOutput {
@@ -18553,7 +18553,7 @@ export class SocialMediaDto implements ISocialMediaDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): SocialMediaDto {
@@ -18616,7 +18616,7 @@ export class SocialMediaDtoPagedResultDto implements ISocialMediaDtoPagedResultD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): SocialMediaDtoPagedResultDto {
@@ -18684,7 +18684,7 @@ export class SocialMediaTypeDto implements ISocialMediaTypeDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): SocialMediaTypeDto {
@@ -18746,7 +18746,7 @@ export class SocialMediaTypeDtoPagedResultDto implements ISocialMediaTypeDtoPage
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): SocialMediaTypeDtoPagedResultDto {
@@ -18823,7 +18823,7 @@ export class SpecialDto implements ISpecialDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): SpecialDto {
@@ -18888,7 +18888,7 @@ export class SpecialDtoPagedResultDto implements ISpecialDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): SpecialDtoPagedResultDto {
@@ -18962,7 +18962,7 @@ export class SpecialPriceDto implements ISpecialPriceDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): SpecialPriceDto {
@@ -19026,7 +19026,7 @@ export class SpecialPriceDtoPagedResultDto implements ISpecialPriceDtoPagedResul
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): SpecialPriceDtoPagedResultDto {
@@ -19094,7 +19094,7 @@ export class StarRatingDto implements IStarRatingDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): StarRatingDto {
@@ -19156,7 +19156,7 @@ export class StarRatingDtoPagedResultDto implements IStarRatingDtoPagedResultDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): StarRatingDtoPagedResultDto {
@@ -19212,7 +19212,7 @@ export class CreateTenantDto implements ICreateTenantDto {
         data["adminEmailAddress"] = this.adminEmailAddress;
         data["connectionString"] = this.connectionString;
         data["isActive"] = this.isActive;
-        return data; 
+        return data;
     }
 
     clone(): CreateTenantDto {
@@ -19268,7 +19268,7 @@ export class TenantDto implements ITenantDto {
         data["name"] = this.name;
         data["isActive"] = this.isActive;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): TenantDto {
@@ -19325,7 +19325,7 @@ export class TenantDtoPagedResultDto implements ITenantDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): TenantDtoPagedResultDto {
@@ -19375,7 +19375,7 @@ export class AuthenticateModel implements IAuthenticateModel {
         data["userNameOrEmailAddress"] = this.userNameOrEmailAddress;
         data["password"] = this.password;
         data["rememberClient"] = this.rememberClient;
-        return data; 
+        return data;
     }
 
     clone(): AuthenticateModel {
@@ -19429,7 +19429,7 @@ export class AuthenticateResultModel implements IAuthenticateResultModel {
         data["encryptedAccessToken"] = this.encryptedAccessToken;
         data["expireInSeconds"] = this.expireInSeconds;
         data["userId"] = this.userId;
-        return data; 
+        return data;
     }
 
     clone(): AuthenticateResultModel {
@@ -19478,7 +19478,7 @@ export class ExternalLoginProviderInfoModel implements IExternalLoginProviderInf
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
         data["clientId"] = this.clientId;
-        return data; 
+        return data;
     }
 
     clone(): ExternalLoginProviderInfoModel {
@@ -19528,7 +19528,7 @@ export class ExternalAuthenticateModel implements IExternalAuthenticateModel {
         data["authProvider"] = this.authProvider;
         data["providerKey"] = this.providerKey;
         data["providerAccessCode"] = this.providerAccessCode;
-        return data; 
+        return data;
     }
 
     clone(): ExternalAuthenticateModel {
@@ -19582,7 +19582,7 @@ export class ExternalAuthenticateResultModel implements IExternalAuthenticateRes
         data["encryptedAccessToken"] = this.encryptedAccessToken;
         data["expireInSeconds"] = this.expireInSeconds;
         data["waitingForActivation"] = this.waitingForActivation;
-        return data; 
+        return data;
     }
 
     clone(): ExternalAuthenticateResultModel {
@@ -19654,7 +19654,7 @@ export class CreateUserDto implements ICreateUserDto {
                 data["roleNames"].push(item);
         }
         data["password"] = this.password;
-        return data; 
+        return data;
     }
 
     clone(): CreateUserDto {
@@ -19738,7 +19738,7 @@ export class UserDto implements IUserDto {
                 data["roleNames"].push(item);
         }
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): UserDto {
@@ -19798,7 +19798,7 @@ export class RoleDtoListResultDto implements IRoleDtoListResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): RoleDtoListResultDto {
@@ -19841,7 +19841,7 @@ export class ChangeUserLanguageDto implements IChangeUserLanguageDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["languageName"] = this.languageName;
-        return data; 
+        return data;
     }
 
     clone(): ChangeUserLanguageDto {
@@ -19887,7 +19887,7 @@ export class ChangePasswordDto implements IChangePasswordDto {
         data = typeof data === 'object' ? data : {};
         data["currentPassword"] = this.currentPassword;
         data["newPassword"] = this.newPassword;
-        return data; 
+        return data;
     }
 
     clone(): ChangePasswordDto {
@@ -19937,7 +19937,7 @@ export class ResetPasswordDto implements IResetPasswordDto {
         data["adminPassword"] = this.adminPassword;
         data["userId"] = this.userId;
         data["newPassword"] = this.newPassword;
-        return data; 
+        return data;
     }
 
     clone(): ResetPasswordDto {
@@ -19993,7 +19993,7 @@ export class UserDtoPagedResultDto implements IUserDtoPagedResultDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): UserDtoPagedResultDto {
@@ -20070,7 +20070,7 @@ export class UserCommentDto implements IUserCommentDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 
     clone(): UserCommentDto {
@@ -20135,7 +20135,7 @@ export class UserCommentDtoPagedResultDto implements IUserCommentDtoPagedResultD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 
     clone(): UserCommentDtoPagedResultDto {
