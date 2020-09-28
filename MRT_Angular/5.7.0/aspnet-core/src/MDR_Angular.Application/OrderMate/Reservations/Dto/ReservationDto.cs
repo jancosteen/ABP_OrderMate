@@ -14,7 +14,7 @@ namespace MDR_Angular.OrderMate.Reservations
 {
     [AutoMapFrom(typeof(Reservation))]
     [AutoMapTo(typeof(Reservation))]
-    public class ReservationDto: EntityDto<int>
+    public class ReservationDto: FullAuditedEntityDto<int>
     {
         //public int ReservationId { get; set; }
         public DateTime ReservationDateCreated { get; set; }

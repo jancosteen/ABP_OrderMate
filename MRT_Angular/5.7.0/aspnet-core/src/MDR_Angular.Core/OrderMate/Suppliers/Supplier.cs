@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.SupplierOrders;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.Suppliers
 {
-    public class Supplier: Entity<int>
+    public class Supplier: FullAuditedEntity<int>
     {
         //public int SupplierId { get; set; }
         public string SupplierName { get; set; }

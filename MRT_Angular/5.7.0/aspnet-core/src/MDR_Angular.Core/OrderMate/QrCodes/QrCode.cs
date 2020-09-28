@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.QrCodeSeatings;
 using MDR_Angular.OrderMate.Restaurants;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.QrCodes
 {
-    public class QrCode: Entity<int>
+    public class QrCode: FullAuditedEntity<int>
     {
         //public int QrCodeId { get; set; }
         public int? RestaurantIdFk { get; set; }

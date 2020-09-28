@@ -12,7 +12,7 @@ namespace MDR_Angular.OrderMate.UserComments
 {
     [AutoMapFrom(typeof(UserComment))]
     [AutoMapTo(typeof(UserComment))]
-    public class UserCommentDto: EntityDto<int>
+    public class UserCommentDto: FullAuditedEntityDto<int>
     {
        // public int UserCommentId { get; set; }
         public string UserComment1 { get; set; }

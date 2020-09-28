@@ -10,7 +10,7 @@ namespace MDR_Angular.OrderMate.WrittenOffStocks
 {
     [AutoMapFrom(typeof(WrittenOffStock))]
     [AutoMapTo(typeof(WrittenOffStock))]
-    public class WrittenOffStockDto: EntityDto<int>
+    public class WrittenOffStockDto: FullAuditedEntityDto<int>
     {
         //public int WrittenOfStockId { get; set; }
         public DateTime WrittenOfStockDate { get; set; }

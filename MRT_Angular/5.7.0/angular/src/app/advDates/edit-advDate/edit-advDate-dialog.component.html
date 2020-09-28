@@ -21,6 +21,7 @@
           name="name"
           id="name"
           maxlength="128"
+          [min]="currentDate"
           required
           [(ngModel)]="advDate.advertisementDateAcvtiveFrom"
           #nameModel="ngModel"
@@ -43,6 +44,7 @@
           class="form-control"
           name="tenancyName"
           id="tenancyName"
+          [min]="currentDate"
           minlength="2"
           maxlength="64"
           required

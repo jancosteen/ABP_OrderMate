@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.LayoutTypes;
 using MDR_Angular.OrderMate.Restaurants;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.SeatingLayouts
 {
-    public class SeatingLayout: Entity<int>
+    public class SeatingLayout: FullAuditedEntity<int>
     {
         //public int SeatingLayoutId { get; set; }
         public int RestaurantIdFk { get; set; }

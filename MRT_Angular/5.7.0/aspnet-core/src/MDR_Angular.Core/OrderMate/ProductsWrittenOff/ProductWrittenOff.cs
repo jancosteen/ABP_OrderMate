@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Employees;
 using MDR_Angular.OrderMate.Products;
 using MDR_Angular.OrderMate.WriteOffReasons;
@@ -10,7 +11,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.ProductsWrittenOff
 {
-    public class ProductWrittenOff: Entity<int>
+    public class ProductWrittenOff: FullAuditedEntity<int>
     {
         //public int WrittenOffStockIdFk { get; set; }
         public int ProductIdFk { get; set; }

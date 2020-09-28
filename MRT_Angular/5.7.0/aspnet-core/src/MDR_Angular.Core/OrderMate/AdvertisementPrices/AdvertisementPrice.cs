@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Advertisements;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 
 namespace MDR_Angular.OrderMate.AdvertisementPrices
 {
-    public class AdvertisementPrice: Entity<int>
+    public class AdvertisementPrice: FullAuditedEntity<int>
     {
         //public int AdvertisementPriceId { get; set; }
         public double AdvertismentPrice { get; set; }

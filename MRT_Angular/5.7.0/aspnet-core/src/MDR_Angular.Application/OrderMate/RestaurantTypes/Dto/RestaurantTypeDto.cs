@@ -10,7 +10,7 @@ namespace MDR_Angular.OrderMate.RestaurantTypes
 {
     [AutoMapFrom(typeof(RestaurantType))]
     [AutoMapTo(typeof(RestaurantType))]
-    public class RestaurantTypeDto: EntityDto<int>
+    public class RestaurantTypeDto: FullAuditedEntityDto<int>
     {
         //public int RestaurantTypeId { get; set; }
         public string RestaurantType1 { get; set; }

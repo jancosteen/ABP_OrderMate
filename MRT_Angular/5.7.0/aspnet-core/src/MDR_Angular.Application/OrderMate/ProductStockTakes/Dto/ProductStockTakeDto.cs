@@ -13,7 +13,7 @@ namespace MDR_Angular.OrderMate.ProductStockTakes
 {
     [AutoMapFrom(typeof(ProductStockTake))]
     [AutoMapTo(typeof(ProductStockTake))]
-    public class ProductStockTakeDto: EntityDto<int>
+    public class ProductStockTakeDto: FullAuditedEntityDto<int>
     {
         //public int ProductStockTakeId { get; set; }
         public int? EmployeeIdFk { get; set; }

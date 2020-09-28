@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.MenuRestaurants;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.Menus
 {
-    public class Menu: Entity<int>
+    public class Menu: FullAuditedEntity<int>
     {
         //public int MenuId { get; set; }
         public string MenuName { get; set; }

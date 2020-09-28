@@ -8,7 +8,7 @@ namespace MDR_Angular.OrderMate.MenuItems.Dto
 {
     [AutoMapFrom(typeof(MenuItem))]
     [AutoMapTo(typeof(MenuItem))]
-    public class MenuItemDto:EntityDto<int>
+    public class MenuItemDto:FullAuditedEntityDto<int>
     {
         public string MenuItemName { get; set; }
         public string MenuItemDescription { get; set; }

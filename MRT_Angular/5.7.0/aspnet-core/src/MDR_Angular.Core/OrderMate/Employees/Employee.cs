@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.AttendanceSheets;
 using MDR_Angular.OrderMate.EmployeeShifts;
 using MDR_Angular.OrderMate.ProductStockTakes;
@@ -9,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MDR_Angular.OrderMate.Employees
 {
-    public class Employee: Entity<int>
+    public class Employee: FullAuditedEntity<int>
     {
         //public int EmployeeId { get; set; }
         public string EmployeeIdNumber { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Allergies;
 using MDR_Angular.OrderMate.MenuItems;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.MenuItemAllergies
 {
-    public class MenuItemAllergy: Entity<int>
+    public class MenuItemAllergy: FullAuditedEntity<int>
     {
         //public int MenuItemAllergyId { get; set; }
         public int MenuItemIdFk { get; set; }

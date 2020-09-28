@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Restaurants;
 using MDR_Angular.OrderMate.StarRatings;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.UserComments
 {
-    public class UserComment: Entity<int>
+    public class UserComment: FullAuditedEntity<int>
     {
        // public int UserCommentId { get; set; }
         public string UserComment1 { get; set; }

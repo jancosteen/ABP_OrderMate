@@ -16,7 +16,7 @@ namespace MDR_Angular.OrderMate.Products
 {
     [AutoMapFrom(typeof(Product))]
     [AutoMapTo(typeof(Product))]
-    public class ProductDto: EntityDto<int>
+    public class ProductDto: FullAuditedEntityDto<int>
     {
         //public int ProductId { get; set; }
         public string ProductName { get; set; }

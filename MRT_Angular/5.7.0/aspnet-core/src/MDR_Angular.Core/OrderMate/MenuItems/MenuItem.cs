@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.ItemTypeMenuMenuItems;
 using MDR_Angular.OrderMate.MenuItemAllergies;
 using MDR_Angular.OrderMate.MenuItemCategories;
@@ -13,7 +14,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.MenuItems
 {
-    public class MenuItem: Entity<int>
+    public class MenuItem: FullAuditedEntity<int>
     {
         //public int MenuItemId { get; set; }
         public string MenuItemName { get; set; }

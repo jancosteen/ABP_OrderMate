@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.ProductCategories;
 using MDR_Angular.OrderMate.ProductReorderFreqs;
 using MDR_Angular.OrderMate.ProductStockTakes;
@@ -12,7 +13,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.Products
 {
-    public class Product: Entity<int>
+    public class Product: FullAuditedEntity<int>
     {
         //public int ProductId { get; set; }
         public string ProductName { get; set; }

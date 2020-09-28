@@ -13,7 +13,7 @@ namespace MDR_Angular.OrderMate.QrCodeSeatings
 {
     [AutoMapFrom(typeof(QrCodeSeating))]
     [AutoMapTo(typeof(QrCodeSeating))]
-    public class QrCodeSeatingDto: EntityDto<int>
+    public class QrCodeSeatingDto: FullAuditedEntityDto<int>
     {
         //public int QrCodeSeatingId { get; set; }
         public int NrOfPeople { get; set; }

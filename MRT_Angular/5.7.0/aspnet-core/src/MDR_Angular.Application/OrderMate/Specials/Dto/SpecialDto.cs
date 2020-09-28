@@ -12,7 +12,7 @@ namespace MDR_Angular.OrderMate.Specials
 {
     [AutoMapFrom(typeof(Special))]
     [AutoMapTo(typeof(Special))]
-    public class SpecialDto: EntityDto<int>
+    public class SpecialDto: FullAuditedEntityDto<int>
     {
         //public int SpecialId { get; set; }
         public DateTime SpecialStartDate { get; set; }

@@ -8,7 +8,7 @@ namespace MDR_Angular.OrderMate.OrderLines.Dto
 {
     [AutoMapFrom(typeof(OrderLine))]
     [AutoMapTo(typeof(OrderLine))]
-    public class OrderLineDto: EntityDto<int>
+    public class OrderLineDto: FullAuditedEntityDto<int>
     {
         public int ItemQty { get; set; }
         public string ItemComments { get; set; }

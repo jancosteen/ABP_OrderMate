@@ -34,6 +34,7 @@ export class CreateAdvDateDialogComponent extends AppComponentBase
 
   ngOnInit(): void {
      this.currentDate = new Date().toISOString().substring(0, 16);
+     console.log(this.currentDate);
   }
 
   save(): void {

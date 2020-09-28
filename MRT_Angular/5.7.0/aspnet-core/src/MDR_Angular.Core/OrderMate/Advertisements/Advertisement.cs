@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.AdvertisementDates;
 using MDR_Angular.OrderMate.AdvertisementPrices;
 using MDR_Angular.OrderMate.RestaurantAdvertisements;
@@ -7,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MDR_Angular.OrderMate.Advertisements
 {
-    public class Advertisement : Entity<int>
+    public class Advertisement : FullAuditedEntity<int>
     {
         //public int AdvertisementId { get; set; }
         public string AdvertisementName { get; set; }

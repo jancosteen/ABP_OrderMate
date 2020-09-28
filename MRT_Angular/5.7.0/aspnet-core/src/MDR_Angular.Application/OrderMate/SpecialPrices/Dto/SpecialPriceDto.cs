@@ -11,7 +11,7 @@ namespace MDR_Angular.OrderMate.SpecialPrices
 {
     [AutoMapFrom(typeof(SpecialPrice))]
     [AutoMapTo(typeof(SpecialPrice))]
-    public class SpecialPriceDto: EntityDto<int>
+    public class SpecialPriceDto: FullAuditedEntityDto<int>
     {
         //public int SpecialPriceId { get; set; }
         public double SpecialPrice1 { get; set; }

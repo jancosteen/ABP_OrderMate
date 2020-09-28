@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Restaurants;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.RestaurantStatusses
 {
-    public class RestaurantStatus: Entity<int>
+    public class RestaurantStatus: FullAuditedEntity<int>
     {
         //public int RestaurantStatusId { get; set; }
         public string RestaurantStatus1 { get; set; }

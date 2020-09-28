@@ -21,6 +21,7 @@ export class EditAdvDateDialogComponent extends AppComponentBase
   saving = false;
   advDate: AdvertisementDateDto = new AdvertisementDateDto();
   id: number;
+  currentDate;
 
   @Output() onSave = new EventEmitter<any>();
 
@@ -36,6 +37,8 @@ export class EditAdvDateDialogComponent extends AppComponentBase
     this._advDateService.get(this.id).subscribe((result: AdvertisementDateDto) => {
       this.advDate = result;
     });
+
+    this.currentDate = new Date().toISOString().substring(0, 16);
   }
 
   save(): void {

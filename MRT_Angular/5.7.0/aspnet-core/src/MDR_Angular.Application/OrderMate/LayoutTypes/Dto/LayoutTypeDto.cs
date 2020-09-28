@@ -9,7 +9,7 @@ namespace MDR_Angular.OrderMate.LayoutTypes.Dto
 {
     [AutoMapFrom(typeof(LayoutType))]
     [AutoMapTo(typeof(LayoutType))]
-    public class LayoutTypeDto:EntityDto<int>
+    public class LayoutTypeDto:FullAuditedEntityDto<int>
     {
         public string LayoutType1 { get; set; }
 

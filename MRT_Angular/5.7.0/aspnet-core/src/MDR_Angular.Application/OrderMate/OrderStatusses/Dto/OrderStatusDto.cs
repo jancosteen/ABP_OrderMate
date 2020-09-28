@@ -8,7 +8,7 @@ namespace MDR_Angular.OrderMate.OrderStatusses.Dto
 {
     [AutoMapFrom(typeof(OrderStatus))]
     [AutoMapTo(typeof(OrderStatus))]
-    public class OrderStatusDto: EntityDto<int>
+    public class OrderStatusDto: FullAuditedEntityDto<int>
     {
         public string OrderStatus1 { get; set; }
     }

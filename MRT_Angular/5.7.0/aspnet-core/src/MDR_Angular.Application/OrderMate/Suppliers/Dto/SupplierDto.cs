@@ -10,7 +10,7 @@ namespace MDR_Angular.OrderMate.Suppliers
 {
     [AutoMapFrom(typeof(Supplier))]
     [AutoMapTo(typeof(Supplier))]
-    public class SupplierDto: EntityDto<int>
+    public class SupplierDto: FullAuditedEntityDto<int>
     {
         //public int SupplierId { get; set; }
         public string SupplierName { get; set; }

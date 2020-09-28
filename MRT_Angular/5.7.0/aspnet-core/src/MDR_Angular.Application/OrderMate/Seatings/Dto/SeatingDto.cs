@@ -12,7 +12,7 @@ namespace MDR_Angular.OrderMate.Seatings
 {
     [AutoMapFrom(typeof(Seating))]
     [AutoMapTo(typeof(Seating))]
-    public class SeatingDto: EntityDto<int>
+    public class SeatingDto: FullAuditedEntityDto<int>
     {
         //public int SeatingId { get; set; }
         public DateTime SeatingDate { get; set; }

@@ -12,7 +12,7 @@ namespace MDR_Angular.OrderMate.Shifts
 {
     [AutoMapFrom(typeof(Shift))]
     [AutoMapTo(typeof(Shift))]
-    public class ShiftDto: EntityDto<int>
+    public class ShiftDto: FullAuditedEntityDto<int>
     {
         //public int ShiftId { get; set; }
         public DateTime ShiftStartDateTime { get; set; }

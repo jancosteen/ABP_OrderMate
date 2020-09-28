@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.RestaurantFacilities;
 using MDR_Angular.OrderMate.Restaurants;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.RestaurantFacilityRefs
 {
-    public class RestaurantFacilityRef: Entity<int>
+    public class RestaurantFacilityRef: FullAuditedEntity<int>
     {
         //public int RestaurantFacilityRefId { get; set; }
         public int RestaurantFacilityIdFk { get; set; }

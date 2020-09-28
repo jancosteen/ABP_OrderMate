@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.MenuItemSpecials;
 using MDR_Angular.OrderMate.OrderLines;
 using MDR_Angular.OrderMate.SpecialPrices;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.Specials
 {
-    public class Special: Entity<int>
+    public class Special: FullAuditedEntity<int>
     {
         //public int SpecialId { get; set; }
         public DateTime SpecialStartDate { get; set; }

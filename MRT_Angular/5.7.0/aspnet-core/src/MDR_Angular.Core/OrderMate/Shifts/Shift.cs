@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.EmployeeShifts;
 using MDR_Angular.OrderMate.ShiftStatusses;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.Shifts
 {
-    public class Shift: Entity<int>
+    public class Shift: FullAuditedEntity<int>
     {
         //public int ShiftId { get; set; }
         public DateTime ShiftStartDateTime { get; set; }
