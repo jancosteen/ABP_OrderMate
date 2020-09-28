@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Abp.Authorization.Roles;
+﻿using Abp.Authorization.Roles;
 using MDR_Angular.Authorization.Users;
+using System.ComponentModel.DataAnnotations;
 
 namespace MDR_Angular.Authorization.Roles
 {
@@ -23,6 +23,6 @@ namespace MDR_Angular.Authorization.Roles
         }
 
         [StringLength(MaxDescriptionLength)]
-        public string Description {get; set;}
+        public string Description { get; set; }
     }
 }

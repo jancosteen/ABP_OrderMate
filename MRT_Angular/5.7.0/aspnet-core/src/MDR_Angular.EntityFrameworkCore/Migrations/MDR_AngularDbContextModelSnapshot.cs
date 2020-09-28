@@ -2061,8 +2061,8 @@ namespace MDR_Angular.Migrations
                     b.Property<double>("MenuItemPrice1")
                         .HasColumnType("float");
 
-                    b.Property<string>("MenuItemPriceStatus")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -3612,6 +3612,9 @@ namespace MDR_Angular.Migrations
                     b.Property<DateTime>("SpecialPriceDateUpdated")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("SpecialIdFk");
@@ -3658,6 +3661,9 @@ namespace MDR_Angular.Migrations
 
                     b.Property<DateTime>("SpecialStartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

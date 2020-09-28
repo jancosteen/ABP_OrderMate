@@ -1,19 +1,16 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.ProductCategories;
 using MDR_Angular.OrderMate.ProductReorderFreqs;
 using MDR_Angular.OrderMate.ProductStockTakes;
 using MDR_Angular.OrderMate.ProductsWrittenOff;
 using MDR_Angular.OrderMate.ProductTypes;
 using MDR_Angular.OrderMate.SupplierOrderLines;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Products
 {
-    public class Product: FullAuditedEntity<int>
+    public class Product : FullAuditedEntity<int>
     {
         //public int ProductId { get; set; }
         public string ProductName { get; set; }

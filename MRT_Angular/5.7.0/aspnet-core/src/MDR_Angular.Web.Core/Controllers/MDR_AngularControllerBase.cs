@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MDR_Angular.Controllers
 {
-    public abstract class MDR_AngularControllerBase: AbpController
+    public abstract class MDR_AngularControllerBase : AbpController
     {
         protected MDR_AngularControllerBase()
         {

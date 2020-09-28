@@ -7,7 +7,7 @@ using MDR_Angular.EntityFrameworkCore.Seed;
 namespace MDR_Angular.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(MDR_AngularCoreModule), 
+        typeof(MDR_AngularCoreModule),
         typeof(AbpZeroCoreEntityFrameworkCoreModule))]
     public class MDR_AngularEntityFrameworkModule : AbpModule
     {

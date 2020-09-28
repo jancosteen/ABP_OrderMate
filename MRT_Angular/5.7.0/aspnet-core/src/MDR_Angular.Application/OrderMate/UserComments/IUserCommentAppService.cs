@@ -3,7 +3,7 @@
 
 namespace MDR_Angular.OrderMate.UserComments
 {
-    public interface IUserCommentAppService: IAsyncCrudAppService<UserCommentDto>
+    public interface IUserCommentAppService : IAsyncCrudAppService<UserCommentDto>
     {
     }
 }

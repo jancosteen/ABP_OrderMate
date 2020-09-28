@@ -1,18 +1,12 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.OrderMate.EmployeeShifts;
-using MDR_Angular.OrderMate.ShiftStatusses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Shifts
 {
     [AutoMapFrom(typeof(Shift))]
     [AutoMapTo(typeof(Shift))]
-    public class ShiftDto: FullAuditedEntityDto<int>
+    public class ShiftDto : FullAuditedEntityDto<int>
     {
         //public int ShiftId { get; set; }
         public DateTime ShiftStartDateTime { get; set; }
@@ -21,6 +15,6 @@ namespace MDR_Angular.OrderMate.Shifts
         public string ShiftName { get; set; }
         public int? ShiftStatusIdFk { get; set; }
 
-        
+
     }
 }

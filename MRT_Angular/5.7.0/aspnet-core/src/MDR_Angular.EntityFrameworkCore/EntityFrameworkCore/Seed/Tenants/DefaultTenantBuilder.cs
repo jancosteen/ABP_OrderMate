@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using Abp.MultiTenancy;
+﻿using Abp.MultiTenancy;
 using MDR_Angular.Editions;
 using MDR_Angular.MultiTenancy;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace MDR_Angular.EntityFrameworkCore.Seed.Tenants
 {

@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Abp.Authorization.Users;
+﻿using Abp.Authorization.Users;
+using System.ComponentModel.DataAnnotations;
 
 namespace MDR_Angular.Models.TokenAuth
 {
@@ -12,7 +12,7 @@ namespace MDR_Angular.Models.TokenAuth
         [Required]
         [StringLength(AbpUserBase.MaxPlainPasswordLength)]
         public string Password { get; set; }
-        
+
         public bool RememberClient { get; set; }
     }
 }

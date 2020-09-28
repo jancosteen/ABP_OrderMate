@@ -1,15 +1,11 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Allergies;
 using MDR_Angular.OrderMate.MenuItems;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.MenuItemAllergies
 {
-    public class MenuItemAllergy: FullAuditedEntity<int>
+    public class MenuItemAllergy : FullAuditedEntity<int>
     {
         //public int MenuItemAllergyId { get; set; }
         public int MenuItemIdFk { get; set; }

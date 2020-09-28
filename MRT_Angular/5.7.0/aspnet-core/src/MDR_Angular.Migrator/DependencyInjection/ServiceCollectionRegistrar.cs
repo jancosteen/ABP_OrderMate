@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Abp.Dependency;
 using Castle.Windsor.MsDependencyInjection;
-using Abp.Dependency;
 using MDR_Angular.Identity;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MDR_Angular.Migrator.DependencyInjection
 {

@@ -1,16 +1,11 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.OrderMate.SupplierOrders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Suppliers
 {
     [AutoMapFrom(typeof(Supplier))]
     [AutoMapTo(typeof(Supplier))]
-    public class SupplierDto: FullAuditedEntityDto<int>
+    public class SupplierDto : FullAuditedEntityDto<int>
     {
         //public int SupplierId { get; set; }
         public string SupplierName { get; set; }

@@ -1,16 +1,12 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Employees;
 using MDR_Angular.OrderMate.Products;
 using MDR_Angular.OrderMate.StockTakes;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.ProductStockTakes
 {
-    public class ProductStockTake: FullAuditedEntity<int>
+    public class ProductStockTake : FullAuditedEntity<int>
     {
         //public int ProductStockTakeId { get; set; }
         public int? EmployeeIdFk { get; set; }

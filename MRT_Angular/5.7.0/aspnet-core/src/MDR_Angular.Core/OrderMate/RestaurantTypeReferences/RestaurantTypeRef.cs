@@ -1,15 +1,11 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Restaurants;
 using MDR_Angular.OrderMate.RestaurantTypes;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.RestaurantTypeReferences
 {
-    public class RestaurantTypeRef: FullAuditedEntity<int>
+    public class RestaurantTypeRef : FullAuditedEntity<int>
     {
         //public int RestaurantTypeRefId { get; set; }
         public int RestaurantTypeIdFk { get; set; }

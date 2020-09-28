@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using Abp.Authorization;
+﻿using Abp.Authorization;
 using Abp.Runtime.Session;
 using MDR_Angular.Configuration.Dto;
+using System.Threading.Tasks;
 
 namespace MDR_Angular.Configuration
 {

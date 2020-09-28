@@ -1,9 +1,4 @@
 ﻿using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.OrderMate.Reservations;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.ReservationStatusses
 {
@@ -14,6 +9,6 @@ namespace MDR_Angular.OrderMate.ReservationStatusses
         //public int ReservationStatusId { get; set; }
         public string ReservationStatus1 { get; set; }
 
-        
+
     }
 }

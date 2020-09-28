@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using MDR_Angular.Authorization;
+﻿using MDR_Angular.Authorization;
 using MDR_Angular.Authorization.Roles;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.Editions;
 using MDR_Angular.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MDR_Angular.Identity
 {

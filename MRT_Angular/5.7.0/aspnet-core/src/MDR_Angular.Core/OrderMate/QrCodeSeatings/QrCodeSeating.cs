@@ -1,16 +1,12 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Orders;
 using MDR_Angular.OrderMate.QrCodes;
 using MDR_Angular.OrderMate.Seatings;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.QrCodeSeatings
 {
-    public class QrCodeSeating: FullAuditedEntity<int>
+    public class QrCodeSeating : FullAuditedEntity<int>
     {
         //public int QrCodeSeatingId { get; set; }
         public int NrOfPeople { get; set; }

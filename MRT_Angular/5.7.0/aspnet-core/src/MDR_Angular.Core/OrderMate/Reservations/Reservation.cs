@@ -1,5 +1,4 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.OrderMate.ReservationRestaurants;
 using MDR_Angular.OrderMate.ReservationStatusses;
@@ -7,11 +6,10 @@ using MDR_Angular.OrderMate.Seatings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Reservations
 {
-    public class Reservation: FullAuditedEntity<int>
+    public class Reservation : FullAuditedEntity<int>
     {
         //public int ReservationId { get; set; }
         public DateTime ReservationDateCreated { get; set; }

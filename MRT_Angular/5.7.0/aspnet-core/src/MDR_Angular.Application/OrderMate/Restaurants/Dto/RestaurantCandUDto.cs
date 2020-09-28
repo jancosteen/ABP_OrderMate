@@ -1,20 +1,5 @@
 ﻿using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.OrderMate.Employees;
-using MDR_Angular.OrderMate.MenuRestaurants;
-using MDR_Angular.OrderMate.QrCodes;
-using MDR_Angular.OrderMate.ReservationRestaurants;
-using MDR_Angular.OrderMate.RestaurantAdvertisements;
-using MDR_Angular.OrderMate.RestaurantFacilityRefs;
-using MDR_Angular.OrderMate.RestaurantImages;
-using MDR_Angular.OrderMate.RestaurantStatusses;
-using MDR_Angular.OrderMate.RestaurantTypeReferences;
-using MDR_Angular.OrderMate.SeatingLayouts;
-using MDR_Angular.OrderMate.UserComments;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Restaurants
 {
@@ -35,6 +20,6 @@ namespace MDR_Angular.OrderMate.Restaurants
         public string RestaurantCountry { get; set; }
         public int? RestaurantStatusIdFk { get; set; }
 
-        
+
     }
 }

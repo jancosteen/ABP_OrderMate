@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
 using Abp.Data;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
@@ -11,6 +8,9 @@ using Abp.Runtime.Security;
 using MDR_Angular.EntityFrameworkCore;
 using MDR_Angular.EntityFrameworkCore.Seed;
 using MDR_Angular.MultiTenancy;
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
 
 namespace MDR_Angular.Migrator
 {

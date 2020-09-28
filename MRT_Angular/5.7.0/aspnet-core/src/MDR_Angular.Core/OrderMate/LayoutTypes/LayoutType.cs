@@ -1,13 +1,10 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.SeatingLayouts;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.LayoutTypes
 {
-    public class LayoutType: FullAuditedEntity<int>
+    public class LayoutType : FullAuditedEntity<int>
     {
         //public int LayoutTypeId { get; set; }
         public string LayoutType1 { get; set; }

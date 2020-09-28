@@ -1,11 +1,11 @@
-using Microsoft.Extensions.Configuration;
-using Castle.MicroKernel.Registration;
 using Abp.Events.Bus;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using Castle.MicroKernel.Registration;
 using MDR_Angular.Configuration;
 using MDR_Angular.EntityFrameworkCore;
 using MDR_Angular.Migrator.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace MDR_Angular.Migrator
 {
@@ -31,7 +31,7 @@ namespace MDR_Angular.Migrator
 
             Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
             Configuration.ReplaceService(
-                typeof(IEventBus), 
+                typeof(IEventBus),
                 () => IocManager.IocContainer.Register(
                     Component.For<IEventBus>().Instance(NullEventBus.Instance)
                 )

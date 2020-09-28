@@ -1,14 +1,10 @@
-﻿using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Abp.AutoMapper;
 
 namespace MDR_Angular.OrderMate.Advertisements.Dto
 {
     [AutoMapFrom(typeof(Advertisement))]
     [AutoMapTo(typeof(Advertisement))]
-    public  class AdvertisementCandUDto
+    public class AdvertisementCandUDto
     {
         public string AdvertisementName { get; set; }
         public string AdvertisementDescription { get; set; }

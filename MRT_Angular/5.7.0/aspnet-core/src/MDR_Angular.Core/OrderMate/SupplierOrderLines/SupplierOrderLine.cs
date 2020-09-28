@@ -1,15 +1,11 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Products;
 using MDR_Angular.OrderMate.SupplierOrders;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.SupplierOrderLines
 {
-    public class SupplierOrderLine: FullAuditedEntity<int>
+    public class SupplierOrderLine : FullAuditedEntity<int>
     {
         //public int SupplierOrderLineId { get; set; }
         public int ProductIdFk { get; set; }

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Abp.Zero.EntityFrameworkCore;
+﻿using Abp.Zero.EntityFrameworkCore;
 using MDR_Angular.Authorization.Roles;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.MultiTenancy;
@@ -29,8 +28,8 @@ using MDR_Angular.OrderMate.Products;
 using MDR_Angular.OrderMate.ProductStockTakes;
 using MDR_Angular.OrderMate.ProductsWrittenOff;
 using MDR_Angular.OrderMate.ProductTypes;
-using MDR_Angular.OrderMate.QrCodeSeatings;
 using MDR_Angular.OrderMate.QrCodes;
+using MDR_Angular.OrderMate.QrCodeSeatings;
 using MDR_Angular.OrderMate.ReservationRestaurants;
 using MDR_Angular.OrderMate.Reservations;
 using MDR_Angular.OrderMate.ReservationStatusses;
@@ -59,6 +58,7 @@ using MDR_Angular.OrderMate.Suppliers;
 using MDR_Angular.OrderMate.UserComments;
 using MDR_Angular.OrderMate.WriteOffReasons;
 using MDR_Angular.OrderMate.WrittenOffStocks;
+using Microsoft.EntityFrameworkCore;
 
 namespace MDR_Angular.EntityFrameworkCore
 {

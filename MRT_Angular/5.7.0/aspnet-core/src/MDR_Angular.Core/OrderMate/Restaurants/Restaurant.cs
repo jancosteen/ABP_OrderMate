@@ -1,5 +1,4 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Employees;
 using MDR_Angular.OrderMate.MenuRestaurants;
 using MDR_Angular.OrderMate.QrCodes;
@@ -14,11 +13,10 @@ using MDR_Angular.OrderMate.UserComments;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Restaurants
 {
-    public class Restaurant: FullAuditedEntity<int>
+    public class Restaurant : FullAuditedEntity<int>
     {
         //public int RestaurantId { get; set; }
         public string RestaurantName { get; set; }

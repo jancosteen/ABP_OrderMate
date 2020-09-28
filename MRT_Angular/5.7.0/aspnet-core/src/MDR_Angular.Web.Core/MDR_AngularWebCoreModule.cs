@@ -1,9 +1,4 @@
-﻿using System;
-using System.Text;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Abp.AspNetCore;
+﻿using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.AspNetCore.SignalR;
 using Abp.Modules;
@@ -12,7 +7,12 @@ using Abp.Zero.Configuration;
 using MDR_Angular.Authentication.JwtBearer;
 using MDR_Angular.Configuration;
 using MDR_Angular.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Text;
 
 namespace MDR_Angular
 {
@@ -20,7 +20,7 @@ namespace MDR_Angular
          typeof(MDR_AngularApplicationModule),
          typeof(MDR_AngularEntityFrameworkModule),
          typeof(AbpAspNetCoreModule)
-        ,typeof(AbpAspNetCoreSignalRModule)
+        , typeof(AbpAspNetCoreSignalRModule)
      )]
     public class MDR_AngularWebCoreModule : AbpModule
     {

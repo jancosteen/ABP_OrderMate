@@ -1,11 +1,5 @@
 ﻿using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.OrderMate.EmployeeShifts;
-using MDR_Angular.OrderMate.ShiftStatusses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Shifts
 {
@@ -20,6 +14,6 @@ namespace MDR_Angular.OrderMate.Shifts
         public string ShiftName { get; set; }
         public int? ShiftStatusIdFk { get; set; }
 
-        
+
     }
 }

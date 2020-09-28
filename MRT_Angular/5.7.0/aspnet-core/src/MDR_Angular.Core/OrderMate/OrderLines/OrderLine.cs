@@ -1,17 +1,13 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.OrderMate.MenuItems;
 using MDR_Angular.OrderMate.Orders;
 using MDR_Angular.OrderMate.Specials;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.OrderLines
 {
-    public class OrderLine: FullAuditedEntity<int>
+    public class OrderLine : FullAuditedEntity<int>
     {
         //public int OrderLineId { get; set; }
         public int ItemQty { get; set; }

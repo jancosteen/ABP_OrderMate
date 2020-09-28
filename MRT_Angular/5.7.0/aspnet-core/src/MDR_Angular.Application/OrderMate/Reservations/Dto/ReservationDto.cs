@@ -1,20 +1,12 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.Authorization.Users;
-using MDR_Angular.OrderMate.ReservationRestaurants;
-using MDR_Angular.OrderMate.ReservationStatusses;
-using MDR_Angular.OrderMate.Seatings;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.Reservations
 {
     [AutoMapFrom(typeof(Reservation))]
     [AutoMapTo(typeof(Reservation))]
-    public class ReservationDto: FullAuditedEntityDto<int>
+    public class ReservationDto : FullAuditedEntityDto<int>
     {
         //public int ReservationId { get; set; }
         public DateTime ReservationDateCreated { get; set; }
@@ -24,6 +16,6 @@ namespace MDR_Angular.OrderMate.Reservations
         public int? ReservationStatusIdFk { get; set; }
         public int ReservationNumberOfBills { get; set; }
 
-        
+
     }
 }

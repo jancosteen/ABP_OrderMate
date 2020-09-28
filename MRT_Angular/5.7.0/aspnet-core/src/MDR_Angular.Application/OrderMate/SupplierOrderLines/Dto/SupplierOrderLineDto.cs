@@ -1,18 +1,11 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using MDR_Angular.OrderMate.Products;
-using MDR_Angular.OrderMate.SupplierOrders;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.SupplierOrderLines
 {
     [AutoMapFrom(typeof(SupplierOrderLine))]
     [AutoMapTo(typeof(SupplierOrderLine))]
-    public class SupplierOrderLineDto: FullAuditedEntityDto<int>
+    public class SupplierOrderLineDto : FullAuditedEntityDto<int>
     {
         //public int SupplierOrderLineId { get; set; }
         public int ProductIdFk { get; set; }
@@ -22,6 +15,6 @@ namespace MDR_Angular.OrderMate.SupplierOrderLines
         public double DiscountAgreement { get; set; }
         public int OrderedQty { get; set; }
 
-        
+
     }
 }

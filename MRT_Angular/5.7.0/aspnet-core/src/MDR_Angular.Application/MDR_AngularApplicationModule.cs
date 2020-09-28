@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 namespace MDR_Angular
 {
     [DependsOn(
-        typeof(MDR_AngularCoreModule), 
+        typeof(MDR_AngularCoreModule),
         typeof(AbpAutoMapperModule))]
     public class MDR_AngularApplicationModule : AbpModule
     {

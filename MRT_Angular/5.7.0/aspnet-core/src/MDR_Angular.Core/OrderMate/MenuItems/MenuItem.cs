@@ -1,5 +1,4 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.ItemTypeMenuMenuItems;
 using MDR_Angular.OrderMate.MenuItemAllergies;
 using MDR_Angular.OrderMate.MenuItemCategories;
@@ -7,14 +6,12 @@ using MDR_Angular.OrderMate.MenuItemPrices;
 using MDR_Angular.OrderMate.MenuItemSpecials;
 using MDR_Angular.OrderMate.MenuRestaurants;
 using MDR_Angular.OrderMate.OrderLines;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.MenuItems
 {
-    public class MenuItem: FullAuditedEntity<int>
+    public class MenuItem : FullAuditedEntity<int>
     {
         //public int MenuItemId { get; set; }
         public string MenuItemName { get; set; }

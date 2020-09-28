@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
-using Abp.Authorization;
+﻿using Abp.Authorization;
 using MDR_Angular.Authorization.Roles;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.MultiTenancy;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace MDR_Angular.Identity
 {
@@ -15,7 +15,7 @@ namespace MDR_Angular.Identity
             IOptions<SecurityStampValidatorOptions> options,
             SignInManager signInManager,
             ISystemClock systemClock,
-            ILoggerFactory loggerFactory) 
+            ILoggerFactory loggerFactory)
             : base(options, signInManager, systemClock, loggerFactory)
         {
         }

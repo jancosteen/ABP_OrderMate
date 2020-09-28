@@ -1,13 +1,10 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.RestaurantFacilityRefs;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.RestaurantFacilities
 {
-    public class RestaurantFacility: FullAuditedEntity<int>
+    public class RestaurantFacility : FullAuditedEntity<int>
     {
         //public int RestaurantFacilityId { get; set; }
         public string RestaurantFacility1 { get; set; }

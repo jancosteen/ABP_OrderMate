@@ -1,17 +1,14 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Restaurants;
 using MDR_Angular.OrderMate.StarRatings;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.UserComments
 {
-    public class UserComment: FullAuditedEntity<int>
+    public class UserComment : FullAuditedEntity<int>
     {
-       // public int UserCommentId { get; set; }
+        // public int UserCommentId { get; set; }
         public string UserComment1 { get; set; }
         public DateTime UserCommentDateCreated { get; set; }
         public int? RestaurantIdFk { get; set; }

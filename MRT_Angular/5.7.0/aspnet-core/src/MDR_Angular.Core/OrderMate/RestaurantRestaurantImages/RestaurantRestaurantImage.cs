@@ -1,15 +1,11 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.RestaurantImages;
 using MDR_Angular.OrderMate.Restaurants;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.RestaurantRestaurantImages
 {
-    public class RestaurantRestaurantImage: FullAuditedEntity<int>
+    public class RestaurantRestaurantImage : FullAuditedEntity<int>
     {
         public int RestaurantIdFk { get; set; }
         public int RestaurantImageIdFk { get; set; }

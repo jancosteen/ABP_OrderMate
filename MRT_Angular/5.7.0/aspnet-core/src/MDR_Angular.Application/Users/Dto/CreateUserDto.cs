@@ -1,9 +1,9 @@
-using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Runtime.Validation;
 using MDR_Angular.Authorization.Users;
+using System.ComponentModel.DataAnnotations;
 
 namespace MDR_Angular.Users.Dto
 {

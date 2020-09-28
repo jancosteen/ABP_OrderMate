@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Abp.Authorization;
-using Abp.Authorization.Users;
+﻿using Abp.Authorization;
 using Abp.Configuration;
 using Abp.Domain.Uow;
 using MDR_Angular.Authorization.Roles;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.MultiTenancy;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace MDR_Angular.Identity
 {

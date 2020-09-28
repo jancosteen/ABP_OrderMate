@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Abp.Authorization;
+﻿using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.Configuration;
 using Abp.Configuration.Startup;
@@ -10,34 +9,35 @@ using Abp.Zero.Configuration;
 using MDR_Angular.Authorization.Roles;
 using MDR_Angular.Authorization.Users;
 using MDR_Angular.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
 
 namespace MDR_Angular.Authorization
 {
     public class LogInManager : AbpLogInManager<Tenant, Role, User>
     {
         public LogInManager(
-            UserManager userManager, 
+            UserManager userManager,
             IMultiTenancyConfig multiTenancyConfig,
             IRepository<Tenant> tenantRepository,
             IUnitOfWorkManager unitOfWorkManager,
-            ISettingManager settingManager, 
-            IRepository<UserLoginAttempt, long> userLoginAttemptRepository, 
+            ISettingManager settingManager,
+            IRepository<UserLoginAttempt, long> userLoginAttemptRepository,
             IUserManagementConfig userManagementConfig,
             IIocResolver iocResolver,
-            IPasswordHasher<User> passwordHasher, 
+            IPasswordHasher<User> passwordHasher,
             RoleManager roleManager,
-            UserClaimsPrincipalFactory claimsPrincipalFactory) 
+            UserClaimsPrincipalFactory claimsPrincipalFactory)
             : base(
-                  userManager, 
+                  userManager,
                   multiTenancyConfig,
-                  tenantRepository, 
-                  unitOfWorkManager, 
-                  settingManager, 
-                  userLoginAttemptRepository, 
-                  userManagementConfig, 
-                  iocResolver, 
-                  passwordHasher, 
-                  roleManager, 
+                  tenantRepository,
+                  unitOfWorkManager,
+                  settingManager,
+                  userLoginAttemptRepository,
+                  userManagementConfig,
+                  iocResolver,
+                  passwordHasher,
+                  roleManager,
                   claimsPrincipalFactory)
         {
         }

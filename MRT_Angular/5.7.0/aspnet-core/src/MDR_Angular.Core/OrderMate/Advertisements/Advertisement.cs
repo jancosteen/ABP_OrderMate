@@ -1,5 +1,4 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.AdvertisementDates;
 using MDR_Angular.OrderMate.AdvertisementPrices;
 using MDR_Angular.OrderMate.RestaurantAdvertisements;

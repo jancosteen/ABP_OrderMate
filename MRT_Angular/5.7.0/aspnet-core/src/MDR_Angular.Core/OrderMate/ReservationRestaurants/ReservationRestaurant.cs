@@ -1,15 +1,11 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Reservations;
 using MDR_Angular.OrderMate.Restaurants;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.ReservationRestaurants
 {
-    public class ReservationRestaurant: FullAuditedEntity<int>
+    public class ReservationRestaurant : FullAuditedEntity<int>
     {
         //public int ReservationRestaurantId { get; set; }
         public int ReservationIdFk { get; set; }

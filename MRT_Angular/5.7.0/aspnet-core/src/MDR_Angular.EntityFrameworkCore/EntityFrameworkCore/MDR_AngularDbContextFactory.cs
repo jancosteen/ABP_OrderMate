@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MDR_Angular.Configuration;
+using MDR_Angular.Web;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using MDR_Angular.Configuration;
-using MDR_Angular.Web;
 
 namespace MDR_Angular.EntityFrameworkCore
 {

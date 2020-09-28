@@ -1,15 +1,11 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.MenuItems;
 using MDR_Angular.OrderMate.MenuItemTypes;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace MDR_Angular.OrderMate.ItemTypeMenuMenuItems
 {
-    public class ItemTypeMenuItem: FullAuditedEntity<int>
+    public class ItemTypeMenuItem : FullAuditedEntity<int>
     {
         //public int ItemTypeMenuItemId { get; set; }
         public int MenuItemIdFk { get; set; }
