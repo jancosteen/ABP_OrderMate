@@ -19,6 +19,7 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.AllergyServiceProxy,
         ApiServiceProxies.AttendanceSheetServiceProxy,
         ApiServiceProxies.RestaurantServiceProxy,
+        ApiServiceProxies.RestaurantImageServiceProxy,
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }
     ]
 })

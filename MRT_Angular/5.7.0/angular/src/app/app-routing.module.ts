@@ -12,6 +12,7 @@ import { AllergiesComponent } from './allergies/allergies.component';
 import { AdvPricesComponent } from './advPrices/advPrices.component';
 import { AdvDatesComponent } from './advDates/advDates.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantImagesComponent } from './restaurant-images/restaurantImages.component';
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
                     { path: 'advPrices', component: AdvPricesComponent, data: { permission: 'Pages.AP' }, canActivate: [AppRouteGuard] },
                     { path: 'advDates', component: AdvDatesComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
                     { path: 'restaurants', component: RestaurantsComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
+                    { path: 'resImages', component: RestaurantImagesComponent, data: { permission: 'Pages.RI' }, canActivate: [AppRouteGuard] },
 
 
 

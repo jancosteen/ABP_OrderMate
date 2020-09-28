@@ -54,6 +54,10 @@ import { CreateAdvDateDialogComponent } from './advDates/create-advDate/create-a
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { EditRestaurantDialogComponent } from './restaurants/edit-restaurant/edit-restaurant-dialog.component';
 import { CreateRestaurantDialogComponent } from './restaurants/create-restaurant/create-restaurant-dialog.component';
+import { RestaurantImagesComponent} from './restaurant-images/restaurantImages.component';
+import { CreateRestaurantImageDialogComponent } from './restaurant-images/create-restaurantImage/create-restaurantImage-dialog.component';
+import { EditRestaurantImageDialogComponent } from './restaurant-images/edit-restaurantImage/edit-restaurantImage-dialog.component';
+
 
 
 @NgModule({
@@ -96,9 +100,13 @@ import { CreateRestaurantDialogComponent } from './restaurants/create-restaurant
     CreateAdvDateDialogComponent,
     EditAdvDateDialogComponent,
     AdvDatesComponent,
+    //restaurant
     RestaurantsComponent,
     CreateRestaurantDialogComponent,
-    EditRestaurantDialogComponent
+    EditRestaurantDialogComponent,
+    RestaurantImagesComponent,
+    CreateRestaurantImageDialogComponent,
+    EditRestaurantImageDialogComponent
   ],
   imports: [
     CommonModule,
@@ -136,8 +144,11 @@ import { CreateRestaurantDialogComponent } from './restaurants/create-restaurant
     CreateAdvPriceDialogComponent,
     CreateAdvDateDialogComponent,
     EditAdvDateDialogComponent,
+    //restaurant
     CreateRestaurantDialogComponent,
-    EditRestaurantDialogComponent
+    EditRestaurantDialogComponent,
+    CreateRestaurantImageDialogComponent,
+    EditRestaurantImageDialogComponent
   ],
 })
 export class AppModule {}

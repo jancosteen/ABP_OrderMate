@@ -62,12 +62,39 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
         'fas fa-theater-masks',
         'Pages.Roles'
       ),
-      new MenuItem(
-        this.l('Restaurants'),
-        '/app/restaurants',
-        'fas fa-theater-masks',
-        'Pages.REST'
-      ),
+      new MenuItem(this.l('Restaurants'), '', 'fas fa-circle', 'Pages.REST',[
+        new MenuItem(
+          this.l('Restaurants'),
+          '/app/restaurants',
+          'fas fa-theater-masks',
+          'Pages.REST'
+        ),
+        new MenuItem(
+          this.l('Advertisements'),
+          '/app/restaurants',
+          'fas fa-theater-masks',
+          'Pages.RA'
+        ),
+        new MenuItem(
+          this.l('Facilities'),
+          '/app/restaurants',
+          'fas fa-theater-masks',
+          'Pages.RF'
+        ),
+        new MenuItem(
+          this.l('Images'),
+          '/app/resImages',
+          'fas fa-theater-masks',
+          'Pages.RI'
+        ),
+        new MenuItem(
+          this.l('Types'),
+          '/app/restaurants',
+          'fas fa-theater-masks',
+          'Pages.RT'
+        ),
+      ]),
+
       new MenuItem(this.l('Advertisements'), '', 'fas fa-circle','Pages.A',[
         new MenuItem(
           this.l('Advertisements'),
