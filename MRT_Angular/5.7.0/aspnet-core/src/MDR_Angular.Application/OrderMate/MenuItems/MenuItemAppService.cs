@@ -26,8 +26,6 @@ namespace MDR_Angular.OrderMate.MenuItems
                 .Include(i => i.ItemTypeMenuMenuItem).ThenInclude(x => x.MenuItemTypeIdFkNavigation)
                 .Include(i => i.MenuItemAllergy).ThenInclude(x=> x.AllergyIdFkNavigation)
                 .Include(i => i.MenuItemSpecial).ThenInclude(x => x.SpecialIdFkNavigation);
-
-
         }
     }
 }

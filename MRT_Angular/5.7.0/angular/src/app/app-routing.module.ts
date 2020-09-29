@@ -22,6 +22,7 @@ import { ReservationStatussesComponent } from './reservation-statusses/reservati
 import { RestaurantStatussesComponent } from './restaurant-status/restaurantStatusses.component';
 import { SocialMediaTypesComponent } from './socialMedia-types/socialMediaTypes.component';
 import { SocialMediasComponent } from './socialMedias/socialMedias.component';
+import { QrCodeGeneratorComponent } from './qrCodeGenerator/qr-code-generator/qr-code-generator.component';
 
 @NgModule({
     imports: [
@@ -50,6 +51,7 @@ import { SocialMediasComponent } from './socialMedias/socialMedias.component';
                     { path: 'resStat', component: RestaurantStatussesComponent, data: { permission: 'Pages.RS' }, canActivate: [AppRouteGuard] },
                     { path: 'smTypes', component: SocialMediaTypesComponent, data: { permission: 'Pages.SMT' }, canActivate: [AppRouteGuard] },
                     { path: 'socialMedia', component: SocialMediasComponent, data: { permission: 'Pages.SM' }, canActivate: [AppRouteGuard] },
+                    { path: 'qrGen', component: QrCodeGeneratorComponent, data: { permission: 'Pages.MIC' }, canActivate: [AppRouteGuard] },
 
 
 

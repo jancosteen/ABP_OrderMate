@@ -84,8 +84,8 @@ import { EditSocialMediaTypeDialogComponent } from './socialMedia-types/edit-soc
 import { SocialMediasComponent } from './socialMedias/socialMedias.component';
 import { CreateSocialMediaDialogComponent } from './socialMedias/create-socialMedia/create-socialMedia-dialog.component';
 import { EditSocialMediaDialogComponent } from './socialMedias/edit-socialMedia/edit-socialMedia-dialog.component';
-
-
+import { QrCodeGeneratorComponent } from './qrCodeGenerator/qr-code-generator/qr-code-generator.component';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 
 
@@ -166,7 +166,8 @@ import { EditSocialMediaDialogComponent } from './socialMedias/edit-socialMedia/
     //reservations
     EditReservationStatusDialogComponent,
     CreateReservationStatusDialogComponent,
-    ReservationStatussesComponent
+    ReservationStatussesComponent,
+    QrCodeGeneratorComponent
   ],
   imports: [
     CommonModule,
@@ -182,6 +183,7 @@ import { EditSocialMediaDialogComponent } from './socialMedias/edit-socialMedia/
     ServiceProxyModule,
     SharedModule,
     NgxPaginationModule,
+    NgxQRCodeModule
 
   ],
   providers: [],

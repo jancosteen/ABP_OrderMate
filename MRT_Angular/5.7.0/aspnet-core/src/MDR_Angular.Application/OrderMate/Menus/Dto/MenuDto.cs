@@ -1,6 +1,8 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using MDR_Angular.OrderMate.MenuRestaurants.Dto;
 using System;
+using System.Collections.Generic;
 
 namespace MDR_Angular.OrderMate.Menus
 {
@@ -13,5 +15,7 @@ namespace MDR_Angular.OrderMate.Menus
         public DateTime MenuDateCreated { get; set; }
         public TimeSpan? MenuTimeActiveFrom { get; set; }
         public TimeSpan? MenuTimeActiveTo { get; set; }
+
+        public virtual ICollection<MenuRestaurantDto> MenuRestaurant { get; set; }
     }
 }
