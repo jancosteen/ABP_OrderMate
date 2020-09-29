@@ -3562,6 +3562,9 @@ namespace MDR_Angular.Migrations
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
 
+                    b.Property<int>("RestaurantIdFk")
+                        .HasColumnType("int");
+
                     b.Property<string>("SocialMediaAddress")
                         .HasColumnType("nvarchar(max)");
 

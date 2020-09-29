@@ -13,6 +13,15 @@ import { AdvPricesComponent } from './advPrices/advPrices.component';
 import { AdvDatesComponent } from './advDates/advDates.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantImagesComponent } from './restaurant-images/restaurantImages.component';
+import { RestaurantFacilitiesComponent } from './restaurant-facilities/restaurantFacilities.component';
+import { RestaurantTypesComponent } from './restaurant-types/restaurantTypes.component';
+import { MenuItemCategoriesComponent } from './menuItem-categories/menuItemCategories.component';
+import { MenuItemPricesComponent } from './menuItem-prices/menuItemPrices.component';
+import { OrderStatussesComponent } from './order-statusses/orderStatus.component';
+import { ReservationStatussesComponent } from './reservation-statusses/reservationStatusses.component';
+import { RestaurantStatussesComponent } from './restaurant-status/restaurantStatusses.component';
+import { SocialMediaTypesComponent } from './socialMedia-types/socialMediaTypes.component';
+import { SocialMediasComponent } from './socialMedias/socialMedias.component';
 
 @NgModule({
     imports: [
@@ -32,6 +41,15 @@ import { RestaurantImagesComponent } from './restaurant-images/restaurantImages.
                     { path: 'advDates', component: AdvDatesComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
                     { path: 'restaurants', component: RestaurantsComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
                     { path: 'resImages', component: RestaurantImagesComponent, data: { permission: 'Pages.RI' }, canActivate: [AppRouteGuard] },
+                    { path: 'resFacs', component: RestaurantFacilitiesComponent, data: { permission: 'Pages.RF' }, canActivate: [AppRouteGuard] },
+                    { path: 'resTypes', component: RestaurantTypesComponent, data: { permission: 'Pages.RT' }, canActivate: [AppRouteGuard] },
+                    { path: 'miCat', component: MenuItemCategoriesComponent, data: { permission: 'Pages.MIC' }, canActivate: [AppRouteGuard] },
+                    { path: 'miPrice', component: MenuItemPricesComponent, data: { permission: 'Pages.MIP' }, canActivate: [AppRouteGuard] },
+                    { path: 'orderStatus', component: OrderStatussesComponent, data: { permission: 'Pages.OS' }, canActivate: [AppRouteGuard] },
+                    { path: 'resStatus', component: ReservationStatussesComponent, data: { permission: 'Pages.RS' }, canActivate: [AppRouteGuard] },
+                    { path: 'resStat', component: RestaurantStatussesComponent, data: { permission: 'Pages.RS' }, canActivate: [AppRouteGuard] },
+                    { path: 'smTypes', component: SocialMediaTypesComponent, data: { permission: 'Pages.SMT' }, canActivate: [AppRouteGuard] },
+                    { path: 'socialMedia', component: SocialMediasComponent, data: { permission: 'Pages.SM' }, canActivate: [AppRouteGuard] },
 
 
 

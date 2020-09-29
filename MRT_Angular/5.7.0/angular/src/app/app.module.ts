@@ -57,6 +57,36 @@ import { CreateRestaurantDialogComponent } from './restaurants/create-restaurant
 import { RestaurantImagesComponent} from './restaurant-images/restaurantImages.component';
 import { CreateRestaurantImageDialogComponent } from './restaurant-images/create-restaurantImage/create-restaurantImage-dialog.component';
 import { EditRestaurantImageDialogComponent } from './restaurant-images/edit-restaurantImage/edit-restaurantImage-dialog.component';
+import { RestaurantFacilitiesComponent } from './restaurant-facilities/restaurantFacilities.component';
+import { EditRestaurantFacilityDialogComponent } from './restaurant-facilities/edit-facility/edit-restaurantFacility-dialog.component';
+import { CreateRestaurantFacilityDialogComponent } from './restaurant-facilities/create-facility/create-restaurantFacility-dialog.component';
+import { RestaurantTypesComponent } from './restaurant-types/restaurantTypes.component';
+import { EditRestaurantTypeDialogComponent } from './restaurant-types/edit-restaurantType/edit-restaurantType-dialog.component';
+import { CreateRestaurantTypeDialogComponent } from './restaurant-types/create-restaurantType/create-restaurantType-dialog.component';
+import { MenuItemCategoriesComponent } from './menuItem-categories/menuItemCategories.component';
+import { CreateMenuItemCategoryDialogComponent} from './menuItem-categories/create-menuItemCategory/create-menuItemCategory-dialog.component';
+import { EditMenuItemCategoryDialogComponent } from './menuItem-categories/edit-menuItemCategory/edit-menuItemCategory-dialog.component';
+import { MenuItemPricesComponent } from './menuItem-prices/menuItemPrices.component';
+import { CreateMenuItemPriceDialogComponent} from './menuItem-prices/create-menuItemPrice/create-menuItemPrice-dialog.component';
+import { EditMenuItemPriceDialogComponent } from './menuItem-prices/edit-menuItemPrice/edit-menuItemPrice-dialog.component';
+import {EditOrderStatusDialogComponent} from './order-statusses/edit-orderStatus/edit-orderStatus-dialog.component';
+import {CreateOrderStatusDialogComponent} from './order-statusses/create-orderStatus/create-orderStatus-dialog.component';
+import { OrderStatussesComponent} from './order-statusses/orderStatus.component';
+import { EditReservationStatusDialogComponent } from './reservation-statusses/edit-reservationStatus/edit-reservationStatus-dialog.component';
+import { CreateReservationStatusDialogComponent } from './reservation-statusses/create-reservationStatus/create-reservationStatus-dialog.component';
+import { ReservationStatussesComponent } from './reservation-statusses/reservationStatusses.component';
+import { RestaurantStatussesComponent } from './restaurant-status/restaurantStatusses.component';
+import { CreateRestaurantStatusDialogComponent } from './restaurant-status/create-restaurantStatus/create-restaurantStatus-dialog.component';
+import { EditRestaurantStatusDialogComponent } from './restaurant-status/edit-restaurantStatus/edit-restaurantStatus-dialog.component';
+import { SocialMediaTypesComponent } from './socialMedia-types/socialMediaTypes.component';
+import { CreateSocialMediaTypeDialogComponent } from './socialMedia-types/create-socialMediaType/create-socialMediaType-dialog.component';
+import { EditSocialMediaTypeDialogComponent } from './socialMedia-types/edit-socialMediaType/edit-socialMediaType-dialog.component';
+import { SocialMediasComponent } from './socialMedias/socialMedias.component';
+import { CreateSocialMediaDialogComponent } from './socialMedias/create-socialMedia/create-socialMedia-dialog.component';
+import { EditSocialMediaDialogComponent } from './socialMedias/edit-socialMedia/edit-socialMedia-dialog.component';
+
+
+
 
 
 
@@ -100,13 +130,43 @@ import { EditRestaurantImageDialogComponent } from './restaurant-images/edit-res
     CreateAdvDateDialogComponent,
     EditAdvDateDialogComponent,
     AdvDatesComponent,
+    //menuItems
+    CreateMenuItemCategoryDialogComponent,
+    MenuItemCategoriesComponent,
+    EditMenuItemCategoryDialogComponent,
+    CreateMenuItemPriceDialogComponent,
+    MenuItemPricesComponent,
+    EditMenuItemPriceDialogComponent,
     //restaurant
     RestaurantsComponent,
     CreateRestaurantDialogComponent,
     EditRestaurantDialogComponent,
     RestaurantImagesComponent,
     CreateRestaurantImageDialogComponent,
-    EditRestaurantImageDialogComponent
+    EditRestaurantImageDialogComponent,
+    RestaurantFacilitiesComponent,
+    EditRestaurantFacilityDialogComponent,
+    CreateRestaurantFacilityDialogComponent,
+    RestaurantTypesComponent,
+    EditRestaurantTypeDialogComponent,
+    CreateRestaurantTypeDialogComponent,
+    EditRestaurantStatusDialogComponent,
+    CreateRestaurantStatusDialogComponent,
+    RestaurantStatussesComponent,
+    EditSocialMediaTypeDialogComponent,
+    CreateSocialMediaTypeDialogComponent,
+    SocialMediaTypesComponent,
+    SocialMediasComponent,
+    CreateSocialMediaDialogComponent,
+    EditSocialMediaDialogComponent,
+    //orders
+    EditOrderStatusDialogComponent,
+    CreateOrderStatusDialogComponent,
+    OrderStatussesComponent,
+    //reservations
+    EditReservationStatusDialogComponent,
+    CreateReservationStatusDialogComponent,
+    ReservationStatussesComponent
   ],
   imports: [
     CommonModule,
@@ -144,11 +204,33 @@ import { EditRestaurantImageDialogComponent } from './restaurant-images/edit-res
     CreateAdvPriceDialogComponent,
     CreateAdvDateDialogComponent,
     EditAdvDateDialogComponent,
+    //menuItems
+    CreateMenuItemCategoryDialogComponent,
+    EditMenuItemCategoryDialogComponent,
+    EditMenuItemPriceDialogComponent,
+    CreateMenuItemPriceDialogComponent,
     //restaurant
     CreateRestaurantDialogComponent,
     EditRestaurantDialogComponent,
     CreateRestaurantImageDialogComponent,
-    EditRestaurantImageDialogComponent
+    EditRestaurantImageDialogComponent,
+    EditRestaurantFacilityDialogComponent,
+    CreateRestaurantFacilityDialogComponent,
+    EditRestaurantTypeDialogComponent,
+    CreateRestaurantTypeDialogComponent,
+    EditRestaurantStatusDialogComponent,
+    CreateRestaurantStatusDialogComponent,
+    EditSocialMediaTypeDialogComponent,
+    CreateSocialMediaTypeDialogComponent,
+    CreateSocialMediaDialogComponent,
+    EditSocialMediaDialogComponent,
+    //order
+    EditOrderStatusDialogComponent,
+    CreateOrderStatusDialogComponent,
+    //reservations
+    EditReservationStatusDialogComponent,
+    CreateReservationStatusDialogComponent,
+
   ],
 })
 export class AppModule {}

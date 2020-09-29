@@ -44,56 +44,145 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
   getMenuItems(): MenuItem[] {
     return [
       new MenuItem(this.l('HomePage'), '/app/home', 'fas fa-home'),
-      new MenuItem(
-        this.l('Tenants'),
-        '/app/tenants',
-        'fas fa-building',
-        'Pages.Tenants'
-      ),
-      new MenuItem(
-        this.l('Users'),
-        '/app/users',
-        'fas fa-users',
-        'Pages.Users'
-      ),
-      new MenuItem(
-        this.l('Roles'),
-        '/app/roles',
-        'fas fa-theater-masks',
-        'Pages.Roles'
-      ),
-      new MenuItem(this.l('Restaurants'), '', 'fas fa-circle', 'Pages.REST',[
+      new MenuItem(this.l('Administration'), '','fas fa-circle','',[
         new MenuItem(
-          this.l('Restaurants'),
-          '/app/restaurants',
-          'fas fa-theater-masks',
-          'Pages.REST'
+          this.l('Tenants'),
+          '/app/tenants',
+          'fas fa-building',
+          'Pages.Tenants'
         ),
         new MenuItem(
-          this.l('Advertisements'),
-          '/app/restaurants',
-          'fas fa-theater-masks',
-          'Pages.RA'
+          this.l('Users'),
+          '/app/users',
+          'fas fa-users',
+          'Pages.Users'
         ),
         new MenuItem(
-          this.l('Facilities'),
-          '/app/restaurants',
+          this.l('Roles'),
+          '/app/roles',
           'fas fa-theater-masks',
-          'Pages.RF'
-        ),
-        new MenuItem(
-          this.l('Images'),
-          '/app/resImages',
-          'fas fa-theater-masks',
-          'Pages.RI'
-        ),
-        new MenuItem(
-          this.l('Types'),
-          '/app/restaurants',
-          'fas fa-theater-masks',
-          'Pages.RT'
+          'Pages.Roles'
         ),
       ]),
+      new MenuItem(this.l('Setup'),'', 'fas fa-circle','',[
+        new MenuItem(this.l('Menus'),'','fas fa-circle','Pages.M',[
+          new MenuItem(
+            this.l('Menus'),
+            '/app/menus',
+            'fas fa-users',
+            'Pages.M'
+          ),
+          new MenuItem(
+            this.l('Menu Items'),
+            '/app/menuItems',
+            'fas fa-users',
+            'Pages.MI'
+          ),
+          new MenuItem(
+            this.l('Allergies'),
+            '/app/allergies',
+            'fas fa-users',
+            'Pages.Al'
+          ),
+          new MenuItem(
+            this.l('Categories'),
+            '/app/miCat',
+            'fas fa-users',
+            'Pages.MIC'
+          ),
+          new MenuItem(
+            this.l('Prices'),
+            '/app/miPrice',
+            'fas fa-users',
+            'Pages.MIP'
+          ),
+          new MenuItem(
+            this.l('Specials'),
+            '/app/specials',
+            'fas fa-users',
+            'Pages.SP'
+          ),
+          new MenuItem(
+            this.l('Special Prices'),
+            '/app/specialPrices',
+            'fas fa-users',
+            'Pages.SPP'
+          ),
+          new MenuItem(
+            this.l('Types'),
+            '/app/miTypes',
+            'fas fa-users',
+            'Pages.MIT'
+          ),
+        ]),
+        new MenuItem(this.l('Orders'),'','fas fa-circle','Pages.O',[
+          new MenuItem(
+            this.l('Status'),
+            '/app/orderStatus',
+            'fas fa-users',
+            'Pages.OS'
+          ),
+        ]),
+        new MenuItem(this.l('Reservations'),'','fas fa-circle','Pages.R',[
+          new MenuItem(
+            this.l('Status'),
+            '/app/resStatus',
+            'fas fa-users',
+            'Pages.RS'
+          ),
+        ]),
+        new MenuItem(this.l('Restaurants'), '', 'fas fa-circle', 'Pages.REST',[
+          new MenuItem(
+            this.l('Restaurants'),
+            '/app/restaurants',
+            'fas fa-theater-masks',
+            'Pages.REST'
+          ),
+          new MenuItem(
+            this.l('Facilities'),
+            '/app/resFacs',
+            'fas fa-theater-masks',
+            'Pages.RF'
+          ),
+          new MenuItem(
+            this.l('Images'),
+            '/app/resImages',
+            'fas fa-theater-masks',
+            'Pages.RI'
+          ),
+          new MenuItem(
+            this.l('Restaurant Status'),
+            '/app/resStat',
+            'fas fa-theater-masks',
+            'Pages.RS'
+          ),
+          new MenuItem(
+            this.l('Social Media'),
+            '/app/socialMedia',
+            'fas fa-theater-masks',
+            'Pages.SM'
+          ),
+          new MenuItem(
+            this.l('Social Media Types'),
+            '/app/smTypes',
+            'fas fa-theater-masks',
+            'Pages.SMT'
+          ),
+          new MenuItem(
+            this.l('Star Rating Values'),
+            '/app/starRating',
+            'fas fa-theater-masks',
+            'Pages.SR'
+          ),
+          new MenuItem(
+            this.l('Types'),
+            '/app/resTypes',
+            'fas fa-theater-masks',
+            'Pages.RT'
+          ),
+        ]),
+      ]),
+
 
       new MenuItem(this.l('Advertisements'), '', 'fas fa-circle','Pages.A',[
         new MenuItem(
@@ -103,24 +192,19 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           'Pages.A'
         ),
         new MenuItem(
-          this.l('Advertisement Prices'),
-          '/app/advPrices',
-          'fas fa-theater-masks',
-          'Pages.AP'
-        ),
-        new MenuItem(
-          this.l('Advertisement Dates'),
+          this.l('Dates'),
           '/app/advDates',
           'fas fa-users',
           'Pages.AD'
+        ),
+        new MenuItem(
+          this.l('Prices'),
+          '/app/advPrices',
+          'fas fa-theater-masks',
+          'Pages.AP'
         )
       ]),
-      new MenuItem(
-        this.l('Allergies'),
-        '/app/allergies',
-        'fas fa-users',
-        'Pages.Al'
-      )
+
     ]
   }
 

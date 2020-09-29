@@ -42,7 +42,7 @@
           name="iRestaurant"
           id="iRestaurant"
           required
-          [(ngModel)]="restaurantImage.imageDescription"
+          [(ngModel)]="restaurantImage.restaurantIdFk"
           #iResModel="ngModel"
           #iResEl>
             <option *ngFor="let r of restaurants" value={{r.id}}>{{r.restaurantName}}</option>
