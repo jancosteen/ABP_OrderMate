@@ -28,6 +28,7 @@ export class AdvPricesComponent extends PagedListingComponentBase<AdvertisementP
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText:string;
 
   constructor(
     injector: Injector,

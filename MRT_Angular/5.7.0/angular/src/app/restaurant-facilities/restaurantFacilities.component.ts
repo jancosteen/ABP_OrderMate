@@ -28,6 +28,7 @@ export class RestaurantFacilitiesComponent extends PagedListingComponentBase<Res
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText:string;
 
   constructor(
     injector: Injector,

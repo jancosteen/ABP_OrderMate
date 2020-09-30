@@ -28,6 +28,7 @@ export class MenuItemPricesComponent extends PagedListingComponentBase<MenuItemP
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText: string;
 
   constructor(
     injector: Injector,

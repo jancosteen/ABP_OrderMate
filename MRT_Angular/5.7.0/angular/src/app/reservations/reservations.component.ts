@@ -28,6 +28,7 @@ export class ReservationsComponent extends PagedListingComponentBase<Reservation
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText: string;
 
   constructor(
     injector: Injector,

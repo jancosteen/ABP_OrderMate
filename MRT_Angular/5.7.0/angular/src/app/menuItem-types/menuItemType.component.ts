@@ -1,4 +1,4 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, Pipe, PipeTransform } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { appModuleAnimation } from '../../shared/animations/routerTransition';
@@ -28,6 +28,7 @@ export class MenuItemTypesComponent extends PagedListingComponentBase<MenuItemTy
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText:string;
 
   constructor(
     injector: Injector,
@@ -121,4 +122,6 @@ export class MenuItemTypesComponent extends PagedListingComponentBase<MenuItemTy
     this.isActive = undefined;
     this.getDataPage(1);
   }
+
+
 }

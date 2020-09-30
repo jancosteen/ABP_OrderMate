@@ -28,6 +28,7 @@ export class AllergiesComponent extends PagedListingComponentBase<AllergyDto> {
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText: string;
 
   constructor(
     injector: Injector,

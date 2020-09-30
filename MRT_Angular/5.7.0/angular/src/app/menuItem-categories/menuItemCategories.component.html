@@ -33,8 +33,7 @@
               class="form-control"
               name="keyword"
               [placeholder]="'SearchWithThreeDot' | localize"
-              [(ngModel)]="keyword"
-              (keyup.enter)="getDataPage(1)"
+              [(ngModel)]="searchText"
             />
             <div class="input-group-append">
               <button
@@ -71,6 +70,7 @@
                           currentPage: pageNumber,
                           totalItems: totalItems
                         }
+                        | grdFilter: {id: searchText, menuItemCategory1:searchText}
                 "
               >
                 <td>{{ menuItemCategory.id }}</td>

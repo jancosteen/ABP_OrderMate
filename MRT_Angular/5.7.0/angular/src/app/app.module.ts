@@ -92,13 +92,15 @@ import { CreateReservationDialogComponent } from './reservations/create-reservat
 import { MenuItemTypesComponent } from './menuItem-types/menuItemType.component';
 import { EditMenuItemTypeDialogComponent } from './menuItem-types/edit-menuItemType/edit-menuItemType-dialog.component';
 import { CreateMenuItemTypeDialogComponent } from './menuItem-types/create-menuItemType/create-menuItemType-dialog.component';
-
+import { FilterPipe } from 'shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
+    //filter
+    FilterPipe,
     // tenants
     TenantsComponent,
     CreateTenantDialogComponent,

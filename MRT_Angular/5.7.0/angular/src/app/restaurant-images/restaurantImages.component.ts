@@ -13,6 +13,9 @@ import {
 } from '../../shared/service-proxies/service-proxies';
 import { CreateRestaurantImageDialogComponent } from './create-restaurantImage/create-restaurantImage-dialog.component';
 import { EditRestaurantImageDialogComponent } from './edit-restaurantImage/edit-restaurantImage-dialog.component';
+import { DomSanitizer } from '@angular/platform-browser';
+
+
 
 class PagedRestaurantImagesRequestDto extends PagedRequestDto {
   keyword: string;
@@ -29,12 +32,14 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
   isActive: boolean | null;
   advancedFiltersVisible = false;
   restaurants: RestaurantDto[] = [];
+  images:any =[];
 
 
   constructor(
     injector: Injector,
     private _restaurantImageService: RestaurantImageServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private sanitizer: DomSanitizer
   ) {
     super(injector);
   }
@@ -60,10 +65,17 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
       )
       .subscribe((result: RestaurantImageDtoPagedResultDto) => {
         this.restaurantImages = result.items;
+        this.convertImage(this.restaurantImages);
         this.showPaging(result, pageNumber);
       });
 
+  }
 
+  convertImage(resImages:RestaurantImageDto[]){
+    for(let i=0;i<resImages.length;i++){
+      this.images[i]=this.sanitizer.bypassSecurityTrustResourceUrl(`binding:data:image/png;base64,${resImages[i].imageFile}`)
+      this.restaurantImages[i].imageFile = this.images;
+    }
   }
 
   delete(restaurantImage: RestaurantImageDto): void {

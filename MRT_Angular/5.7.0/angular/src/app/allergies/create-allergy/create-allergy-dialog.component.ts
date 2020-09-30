@@ -21,6 +21,7 @@ export class CreateAllergyDialogComponent extends AppComponentBase
   saving = false;
   allergy: AllergyDto = new AllergyDto();
 
+
   @Output() onSave = new EventEmitter<any>();
 
   constructor(

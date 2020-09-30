@@ -28,6 +28,7 @@ export class OrderStatussesComponent extends PagedListingComponentBase<OrderStat
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  public searchText:string;
 
   constructor(
     injector: Injector,

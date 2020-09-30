@@ -16,6 +16,7 @@ import {
   RestaurantServiceProxy
 } from '../../../shared/service-proxies/service-proxies';
 import { PagedRequestDto } from '@shared/paged-listing-component-base';
+import { ReadVarExpr } from '@angular/compiler';
 
 class PagedRestaurantsRequestDto extends PagedRequestDto {
   keyword: string;
@@ -33,10 +34,12 @@ export class CreateRestaurantImageDialogComponent extends AppComponentBase
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
-  selectedFile: File = null;
+  selectedFile;
+  selectedFileBase64;
   request: PagedRestaurantsRequestDto;
   pageNumber: number;
   finishedCallback: Function;
+  base64textString;
 
 
 
@@ -64,7 +67,7 @@ export class CreateRestaurantImageDialogComponent extends AppComponentBase
       })
     ).subscribe((result: RestaurantDtoPagedResultDto) => {
       this.restaurants = result.items;
-      console.log(result);
+      //console.log(result);
       //this.showPaging(result, pageNumber);
     });
 
@@ -75,13 +78,27 @@ export class CreateRestaurantImageDialogComponent extends AppComponentBase
 
 
   onFileChanged(event){
-    this.selectedFile = <File>event.target.files[0];
-    console.log(this.selectedFile);
+    var files = event.target.files;
+    var file = files[0];
+
+    if (files && file){
+      var reader = new FileReader();
+      reader.onload = this._handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+    }
   }
+
+  _handleReaderLoaded(readerEvt) {
+    var binaryString = readerEvt.target.result;
+           this.base64textString= btoa(binaryString);
+           console.log(btoa(binaryString));
+           this.selectedFile = this.base64textString;
+   }
 
   save(): void {
     this.saving = true;
 
+    this.restaurantImage.imageFile = this.selectedFile;
     this._restaurantImageService
       .create(this.restaurantImage)
       .pipe(
