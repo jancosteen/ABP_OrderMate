@@ -10,8 +10,9 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   ReservationServiceProxy,
-  ReservationDto
+  ReservationDto, RestaurantDtoPagedResultDto, RestaurantServiceProxy, RestaurantDto, ReservationStatusDto, ReservationStatusDtoPagedResultDto, ReservationStatusServiceProxy
 } from '../../../shared/service-proxies/service-proxies';
+import { AppSessionService } from '@shared/session/app-session.service';
 
 @Component({
   templateUrl: 'edit-reservation-dialog.component.html'
@@ -21,12 +22,20 @@ export class EditReservationDialogComponent extends AppComponentBase
   saving = false;
   reservation: ReservationDto = new ReservationDto();
   id: number;
+  sUserId:string;
+  iUserId:number;
+  currentDate;
+  restaurants: RestaurantDto[] = [];
+  reservationStatusses: ReservationStatusDto[]=[];
 
   @Output() onSave = new EventEmitter<any>();
 
   constructor(
     injector: Injector,
     public _reservationService: ReservationServiceProxy,
+    public _restaurantService: RestaurantServiceProxy,
+    public _reservationStatusService : ReservationStatusServiceProxy,
+    public sessionService: AppSessionService,
     public bsModalRef: BsModalRef
   ) {
     super(injector);
@@ -35,6 +44,43 @@ export class EditReservationDialogComponent extends AppComponentBase
   ngOnInit(): void {
     this._reservationService.get(this.id).subscribe((result: ReservationDto) => {
       this.reservation = result;
+    });
+    this.sUserId = localStorage.getItem('userId');
+    this.iUserId = this.sessionService.userId;
+    this.currentDate = new Date().toISOString().substring(0, 16);
+     console.log(this.currentDate);
+     this.reservation.reservationDateCreated = this.currentDate;
+     this.reservation.userIdFk=this.iUserId;
+    this._restaurantService
+    .getAll(
+      '',
+      0,
+      100
+    )
+    .pipe(
+      finalize(() => {
+        console.log('pipe');
+      })
+    )
+    .subscribe((result: RestaurantDtoPagedResultDto) => {
+      this.restaurants = result.items;
+      //this.showPaging(result, pageNumber);
+    });
+
+    this._reservationStatusService
+    .getAll(
+      '',
+      0,
+      100
+    )
+    .pipe(
+      finalize(() => {
+        console.log(this.iUserId);
+      })
+    )
+    .subscribe((result: ReservationStatusDtoPagedResultDto) => {
+      this.reservationStatusses = result.items;
+      //this.showPaging(result, pageNumber);
     });
   }
 

@@ -89,7 +89,9 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { EditReservationDialogComponent } from './reservations/edit-reservation/edit-reservation-dialog.component';
 import { CreateReservationDialogComponent } from './reservations/create-reservation/create-reservation-dialog.component';
-
+import { MenuItemTypesComponent } from './menuItem-types/menuItemType.component';
+import { EditMenuItemTypeDialogComponent } from './menuItem-types/edit-menuItemType/edit-menuItemType-dialog.component';
+import { CreateMenuItemTypeDialogComponent } from './menuItem-types/create-menuItemType/create-menuItemType-dialog.component';
 
 
 @NgModule({
@@ -139,6 +141,9 @@ import { CreateReservationDialogComponent } from './reservations/create-reservat
     CreateMenuItemPriceDialogComponent,
     MenuItemPricesComponent,
     EditMenuItemPriceDialogComponent,
+    MenuItemTypesComponent,
+    EditMenuItemTypeDialogComponent,
+    CreateMenuItemTypeDialogComponent,
     //restaurant
     RestaurantsComponent,
     CreateRestaurantDialogComponent,
@@ -216,6 +221,8 @@ import { CreateReservationDialogComponent } from './reservations/create-reservat
     EditMenuItemCategoryDialogComponent,
     EditMenuItemPriceDialogComponent,
     CreateMenuItemPriceDialogComponent,
+    EditMenuItemTypeDialogComponent,
+    CreateMenuItemTypeDialogComponent,
     //restaurant
     CreateRestaurantDialogComponent,
     EditRestaurantDialogComponent,

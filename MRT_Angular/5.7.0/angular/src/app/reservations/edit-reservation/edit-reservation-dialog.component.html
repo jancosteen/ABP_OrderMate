@@ -11,24 +11,136 @@
   <div class="modal-body">
 
     <div class="form-group row required">
-      <label class="col-md-3 col-form-label" for="name">
-        {{ "Reservation" | localize }}
+      <label class="col-md-3 col-form-label" for="rest">
+        {{ "Restaurant" | localize }}
+      </label>
+      <div class="col-md-9">
+        <select
+          class="form-control"
+          name="rest"
+          id="rest"
+          required
+          [(ngModel)]="reservation.restaurantIdFk"
+          #restModel="ngModel"
+          #restEl>
+            <option *ngFor="let r of restaurants" value={{r.id}}>{{r.restaurantName}}</option>
+        </select>
+        <abp-validation-summary
+          [control]="restModel"
+          [controlEl]="restEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="resDate">
+        {{ "Reservation Date " | localize }}
       </label>
       <div class="col-md-9">
         <input
-          type="text"
+          type="datetime-local"
           class="form-control"
-          name="name"
-          id="name"
+          name="resDate"
+          id="resDate"
           maxlength="128"
           required
-          [(ngModel)]="reservation.id"
+          [min]="currentDate"
+          [(ngModel)]="reservation.reservationDateReserved"
           #nameModel="ngModel"
           #nameEl
         />
         <abp-validation-summary
           [control]="nameModel"
           [controlEl]="nameEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <!--<label class="col-md-3 col-form-label" for="userId">
+        {{ "UserId" | localize }}
+      </label>-->
+      <div class="col-md-9">
+        <input
+          type="text"
+          style="display: none;"
+          class="form-control"
+          name="userId"
+          id="userId"
+          maxlength="1024"
+          value={{iUserId}}
+          [(ngModel)]="reservation.userIdFk"
+          #userIdModel="ngModel"
+          #userIdEl
+        />
+    <abp-validation-summary
+          [control]="userIdModel"
+          [controlEl]="userIdEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label" for="pQty">
+        {{ "Party Qty" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="number"
+          class="form-control"
+          name="pQty"
+          id="pQty"
+          maxlength="1024"
+          [(ngModel)]="reservation.reservationPartyQty"
+          #pQtyModel="ngModel"
+          #pQtyEl
+        />
+    <abp-validation-summary
+          [control]="pQtyModel"
+          [controlEl]="pQtyEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label" for="nrBill">
+        {{ "Nr of Bills" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="number"
+          class="form-control"
+          name="nrBill"
+          id="nrBill"
+          maxlength="1024"
+          [(ngModel)]="reservation.reservationNumberOfBills"
+          #nrBillModel="ngModel"
+          #nrBillEl
+        />
+    <abp-validation-summary
+          [control]="nrBillModel"
+          [controlEl]="nrBillEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="stat">
+        {{ "Status" | localize }}
+      </label>
+      <div class="col-md-9">
+        <select
+          class="form-control"
+          name="stat"
+          id="stat"
+          required
+          [(ngModel)]="reservation.reservationStatusIdFk"
+          #statModel="ngModel"
+          #statEl>
+            <option *ngFor="let r of reservationStatusses" value={{r.id}}>{{r.reservationStatus1}}</option>
+        </select>
+        <abp-validation-summary
+          [control]="statModel"
+          [controlEl]="statEl"
         ></abp-validation-summary>
       </div>
     </div>
