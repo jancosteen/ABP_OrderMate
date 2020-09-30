@@ -15,6 +15,8 @@ export class AppAuthService {
     authenticateModel: AuthenticateModel;
     authenticateResult: AuthenticateResultModel;
     rememberMe: boolean;
+    sUserId:string;
+    iUserId:number;
 
     constructor(
         private _tokenAuthService: TokenAuthServiceProxy,
@@ -98,7 +100,10 @@ export class AppAuthService {
         if (initialUrl.indexOf('/login') > 0) {
             initialUrl = AppConsts.appBaseUrl;
         }
-
+        this.iUserId=this.authenticateResult.userId;
+        this.sUserId +=this.iUserId;
+        console.log(this.sUserId);
+        localStorage.setItem('userId',this.sUserId);
         location.href = initialUrl;
     }
 

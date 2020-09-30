@@ -3,6 +3,7 @@ using MDR_Angular.OrderMate.Employees;
 using MDR_Angular.OrderMate.MenuRestaurants;
 using MDR_Angular.OrderMate.QrCodes;
 using MDR_Angular.OrderMate.ReservationRestaurants;
+using MDR_Angular.OrderMate.Reservations;
 using MDR_Angular.OrderMate.RestaurantAdvertisements;
 using MDR_Angular.OrderMate.RestaurantFacilityRefs;
 using MDR_Angular.OrderMate.RestaurantImages;
@@ -37,11 +38,13 @@ namespace MDR_Angular.OrderMate.Restaurants
         public virtual ICollection<MenuRestaurant> MenuRestaurant { get; set; }
         public virtual ICollection<QrCode> QrCode { get; set; }
         public virtual ICollection<RestaurantFacilityRef> ResaurantFacilityRef { get; set; }
-        public virtual ICollection<ReservationRestaurant> ReservationRestaurant { get; set; }
+        //public virtual ICollection<ReservationRestaurant> ReservationRestaurant { get; set; }
         public virtual ICollection<RestaurantAdvertisement> RestaurantAdvertisement { get; set; }
         public virtual ICollection<RestaurantImage> RestaurantImage { get; set; }
         public virtual ICollection<RestaurantTypeRef> RestaurantTypeReference { get; set; }
         public virtual ICollection<SeatingLayout> SeatingLayout { get; set; }
         public virtual ICollection<UserComment> UserComment { get; set; }
+        public virtual ICollection<Reservation> Reservation { get; set; }
+
     }
 }

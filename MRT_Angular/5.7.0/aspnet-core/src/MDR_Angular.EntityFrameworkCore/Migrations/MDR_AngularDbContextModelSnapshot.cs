@@ -2832,10 +2832,6 @@ namespace MDR_Angular.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReservationIdFk");
-
-                    b.HasIndex("RestaurantIdFk");
-
                     b.ToTable("ReservationRestaurant");
                 });
 
@@ -2918,12 +2914,17 @@ namespace MDR_Angular.Migrations
                     b.Property<int?>("ReservationStatusIdFk")
                         .HasColumnType("int");
 
+                    b.Property<int>("RestaurantIdFk")
+                        .HasColumnType("int");
+
                     b.Property<long>("UserIdFk")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ReservationStatusIdFk");
+
+                    b.HasIndex("RestaurantIdFk");
 
                     b.HasIndex("UserIdFk");
 
@@ -3572,6 +3573,8 @@ namespace MDR_Angular.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RestaurantIdFk");
 
                     b.HasIndex("SocialMediaTypeIdFk");
 
@@ -4472,26 +4475,17 @@ namespace MDR_Angular.Migrations
                         .HasForeignKey("RestaurantIdFk");
                 });
 
-            modelBuilder.Entity("MDR_Angular.OrderMate.ReservationRestaurants.ReservationRestaurant", b =>
-                {
-                    b.HasOne("MDR_Angular.OrderMate.Reservations.Reservation", "ReservationIdFkNavigation")
-                        .WithMany("ReservationRestaurant")
-                        .HasForeignKey("ReservationIdFk")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "RestaurantIdFkNavigation")
-                        .WithMany("ReservationRestaurant")
-                        .HasForeignKey("RestaurantIdFk")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("MDR_Angular.OrderMate.Reservations.Reservation", b =>
                 {
                     b.HasOne("MDR_Angular.OrderMate.ReservationStatusses.ReservationStatus", "ReservationStatusIdFkNavigation")
                         .WithMany("Reservation")
                         .HasForeignKey("ReservationStatusIdFk");
+
+                    b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "RestaurantIdFkNavigation")
+                        .WithMany("Reservation")
+                        .HasForeignKey("RestaurantIdFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MDR_Angular.Authorization.Users.User", "UserIdFkNavigation")
                         .WithMany()
@@ -4605,6 +4599,12 @@ namespace MDR_Angular.Migrations
 
             modelBuilder.Entity("MDR_Angular.OrderMate.SocialMedias.SocialMedia", b =>
                 {
+                    b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "RestaurantIdFkNavigation")
+                        .WithMany()
+                        .HasForeignKey("RestaurantIdFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MDR_Angular.OrderMate.SocialMediaTypes.SocialMediaType", "SocialMediaTypeIdFkNavigation")
                         .WithMany("SocialMedia")
                         .HasForeignKey("SocialMediaTypeIdFk")

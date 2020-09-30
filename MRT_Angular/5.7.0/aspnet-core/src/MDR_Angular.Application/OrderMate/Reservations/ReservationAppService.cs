@@ -16,10 +16,11 @@ namespace MDR_Angular.OrderMate.Reservations
         protected override IQueryable<Reservation> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
         {
             return base.CreateFilteredQuery(input)
-                .Include(i => i.ReservationRestaurant).ThenInclude(x => x.RestaurantIdFkNavigation)
-                .Include(i => i.ReservationStatusIdFkNavigation).ThenInclude(x => x.ReservationStatus1)
+                //.Include(i => i.ReservationRestaurant).ThenInclude(x => x.RestaurantIdFkNavigation)
+                .Include(i => i.ReservationStatusIdFkNavigation)
                 .Include(i => i.Seating)
-                .Include(i => i.UserIdFkNavigation);
+                .Include(i => i.UserIdFkNavigation)
+                .Include(i => i.RestaurantIdFkNavigation);
         }
     }
 }

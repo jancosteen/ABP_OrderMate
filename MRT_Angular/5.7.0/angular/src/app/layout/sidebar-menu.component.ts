@@ -204,7 +204,12 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           'Pages.AP'
         )
       ]),
-
+      new MenuItem(
+        this.l('Manage Reservations'),
+        '/app/reservations',
+        'fas fa-users',
+        "Pages.R"
+      )
     ]
   }
 

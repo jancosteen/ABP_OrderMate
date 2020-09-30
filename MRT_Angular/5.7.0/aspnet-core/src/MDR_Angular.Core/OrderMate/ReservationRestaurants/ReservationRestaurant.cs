@@ -11,9 +11,9 @@ namespace MDR_Angular.OrderMate.ReservationRestaurants
         public int ReservationIdFk { get; set; }
         public int RestaurantIdFk { get; set; }
 
-        [ForeignKey("ReservationIdFk")]
+        /*[ForeignKey("ReservationIdFk")]
         public virtual Reservation ReservationIdFkNavigation { get; set; }
         [ForeignKey("RestaurantIdFk")]
-        public virtual Restaurant RestaurantIdFkNavigation { get; set; }
+        public virtual Restaurant RestaurantIdFkNavigation { get; set; }*/
     }
 }

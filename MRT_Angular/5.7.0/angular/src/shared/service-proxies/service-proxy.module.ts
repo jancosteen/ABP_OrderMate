@@ -29,6 +29,8 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.RestaurantStatusServiceProxy,
         ApiServiceProxies.SocialMediaTypeServiceProxy,
         ApiServiceProxies.SocialMediaServiceProxy,
+        ApiServiceProxies.ReservationServiceProxy,
+        ApiServiceProxies.ReservationRestaurantServiceProxy,
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }
     ]
 })
