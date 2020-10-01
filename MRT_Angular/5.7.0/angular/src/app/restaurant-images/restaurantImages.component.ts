@@ -1,4 +1,4 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, SecurityContext } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { appModuleAnimation } from '../../shared/animations/routerTransition';
@@ -22,6 +22,7 @@ class PagedRestaurantImagesRequestDto extends PagedRequestDto {
   isActive: boolean | null;
 }
 
+
 @Component({
   templateUrl: './restaurantImages.component.html',
   animations: [appModuleAnimation()]
@@ -33,6 +34,8 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
   advancedFiltersVisible = false;
   restaurants: RestaurantDto[] = [];
   images:any =[];
+  public searchText: string;
+
 
 
   constructor(
@@ -73,8 +76,9 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
 
   convertImage(resImages:RestaurantImageDto[]){
     for(let i=0;i<resImages.length;i++){
-      this.images[i]=this.sanitizer.bypassSecurityTrustResourceUrl(`binding:data:image/png;base64,${resImages[i].imageFile}`)
-      this.restaurantImages[i].imageFile = this.images;
+      //this.images[i]=this.sanitizer.bypassSecurityTrustResourceUrl('data:image/png;base64,'+resImages[i].imageFile)
+      this.restaurantImages[i].imageFile = 'data:image/jpg;base64,'+this.restaurantImages[i].imageFile
+      //this.restaurantImages[i].imageFile = this.images;
     }
   }
 

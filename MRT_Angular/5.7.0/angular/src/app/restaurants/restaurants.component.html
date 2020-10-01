@@ -75,6 +75,11 @@
                           currentPage: pageNumber,
                           totalItems: totalItems
                         }
+                        | grdFilter: {id: searchText
+                          , restaurantName:searchText
+                          , restaurantDescription:searchText
+                          , restaurantUrl:searchText
+                          , restaurantCity: searchText}
                 "
               >
                 <td>{{ restaurant.id }}</td>

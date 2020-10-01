@@ -28,6 +28,7 @@ export class SocialMediaTypesComponent extends PagedListingComponentBase<SocialM
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
+  searchText:string;
 
   constructor(
     injector: Injector,

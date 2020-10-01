@@ -72,12 +72,13 @@
                           currentPage: pageNumber,
                           totalItems: totalItems
                         }
+                        | grdFilter: {id: searchText, imageDescription:searchText}
                 "
               >
                 <td>{{ restaurantImage.id }}</td>
                 <td>{{ restaurantImage.imageDescription }}</td>
                 <td>
-                  <img src={{restaurantImage.imageFile}}>
+                  <img style="width:50%; height:50%;" [src]="restaurantImage.imageFile"><!---->
                   </td>
 
                 <td>
