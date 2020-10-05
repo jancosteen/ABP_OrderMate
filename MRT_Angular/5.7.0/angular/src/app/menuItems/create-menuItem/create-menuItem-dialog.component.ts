@@ -41,10 +41,11 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
   form: FormGroup;
   allergyIds:any=[];
   allergyId:number;
+  filtered:[];
+  currentDate;
+  sCurrentDate: string;
 
-  get allergiesFormArray(){
-    return this.form.controls.allergiesF as FormArray;
-  }
+
 
   @Output() onSave = new EventEmitter<any>();
 
@@ -63,6 +64,9 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
 
   ngOnInit(): void {
 
+    this.currentDate = new Date().toISOString().substring(0, 16);
+    this.sCurrentDate = this.currentDate.toString();
+
     this._allergyService
     .getAll(
       '',
@@ -80,10 +84,7 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
       //this.showPaging(result, pageNumber);
     });
 
-    this.form = this.fb.group({
-      allergiesF:new FormArray([])
-    });
-     this.addCheckBoxes();
+
 
     this._menuItemCategoryService
     .getAll(
@@ -118,10 +119,6 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
     });
   }
 
-  private addCheckBoxes(){
-    this.allergies.forEach(() => this.allergiesFormArray.push(new FormControl(false)));
-  }
-
   show(id){
       this.allergyIds.push(id);
       console.log('add',this.allergyIds);
@@ -140,17 +137,10 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
         }
     }
   }
-  var filtered = this.allergyIds.filter(function (el){
+  this.filtered = this.allergyIds.filter(function (el){
     return el !=null;
   });
-  console.log('final', filtered);
-
-  }
-  submit(){
-    const selectedAllergyIds = this.form.value.allergiesF
-        .map((checked, i) => checked ? this.allergies[i].id : null)
-        .filter(v => v !==null);
-        console.log(selectedAllergyIds);
+  console.log('final', this.filtered);
   }
 
   save(): void {
@@ -163,29 +153,39 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
           this.saving = false;
         })
       )
-      .subscribe(() => {
-        this.menuItemId = this.menuItem.id;
+      .subscribe((res) => {
+        this.menuItemId = res.id;
+        console.log('create MI',this.menuItemId);
+        localStorage.setItem('menuItemId', this.menuItemId.toString());
         this.notify.info(this.l('SavedSuccessfully'));
         this.bsModalRef.hide();
         this.onSave.emit();
-
+        this.createMenuItemAllergy();
       });
+      localStorage.removeItem('menuItemId');
+  }
 
-      this.menuItemAllergy.menuItemIdFk = this.menuItemId;
-      //this.menuItemAllergy.allergyIdFk =
-      console.log(this.miAllergies);
+  createMenuItemAllergy(){
+    for(let x=0;x<this.filtered.length;x++){
+      this.menuItemAllergy.menuItemIdFk =+ localStorage.getItem('menuItemId');
+      this.menuItemAllergy.allergyIdFk = this.filtered[x];
 
-      /*this._menuItemAllergyService
-      .create(this.menuItemAllergy)
-      .pipe(
-        finalize(() => {
-          this.saving = false;
-        })
-      )
-      .subscribe(() => {
-        this.notify.info(this.l('SavedSuccessfully'));
-        this.bsModalRef.hide();
-        this.onSave.emit();
-      });*/
+      console.log('allergyId',this.menuItemAllergy.allergyIdFk);
+      console.log('menuItemId',this.menuItemAllergy.menuItemIdFk);
+      console.log('object MI',this.menuItemAllergy);
+
+      this._menuItemAllergyService
+    .create(this.menuItemAllergy)
+    .pipe(
+      finalize(() => {
+        this.saving = false;
+      })
+    )
+    .subscribe(() => {
+      this.notify.info(this.l('SavedSuccessfully'));
+      this.bsModalRef.hide();
+      this.onSave.emit();
+    });
+    }
   }
 }

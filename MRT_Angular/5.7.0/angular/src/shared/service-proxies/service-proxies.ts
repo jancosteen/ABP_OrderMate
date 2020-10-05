@@ -14460,7 +14460,7 @@ export class MenuItemAllergyDto implements IMenuItemAllergyDto {
     deletionTime: moment.Moment | undefined;
     lastModificationTime: moment.Moment | undefined;
     lastModifierUserId: number | undefined;
-    creationTime: moment.Moment;
+    creationTime: string;//moment.Moment;
     creatorUserId: number | undefined;
     id: number;
 
@@ -14482,7 +14482,7 @@ export class MenuItemAllergyDto implements IMenuItemAllergyDto {
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
             this.lastModificationTime = _data["lastModificationTime"] ? moment(_data["lastModificationTime"].toString()) : <any>undefined;
             this.lastModifierUserId = _data["lastModifierUserId"];
-            this.creationTime = _data["creationTime"] ? moment(_data["creationTime"].toString()) : <any>undefined;
+            this.creationTime = _data["creationTime"];// ? moment(_data["creationTime"].toString()) : <any>undefined;
             this.creatorUserId = _data["creatorUserId"];
             this.id = _data["id"];
         }
@@ -14504,7 +14504,7 @@ export class MenuItemAllergyDto implements IMenuItemAllergyDto {
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
         data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>undefined;
         data["lastModifierUserId"] = this.lastModifierUserId;
-        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
+        data["creationTime"] = this.creationTime;// ? this.creationTime.toISOString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
         return data;
@@ -14526,7 +14526,7 @@ export interface IMenuItemAllergyDto {
     deletionTime: moment.Moment | undefined;
     lastModificationTime: moment.Moment | undefined;
     lastModifierUserId: number | undefined;
-    creationTime: moment.Moment;
+    creationTime:string;// moment.Moment;
     creatorUserId: number | undefined;
     id: number;
 }
