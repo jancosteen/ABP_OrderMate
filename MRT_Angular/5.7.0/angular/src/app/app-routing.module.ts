@@ -25,6 +25,8 @@ import { SocialMediasComponent } from './socialMedias/socialMedias.component';
 import { QrCodeGeneratorComponent } from './qrCodeGenerator/qr-code-generator/qr-code-generator.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { MenuItemTypesComponent } from './menuItem-types/menuItemType.component';
+import { OrdersComponent } from './orders/orders.component';
+import { MenuItemsComponent } from './menuItems/menuItems.component';
 
 @NgModule({
     imports: [
@@ -56,6 +58,8 @@ import { MenuItemTypesComponent } from './menuItem-types/menuItemType.component'
                     { path: 'qrGen', component: QrCodeGeneratorComponent, data: { permission: 'Pages.MIC' }, canActivate: [AppRouteGuard] },
                     { path: 'reservations', component: ReservationsComponent, data: { permission: 'Pages.R' }, canActivate: [AppRouteGuard] },
                     { path: 'miTypes', component: MenuItemTypesComponent, data: { permission: 'Pages.MIT' }, canActivate: [AppRouteGuard] },
+                    { path: 'orders', component: OrdersComponent, data: { permission: 'Pages.O' }, canActivate: [AppRouteGuard] },
+                    { path: 'menuItems', component: MenuItemsComponent, data: { permission: 'Pages.MI' }, canActivate: [AppRouteGuard] },
 
 
 

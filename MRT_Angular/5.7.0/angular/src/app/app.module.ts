@@ -93,6 +93,12 @@ import { MenuItemTypesComponent } from './menuItem-types/menuItemType.component'
 import { EditMenuItemTypeDialogComponent } from './menuItem-types/edit-menuItemType/edit-menuItemType-dialog.component';
 import { CreateMenuItemTypeDialogComponent } from './menuItem-types/create-menuItemType/create-menuItemType-dialog.component';
 import { FilterPipe } from 'shared/pipes/filter.pipe';
+import { OrdersComponent} from './orders/orders.component';
+import { CreateOrderDialogComponent } from './orders/create-order/create-order-dialog.component';
+import { EditOrderDialogComponent } from './orders/edit-order/edit-order-dialog.component';
+import { MenuItemsComponent} from './menuItems/menuItems.component';
+import { CreateMenuItemDialogComponent } from './menuItems/create-menuItem/create-menuItem-dialog.component';
+import { EditMenuItemDialogComponent } from './menuItems/edit-menuItem/edit-menuItem-dialog.component';
 
 @NgModule({
   declarations: [
@@ -146,6 +152,9 @@ import { FilterPipe } from 'shared/pipes/filter.pipe';
     MenuItemTypesComponent,
     EditMenuItemTypeDialogComponent,
     CreateMenuItemTypeDialogComponent,
+    MenuItemsComponent,
+    CreateMenuItemDialogComponent,
+    EditMenuItemDialogComponent,
     //restaurant
     RestaurantsComponent,
     CreateRestaurantDialogComponent,
@@ -172,6 +181,9 @@ import { FilterPipe } from 'shared/pipes/filter.pipe';
     EditOrderStatusDialogComponent,
     CreateOrderStatusDialogComponent,
     OrderStatussesComponent,
+    OrdersComponent,
+    CreateOrderDialogComponent,
+    EditOrderDialogComponent,
     //reservations
     EditReservationStatusDialogComponent,
     CreateReservationStatusDialogComponent,
@@ -225,6 +237,8 @@ import { FilterPipe } from 'shared/pipes/filter.pipe';
     CreateMenuItemPriceDialogComponent,
     EditMenuItemTypeDialogComponent,
     CreateMenuItemTypeDialogComponent,
+    CreateMenuItemDialogComponent,
+    EditMenuItemDialogComponent,
     //restaurant
     CreateRestaurantDialogComponent,
     EditRestaurantDialogComponent,
@@ -243,6 +257,8 @@ import { FilterPipe } from 'shared/pipes/filter.pipe';
     //order
     EditOrderStatusDialogComponent,
     CreateOrderStatusDialogComponent,
+    CreateOrderDialogComponent,
+    EditOrderDialogComponent,
     //reservations
     EditReservationStatusDialogComponent,
     CreateReservationStatusDialogComponent,
