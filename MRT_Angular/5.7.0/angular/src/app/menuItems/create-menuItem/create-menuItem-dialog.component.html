@@ -99,21 +99,23 @@
       </div>
     </div>
 
+
     <div class="form-group row mb-0">
       <label class="col-md-3 col-form-label">
         {{ "Allergy" | localize }}
       </label>
-      <div class="col"  *ngFor="let a of allergies">
+      <div class="col"  *ngFor="let a of allergies; let i = index">
         <label>{{a.allergy1}}</label>
         <div class="custom-control custom-checkbox">
           <input
             type="checkbox"
             class="custom-control-input"
-            name={{a.id}}
-            id={{a.id}}
-            value={{a.id}}
-          /><!--[(ngModel)]="a.allergy1"-->
-          <label class="custom-control-label mt-2" for={{a.id}}></label>
+            [name]="a.id"
+            [id]="a.id"
+            [value]="a.id"
+            (change)="show(a.id)"
+          /><!--[(ngModel)]="menuItemAllergy.allergyIdFk"-->
+          <label class="custom-control-label mt-2" [for]="a.id"></label>
         </div>
       </div>
     </div>
