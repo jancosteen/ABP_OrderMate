@@ -12,7 +12,7 @@
 
     <div class="form-group row required">
       <label class="col-md-3 col-form-label" for="name">
-        {{ "MenuItem" | localize }}
+        {{ "Menu Item" | localize }}
       </label>
       <div class="col-md-9">
         <input
@@ -32,6 +32,94 @@
         ></abp-validation-summary>
       </div>
     </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="mDes">
+        {{ "Description" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          name="mDes"
+          id="mDes"
+          maxlength="128"
+          required
+          [(ngModel)]="menuItem.menuItemDescription"
+          #nameModel="ngModel"
+          #nameEl
+        />
+        <abp-validation-summary
+          [control]="nameModel"
+          [controlEl]="nameEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="cat">
+        {{ "Category" | localize }}
+      </label>
+      <div class="col-md-9">
+        <select
+          class="form-control"
+          name="cat"
+          id="cat"
+          required
+          [(ngModel)]="menuItem.menuItemCategoryIdFk"
+          #restModel="ngModel"
+          #restEl>
+            <option *ngFor="let m of menuItemCategories" value={{m.id}}>{{m.menuItemCategory1}}</option>
+        </select>
+        <abp-validation-summary
+          [control]="restModel"
+          [controlEl]="restEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="price">
+        {{ "Price" | localize }}
+      </label>
+      <div class="col-md-9">
+        <select
+          class="form-control"
+          name="price"
+          id="price"
+          required
+          [(ngModel)]="menuItem.menuItemPriceIdFk"
+          #restModel="ngModel"
+          #restEl>
+            <option *ngFor="let p of menuItemPrices" value={{p.id}}>{{p.menuItemPrice1}}</option>
+        </select>
+        <abp-validation-summary
+          [control]="restModel"
+          [controlEl]="restEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+    <div class="form-group row mb-0">
+      <label class="col-md-3 col-form-label">
+        {{ "Allergy" | localize }}
+      </label>
+      <div class="col"  *ngFor="let a of allergies; let i = index">
+        <label>{{a.allergy1}}</label>
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            [name]="a.id"
+            [id]="a.id"
+            [value]="a.id"
+            (change)="show(a.id)"
+          />
+          <!--[(ngModel)]="menuItemAllergy.allergyIdFk"-->
+          <label class="custom-control-label mt-2" [for]="a.id"></label>
+        </div>
+      </div>
+    </div>
+
 
   </div>
   <abp-modal-footer

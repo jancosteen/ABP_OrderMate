@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
+using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using MDR_Angular.Authorization;
 using MDR_Angular.OrderMate.MenuItems.Dto;
@@ -27,5 +28,6 @@ namespace MDR_Angular.OrderMate.MenuItems
                 .Include(i => i.MenuItemAllergy).ThenInclude(x=> x.AllergyIdFkNavigation)
                 .Include(i => i.MenuItemSpecial).ThenInclude(x => x.SpecialIdFkNavigation);
         }
+
     }
 }
