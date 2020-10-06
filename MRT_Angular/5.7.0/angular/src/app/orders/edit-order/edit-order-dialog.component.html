@@ -20,7 +20,7 @@
           name="rest"
           id="rest"
           required
-          [(ngModel)]="order.restaurantIdFk"
+          [(ngModel)]="order.id"
           #restModel="ngModel"
           #restEl>
             <option *ngFor="let r of restaurants" value={{r.id}}>{{r.restaurantName}}</option>
@@ -44,7 +44,7 @@
           maxlength="128"
           required
           [min]="currentDate"
-          [(ngModel)]="order.orderDateReserved"
+          [(ngModel)]="order.isDeleted"
           #nameModel="ngModel"
           #nameEl
         />
@@ -68,7 +68,7 @@
           id="userId"
           maxlength="1024"
           value={{iUserId}}
-          [(ngModel)]="order.userIdFk"
+          [(ngModel)]="order.lastModificationTime"
           #userIdModel="ngModel"
           #userIdEl
         />
@@ -90,7 +90,7 @@
           name="pQty"
           id="pQty"
           maxlength="1024"
-          [(ngModel)]="order.orderPartyQty"
+          [(ngModel)]="order.lastModifierUserId"
           #pQtyModel="ngModel"
           #pQtyEl
         />
@@ -112,7 +112,7 @@
           name="nrBill"
           id="nrBill"
           maxlength="1024"
-          [(ngModel)]="order.orderNumberOfBills"
+          [(ngModel)]="order.orderDateCompleted"
           #nrBillModel="ngModel"
           #nrBillEl
         />
