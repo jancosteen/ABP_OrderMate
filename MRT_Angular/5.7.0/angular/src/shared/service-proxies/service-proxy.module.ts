@@ -35,7 +35,9 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.OrderServiceProxy,
         ApiServiceProxies.MenuItemServiceProxy,
         ApiServiceProxies.MenuItemAllergyServiceProxy,
-
+        ApiServiceProxies.QrCodeSeatingServiceProxy,
+        ApiServiceProxies.OrderLineServiceProxy,
+        ApiServiceProxies.SeatingServiceProxy,
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }
     ]
 })

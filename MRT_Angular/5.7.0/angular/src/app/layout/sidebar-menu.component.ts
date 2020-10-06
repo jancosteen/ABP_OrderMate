@@ -181,6 +181,13 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
             'Pages.RT'
           ),
         ]),
+        new MenuItem(this.l('Tables'),'','fas fa-circle','Pages.S',[
+          new MenuItem(
+            this.l('Tables'),
+            '/app/seating',
+            'fas fa-building',
+            'Pages.S')
+        ])
       ]),
 
 
@@ -209,6 +216,12 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
         '/app/reservations',
         'fas fa-users',
         "Pages.R"
+      ),
+      new MenuItem(
+        this.l('Manage Orders'),
+        '/app/orders',
+        'fas fa-users',
+        "Pages.O"
       )
     ]
   }

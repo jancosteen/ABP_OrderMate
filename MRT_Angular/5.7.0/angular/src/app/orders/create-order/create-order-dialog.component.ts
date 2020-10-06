@@ -14,6 +14,9 @@ import {
   OrderStatusDto,
   OrderStatusDtoPagedResultDto,
   OrderStatusServiceProxy,
+  QrCodeSeatingDto,
+  QrCodeSeatingDtoPagedResultDto,
+  QrCodeSeatingServiceProxy,
   RestaurantDto,
   RestaurantDtoPagedResultDto,
   RestaurantServiceProxy
@@ -29,6 +32,7 @@ export class CreateOrderDialogComponent extends AppComponentBase
   order: OrderDto = new OrderDto();
   restaurants: RestaurantDto[] = [];
   orderStatusses: OrderStatusDto[]=[];
+  qrCodeSeating: QrCodeSeatingDto[]=[];
   currentDate;
   sUserId:string;
   iUserId:number;
@@ -38,7 +42,7 @@ export class CreateOrderDialogComponent extends AppComponentBase
   constructor(
     injector: Injector,
     public _orderService: OrderServiceProxy,
-    public _restaurantService: RestaurantServiceProxy,
+    public _qrCodeSeatingService: QrCodeSeatingServiceProxy,
     public _orderStatusService: OrderStatusServiceProxy,
     public bsModalRef: BsModalRef,
     public sessionService: AppSessionService
@@ -51,22 +55,6 @@ export class CreateOrderDialogComponent extends AppComponentBase
     this.iUserId = this.sessionService.userId;
     this.currentDate = new Date().toISOString().substring(0, 16);
      console.log(this.currentDate);
-
-    this._restaurantService
-    .getAll(
-      '',
-      0,
-      100
-    )
-    .pipe(
-      finalize(() => {
-        console.log('pipe');
-      })
-    )
-    .subscribe((result: RestaurantDtoPagedResultDto) => {
-      this.restaurants = result.items;
-      //this.showPaging(result, pageNumber);
-    });
 
     this._orderStatusService
     .getAll(
@@ -81,6 +69,22 @@ export class CreateOrderDialogComponent extends AppComponentBase
     )
     .subscribe((result: OrderStatusDtoPagedResultDto) => {
       this.orderStatusses = result.items;
+      //this.showPaging(result, pageNumber);
+    });
+
+    this._qrCodeSeatingService
+    .getAll(
+      '',
+      0,
+      100
+    )
+    .pipe(
+      finalize(() => {
+        console.log(this.iUserId);
+      })
+    )
+    .subscribe((result: QrCodeSeatingDtoPagedResultDto) => {
+      this.qrCodeSeating = result.items;
       //this.showPaging(result, pageNumber);
     });
   }

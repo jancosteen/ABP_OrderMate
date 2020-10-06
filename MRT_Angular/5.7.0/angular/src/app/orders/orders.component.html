@@ -43,13 +43,11 @@
             <thead class="bg-light">
               <tr>
                 <th>{{ "Id" | localize }}</th>
-                <th>{{ "Restaurant" | localize }}</th>
                 <th>{{ "Date Created" | localize }}</th>
-                <th>{{ "Date Reserved" | localize }}</th>
-                <th>{{ "User" | localize }}</th>
-                <th>{{ "Party Qty" | localize }}</th>
-                <th>{{ "Number of Bills" | localize }}</th>
-                <th>{{ "Order Status" | localize }}</th>
+                <th>{{ "Date Completed" | localize }}</th>
+                <th>{{ "Table (QrCodeSeating)" | localize }}</th>
+                <th>{{ "OrderStatus" | localize }}</th>
+                <th>{{ "User Created" | localize }}</th>
                 <th style="width: 200px;">{{ "Actions" | localize }}</th>
               </tr>
             </thead>
@@ -65,23 +63,19 @@
                           totalItems: totalItems
                         }
                         | grdFilter: {id: searchText
-                          ,restaurantName:searchText
                           ,orderDateCreated:searchText
-                          ,orderDateReserved: searchText
+                          ,orderDateCompleted: searchText
                           ,userName: searchText
-                          ,orderPartyQty:searchText
-                          ,orderNumberOfBills: searchText
-                          ,orderStatusIdFkNavigation: searchText }
+                          ,creatorUserId:searchText
+                           }
                 "
               >
                 <td>{{ order.id }}</td>
-                <td>{{ order.restaurantIdFkNavigation.restaurantName}}</td>
                 <td>{{ order.orderDateCreated }}</td>
-                <td>{{ order.orderDateReserved }}</td>
-                <td>{{ order.userIdFkNavigation.userName }}</td>
-                <td>{{ order.orderPartyQty }}</td>
-                <td>{{ order.orderNumberOfBills }}</td>
+                <td>{{ order.orderDateCompleted }}</td>
+                <td>{{ order.qrCodeSeating.qrCodeIdFk }}</td>
                 <td>{{ order.orderStatusIdFkNavigation.orderStatus1 }}</td>
+                <td>{{ order.creatorUserId }}</td>
                 <td>
                   <button
                     type="button"
