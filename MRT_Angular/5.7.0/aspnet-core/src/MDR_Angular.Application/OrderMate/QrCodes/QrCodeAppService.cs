@@ -3,6 +3,8 @@ using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using MDR_Angular.Authorization;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace MDR_Angular.OrderMate.QrCodes
 {
@@ -11,5 +13,12 @@ namespace MDR_Angular.OrderMate.QrCodes
         QrCode, QrCodeDto, int, PagedAndSortedResultRequestDto, QrCodeDto>, IQrCodeAppService
     {
         public QrCodeAppService(IRepository<QrCode> repository) : base(repository) { }
+
+        protected override IQueryable<QrCode> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
+        {
+            return base.CreateFilteredQuery(input)
+                //.Include(i => i.ReservationRestaurant).ThenInclude(x => x.RestaurantIdFkNavigation)
+                .Include(i => i.RestaurantIdFkNavigation);
+        }
     }
 }

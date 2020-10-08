@@ -28,6 +28,7 @@ import { MenuItemTypesComponent } from './menuItem-types/menuItemType.component'
 import { OrdersComponent } from './orders/orders.component';
 import { MenuItemsComponent } from './menuItems/menuItems.component';
 import { SeatingsComponent } from './seating/seatings.component';
+import { QrCodesComponent } from './qrCodes/qrCodes.component';
 
 @NgModule({
     imports: [
@@ -62,11 +63,7 @@ import { SeatingsComponent } from './seating/seatings.component';
                     { path: 'orders', component: OrdersComponent, data: { permission: 'Pages.O' }, canActivate: [AppRouteGuard] },
                     { path: 'menuItems', component: MenuItemsComponent, data: { permission: 'Pages.MI' }, canActivate: [AppRouteGuard] },
                     { path: 'seating', component: SeatingsComponent, data: { permission: 'Pages.S' }, canActivate: [AppRouteGuard] },
-                    { path: 'qrCodes', component: SeatingsComponent, data: { permission: 'Pages.QC' }, canActivate: [AppRouteGuard] },
-
-
-
-
+                    { path: 'qrCodes', component: QrCodesComponent, data: { permission: 'Pages.QC' }, canActivate: [AppRouteGuard] },
 
                 ]
             }

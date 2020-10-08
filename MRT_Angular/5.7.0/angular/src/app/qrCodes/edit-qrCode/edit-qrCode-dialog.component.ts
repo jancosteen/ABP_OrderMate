@@ -10,7 +10,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   QrCodeServiceProxy,
-  QrCodeDto
+  QrCodeDto, RestaurantServiceProxy, RestaurantDtoPagedResultDto, RestaurantDto
 } from '../../../shared/service-proxies/service-proxies';
 
 @Component({
@@ -21,12 +21,14 @@ export class EditQrCodeDialogComponent extends AppComponentBase
   saving = false;
   qrCode: QrCodeDto = new QrCodeDto();
   id: number;
+  restaurants:RestaurantDto[]=[];
 
   @Output() onSave = new EventEmitter<any>();
 
   constructor(
     injector: Injector,
     public _qrCodeService: QrCodeServiceProxy,
+    public _restaurantService: RestaurantServiceProxy,
     public bsModalRef: BsModalRef
   ) {
     super(injector);
@@ -35,6 +37,22 @@ export class EditQrCodeDialogComponent extends AppComponentBase
   ngOnInit(): void {
     this._qrCodeService.get(this.id).subscribe((result: QrCodeDto) => {
       this.qrCode = result;
+    });
+
+    this._restaurantService
+    .getAll(
+      '',
+      0,
+      100
+    )
+    .pipe(
+      finalize(() => {
+        console.log('pipe');
+      })
+    )
+    .subscribe((result: RestaurantDtoPagedResultDto) => {
+      this.restaurants = result.items;
+      //this.showPaging(result, pageNumber);
     });
   }
 

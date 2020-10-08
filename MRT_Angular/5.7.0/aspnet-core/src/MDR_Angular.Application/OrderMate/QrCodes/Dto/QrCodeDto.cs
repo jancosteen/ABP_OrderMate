@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using MDR_Angular.OrderMate.Restaurants;
 
 namespace MDR_Angular.OrderMate.QrCodes
 {
@@ -9,6 +10,8 @@ namespace MDR_Angular.OrderMate.QrCodes
     {
         //public int QrCodeId { get; set; }
         public int? RestaurantIdFk { get; set; }
+
+        public virtual RestaurantDto RestaurantIdFkNavigation { get; set; }
 
     }
 }
