@@ -186,7 +186,12 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
             this.l('Tables'),
             '/app/seating',
             'fas fa-building',
-            'Pages.S')
+            'Pages.S'),
+          new MenuItem(
+            this.l('QrCodes'),
+            '/app/qrCodes',
+            'fas fa-building',
+            'Pages.QC')
         ])
       ]),
 

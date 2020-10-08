@@ -12,6 +12,7 @@ import {
   MenuItemServiceProxy,
   MenuItemDto, MenuItemCategoryDtoPagedResultDto, MenuItemCategoryServiceProxy, MenuItemCategoryDto, MenuItemPriceDto, MenuItemPriceServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto, AllergyDto, AllergyServiceProxy, AllergyDtoPagedResultDto
 } from '../../../shared/service-proxies/service-proxies';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   templateUrl: 'edit-menuItem-dialog.component.html'
@@ -20,14 +21,19 @@ export class EditMenuItemDialogComponent extends AppComponentBase
   implements OnInit {
   saving = false;
   menuItem: MenuItemDto = new MenuItemDto();
+  menuItemId:number;
+  menuItemId2:number;
   id: number;
   menuItemCategories: MenuItemCategoryDto[]=[];
   menuItemPrices: MenuItemPriceDto[]=[];
   menuItemAllergies: MenuItemAllergyDto[]=[];
+  miAllergyIds=[];
   allergies: AllergyDto[]=[];
   allergyIds=[];
   allergyIds2=[];
   filtered=[];
+  menuItemAllergy: MenuItemAllergyDto = new MenuItemAllergyDto();
+  uniqueSet=[];
 
   @Output() onSave = new EventEmitter<any>();
 
@@ -46,13 +52,16 @@ export class EditMenuItemDialogComponent extends AppComponentBase
   ngOnInit(): void {
     this._menuItemService.get(this.id).subscribe((result: MenuItemDto) => {
       this.menuItem = result;
+      this.menuItemId2 = this.menuItem.id;
+      localStorage.setItem('menuItemId2', this.menuItemId2.toString());
     });
 
     this._menuItemAllergyService.getByMenuItemId(this.id).subscribe((result: MenuItemAllergyDto[]) => {
       this.menuItemAllergies = result;
       this.allergyIds = this.menuItemAllergies;
+
       console.log(this.allergyIds);
-      //this.populateAllergyIds(result);
+      this.populateAllergyIds(result);
     });
 
 
@@ -105,9 +114,14 @@ export class EditMenuItemDialogComponent extends AppComponentBase
     });
   }
 
+  isChecked(id){
+    return this.allergyIds2.includes(id);
+  }
+
   populateAllergyIds(res){
     for(let x=0;x<res.length;x++){
       this.allergyIds2.push(res[x].allergyIdFk);
+      this.miAllergyIds.push(res[x].id);
     }
     console.log('populated allergyIds',this.allergyIds2)
   }
@@ -116,16 +130,20 @@ export class EditMenuItemDialogComponent extends AppComponentBase
     this.saving = true;
 
     this._menuItemService
-      .update(this.menuItem)
+      .create(this.menuItem)
       .pipe(
         finalize(() => {
           this.saving = false;
         })
       )
-      .subscribe(() => {
+      .subscribe((res) => {
+        this.menuItemId = res.id;
+        console.log('update MI',this.menuItemId);
+        localStorage.setItem('menuItemId', this.menuItemId.toString());
         this.notify.info(this.l('SavedSuccessfully'));
         this.bsModalRef.hide();
         this.onSave.emit();
+        //this.updateMenuItemAllergy();
       });
   }
 
@@ -150,6 +168,50 @@ export class EditMenuItemDialogComponent extends AppComponentBase
 this.filtered = this.allergyIds2.filter(function (el){
   return el !=null;
 });
-console.log('final', this.filtered);
+
+this.uniqueSet = this.filtered.filter(function(elem,index,self){
+  return index === self.indexOf(elem);
+})
+console.log('final', this.uniqueSet);
 }
+
+/*updateMenuItemAllergy(){
+  for(let x=0;x<this.uniqueSet.length;x++){
+    this.menuItemAllergy.id = this.miAllergyIds[x];
+    this.menuItemAllergy.menuItemIdFk =+ localStorage.getItem('menuItemId2');
+    this.menuItemAllergy.allergyIdFk = this.uniqueSet[x];
+
+    console.log('allergyId',this.menuItemAllergy.allergyIdFk);
+    console.log('menuItemId',this.menuItemAllergy.menuItemIdFk);
+    console.log('object MI',this.menuItemAllergy);
+
+    if(this.menuItemAllergy.allergyIdFk == this.allergyIds2[x] ){
+      console.log('already allergy',this.menuItemAllergy.allergyIdFk)
+    }else if(this.uniqueSet.length>this.allergyIds2.length){
+      this._menuItemAllergyService
+      .create(this.menuItemAllergy)
+      .pipe(
+        finalize(() => {
+          this.saving = false;
+        })
+      )
+      .subscribe(() => {
+        this.notify.info(this.l('SavedSuccessfully'));
+        console.log('created allergy', this.menuItemAllergy.allergyIdFk)
+        this.bsModalRef.hide();
+        this.onSave.emit();
+      });
+      }else if(this.uniqueSet.length<this.allergyIds2.length){
+        this._menuItemAllergyService
+            .delete(this.menuItemAllergy.id)
+            .pipe(
+              finalize(() => {
+                console.log('removed allergy', this.menuItemAllergy.allergyIdFk)
+              })
+            )
+            .subscribe(() => {});
+      }
+    }
+
+}*/
 }

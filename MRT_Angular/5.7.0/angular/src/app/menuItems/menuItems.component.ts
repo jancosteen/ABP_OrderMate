@@ -9,7 +9,7 @@ import {
 import {
   MenuItemServiceProxy,
   MenuItemDto,
-  MenuItemDtoPagedResultDto, MenuItemPriceDto, MenuItemCategoryDto, MenuItemPriceServiceProxy, MenuItemCategoryServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemCategoryDtoPagedResultDto
+  MenuItemDtoPagedResultDto, MenuItemPriceDto, MenuItemCategoryDto, MenuItemPriceServiceProxy, MenuItemCategoryServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemCategoryDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto
 } from '../../shared/service-proxies/service-proxies';
 import { CreateMenuItemDialogComponent } from './create-menuItem/create-menuItem-dialog.component';
 import { EditMenuItemDialogComponent } from './edit-menuItem/edit-menuItem-dialog.component';
@@ -27,6 +27,8 @@ export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
   menuItems: MenuItemDto[] = [];
   menuItemPrices: MenuItemPriceDto[] = [];
   menuItemCategories: MenuItemCategoryDto[]=[];
+  menuItemAllergies: MenuItemAllergyDto[]=[];
+  miAllergyIds:MenuItemAllergyDto[] = [];
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
@@ -37,6 +39,7 @@ export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
     private _menuItemService: MenuItemServiceProxy,
     private _menuItemPriceService: MenuItemPriceServiceProxy,
     private _menuItemCategoryService: MenuItemCategoryServiceProxy,
+    private __menuItemAllergyService: MenuItemAllergyServiceProxy,
     private _modalService: BsModalService
   ) {
     super(injector);
@@ -97,9 +100,14 @@ export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
         this.menuItemCategories = result.items;
         //this.showPaging(result, pageNumber);
       });
+
   }
 
   delete(menuItem: MenuItemDto): void {
+    this.__menuItemAllergyService.getByMenuItemId(menuItem.id).subscribe((result: MenuItemAllergyDto[]) => {
+      this.menuItemAllergies = result;
+      this.miAllergyIds = this.menuItemAllergies});
+
     abp.message.confirm(
       this.l('MenuItemDeleteWarningMessage', menuItem.menuItemName),
       undefined,
@@ -117,6 +125,17 @@ export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
         }
       }
     );
+    for(let x=0; x<this.miAllergyIds.length;x++){
+      this.__menuItemAllergyService
+      .delete(this.miAllergyIds[x].id)
+      .pipe(
+        finalize(() => {
+          console.log('deleted mia', this.miAllergyIds[x].id);
+        })
+      )
+      .subscribe(() => {});
+    }
+
   }
 
   createMenuItem(): void {

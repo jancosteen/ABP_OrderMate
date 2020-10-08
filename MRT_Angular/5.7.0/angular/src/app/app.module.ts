@@ -99,6 +99,15 @@ import { EditOrderDialogComponent } from './orders/edit-order/edit-order-dialog.
 import { MenuItemsComponent} from './menuItems/menuItems.component';
 import { CreateMenuItemDialogComponent } from './menuItems/create-menuItem/create-menuItem-dialog.component';
 import { EditMenuItemDialogComponent } from './menuItems/edit-menuItem/edit-menuItem-dialog.component';
+import { SeatingsComponent } from './seating/seatings.component';
+import { EditSeatingDialogComponent } from './seating/edit-seating/edit-seating-dialog.component';
+import { CreateSeatingDialogComponent } from './seating/create-seating/create-seating-dialog.component';
+import { QrCodesComponent } from './qrCodes/qrCodes.component';
+import { EditQrCodeDialogComponent } from './qrCodes/edit-qrCode/edit-qrCode-dialog.component';
+import { CreateQrCodeDialogComponent } from './qrCodes/create-qrCode/create-qrCode-dialog.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -192,6 +201,14 @@ import { EditMenuItemDialogComponent } from './menuItems/edit-menuItem/edit-menu
     EditReservationDialogComponent,
     CreateReservationDialogComponent,
     ReservationsComponent,
+    //seating
+    SeatingsComponent,
+    EditSeatingDialogComponent,
+    CreateSeatingDialogComponent,
+    //qrCodes
+    QrCodesComponent,
+    EditQrCodeDialogComponent,
+    CreateQrCodeDialogComponent
   ],
   imports: [
     CommonModule,
@@ -264,6 +281,12 @@ import { EditMenuItemDialogComponent } from './menuItems/edit-menuItem/edit-menu
     CreateReservationStatusDialogComponent,
     EditReservationDialogComponent,
     CreateReservationDialogComponent,
+    //seating
+    EditSeatingDialogComponent,
+    CreateSeatingDialogComponent,
+    //qrCodes
+    EditQrCodeDialogComponent,
+    CreateQrCodeDialogComponent
 
   ],
 })

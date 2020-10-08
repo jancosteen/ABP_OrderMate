@@ -38,6 +38,8 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.QrCodeSeatingServiceProxy,
         ApiServiceProxies.OrderLineServiceProxy,
         ApiServiceProxies.SeatingServiceProxy,
+        ApiServiceProxies.QrCodeServiceProxy,
+
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }
     ]
 })
