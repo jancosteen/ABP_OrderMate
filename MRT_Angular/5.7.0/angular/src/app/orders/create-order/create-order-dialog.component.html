@@ -10,26 +10,75 @@
   ></abp-modal-header>
   <div class="modal-body">
     <div class="form-group row required">
-      <label class="col-md-3 col-form-label" for="table">
-        {{ "Table" | localize }}
+      <label class="col-md-3 col-form-label" for="dateCreated">
+        {{ "Date Created " | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="datetime-local"
+          class="form-control"
+          name="dateCreated"
+          id="dateCreated"
+          maxlength="128"
+          required
+          [min]="currentDate"
+          [(ngModel)]="order.orderDateCreated"
+          #dateCreatedModel="ngModel"
+          #dateCreatedEl
+        />
+        <abp-validation-summary
+          [control]="dateCreatedModel"
+          [controlEl]="dateCreatedEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="dateCompleted">
+        {{ "Date Completed " | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="datetime-local"
+          class="form-control"
+          name="dateCompleted"
+          id="dateCompleted"
+          maxlength="128"
+          required
+          [min]="dateCreatedModel"
+          [(ngModel)]="order.orderDateCompleted"
+          #dateCompletedModel="ngModel"
+          #dateCompletedEl
+        />
+        <abp-validation-summary
+          [control]="dateCompletedModel"
+          [controlEl]="dateCompletedEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="tblNo">
+        {{ "Table No" | localize }}
       </label>
       <div class="col-md-9">
         <select
           class="form-control"
-          name="table"
-          id="table"
+          name="tblNo"
+          id="tblNo"
           required
           [(ngModel)]="order.qrCodeSeatingIdFk"
-          #tableModel="ngModel"
-          #tableEl>
-            <option *ngFor="let qs of qrCodeSeating" value={{qs.id}}>{{qs.id}}</option>
+          #tblNoModel="ngModel"
+          #tblNoEl>
+            <option *ngFor="let q of qrCodeSeatings" value={{q.id}}>{{q.id}}</option>
         </select>
         <abp-validation-summary
-          [control]="tableModel"
-          [controlEl]="tableEl"
+          [control]="tblNoModel"
+          [controlEl]="tblNoEl"
         ></abp-validation-summary>
       </div>
     </div>
+
     <div class="form-group row required">
       <label class="col-md-3 col-form-label" for="status">
         {{ "Status" | localize }}
@@ -57,7 +106,6 @@
     [saveDisabled]="!createOrderForm.form.valid || saving"
     (onCancelClick)="bsModalRef.hide()"
   ></abp-modal-footer>
-
 </div>
 </form>
     <!--

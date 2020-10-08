@@ -10,9 +10,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   OrderServiceProxy,
-  OrderDto, RestaurantDtoPagedResultDto, RestaurantServiceProxy, RestaurantDto, OrderStatusDto, OrderStatusDtoPagedResultDto, OrderStatusServiceProxy
+  OrderDto, OrderStatusDto, QrCodeSeatingDto, OrderStatusServiceProxy, QrCodeSeatingServiceProxy, OrderStatusDtoPagedResultDto, QrCodeSeatingDtoPagedResultDto
 } from '../../../shared/service-proxies/service-proxies';
-import { AppSessionService } from '@shared/session/app-session.service';
 
 @Component({
   templateUrl: 'edit-order-dialog.component.html'
@@ -22,20 +21,17 @@ export class EditOrderDialogComponent extends AppComponentBase
   saving = false;
   order: OrderDto = new OrderDto();
   id: number;
-  sUserId:string;
-  iUserId:number;
-  currentDate;
-  restaurants: RestaurantDto[] = [];
+  qrCodeSeatings: QrCodeSeatingDto[]=[];
   orderStatusses: OrderStatusDto[]=[];
+  currentDate;
 
   @Output() onSave = new EventEmitter<any>();
 
   constructor(
     injector: Injector,
     public _orderService: OrderServiceProxy,
-    public _restaurantService: RestaurantServiceProxy,
-    public _orderStatusService : OrderStatusServiceProxy,
-    public sessionService: AppSessionService,
+    public _qrCodeSeatingService: QrCodeSeatingServiceProxy,
+    public _orderStatusses: OrderStatusServiceProxy,
     public bsModalRef: BsModalRef
   ) {
     super(injector);
@@ -45,12 +41,10 @@ export class EditOrderDialogComponent extends AppComponentBase
     this._orderService.get(this.id).subscribe((result: OrderDto) => {
       this.order = result;
     });
-    this.sUserId = localStorage.getItem('userId');
-    this.iUserId = this.sessionService.userId;
-    this.currentDate = new Date().toISOString().substring(0, 16);
-     console.log(this.currentDate);
 
-    this._restaurantService
+    this.currentDate = new Date().toISOString().substring(0, 16);
+
+    this._qrCodeSeatingService
     .getAll(
       '',
       0,
@@ -61,12 +55,12 @@ export class EditOrderDialogComponent extends AppComponentBase
         console.log('pipe');
       })
     )
-    .subscribe((result: RestaurantDtoPagedResultDto) => {
-      this.restaurants = result.items;
+    .subscribe((result: QrCodeSeatingDtoPagedResultDto) => {
+      this.qrCodeSeatings = result.items;
       //this.showPaging(result, pageNumber);
     });
 
-    this._orderStatusService
+    this._orderStatusses
     .getAll(
       '',
       0,
@@ -74,7 +68,7 @@ export class EditOrderDialogComponent extends AppComponentBase
     )
     .pipe(
       finalize(() => {
-        console.log(this.iUserId);
+        console.log('pipe');
       })
     )
     .subscribe((result: OrderStatusDtoPagedResultDto) => {

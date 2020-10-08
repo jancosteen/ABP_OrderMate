@@ -18,9 +18,9 @@ namespace MDR_Angular.OrderMate.Orders
         protected override IQueryable<Order> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
         {
             return base.CreateFilteredQuery(input)
-                .Include(i => i.OrderLine).ThenInclude(x => x.MenuItemIdFkNavigation)
+                .Include(i => i.OrderLine)
                 .Include(i => i.OrderStatusIdFkNavigation)
-                .Include(i => i.QrCodeSeatingIdFk);
+                .Include(i => i.QrCodeSeating);
     }
     }
 

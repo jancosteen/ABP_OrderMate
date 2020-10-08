@@ -61,7 +61,6 @@ export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
         this.orders = result.items;
         this.showPaging(result, pageNumber);
       });
-      console.log(this.appSession.userId);
   }
 
   delete(order: OrderDto): void {

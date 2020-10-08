@@ -35,7 +35,19 @@
               [placeholder]="'SearchWithThreeDot' | localize"
               [(ngModel)]="searchText"
             />
-
+            <div class="input-group-append">
+              <button
+                type="button"
+                class="btn btn-default"
+                (click)="advancedFiltersVisible = !advancedFiltersVisible"
+              >
+                <i
+                  class="fas"
+                  [class.fa-angle-up]="advancedFiltersVisible"
+                  [class.fa-angle-down]="!advancedFiltersVisible"
+                ></i>
+              </button>
+            </div>
           </div>
 
         <div class="card-body table-responsive p-0">
@@ -45,9 +57,8 @@
                 <th>{{ "Id" | localize }}</th>
                 <th>{{ "Date Created" | localize }}</th>
                 <th>{{ "Date Completed" | localize }}</th>
-                <th>{{ "Table (QrCodeSeating)" | localize }}</th>
-                <th>{{ "OrderStatus" | localize }}</th>
-                <th>{{ "User Created" | localize }}</th>
+                <th>{{ "Table No" | localize }}</th>
+                <th>{{ "Status" | localize }}</th>
                 <th style="width: 200px;">{{ "Actions" | localize }}</th>
               </tr>
             </thead>
@@ -62,20 +73,15 @@
                           currentPage: pageNumber,
                           totalItems: totalItems
                         }
-                        | grdFilter: {id: searchText
-                          ,orderDateCreated:searchText
-                          ,orderDateCompleted: searchText
-                          ,userName: searchText
-                          ,creatorUserId:searchText
-                           }
+                        | grdFilter: {id: searchText, orderDateCreated:searchText, orderDateCompleted:searchText}
                 "
               >
                 <td>{{ order.id }}</td>
                 <td>{{ order.orderDateCreated }}</td>
                 <td>{{ order.orderDateCompleted }}</td>
-                <!--<td>{{ order.qrCodeSeating.qrCodeIdFk }}</td>-->
-                <!--<td>{{ order.orderStatusIdFkNavigation.orderStatus1 }}</td>-->
-                <td>{{ order.creatorUserId }}</td>
+                <td>{{ order.qrCodeSeating.id }}</td>
+                <td>{{order.orderStatusIdFkNavigation.orderStatus1}}</td>
+
                 <td>
                   <button
                     type="button"
