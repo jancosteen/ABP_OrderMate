@@ -105,7 +105,9 @@ import { CreateSeatingDialogComponent } from './seating/create-seating/create-se
 import { QrCodesComponent } from './qrCodes/qrCodes.component';
 import { EditQrCodeDialogComponent } from './qrCodes/edit-qrCode/edit-qrCode-dialog.component';
 import { CreateQrCodeDialogComponent } from './qrCodes/create-qrCode/create-qrCode-dialog.component';
-
+import { MenusComponent } from './menus/menus.component';
+import { CreateMenuDialogComponent } from './menus/create-menu/create-menu-dialog.component';
+import { EditMenuDialogComponent } from './menus/edit-menu/edit-menu-dialog.component';
 
 
 
@@ -208,7 +210,11 @@ import { CreateQrCodeDialogComponent } from './qrCodes/create-qrCode/create-qrCo
     //qrCodes
     QrCodesComponent,
     EditQrCodeDialogComponent,
-    CreateQrCodeDialogComponent
+    CreateQrCodeDialogComponent,
+    //menu
+    MenusComponent,
+    CreateMenuDialogComponent,
+    EditMenuDialogComponent
   ],
   imports: [
     CommonModule,
@@ -286,7 +292,10 @@ import { CreateQrCodeDialogComponent } from './qrCodes/create-qrCode/create-qrCo
     CreateSeatingDialogComponent,
     //qrCodes
     EditQrCodeDialogComponent,
-    CreateQrCodeDialogComponent
+    CreateQrCodeDialogComponent,
+    //menu
+    CreateMenuDialogComponent,
+    EditMenuDialogComponent
 
   ],
 })

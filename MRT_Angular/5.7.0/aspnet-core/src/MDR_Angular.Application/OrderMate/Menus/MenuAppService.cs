@@ -17,8 +17,8 @@ namespace MDR_Angular.OrderMate.Menus
         protected override IQueryable<Menu> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
         {
             return base.CreateFilteredQuery(input)
-                .Include(i => i.MenuRestaurant).ThenInclude(x => x.MenuItemIdFkNavigation)
-                .Include(i => i.MenuRestaurant).ThenInclude(x => x.RestaurantIdFkNavigation);
+                .Include(i => i.MenuRestaurant);
+                
         }
     }
 }
