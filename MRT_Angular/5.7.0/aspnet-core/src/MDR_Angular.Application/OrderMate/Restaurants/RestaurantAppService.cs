@@ -19,7 +19,7 @@ namespace MDR_Angular.OrderMate.Restaurants
             return base.CreateFilteredQuery(input)
                 .Include(i => i.QrCode)
                 .Include(i=> i.RestaurantStatusIdFkNavigation)
-                .Include(i => i.MenuRestaurant).ThenInclude(x => x.MenuItemIdFkNavigation)
+                .Include(i => i.Menu)
                 .Include(i => i.ResaurantFacilityRef).ThenInclude(x => x.RestaurantFacilityIdFkNavigation)
                 .Include(i => i.RestaurantAdvertisement)
                 .Include(i => i.RestaurantImage)

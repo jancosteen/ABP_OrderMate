@@ -1,6 +1,7 @@
 ﻿using Abp.Domain.Entities.Auditing;
 using MDR_Angular.OrderMate.Employees;
 using MDR_Angular.OrderMate.MenuRestaurants;
+using MDR_Angular.OrderMate.Menus;
 using MDR_Angular.OrderMate.QrCodes;
 using MDR_Angular.OrderMate.ReservationRestaurants;
 using MDR_Angular.OrderMate.Reservations;
@@ -35,7 +36,7 @@ namespace MDR_Angular.OrderMate.Restaurants
         [ForeignKey("RestaurantStatusIdFk")]
         public virtual RestaurantStatus RestaurantStatusIdFkNavigation { get; set; }
         public virtual ICollection<Employee> Employee { get; set; }
-        public virtual ICollection<MenuRestaurant> MenuRestaurant { get; set; }
+        public virtual ICollection<Menu> Menu { get; set; }
         public virtual ICollection<QrCode> QrCode { get; set; }
         public virtual ICollection<RestaurantFacilityRef> ResaurantFacilityRef { get; set; }
         //public virtual ICollection<ReservationRestaurant> ReservationRestaurant { get; set; }

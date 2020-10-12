@@ -99,25 +99,9 @@ export class CreateMenuDialogComponent extends AppComponentBase
         this.notify.info(this.l('SavedSuccessfully'));
         this.bsModalRef.hide();
         this.onSave.emit();
-        this.saveMR(this.createdMenuId);
+
       });
   }
 
-  saveMR(id): void {
-    this.saving = true;
 
-    this.menuRestaurant.menuIdFk = id;
-    this._menuRestaurantService
-      .create(this.menuRestaurant)
-      .pipe(
-        finalize(() => {
-          this.saving = false;
-        })
-      )
-      .subscribe(() => {
-        this.notify.info(this.l('SavedSuccessfully'));
-        this.bsModalRef.hide();
-        this.onSave.emit();
-      });
-  }
 }

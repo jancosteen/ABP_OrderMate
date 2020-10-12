@@ -22,7 +22,7 @@ namespace MDR_Angular.OrderMate.MenuItems
                 .Include(i => i.MenuItemAllergy)     
                 .Include(i => i.MenuItemCategoryIdFkNavigation)
                 .Include(i => i.MenuItemPriceIdFkNavigation)
-                .Include(i => i.MenuRestaurant).ThenInclude(x => x.MenuIdFkNavigation)
+                //.Include(i => i.Menu)
                 .Include(i => i.MenuItemSpecial).ThenInclude(x => x.SpecialIdFkNavigation)
                 .Include(i => i.ItemTypeMenuMenuItem).ThenInclude(x => x.MenuItemTypeIdFkNavigation)
                 .Include(i => i.MenuItemAllergy).ThenInclude(x=> x.AllergyIdFkNavigation)

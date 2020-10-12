@@ -15,10 +15,5 @@ namespace MDR_Angular.OrderMate.MenuRestaurants.Dto
         public int? MenuItemIdFk { get; set; }
 
         
-        public virtual MenuDto MenuIdFkNavigation { get; set; }
-        
-        public virtual MenuItemDto MenuItemIdFkNavigation { get; set; }
-        
-        public virtual RestaurantDto RestaurantIdFkNavigation { get; set; }
     }
 }

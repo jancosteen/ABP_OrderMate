@@ -13230,7 +13230,7 @@ export class AdvertisementDto implements IAdvertisementDto {
     advertisementName: string | undefined;
     advertisementDescription: string | undefined;
     advertisementFile: string | undefined;
-    advertisementDateIdFk: number | undefined;
+    advertisementDateIdFk: string | undefined;
     advertisementPriceIdFk: number | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -13305,7 +13305,7 @@ export interface IAdvertisementDto {
     advertisementName: string | undefined;
     advertisementDescription: string | undefined;
     advertisementFile: string | undefined;
-    advertisementDateIdFk: number | undefined;
+    advertisementDateIdFk: string | undefined;
     advertisementPriceIdFk: number | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -13373,8 +13373,8 @@ export interface IAdvertisementDtoPagedResultDto {
 }
 
 export class AdvertisementDateDto implements IAdvertisementDateDto {
-    advertisementDateAcvtiveFrom: moment.Moment;
-    advertisementDateActiveTo: moment.Moment;
+    advertisementDateAcvtiveFrom: string;
+    advertisementDateActiveTo: string;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -13395,8 +13395,8 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
 
     init(_data?: any) {
         if (_data) {
-            this.advertisementDateAcvtiveFrom = _data["advertisementDateAcvtiveFrom"] ? moment(_data["advertisementDateAcvtiveFrom"].toString()) : <any>undefined;
-            this.advertisementDateActiveTo = _data["advertisementDateActiveTo"] ? moment(_data["advertisementDateActiveTo"].toString()) : <any>undefined;
+            this.advertisementDateAcvtiveFrom = _data["advertisementDateAcvtiveFrom"];// ? moment(_data["advertisementDateAcvtiveFrom"].toString()) : <any>undefined;
+            this.advertisementDateActiveTo = _data["advertisementDateActiveTo"];// ? moment(_data["advertisementDateActiveTo"].toString()) : <any>undefined;
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
@@ -13417,8 +13417,8 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["advertisementDateAcvtiveFrom"] = this.advertisementDateAcvtiveFrom ? this.advertisementDateAcvtiveFrom.toISOString() : <any>undefined;
-        data["advertisementDateActiveTo"] = this.advertisementDateActiveTo ? this.advertisementDateActiveTo.toISOString() : <any>undefined;
+        data["advertisementDateAcvtiveFrom"] = this.advertisementDateAcvtiveFrom;// ? this.advertisementDateAcvtiveFrom.toISOString() : <any>undefined;
+        data["advertisementDateActiveTo"] = this.advertisementDateActiveTo;// ? this.advertisementDateActiveTo.toISOString() : <any>undefined;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
@@ -13439,8 +13439,8 @@ export class AdvertisementDateDto implements IAdvertisementDateDto {
 }
 
 export interface IAdvertisementDateDto {
-    advertisementDateAcvtiveFrom: moment.Moment;
-    advertisementDateActiveTo: moment.Moment;
+    advertisementDateAcvtiveFrom: string;
+    advertisementDateActiveTo: string;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -13508,7 +13508,7 @@ export interface IAdvertisementDateDtoPagedResultDto {
 
 export class AdvertisementPriceDto implements IAdvertisementPriceDto {
     advertismentPrice: number;
-    advertisementPriceDateUpdated: moment.Moment;
+    advertisementPriceDateUpdated: string;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -13530,7 +13530,7 @@ export class AdvertisementPriceDto implements IAdvertisementPriceDto {
     init(_data?: any) {
         if (_data) {
             this.advertismentPrice = _data["advertismentPrice"];
-            this.advertisementPriceDateUpdated = _data["advertisementPriceDateUpdated"] ? moment(_data["advertisementPriceDateUpdated"].toString()) : <any>undefined;
+            this.advertisementPriceDateUpdated = _data["advertisementPriceDateUpdated"];// ? moment(_data["advertisementPriceDateUpdated"].toString()) : <any>undefined;
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
@@ -13552,7 +13552,7 @@ export class AdvertisementPriceDto implements IAdvertisementPriceDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["advertismentPrice"] = this.advertismentPrice;
-        data["advertisementPriceDateUpdated"] = this.advertisementPriceDateUpdated ? this.advertisementPriceDateUpdated.toISOString() : <any>undefined;
+        data["advertisementPriceDateUpdated"] = this.advertisementPriceDateUpdated;// ? this.advertisementPriceDateUpdated.toISOString() : <any>undefined;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
@@ -13574,7 +13574,7 @@ export class AdvertisementPriceDto implements IAdvertisementPriceDto {
 
 export interface IAdvertisementPriceDto {
     advertismentPrice: number;
-    advertisementPriceDateUpdated: moment.Moment;
+    advertisementPriceDateUpdated: string;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -14111,7 +14111,7 @@ export interface IMenuItemCategoryDto {
 
 export class MenuItemPriceDto implements IMenuItemPriceDto {
     menuItemPrice1: number;
-    menuItemDateUpdated: moment.Moment;
+    menuItemDateUpdated: string;
     isActive: boolean;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -14134,7 +14134,7 @@ export class MenuItemPriceDto implements IMenuItemPriceDto {
     init(_data?: any) {
         if (_data) {
             this.menuItemPrice1 = _data["menuItemPrice1"];
-            this.menuItemDateUpdated = _data["menuItemDateUpdated"] ? moment(_data["menuItemDateUpdated"].toString()) : <any>undefined;
+            this.menuItemDateUpdated = _data["menuItemDateUpdated"];// ? moment(_data["menuItemDateUpdated"].toString()) : <any>undefined;
             this.isActive = _data["isActive"];
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
@@ -14157,7 +14157,7 @@ export class MenuItemPriceDto implements IMenuItemPriceDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["menuItemPrice1"] = this.menuItemPrice1;
-        data["menuItemDateUpdated"] = this.menuItemDateUpdated ? this.menuItemDateUpdated.toISOString() : <any>undefined;
+        data["menuItemDateUpdated"] = this.menuItemDateUpdated;// ? this.menuItemDateUpdated.toISOString() : <any>undefined;
         data["isActive"] = this.isActive;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
@@ -14180,7 +14180,7 @@ export class MenuItemPriceDto implements IMenuItemPriceDto {
 
 export interface IMenuItemPriceDto {
     menuItemPrice1: number;
-    menuItemDateUpdated: moment.Moment;
+    menuItemDateUpdated: string;
     isActive: boolean;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -14434,12 +14434,13 @@ export class MenuItemDto implements IMenuItemDto {
     menuItemDescription: string | undefined;
     menuItemCategoryIdFk: number | undefined;
     menuItemPriceIdFk: number | undefined;
+    menuIdFk: number | undefined;
     menuItemCategoryIdFkNavigation: MenuItemCategoryDto;
     menuItemPriceIdFkNavigation: MenuItemPriceDto;
     itemTypeMenuMenuItem: ItemTypeMenuItemDto[] | undefined;
     menuItemAllergy: MenuItemAllergyDto[] | undefined;
     menuItemSpecial: MenuItemSpecialDto[] | undefined;
-    menuRestaurant: MenuRestaurantDto[] | undefined;
+    menu: MenuDto;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -14464,6 +14465,7 @@ export class MenuItemDto implements IMenuItemDto {
             this.menuItemDescription = _data["menuItemDescription"];
             this.menuItemCategoryIdFk = _data["menuItemCategoryIdFk"];
             this.menuItemPriceIdFk = _data["menuItemPriceIdFk"];
+            this.menuIdFk = _data["menuIdFk"];
             this.menuItemCategoryIdFkNavigation = _data["menuItemCategoryIdFkNavigation"] ? MenuItemCategoryDto.fromJS(_data["menuItemCategoryIdFkNavigation"]) : <any>undefined;
             this.menuItemPriceIdFkNavigation = _data["menuItemPriceIdFkNavigation"] ? MenuItemPriceDto.fromJS(_data["menuItemPriceIdFkNavigation"]) : <any>undefined;
             if (Array.isArray(_data["itemTypeMenuMenuItem"])) {
@@ -14481,11 +14483,7 @@ export class MenuItemDto implements IMenuItemDto {
                 for (let item of _data["menuItemSpecial"])
                     this.menuItemSpecial.push(MenuItemSpecialDto.fromJS(item));
             }
-            if (Array.isArray(_data["menuRestaurant"])) {
-                this.menuRestaurant = [] as any;
-                for (let item of _data["menuRestaurant"])
-                    this.menuRestaurant.push(MenuRestaurantDto.fromJS(item));
-            }
+            this.menu = _data["menu"] ? MenuDto.fromJS(_data["menu"]) : <any>undefined;
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
@@ -14510,6 +14508,7 @@ export class MenuItemDto implements IMenuItemDto {
         data["menuItemDescription"] = this.menuItemDescription;
         data["menuItemCategoryIdFk"] = this.menuItemCategoryIdFk;
         data["menuItemPriceIdFk"] = this.menuItemPriceIdFk;
+        data["menuIdFk"] = this.menuIdFk;
         data["menuItemCategoryIdFkNavigation"] = this.menuItemCategoryIdFkNavigation ? this.menuItemCategoryIdFkNavigation.toJSON() : <any>undefined;
         data["menuItemPriceIdFkNavigation"] = this.menuItemPriceIdFkNavigation ? this.menuItemPriceIdFkNavigation.toJSON() : <any>undefined;
         if (Array.isArray(this.itemTypeMenuMenuItem)) {
@@ -14527,11 +14526,7 @@ export class MenuItemDto implements IMenuItemDto {
             for (let item of this.menuItemSpecial)
                 data["menuItemSpecial"].push(item.toJSON());
         }
-        if (Array.isArray(this.menuRestaurant)) {
-            data["menuRestaurant"] = [];
-            for (let item of this.menuRestaurant)
-                data["menuRestaurant"].push(item.toJSON());
-        }
+        data["menu"] = this.menu ? this.menu.toJSON() : <any>undefined;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
@@ -14556,12 +14551,13 @@ export interface IMenuItemDto {
     menuItemDescription: string | undefined;
     menuItemCategoryIdFk: number | undefined;
     menuItemPriceIdFk: number | undefined;
+    menuIdFk: number | undefined;
     menuItemCategoryIdFkNavigation: MenuItemCategoryDto;
     menuItemPriceIdFkNavigation: MenuItemPriceDto;
     itemTypeMenuMenuItem: ItemTypeMenuItemDto[] | undefined;
     menuItemAllergy: MenuItemAllergyDto[] | undefined;
     menuItemSpecial: MenuItemSpecialDto[] | undefined;
-    menuRestaurant: MenuRestaurantDto[] | undefined;
+    menu: MenuDto;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -15131,7 +15127,7 @@ export interface ISeatingLayoutDto {
 
 export class UserCommentDto implements IUserCommentDto {
     userComment1: string | undefined;
-    userCommentDateCreated: moment.Moment;
+    userCommentDateCreated: string;
     restaurantIdFk: number | undefined;
     starRatingIdFk: number | undefined;
     isDeleted: boolean;
@@ -15155,7 +15151,7 @@ export class UserCommentDto implements IUserCommentDto {
     init(_data?: any) {
         if (_data) {
             this.userComment1 = _data["userComment1"];
-            this.userCommentDateCreated = _data["userCommentDateCreated"] ? moment(_data["userCommentDateCreated"].toString()) : <any>undefined;
+            this.userCommentDateCreated = _data["userCommentDateCreated"];// ? moment(_data["userCommentDateCreated"].toString()) : <any>undefined;
             this.restaurantIdFk = _data["restaurantIdFk"];
             this.starRatingIdFk = _data["starRatingIdFk"];
             this.isDeleted = _data["isDeleted"];
@@ -15179,7 +15175,7 @@ export class UserCommentDto implements IUserCommentDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["userComment1"] = this.userComment1;
-        data["userCommentDateCreated"] = this.userCommentDateCreated ? this.userCommentDateCreated.toISOString() : <any>undefined;
+        data["userCommentDateCreated"] = this.userCommentDateCreated;// ? this.userCommentDateCreated.toISOString() : <any>undefined;
         data["restaurantIdFk"] = this.restaurantIdFk;
         data["starRatingIdFk"] = this.starRatingIdFk;
         data["isDeleted"] = this.isDeleted;
@@ -15203,7 +15199,7 @@ export class UserCommentDto implements IUserCommentDto {
 
 export interface IUserCommentDto {
     userComment1: string | undefined;
-    userCommentDateCreated: moment.Moment;
+    userCommentDateCreated: string;
     restaurantIdFk: number | undefined;
     starRatingIdFk: number | undefined;
     isDeleted: boolean;
@@ -15220,7 +15216,7 @@ export class RestaurantDto implements IRestaurantDto {
     restaurantName: string | undefined;
     restaurantUrl: string | undefined;
     restaurantDescription: string | undefined;
-    restaurantDateCreated: moment.Moment | undefined;
+    restaurantDateCreated: string| undefined;
     restaurantAddressLine1: string | undefined;
     resaturantAddressLine2: string | undefined;
     restaurantCity: string | undefined;
@@ -15230,7 +15226,7 @@ export class RestaurantDto implements IRestaurantDto {
     restaurantStatusIdFk: number | undefined;
     restaurantStatusIdFkNavigation: RestaurantStatusDto;
     employee: EmployeeDto[] | undefined;
-    menuRestaurant: MenuRestaurantDto[] | undefined;
+    menu: MenuDto[] | undefined;
     resaurantFacilityRef: RestaurantFacilityRefDto[] | undefined;
     restaurantAdvertisement: RestaurantAdvertisementDto[] | undefined;
     restaurantImage: RestaurantImageDto[] | undefined;
@@ -15260,7 +15256,7 @@ export class RestaurantDto implements IRestaurantDto {
             this.restaurantName = _data["restaurantName"];
             this.restaurantUrl = _data["restaurantUrl"];
             this.restaurantDescription = _data["restaurantDescription"];
-            this.restaurantDateCreated = _data["restaurantDateCreated"] ? moment(_data["restaurantDateCreated"].toString()) : <any>undefined;
+            this.restaurantDateCreated = _data["restaurantDateCreated"];// ? moment(_data["restaurantDateCreated"].toString()) : <any>undefined;
             this.restaurantAddressLine1 = _data["restaurantAddressLine1"];
             this.resaturantAddressLine2 = _data["resaturantAddressLine2"];
             this.restaurantCity = _data["restaurantCity"];
@@ -15274,10 +15270,10 @@ export class RestaurantDto implements IRestaurantDto {
                 for (let item of _data["employee"])
                     this.employee.push(EmployeeDto.fromJS(item));
             }
-            if (Array.isArray(_data["menuRestaurant"])) {
-                this.menuRestaurant = [] as any;
-                for (let item of _data["menuRestaurant"])
-                    this.menuRestaurant.push(MenuRestaurantDto.fromJS(item));
+            if (Array.isArray(_data["menu"])) {
+                this.menu = [] as any;
+                for (let item of _data["menu"])
+                    this.menu.push(MenuDto.fromJS(item));
             }
             if (Array.isArray(_data["resaurantFacilityRef"])) {
                 this.resaurantFacilityRef = [] as any;
@@ -15332,7 +15328,7 @@ export class RestaurantDto implements IRestaurantDto {
         data["restaurantName"] = this.restaurantName;
         data["restaurantUrl"] = this.restaurantUrl;
         data["restaurantDescription"] = this.restaurantDescription;
-        data["restaurantDateCreated"] = this.restaurantDateCreated ? this.restaurantDateCreated.toISOString() : <any>undefined;
+        data["restaurantDateCreated"] = this.restaurantDateCreated;// ? this.restaurantDateCreated.toISOString() : <any>undefined;
         data["restaurantAddressLine1"] = this.restaurantAddressLine1;
         data["resaturantAddressLine2"] = this.resaturantAddressLine2;
         data["restaurantCity"] = this.restaurantCity;
@@ -15346,10 +15342,10 @@ export class RestaurantDto implements IRestaurantDto {
             for (let item of this.employee)
                 data["employee"].push(item.toJSON());
         }
-        if (Array.isArray(this.menuRestaurant)) {
-            data["menuRestaurant"] = [];
-            for (let item of this.menuRestaurant)
-                data["menuRestaurant"].push(item.toJSON());
+        if (Array.isArray(this.menu)) {
+            data["menu"] = [];
+            for (let item of this.menu)
+                data["menu"].push(item.toJSON());
         }
         if (Array.isArray(this.resaurantFacilityRef)) {
             data["resaurantFacilityRef"] = [];
@@ -15404,7 +15400,7 @@ export interface IRestaurantDto {
     restaurantName: string | undefined;
     restaurantUrl: string | undefined;
     restaurantDescription: string | undefined;
-    restaurantDateCreated: moment.Moment | undefined;
+    restaurantDateCreated: string | undefined;
     restaurantAddressLine1: string | undefined;
     resaturantAddressLine2: string | undefined;
     restaurantCity: string | undefined;
@@ -15414,7 +15410,7 @@ export interface IRestaurantDto {
     restaurantStatusIdFk: number | undefined;
     restaurantStatusIdFkNavigation: RestaurantStatusDto;
     employee: EmployeeDto[] | undefined;
-    menuRestaurant: MenuRestaurantDto[] | undefined;
+    menu: MenuDto[] | undefined;
     resaurantFacilityRef: RestaurantFacilityRefDto[] | undefined;
     restaurantAdvertisement: RestaurantAdvertisementDto[] | undefined;
     restaurantImage: RestaurantImageDto[] | undefined;
@@ -15431,108 +15427,15 @@ export interface IRestaurantDto {
     id: number;
 }
 
-export class MenuRestaurantDto implements IMenuRestaurantDto {
-    menuIdFk: number;
-    restaurantIdFk: number;
-    menuItemIdFk: number | undefined;
-    menuIdFkNavigation: MenuDto;
-    menuItemIdFkNavigation: MenuItemDto;
-    restaurantIdFkNavigation: RestaurantDto;
-    isDeleted: boolean;
-    deleterUserId: number | undefined;
-    deletionTime: moment.Moment | undefined;
-    lastModificationTime: moment.Moment | undefined;
-    lastModifierUserId: number | undefined;
-    creationTime: moment.Moment;
-    creatorUserId: number | undefined;
-    id: number;
-
-    constructor(data?: IMenuRestaurantDto) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(_data?: any) {
-        if (_data) {
-            this.menuIdFk = _data["menuIdFk"];
-            this.restaurantIdFk = _data["restaurantIdFk"];
-            this.menuItemIdFk = _data["menuItemIdFk"];
-            this.menuIdFkNavigation = _data["menuIdFkNavigation"] ? MenuDto.fromJS(_data["menuIdFkNavigation"]) : <any>undefined;
-            this.menuItemIdFkNavigation = _data["menuItemIdFkNavigation"] ? MenuItemDto.fromJS(_data["menuItemIdFkNavigation"]) : <any>undefined;
-            this.restaurantIdFkNavigation = _data["restaurantIdFkNavigation"] ? RestaurantDto.fromJS(_data["restaurantIdFkNavigation"]) : <any>undefined;
-            this.isDeleted = _data["isDeleted"];
-            this.deleterUserId = _data["deleterUserId"];
-            this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
-            this.lastModificationTime = _data["lastModificationTime"] ? moment(_data["lastModificationTime"].toString()) : <any>undefined;
-            this.lastModifierUserId = _data["lastModifierUserId"];
-            this.creationTime = _data["creationTime"] ? moment(_data["creationTime"].toString()) : <any>undefined;
-            this.creatorUserId = _data["creatorUserId"];
-            this.id = _data["id"];
-        }
-    }
-
-    static fromJS(data: any): MenuRestaurantDto {
-        data = typeof data === 'object' ? data : {};
-        let result = new MenuRestaurantDto();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["menuIdFk"] = this.menuIdFk;
-        data["restaurantIdFk"] = this.restaurantIdFk;
-        data["menuItemIdFk"] = this.menuItemIdFk;
-        data["menuIdFkNavigation"] = this.menuIdFkNavigation ? this.menuIdFkNavigation.toJSON() : <any>undefined;
-        data["menuItemIdFkNavigation"] = this.menuItemIdFkNavigation ? this.menuItemIdFkNavigation.toJSON() : <any>undefined;
-        data["restaurantIdFkNavigation"] = this.restaurantIdFkNavigation ? this.restaurantIdFkNavigation.toJSON() : <any>undefined;
-        data["isDeleted"] = this.isDeleted;
-        data["deleterUserId"] = this.deleterUserId;
-        data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
-        data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>undefined;
-        data["lastModifierUserId"] = this.lastModifierUserId;
-        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
-        data["creatorUserId"] = this.creatorUserId;
-        data["id"] = this.id;
-        return data;
-    }
-
-    clone(): MenuRestaurantDto {
-        const json = this.toJSON();
-        let result = new MenuRestaurantDto();
-        result.init(json);
-        return result;
-    }
-}
-
-export interface IMenuRestaurantDto {
-    menuIdFk: number;
-    restaurantIdFk: number;
-    menuItemIdFk: number | undefined;
-    menuIdFkNavigation: MenuDto;
-    menuItemIdFkNavigation: MenuItemDto;
-    restaurantIdFkNavigation: RestaurantDto;
-    isDeleted: boolean;
-    deleterUserId: number | undefined;
-    deletionTime: moment.Moment | undefined;
-    lastModificationTime: moment.Moment | undefined;
-    lastModifierUserId: number | undefined;
-    creationTime: moment.Moment;
-    creatorUserId: number | undefined;
-    id: number;
-}
-
 export class MenuDto implements IMenuDto {
     menuName: string | undefined;
     menuDescription: string | undefined;
     menuDateCreated: string;
     menuTimeActiveFrom: string;
     menuTimeActiveTo: string;
-    menuRestaurant: MenuRestaurantDto[] | undefined;
+    restaurantIdFk: number | undefined;
+    menuItem: MenuItemDto[] | undefined;
+    restaurantIdFkNavigation: RestaurantDto;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -15558,11 +15461,13 @@ export class MenuDto implements IMenuDto {
             this.menuDateCreated = _data["menuDateCreated"];// ? moment(_data["menuDateCreated"].toString()) : <any>undefined;
             this.menuTimeActiveFrom = _data["menuTimeActiveFrom"];// ? TimeSpan.fromJS(_data["menuTimeActiveFrom"]) : <any>undefined;
             this.menuTimeActiveTo = _data["menuTimeActiveTo"];// ? TimeSpan.fromJS(_data["menuTimeActiveTo"]) : <any>undefined;
-            if (Array.isArray(_data["menuRestaurant"])) {
-                this.menuRestaurant = [] as any;
-                for (let item of _data["menuRestaurant"])
-                    this.menuRestaurant.push(MenuRestaurantDto.fromJS(item));
+            this.restaurantIdFk = _data["restaurantIdFk"];
+            if (Array.isArray(_data["menuItem"])) {
+                this.menuItem = [] as any;
+                for (let item of _data["menuItem"])
+                    this.menuItem.push(MenuItemDto.fromJS(item));
             }
+            this.restaurantIdFkNavigation = _data["restaurantIdFkNavigation"] ? RestaurantDto.fromJS(_data["restaurantIdFkNavigation"]) : <any>undefined;
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
@@ -15588,11 +15493,13 @@ export class MenuDto implements IMenuDto {
         data["menuDateCreated"] = this.menuDateCreated;// ? this.menuDateCreated.toISOString() : <any>undefined;
         data["menuTimeActiveFrom"] = this.menuTimeActiveFrom;// ? this.menuTimeActiveFrom.toJSON() : <any>undefined;
         data["menuTimeActiveTo"] = this.menuTimeActiveTo;// ? this.menuTimeActiveTo.toJSON() : <any>undefined;
-        if (Array.isArray(this.menuRestaurant)) {
-            data["menuRestaurant"] = [];
-            for (let item of this.menuRestaurant)
-                data["menuRestaurant"].push(item.toJSON());
+        data["restaurantIdFk"] = this.restaurantIdFk;
+        if (Array.isArray(this.menuItem)) {
+            data["menuItem"] = [];
+            for (let item of this.menuItem)
+                data["menuItem"].push(item.toJSON());
         }
+        data["restaurantIdFkNavigation"] = this.restaurantIdFkNavigation ? this.restaurantIdFkNavigation.toJSON() : <any>undefined;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
@@ -15618,7 +15525,9 @@ export interface IMenuDto {
     menuDateCreated: string;
     menuTimeActiveFrom: string;
     menuTimeActiveTo: string;
-    menuRestaurant: MenuRestaurantDto[] | undefined;
+    restaurantIdFk: number | undefined;
+    menuItem: MenuItemDto[] | undefined;
+    restaurantIdFkNavigation: RestaurantDto;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -15915,7 +15824,7 @@ export interface IMenuItemCategory {
 
 export class MenuItemPrice implements IMenuItemPrice {
     menuItemPrice1: number;
-    menuItemDateUpdated: moment.Moment;
+    menuItemDateUpdated: string;
     isActive: boolean;
     menuItem: MenuItem[] | undefined;
     isDeleted: boolean;
@@ -15939,7 +15848,7 @@ export class MenuItemPrice implements IMenuItemPrice {
     init(_data?: any) {
         if (_data) {
             this.menuItemPrice1 = _data["menuItemPrice1"];
-            this.menuItemDateUpdated = _data["menuItemDateUpdated"] ? moment(_data["menuItemDateUpdated"].toString()) : <any>undefined;
+            this.menuItemDateUpdated = _data["menuItemDateUpdated"];// ? moment(_data["menuItemDateUpdated"].toString()) : <any>undefined;
             this.isActive = _data["isActive"];
             if (Array.isArray(_data["menuItem"])) {
                 this.menuItem = [] as any;
@@ -15967,7 +15876,7 @@ export class MenuItemPrice implements IMenuItemPrice {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["menuItemPrice1"] = this.menuItemPrice1;
-        data["menuItemDateUpdated"] = this.menuItemDateUpdated ? this.menuItemDateUpdated.toISOString() : <any>undefined;
+        data["menuItemDateUpdated"] = this.menuItemDateUpdated;// ? this.menuItemDateUpdated.toISOString() : <any>undefined;
         data["isActive"] = this.isActive;
         if (Array.isArray(this.menuItem)) {
             data["menuItem"] = [];
@@ -15995,7 +15904,7 @@ export class MenuItemPrice implements IMenuItemPrice {
 
 export interface IMenuItemPrice {
     menuItemPrice1: number;
-    menuItemDateUpdated: moment.Moment;
+    menuItemDateUpdated: string;
     isActive: boolean;
     menuItem: MenuItem[] | undefined;
     isDeleted: boolean;
@@ -18057,7 +17966,9 @@ export class Menu implements IMenu {
     menuDateCreated: string;
     menuTimeActiveFrom: string;
     menuTimeActiveTo: string;
-    menuRestaurant: MenuRestaurant[] | undefined;
+    restaurantIdFk: number | undefined;
+    menuItem: MenuItem[] | undefined;
+    resaturantIdFkNavigation: Restaurant;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -18083,11 +17994,13 @@ export class Menu implements IMenu {
             this.menuDateCreated = _data["menuDateCreated"];// ? moment(_data["menuDateCreated"].toString()) : <any>undefined;
             this.menuTimeActiveFrom = _data["menuTimeActiveFrom"];// ? TimeSpan.fromJS(_data["menuTimeActiveFrom"]) : <any>undefined;
             this.menuTimeActiveTo = _data["menuTimeActiveTo"];// ? TimeSpan.fromJS(_data["menuTimeActiveTo"]) : <any>undefined;
-            if (Array.isArray(_data["menuRestaurant"])) {
-                this.menuRestaurant = [] as any;
-                for (let item of _data["menuRestaurant"])
-                    this.menuRestaurant.push(MenuRestaurant.fromJS(item));
+            this.restaurantIdFk = _data["restaurantIdFk"];
+            if (Array.isArray(_data["menuItem"])) {
+                this.menuItem = [] as any;
+                for (let item of _data["menuItem"])
+                    this.menuItem.push(MenuItem.fromJS(item));
             }
+            this.resaturantIdFkNavigation = _data["resaturantIdFkNavigation"] ? Restaurant.fromJS(_data["resaturantIdFkNavigation"]) : <any>undefined;
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
             this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
@@ -18113,11 +18026,13 @@ export class Menu implements IMenu {
         data["menuDateCreated"] = this.menuDateCreated;// ? this.menuDateCreated.toISOString() : <any>undefined;
         data["menuTimeActiveFrom"] = this.menuTimeActiveFrom;// ? this.menuTimeActiveFrom.toJSON() : <any>undefined;
         data["menuTimeActiveTo"] = this.menuTimeActiveTo;// ? this.menuTimeActiveTo.toJSON() : <any>undefined;
-        if (Array.isArray(this.menuRestaurant)) {
-            data["menuRestaurant"] = [];
-            for (let item of this.menuRestaurant)
-                data["menuRestaurant"].push(item.toJSON());
+        data["restaurantIdFk"] = this.restaurantIdFk;
+        if (Array.isArray(this.menuItem)) {
+            data["menuItem"] = [];
+            for (let item of this.menuItem)
+                data["menuItem"].push(item.toJSON());
         }
+        data["resaturantIdFkNavigation"] = this.resaturantIdFkNavigation ? this.resaturantIdFkNavigation.toJSON() : <any>undefined;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
@@ -18143,102 +18058,9 @@ export interface IMenu {
     menuDateCreated: string;
     menuTimeActiveFrom: string;
     menuTimeActiveTo: string;
-    menuRestaurant: MenuRestaurant[] | undefined;
-    isDeleted: boolean;
-    deleterUserId: number | undefined;
-    deletionTime: moment.Moment | undefined;
-    lastModificationTime: moment.Moment | undefined;
-    lastModifierUserId: number | undefined;
-    creationTime: moment.Moment;
-    creatorUserId: number | undefined;
-    id: number;
-}
-
-export class MenuRestaurant implements IMenuRestaurant {
-    menuIdFk: number;
-    restaurantIdFk: number;
-    menuItemIdFk: number | undefined;
-    menuIdFkNavigation: Menu;
-    menuItemIdFkNavigation: MenuItem;
-    restaurantIdFkNavigation: Restaurant;
-    isDeleted: boolean;
-    deleterUserId: number | undefined;
-    deletionTime: moment.Moment | undefined;
-    lastModificationTime: moment.Moment | undefined;
-    lastModifierUserId: number | undefined;
-    creationTime: moment.Moment;
-    creatorUserId: number | undefined;
-    id: number;
-
-    constructor(data?: IMenuRestaurant) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(_data?: any) {
-        if (_data) {
-            this.menuIdFk = _data["menuIdFk"];
-            this.restaurantIdFk = _data["restaurantIdFk"];
-            this.menuItemIdFk = _data["menuItemIdFk"];
-            this.menuIdFkNavigation = _data["menuIdFkNavigation"] ? Menu.fromJS(_data["menuIdFkNavigation"]) : <any>undefined;
-            this.menuItemIdFkNavigation = _data["menuItemIdFkNavigation"] ? MenuItem.fromJS(_data["menuItemIdFkNavigation"]) : <any>undefined;
-            this.restaurantIdFkNavigation = _data["restaurantIdFkNavigation"] ? Restaurant.fromJS(_data["restaurantIdFkNavigation"]) : <any>undefined;
-            this.isDeleted = _data["isDeleted"];
-            this.deleterUserId = _data["deleterUserId"];
-            this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
-            this.lastModificationTime = _data["lastModificationTime"] ? moment(_data["lastModificationTime"].toString()) : <any>undefined;
-            this.lastModifierUserId = _data["lastModifierUserId"];
-            this.creationTime = _data["creationTime"] ? moment(_data["creationTime"].toString()) : <any>undefined;
-            this.creatorUserId = _data["creatorUserId"];
-            this.id = _data["id"];
-        }
-    }
-
-    static fromJS(data: any): MenuRestaurant {
-        data = typeof data === 'object' ? data : {};
-        let result = new MenuRestaurant();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["menuIdFk"] = this.menuIdFk;
-        data["restaurantIdFk"] = this.restaurantIdFk;
-        data["menuItemIdFk"] = this.menuItemIdFk;
-        data["menuIdFkNavigation"] = this.menuIdFkNavigation ? this.menuIdFkNavigation.toJSON() : <any>undefined;
-        data["menuItemIdFkNavigation"] = this.menuItemIdFkNavigation ? this.menuItemIdFkNavigation.toJSON() : <any>undefined;
-        data["restaurantIdFkNavigation"] = this.restaurantIdFkNavigation ? this.restaurantIdFkNavigation.toJSON() : <any>undefined;
-        data["isDeleted"] = this.isDeleted;
-        data["deleterUserId"] = this.deleterUserId;
-        data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
-        data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>undefined;
-        data["lastModifierUserId"] = this.lastModifierUserId;
-        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
-        data["creatorUserId"] = this.creatorUserId;
-        data["id"] = this.id;
-        return data;
-    }
-
-    clone(): MenuRestaurant {
-        const json = this.toJSON();
-        let result = new MenuRestaurant();
-        result.init(json);
-        return result;
-    }
-}
-
-export interface IMenuRestaurant {
-    menuIdFk: number;
-    restaurantIdFk: number;
-    menuItemIdFk: number | undefined;
-    menuIdFkNavigation: Menu;
-    menuItemIdFkNavigation: MenuItem;
-    restaurantIdFkNavigation: Restaurant;
+    restaurantIdFk: number | undefined;
+    menuItem: MenuItem[] | undefined;
+    resaturantIdFkNavigation: Restaurant;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -18424,8 +18246,8 @@ export interface IRestaurantFacilityRef {
 }
 
 export class AdvertisementDate implements IAdvertisementDate {
-    advertisementDateAcvtiveFrom: moment.Moment;
-    advertisementDateActiveTo: moment.Moment;
+    advertisementDateAcvtiveFrom: string;
+    advertisementDateActiveTo: string;
     advertisement: Advertisement[] | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -18447,8 +18269,8 @@ export class AdvertisementDate implements IAdvertisementDate {
 
     init(_data?: any) {
         if (_data) {
-            this.advertisementDateAcvtiveFrom = _data["advertisementDateAcvtiveFrom"] ? moment(_data["advertisementDateAcvtiveFrom"].toString()) : <any>undefined;
-            this.advertisementDateActiveTo = _data["advertisementDateActiveTo"] ? moment(_data["advertisementDateActiveTo"].toString()) : <any>undefined;
+            this.advertisementDateAcvtiveFrom = _data["advertisementDateAcvtiveFrom"];// ? moment(_data["advertisementDateAcvtiveFrom"].toString()) : <any>undefined;
+            this.advertisementDateActiveTo = _data["advertisementDateActiveTo"];// ? moment(_data["advertisementDateActiveTo"].toString()) : <any>undefined;
             if (Array.isArray(_data["advertisement"])) {
                 this.advertisement = [] as any;
                 for (let item of _data["advertisement"])
@@ -18474,8 +18296,8 @@ export class AdvertisementDate implements IAdvertisementDate {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["advertisementDateAcvtiveFrom"] = this.advertisementDateAcvtiveFrom ? this.advertisementDateAcvtiveFrom.toISOString() : <any>undefined;
-        data["advertisementDateActiveTo"] = this.advertisementDateActiveTo ? this.advertisementDateActiveTo.toISOString() : <any>undefined;
+        data["advertisementDateAcvtiveFrom"] = this.advertisementDateAcvtiveFrom;// ? this.advertisementDateAcvtiveFrom.toISOString() : <any>undefined;
+        data["advertisementDateActiveTo"] = this.advertisementDateActiveTo;// ? this.advertisementDateActiveTo.toISOString() : <any>undefined;
         if (Array.isArray(this.advertisement)) {
             data["advertisement"] = [];
             for (let item of this.advertisement)
@@ -18501,8 +18323,8 @@ export class AdvertisementDate implements IAdvertisementDate {
 }
 
 export interface IAdvertisementDate {
-    advertisementDateAcvtiveFrom: moment.Moment;
-    advertisementDateActiveTo: moment.Moment;
+    advertisementDateAcvtiveFrom: string;
+    advertisementDateActiveTo: string;
     advertisement: Advertisement[] | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -18516,7 +18338,7 @@ export interface IAdvertisementDate {
 
 export class AdvertisementPrice implements IAdvertisementPrice {
     advertismentPrice: number;
-    advertisementPriceDateUpdated: moment.Moment;
+    advertisementPriceDateUpdated: string;
     advertisement: Advertisement[] | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -18539,7 +18361,7 @@ export class AdvertisementPrice implements IAdvertisementPrice {
     init(_data?: any) {
         if (_data) {
             this.advertismentPrice = _data["advertismentPrice"];
-            this.advertisementPriceDateUpdated = _data["advertisementPriceDateUpdated"] ? moment(_data["advertisementPriceDateUpdated"].toString()) : <any>undefined;
+            this.advertisementPriceDateUpdated = _data["advertisementPriceDateUpdated"];// ? moment(_data["advertisementPriceDateUpdated"].toString()) : <any>undefined;
             if (Array.isArray(_data["advertisement"])) {
                 this.advertisement = [] as any;
                 for (let item of _data["advertisement"])
@@ -18566,7 +18388,7 @@ export class AdvertisementPrice implements IAdvertisementPrice {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["advertismentPrice"] = this.advertismentPrice;
-        data["advertisementPriceDateUpdated"] = this.advertisementPriceDateUpdated ? this.advertisementPriceDateUpdated.toISOString() : <any>undefined;
+        data["advertisementPriceDateUpdated"] = this.advertisementPriceDateUpdated;// ? this.advertisementPriceDateUpdated.toISOString() : <any>undefined;
         if (Array.isArray(this.advertisement)) {
             data["advertisement"] = [];
             for (let item of this.advertisement)
@@ -18593,7 +18415,7 @@ export class AdvertisementPrice implements IAdvertisementPrice {
 
 export interface IAdvertisementPrice {
     advertismentPrice: number;
-    advertisementPriceDateUpdated: moment.Moment;
+    advertisementPriceDateUpdated: string;
     advertisement: Advertisement[] | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -19331,7 +19153,7 @@ export interface IStarRating {
 
 export class UserComment implements IUserComment {
     userComment1: string | undefined;
-    userCommentDateCreated: moment.Moment;
+    userCommentDateCreated: string;
     restaurantIdFk: number | undefined;
     starRatingIdFk: number | undefined;
     restaurantIdFkNavigation: Restaurant;
@@ -19357,7 +19179,7 @@ export class UserComment implements IUserComment {
     init(_data?: any) {
         if (_data) {
             this.userComment1 = _data["userComment1"];
-            this.userCommentDateCreated = _data["userCommentDateCreated"] ? moment(_data["userCommentDateCreated"].toString()) : <any>undefined;
+            this.userCommentDateCreated = _data["userCommentDateCreated"];// ? moment(_data["userCommentDateCreated"].toString()) : <any>undefined;
             this.restaurantIdFk = _data["restaurantIdFk"];
             this.starRatingIdFk = _data["starRatingIdFk"];
             this.restaurantIdFkNavigation = _data["restaurantIdFkNavigation"] ? Restaurant.fromJS(_data["restaurantIdFkNavigation"]) : <any>undefined;
@@ -19383,7 +19205,7 @@ export class UserComment implements IUserComment {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["userComment1"] = this.userComment1;
-        data["userCommentDateCreated"] = this.userCommentDateCreated ? this.userCommentDateCreated.toISOString() : <any>undefined;
+        data["userCommentDateCreated"] = this.userCommentDateCreated;// ? this.userCommentDateCreated.toISOString() : <any>undefined;
         data["restaurantIdFk"] = this.restaurantIdFk;
         data["starRatingIdFk"] = this.starRatingIdFk;
         data["restaurantIdFkNavigation"] = this.restaurantIdFkNavigation ? this.restaurantIdFkNavigation.toJSON() : <any>undefined;
@@ -19409,7 +19231,7 @@ export class UserComment implements IUserComment {
 
 export interface IUserComment {
     userComment1: string | undefined;
-    userCommentDateCreated: moment.Moment;
+    userCommentDateCreated: string;
     restaurantIdFk: number | undefined;
     starRatingIdFk: number | undefined;
     restaurantIdFkNavigation: Restaurant;
@@ -20153,8 +19975,8 @@ export interface IUser {
 }
 
 export class Seating implements ISeating {
-    seatingDate: moment.Moment;
-    seatingTime: TimeSpan;
+    seatingDate: string;
+    seatingTime: string;
     reservationIdFk: number | undefined;
     reservationIdFkNavigation: Reservation;
     qrCodeSeating: QrCodeSeating[] | undefined;
@@ -20178,8 +20000,8 @@ export class Seating implements ISeating {
 
     init(_data?: any) {
         if (_data) {
-            this.seatingDate = _data["seatingDate"] ? moment(_data["seatingDate"].toString()) : <any>undefined;
-            this.seatingTime = _data["seatingTime"] ? TimeSpan.fromJS(_data["seatingTime"]) : <any>undefined;
+            this.seatingDate = _data["seatingDate"];// ? moment(_data["seatingDate"].toString()) : <any>undefined;
+            this.seatingTime = _data["seatingTime"];// ? TimeSpan.fromJS(_data["seatingTime"]) : <any>undefined;
             this.reservationIdFk = _data["reservationIdFk"];
             this.reservationIdFkNavigation = _data["reservationIdFkNavigation"] ? Reservation.fromJS(_data["reservationIdFkNavigation"]) : <any>undefined;
             if (Array.isArray(_data["qrCodeSeating"])) {
@@ -20207,8 +20029,8 @@ export class Seating implements ISeating {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["seatingDate"] = this.seatingDate ? this.seatingDate.toISOString() : <any>undefined;
-        data["seatingTime"] = this.seatingTime ? this.seatingTime.toJSON() : <any>undefined;
+        data["seatingDate"] = this.seatingDate;// ? this.seatingDate.toISOString() : <any>undefined;
+        data["seatingTime"] = this.seatingTime;// ? this.seatingTime.toJSON() : <any>undefined;
         data["reservationIdFk"] = this.reservationIdFk;
         data["reservationIdFkNavigation"] = this.reservationIdFkNavigation ? this.reservationIdFkNavigation.toJSON() : <any>undefined;
         if (Array.isArray(this.qrCodeSeating)) {
@@ -20236,8 +20058,8 @@ export class Seating implements ISeating {
 }
 
 export interface ISeating {
-    seatingDate: moment.Moment;
-    seatingTime: TimeSpan;
+    seatingDate: string;
+    seatingTime: string;
     reservationIdFk: number | undefined;
     reservationIdFkNavigation: Reservation;
     qrCodeSeating: QrCodeSeating[] | undefined;
@@ -20252,8 +20074,8 @@ export interface ISeating {
 }
 
 export class Reservation implements IReservation {
-    reservationDateCreated: moment.Moment;
-    reservationDateReserved: moment.Moment;
+    reservationDateCreated: string;
+    reservationDateReserved: string;
     reservationPartyQty: number;
     userIdFk: number;
     reservationStatusIdFk: number | undefined;
@@ -20283,8 +20105,8 @@ export class Reservation implements IReservation {
 
     init(_data?: any) {
         if (_data) {
-            this.reservationDateCreated = _data["reservationDateCreated"] ? moment(_data["reservationDateCreated"].toString()) : <any>undefined;
-            this.reservationDateReserved = _data["reservationDateReserved"] ? moment(_data["reservationDateReserved"].toString()) : <any>undefined;
+            this.reservationDateCreated = _data["reservationDateCreated"];// ? moment(_data["reservationDateCreated"].toString()) : <any>undefined;
+            this.reservationDateReserved = _data["reservationDateReserved"];// ? moment(_data["reservationDateReserved"].toString()) : <any>undefined;
             this.reservationPartyQty = _data["reservationPartyQty"];
             this.userIdFk = _data["userIdFk"];
             this.reservationStatusIdFk = _data["reservationStatusIdFk"];
@@ -20318,8 +20140,8 @@ export class Reservation implements IReservation {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["reservationDateCreated"] = this.reservationDateCreated ? this.reservationDateCreated.toISOString() : <any>undefined;
-        data["reservationDateReserved"] = this.reservationDateReserved ? this.reservationDateReserved.toISOString() : <any>undefined;
+        data["reservationDateCreated"] = this.reservationDateCreated;// ? this.reservationDateCreated.toISOString() : <any>undefined;
+        data["reservationDateReserved"] = this.reservationDateReserved;// ? this.reservationDateReserved.toISOString() : <any>undefined;
         data["reservationPartyQty"] = this.reservationPartyQty;
         data["userIdFk"] = this.userIdFk;
         data["reservationStatusIdFk"] = this.reservationStatusIdFk;
@@ -20353,8 +20175,8 @@ export class Reservation implements IReservation {
 }
 
 export interface IReservation {
-    reservationDateCreated: moment.Moment;
-    reservationDateReserved: moment.Moment;
+    reservationDateCreated: string;
+    reservationDateReserved: string;
     reservationPartyQty: number;
     userIdFk: number;
     reservationStatusIdFk: number | undefined;
@@ -20378,7 +20200,7 @@ export class Restaurant implements IRestaurant {
     restaurantName: string | undefined;
     restaurantUrl: string | undefined;
     restaurantDescription: string | undefined;
-    restaurantDateCreated: moment.Moment | undefined;
+    restaurantDateCreated: string | undefined;
     restaurantAddressLine1: string | undefined;
     resaturantAddressLine2: string | undefined;
     restaurantCity: string | undefined;
@@ -20388,7 +20210,7 @@ export class Restaurant implements IRestaurant {
     restaurantStatusIdFk: number | undefined;
     restaurantStatusIdFkNavigation: RestaurantStatus;
     employee: Employee[] | undefined;
-    menuRestaurant: MenuRestaurant[] | undefined;
+    menu: Menu[] | undefined;
     qrCode: QrCode[] | undefined;
     resaurantFacilityRef: RestaurantFacilityRef[] | undefined;
     restaurantAdvertisement: RestaurantAdvertisement[] | undefined;
@@ -20420,7 +20242,7 @@ export class Restaurant implements IRestaurant {
             this.restaurantName = _data["restaurantName"];
             this.restaurantUrl = _data["restaurantUrl"];
             this.restaurantDescription = _data["restaurantDescription"];
-            this.restaurantDateCreated = _data["restaurantDateCreated"] ? moment(_data["restaurantDateCreated"].toString()) : <any>undefined;
+            this.restaurantDateCreated = _data["restaurantDateCreated"];// ? moment(_data["restaurantDateCreated"].toString()) : <any>undefined;
             this.restaurantAddressLine1 = _data["restaurantAddressLine1"];
             this.resaturantAddressLine2 = _data["resaturantAddressLine2"];
             this.restaurantCity = _data["restaurantCity"];
@@ -20434,10 +20256,10 @@ export class Restaurant implements IRestaurant {
                 for (let item of _data["employee"])
                     this.employee.push(Employee.fromJS(item));
             }
-            if (Array.isArray(_data["menuRestaurant"])) {
-                this.menuRestaurant = [] as any;
-                for (let item of _data["menuRestaurant"])
-                    this.menuRestaurant.push(MenuRestaurant.fromJS(item));
+            if (Array.isArray(_data["menu"])) {
+                this.menu = [] as any;
+                for (let item of _data["menu"])
+                    this.menu.push(Menu.fromJS(item));
             }
             if (Array.isArray(_data["qrCode"])) {
                 this.qrCode = [] as any;
@@ -20502,7 +20324,7 @@ export class Restaurant implements IRestaurant {
         data["restaurantName"] = this.restaurantName;
         data["restaurantUrl"] = this.restaurantUrl;
         data["restaurantDescription"] = this.restaurantDescription;
-        data["restaurantDateCreated"] = this.restaurantDateCreated ? this.restaurantDateCreated.toISOString() : <any>undefined;
+        data["restaurantDateCreated"] = this.restaurantDateCreated;// ? this.restaurantDateCreated.toISOString() : <any>undefined;
         data["restaurantAddressLine1"] = this.restaurantAddressLine1;
         data["resaturantAddressLine2"] = this.resaturantAddressLine2;
         data["restaurantCity"] = this.restaurantCity;
@@ -20516,10 +20338,10 @@ export class Restaurant implements IRestaurant {
             for (let item of this.employee)
                 data["employee"].push(item.toJSON());
         }
-        if (Array.isArray(this.menuRestaurant)) {
-            data["menuRestaurant"] = [];
-            for (let item of this.menuRestaurant)
-                data["menuRestaurant"].push(item.toJSON());
+        if (Array.isArray(this.menu)) {
+            data["menu"] = [];
+            for (let item of this.menu)
+                data["menu"].push(item.toJSON());
         }
         if (Array.isArray(this.qrCode)) {
             data["qrCode"] = [];
@@ -20584,7 +20406,7 @@ export interface IRestaurant {
     restaurantName: string | undefined;
     restaurantUrl: string | undefined;
     restaurantDescription: string | undefined;
-    restaurantDateCreated: moment.Moment | undefined;
+    restaurantDateCreated: string | undefined;
     restaurantAddressLine1: string | undefined;
     resaturantAddressLine2: string | undefined;
     restaurantCity: string | undefined;
@@ -20594,7 +20416,7 @@ export interface IRestaurant {
     restaurantStatusIdFk: number | undefined;
     restaurantStatusIdFkNavigation: RestaurantStatus;
     employee: Employee[] | undefined;
-    menuRestaurant: MenuRestaurant[] | undefined;
+    menu: Menu[] | undefined;
     qrCode: QrCode[] | undefined;
     resaurantFacilityRef: RestaurantFacilityRef[] | undefined;
     restaurantAdvertisement: RestaurantAdvertisement[] | undefined;
@@ -20804,8 +20626,8 @@ export interface IQrCodeSeating {
 }
 
 export class Order implements IOrder {
-    orderDateCreated: moment.Moment;
-    orderDateCompleted: moment.Moment | undefined;
+    orderDateCreated: string;
+    orderDateCompleted: string | undefined;
     qrCodeSeatingIdFk: number | undefined;
     orderStatusIdFk: number | undefined;
     orderStatusIdFkNavigation: OrderStatus;
@@ -20831,8 +20653,8 @@ export class Order implements IOrder {
 
     init(_data?: any) {
         if (_data) {
-            this.orderDateCreated = _data["orderDateCreated"] ? moment(_data["orderDateCreated"].toString()) : <any>undefined;
-            this.orderDateCompleted = _data["orderDateCompleted"] ? moment(_data["orderDateCompleted"].toString()) : <any>undefined;
+            this.orderDateCreated = _data["orderDateCreated"];// ? moment(_data["orderDateCreated"].toString()) : <any>undefined;
+            this.orderDateCompleted = _data["orderDateCompleted"];// ? moment(_data["orderDateCompleted"].toString()) : <any>undefined;
             this.qrCodeSeatingIdFk = _data["qrCodeSeatingIdFk"];
             this.orderStatusIdFk = _data["orderStatusIdFk"];
             this.orderStatusIdFkNavigation = _data["orderStatusIdFkNavigation"] ? OrderStatus.fromJS(_data["orderStatusIdFkNavigation"]) : <any>undefined;
@@ -20862,8 +20684,8 @@ export class Order implements IOrder {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["orderDateCreated"] = this.orderDateCreated ? this.orderDateCreated.toISOString() : <any>undefined;
-        data["orderDateCompleted"] = this.orderDateCompleted ? this.orderDateCompleted.toISOString() : <any>undefined;
+        data["orderDateCreated"] = this.orderDateCreated;// ? this.orderDateCreated.toISOString() : <any>undefined;
+        data["orderDateCompleted"] = this.orderDateCompleted;// ? this.orderDateCompleted.toISOString() : <any>undefined;
         data["qrCodeSeatingIdFk"] = this.qrCodeSeatingIdFk;
         data["orderStatusIdFk"] = this.orderStatusIdFk;
         data["orderStatusIdFkNavigation"] = this.orderStatusIdFkNavigation ? this.orderStatusIdFkNavigation.toJSON() : <any>undefined;
@@ -20893,8 +20715,8 @@ export class Order implements IOrder {
 }
 
 export interface IOrder {
-    orderDateCreated: moment.Moment;
-    orderDateCompleted: moment.Moment | undefined;
+    orderDateCreated: string;
+    orderDateCompleted: string | undefined;
     qrCodeSeatingIdFk: number | undefined;
     orderStatusIdFk: number | undefined;
     orderStatusIdFkNavigation: OrderStatus;
@@ -21331,12 +21153,13 @@ export class MenuItem implements IMenuItem {
     menuItemDescription: string | undefined;
     menuItemCategoryIdFk: number | undefined;
     menuItemPriceIdFk: number | undefined;
+    menuIdFk: number | undefined;
     menuItemCategoryIdFkNavigation: MenuItemCategory;
     menuItemPriceIdFkNavigation: MenuItemPrice;
     itemTypeMenuMenuItem: ItemTypeMenuItem[] | undefined;
     menuItemAllergy: MenuItemAllergy[] | undefined;
     menuItemSpecial: MenuItemSpecial[] | undefined;
-    menuRestaurant: MenuRestaurant[] | undefined;
+    menuIdFkNavigation: Menu;
     orderLine: OrderLine[] | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -21362,6 +21185,7 @@ export class MenuItem implements IMenuItem {
             this.menuItemDescription = _data["menuItemDescription"];
             this.menuItemCategoryIdFk = _data["menuItemCategoryIdFk"];
             this.menuItemPriceIdFk = _data["menuItemPriceIdFk"];
+            this.menuIdFk = _data["menuIdFk"];
             this.menuItemCategoryIdFkNavigation = _data["menuItemCategoryIdFkNavigation"] ? MenuItemCategory.fromJS(_data["menuItemCategoryIdFkNavigation"]) : <any>undefined;
             this.menuItemPriceIdFkNavigation = _data["menuItemPriceIdFkNavigation"] ? MenuItemPrice.fromJS(_data["menuItemPriceIdFkNavigation"]) : <any>undefined;
             if (Array.isArray(_data["itemTypeMenuMenuItem"])) {
@@ -21379,11 +21203,7 @@ export class MenuItem implements IMenuItem {
                 for (let item of _data["menuItemSpecial"])
                     this.menuItemSpecial.push(MenuItemSpecial.fromJS(item));
             }
-            if (Array.isArray(_data["menuRestaurant"])) {
-                this.menuRestaurant = [] as any;
-                for (let item of _data["menuRestaurant"])
-                    this.menuRestaurant.push(MenuRestaurant.fromJS(item));
-            }
+            this.menuIdFkNavigation = _data["menuIdFkNavigation"] ? Menu.fromJS(_data["menuIdFkNavigation"]) : <any>undefined;
             if (Array.isArray(_data["orderLine"])) {
                 this.orderLine = [] as any;
                 for (let item of _data["orderLine"])
@@ -21413,6 +21233,7 @@ export class MenuItem implements IMenuItem {
         data["menuItemDescription"] = this.menuItemDescription;
         data["menuItemCategoryIdFk"] = this.menuItemCategoryIdFk;
         data["menuItemPriceIdFk"] = this.menuItemPriceIdFk;
+        data["menuIdFk"] = this.menuIdFk;
         data["menuItemCategoryIdFkNavigation"] = this.menuItemCategoryIdFkNavigation ? this.menuItemCategoryIdFkNavigation.toJSON() : <any>undefined;
         data["menuItemPriceIdFkNavigation"] = this.menuItemPriceIdFkNavigation ? this.menuItemPriceIdFkNavigation.toJSON() : <any>undefined;
         if (Array.isArray(this.itemTypeMenuMenuItem)) {
@@ -21430,11 +21251,7 @@ export class MenuItem implements IMenuItem {
             for (let item of this.menuItemSpecial)
                 data["menuItemSpecial"].push(item.toJSON());
         }
-        if (Array.isArray(this.menuRestaurant)) {
-            data["menuRestaurant"] = [];
-            for (let item of this.menuRestaurant)
-                data["menuRestaurant"].push(item.toJSON());
-        }
+        data["menuIdFkNavigation"] = this.menuIdFkNavigation ? this.menuIdFkNavigation.toJSON() : <any>undefined;
         if (Array.isArray(this.orderLine)) {
             data["orderLine"] = [];
             for (let item of this.orderLine)
@@ -21464,12 +21281,13 @@ export interface IMenuItem {
     menuItemDescription: string | undefined;
     menuItemCategoryIdFk: number | undefined;
     menuItemPriceIdFk: number | undefined;
+    menuIdFk: number | undefined;
     menuItemCategoryIdFkNavigation: MenuItemCategory;
     menuItemPriceIdFkNavigation: MenuItemPrice;
     itemTypeMenuMenuItem: ItemTypeMenuItem[] | undefined;
     menuItemAllergy: MenuItemAllergy[] | undefined;
     menuItemSpecial: MenuItemSpecial[] | undefined;
-    menuRestaurant: MenuRestaurant[] | undefined;
+    menuIdFkNavigation: Menu;
     orderLine: OrderLine[] | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -21918,6 +21736,89 @@ export interface IMenuItemTypeDtoPagedResultDto {
     items: MenuItemTypeDto[] | undefined;
 }
 
+export class MenuRestaurantDto implements IMenuRestaurantDto {
+    menuIdFk: number;
+    restaurantIdFk: number;
+    menuItemIdFk: number | undefined;
+    isDeleted: boolean;
+    deleterUserId: number | undefined;
+    deletionTime: moment.Moment | undefined;
+    lastModificationTime: moment.Moment | undefined;
+    lastModifierUserId: number | undefined;
+    creationTime: moment.Moment;
+    creatorUserId: number | undefined;
+    id: number;
+
+    constructor(data?: IMenuRestaurantDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.menuIdFk = _data["menuIdFk"];
+            this.restaurantIdFk = _data["restaurantIdFk"];
+            this.menuItemIdFk = _data["menuItemIdFk"];
+            this.isDeleted = _data["isDeleted"];
+            this.deleterUserId = _data["deleterUserId"];
+            this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
+            this.lastModificationTime = _data["lastModificationTime"] ? moment(_data["lastModificationTime"].toString()) : <any>undefined;
+            this.lastModifierUserId = _data["lastModifierUserId"];
+            this.creationTime = _data["creationTime"] ? moment(_data["creationTime"].toString()) : <any>undefined;
+            this.creatorUserId = _data["creatorUserId"];
+            this.id = _data["id"];
+        }
+    }
+
+    static fromJS(data: any): MenuRestaurantDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new MenuRestaurantDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["menuIdFk"] = this.menuIdFk;
+        data["restaurantIdFk"] = this.restaurantIdFk;
+        data["menuItemIdFk"] = this.menuItemIdFk;
+        data["isDeleted"] = this.isDeleted;
+        data["deleterUserId"] = this.deleterUserId;
+        data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
+        data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>undefined;
+        data["lastModifierUserId"] = this.lastModifierUserId;
+        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
+        data["creatorUserId"] = this.creatorUserId;
+        data["id"] = this.id;
+        return data;
+    }
+
+    clone(): MenuRestaurantDto {
+        const json = this.toJSON();
+        let result = new MenuRestaurantDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface IMenuRestaurantDto {
+    menuIdFk: number;
+    restaurantIdFk: number;
+    menuItemIdFk: number | undefined;
+    isDeleted: boolean;
+    deleterUserId: number | undefined;
+    deletionTime: moment.Moment | undefined;
+    lastModificationTime: moment.Moment | undefined;
+    lastModifierUserId: number | undefined;
+    creationTime: moment.Moment;
+    creatorUserId: number | undefined;
+    id: number;
+}
+
 export class MenuRestaurantDtoPagedResultDto implements IMenuRestaurantDtoPagedResultDto {
     totalCount: number;
     items: MenuRestaurantDto[] | undefined;
@@ -22235,8 +22136,8 @@ export interface IQrCodeSeatingDto {
 }
 
 export class OrderDto implements IOrderDto {
-    orderDateCreated: moment.Moment;
-    orderDateCompleted: moment.Moment | undefined;
+    orderDateCreated: string;
+    orderDateCompleted: string | undefined;
     qrCodeSeatingIdFk: number | undefined;
     orderStatusIdFk: number | undefined;
     orderStatusIdFkNavigation: OrderStatusDto;
@@ -22262,8 +22163,8 @@ export class OrderDto implements IOrderDto {
 
     init(_data?: any) {
         if (_data) {
-            this.orderDateCreated = _data["orderDateCreated"] ? moment(_data["orderDateCreated"].toString()) : <any>undefined;
-            this.orderDateCompleted = _data["orderDateCompleted"] ? moment(_data["orderDateCompleted"].toString()) : <any>undefined;
+            this.orderDateCreated = _data["orderDateCreated"];// ? moment(_data["orderDateCreated"].toString()) : <any>undefined;
+            this.orderDateCompleted = _data["orderDateCompleted"];// ? moment(_data["orderDateCompleted"].toString()) : <any>undefined;
             this.qrCodeSeatingIdFk = _data["qrCodeSeatingIdFk"];
             this.orderStatusIdFk = _data["orderStatusIdFk"];
             this.orderStatusIdFkNavigation = _data["orderStatusIdFkNavigation"] ? OrderStatusDto.fromJS(_data["orderStatusIdFkNavigation"]) : <any>undefined;
@@ -22293,8 +22194,8 @@ export class OrderDto implements IOrderDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["orderDateCreated"] = this.orderDateCreated ? this.orderDateCreated.toISOString() : <any>undefined;
-        data["orderDateCompleted"] = this.orderDateCompleted ? this.orderDateCompleted.toISOString() : <any>undefined;
+        data["orderDateCreated"] = this.orderDateCreated;// ? this.orderDateCreated.toISOString() : <any>undefined;
+        data["orderDateCompleted"] = this.orderDateCompleted;// ? this.orderDateCompleted.toISOString() : <any>undefined;
         data["qrCodeSeatingIdFk"] = this.qrCodeSeatingIdFk;
         data["orderStatusIdFk"] = this.orderStatusIdFk;
         data["orderStatusIdFkNavigation"] = this.orderStatusIdFkNavigation ? this.orderStatusIdFkNavigation.toJSON() : <any>undefined;
@@ -22324,8 +22225,8 @@ export class OrderDto implements IOrderDto {
 }
 
 export interface IOrderDto {
-    orderDateCreated: moment.Moment;
-    orderDateCompleted: moment.Moment | undefined;
+    orderDateCreated: string;
+    orderDateCompleted: string | undefined;
     qrCodeSeatingIdFk: number | undefined;
     orderStatusIdFk: number | undefined;
     orderStatusIdFkNavigation: OrderStatusDto;
@@ -22858,8 +22759,8 @@ export interface IUserDto {
 }
 
 export class SeatingDto implements ISeatingDto {
-    seatingDate: moment.Moment;
-    seatingTime: TimeSpan;
+    seatingDate: string;
+    seatingTime: string;
     reservationIdFk: number | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -22881,8 +22782,8 @@ export class SeatingDto implements ISeatingDto {
 
     init(_data?: any) {
         if (_data) {
-            this.seatingDate = _data["seatingDate"] ? moment(_data["seatingDate"].toString()) : <any>undefined;
-            this.seatingTime = _data["seatingTime"] ? TimeSpan.fromJS(_data["seatingTime"]) : <any>undefined;
+            this.seatingDate = _data["seatingDate"];// ? moment(_data["seatingDate"].toString()) : <any>undefined;
+            this.seatingTime = _data["seatingTime"];// ? TimeSpan.fromJS(_data["seatingTime"]) : <any>undefined;
             this.reservationIdFk = _data["reservationIdFk"];
             this.isDeleted = _data["isDeleted"];
             this.deleterUserId = _data["deleterUserId"];
@@ -22904,8 +22805,8 @@ export class SeatingDto implements ISeatingDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["seatingDate"] = this.seatingDate ? this.seatingDate.toISOString() : <any>undefined;
-        data["seatingTime"] = this.seatingTime ? this.seatingTime.toJSON() : <any>undefined;
+        data["seatingDate"] = this.seatingDate;// ? this.seatingDate.toISOString() : <any>undefined;
+        data["seatingTime"] = this.seatingTime;//? this.seatingTime.toJSON() : <any>undefined;
         data["reservationIdFk"] = this.reservationIdFk;
         data["isDeleted"] = this.isDeleted;
         data["deleterUserId"] = this.deleterUserId;
@@ -22927,8 +22828,8 @@ export class SeatingDto implements ISeatingDto {
 }
 
 export interface ISeatingDto {
-    seatingDate: moment.Moment;
-    seatingTime: TimeSpan;
+    seatingDate: string;
+    seatingTime: string;
     reservationIdFk: number | undefined;
     isDeleted: boolean;
     deleterUserId: number | undefined;
@@ -22941,8 +22842,8 @@ export interface ISeatingDto {
 }
 
 export class ReservationDto implements IReservationDto {
-    reservationDateCreated: moment.Moment;
-    reservationDateReserved: moment.Moment;
+    reservationDateCreated: string;
+    reservationDateReserved: string;
     reservationPartyQty: number;
     userIdFk: number;
     reservationStatusIdFk: number | undefined;
@@ -22972,8 +22873,8 @@ export class ReservationDto implements IReservationDto {
 
     init(_data?: any) {
         if (_data) {
-            this.reservationDateCreated = _data["reservationDateCreated"] ? moment(_data["reservationDateCreated"].toString()) : <any>undefined;
-            this.reservationDateReserved = _data["reservationDateReserved"] ? moment(_data["reservationDateReserved"].toString()) : <any>undefined;
+            this.reservationDateCreated = _data["reservationDateCreated"];// ? moment(_data["reservationDateCreated"].toString()) : <any>undefined;
+            this.reservationDateReserved = _data["reservationDateReserved"];// ? moment(_data["reservationDateReserved"].toString()) : <any>undefined;
             this.reservationPartyQty = _data["reservationPartyQty"];
             this.userIdFk = _data["userIdFk"];
             this.reservationStatusIdFk = _data["reservationStatusIdFk"];
@@ -23007,8 +22908,8 @@ export class ReservationDto implements IReservationDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["reservationDateCreated"] = this.reservationDateCreated ? this.reservationDateCreated.toISOString() : <any>undefined;
-        data["reservationDateReserved"] = this.reservationDateReserved ? this.reservationDateReserved.toISOString() : <any>undefined;
+        data["reservationDateCreated"] = this.reservationDateCreated;// ? this.reservationDateCreated.toISOString() : <any>undefined;
+        data["reservationDateReserved"] = this.reservationDateReserved;// ? this.reservationDateReserved.toISOString() : <any>undefined;
         data["reservationPartyQty"] = this.reservationPartyQty;
         data["userIdFk"] = this.userIdFk;
         data["reservationStatusIdFk"] = this.reservationStatusIdFk;
@@ -23042,8 +22943,8 @@ export class ReservationDto implements IReservationDto {
 }
 
 export interface IReservationDto {
-    reservationDateCreated: moment.Moment;
-    reservationDateReserved: moment.Moment;
+    reservationDateCreated: string;
+    reservationDateReserved: string;
     reservationPartyQty: number;
     userIdFk: number;
     reservationStatusIdFk: number | undefined;

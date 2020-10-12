@@ -2176,6 +2176,9 @@ namespace MDR_Angular.Migrations
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
 
+                    b.Property<int?>("MenuIdFk")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MenuItemCategoryIdFk")
                         .HasColumnType("int");
 
@@ -2189,6 +2192,8 @@ namespace MDR_Angular.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MenuIdFk");
 
                     b.HasIndex("MenuItemCategoryIdFk");
 
@@ -2236,12 +2241,6 @@ namespace MDR_Angular.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MenuIdFk");
-
-                    b.HasIndex("MenuItemIdFk");
-
-                    b.HasIndex("RestaurantIdFk");
-
                     b.ToTable("MenuRestaurant");
                 });
 
@@ -2288,7 +2287,12 @@ namespace MDR_Angular.Migrations
                     b.Property<TimeSpan?>("MenuTimeActiveTo")
                         .HasColumnType("time");
 
+                    b.Property<int?>("RestaurantIdFk")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("RestaurantIdFk");
 
                     b.ToTable("Menu");
                 });
@@ -4338,6 +4342,10 @@ namespace MDR_Angular.Migrations
 
             modelBuilder.Entity("MDR_Angular.OrderMate.MenuItems.MenuItem", b =>
                 {
+                    b.HasOne("MDR_Angular.OrderMate.Menus.Menu", "MenuIdFkNavigation")
+                        .WithMany("MenuItem")
+                        .HasForeignKey("MenuIdFk");
+
                     b.HasOne("MDR_Angular.OrderMate.MenuItemCategories.MenuItemCategory", "MenuItemCategoryIdFkNavigation")
                         .WithMany("MenuItem")
                         .HasForeignKey("MenuItemCategoryIdFk");
@@ -4347,23 +4355,11 @@ namespace MDR_Angular.Migrations
                         .HasForeignKey("MenuItemPriceIdFk");
                 });
 
-            modelBuilder.Entity("MDR_Angular.OrderMate.MenuRestaurants.MenuRestaurant", b =>
+            modelBuilder.Entity("MDR_Angular.OrderMate.Menus.Menu", b =>
                 {
-                    b.HasOne("MDR_Angular.OrderMate.Menus.Menu", "MenuIdFkNavigation")
-                        .WithMany("MenuRestaurant")
-                        .HasForeignKey("MenuIdFk")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MDR_Angular.OrderMate.MenuItems.MenuItem", "MenuItemIdFkNavigation")
-                        .WithMany("MenuRestaurant")
-                        .HasForeignKey("MenuItemIdFk");
-
-                    b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "RestaurantIdFkNavigation")
-                        .WithMany("MenuRestaurant")
-                        .HasForeignKey("RestaurantIdFk")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "ResaturantIdFkNavigation")
+                        .WithMany("Menu")
+                        .HasForeignKey("RestaurantIdFk");
                 });
 
             modelBuilder.Entity("MDR_Angular.OrderMate.OrderLines.OrderLine", b =>

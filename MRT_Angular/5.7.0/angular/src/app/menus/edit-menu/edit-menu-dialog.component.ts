@@ -10,7 +10,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   MenuServiceProxy,
-  MenuDto
+  MenuDto, RestaurantServiceProxy, RestaurantDtoPagedResultDto, RestaurantDto
 } from '../../../shared/service-proxies/service-proxies';
 
 @Component({
@@ -21,12 +21,14 @@ export class EditMenuDialogComponent extends AppComponentBase
   saving = false;
   menu: MenuDto = new MenuDto();
   id: number;
+  restaurants: RestaurantDto[]=[];
 
   @Output() onSave = new EventEmitter<any>();
 
   constructor(
     injector: Injector,
     public _menuService: MenuServiceProxy,
+    public _restaurantService: RestaurantServiceProxy,
     public bsModalRef: BsModalRef
   ) {
     super(injector);
@@ -35,6 +37,22 @@ export class EditMenuDialogComponent extends AppComponentBase
   ngOnInit(): void {
     this._menuService.get(this.id).subscribe((result: MenuDto) => {
       this.menu = result;
+    });
+
+    this._restaurantService
+    .getAll(
+      '',
+      0,
+      100
+    )
+    .pipe(
+      finalize(() => {
+        console.log('pipe');
+      })
+    )
+    .subscribe((result: RestaurantDtoPagedResultDto) => {
+      this.restaurants = result.items;
+      //this.showPaging(result, pageNumber);
     });
   }
 

@@ -13,11 +13,6 @@ namespace MDR_Angular.OrderMate.MenuRestaurants
         public int RestaurantIdFk { get; set; }
         public int? MenuItemIdFk { get; set; }
 
-        [ForeignKey("MenuIdFk")]
-        public virtual Menu MenuIdFkNavigation { get; set; }
-        [ForeignKey("MenuItemIdFk")]
-        public virtual MenuItem MenuItemIdFkNavigation { get; set; }
-        [ForeignKey("RestaurantIdFk")]
-        public virtual Restaurant RestaurantIdFkNavigation { get; set; }
+       
     }
 }

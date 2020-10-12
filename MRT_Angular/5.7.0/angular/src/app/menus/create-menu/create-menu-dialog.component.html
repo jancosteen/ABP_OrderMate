@@ -111,7 +111,7 @@
           name="rest"
           id="rest"
           required
-          [(ngModel)]="menuRestaurant.restaurantIdFk"
+          [(ngModel)]="menu.restaurantIdFk"
           #restModel="ngModel"
           #restEl>
             <option *ngFor="let r of restaurants" value={{r.id}}>{{r.restaurantName}}</option>

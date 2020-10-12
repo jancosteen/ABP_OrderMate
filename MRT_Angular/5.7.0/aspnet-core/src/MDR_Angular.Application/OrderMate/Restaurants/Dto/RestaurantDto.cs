@@ -2,6 +2,7 @@
 using Abp.AutoMapper;
 using MDR_Angular.OrderMate.Employees.Dto;
 using MDR_Angular.OrderMate.MenuRestaurants.Dto;
+using MDR_Angular.OrderMate.Menus;
 using MDR_Angular.OrderMate.QrCodes;
 using MDR_Angular.OrderMate.ReservationRestaurants;
 using MDR_Angular.OrderMate.Reservations;
@@ -36,7 +37,9 @@ namespace MDR_Angular.OrderMate.Restaurants
 
         public virtual RestaurantStatusDto RestaurantStatusIdFkNavigation { get; set; }
         public virtual ICollection<EmployeeDto> Employee { get; set; }
-        public virtual ICollection<MenuRestaurantDto> MenuRestaurant { get; set; }
+        //public virtual ICollection<MenuRestaurantDto> MenuRestaurant { get; set; }
+        //public virtual ICollection<MenuDto> Menu { get; set; }
+
         //public virtual ICollection<QrCodeDto> QrCode { get; set; }
         public virtual ICollection<RestaurantFacilityRefDto> ResaurantFacilityRef { get; set; }
         //public virtual ICollection<ReservationRestaurantDto> ReservationRestaurant { get; set; }
