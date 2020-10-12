@@ -13,6 +13,7 @@ import {
 } from '../../shared/service-proxies/service-proxies';
 import { CreateMenuDialogComponent } from './create-menu/create-menu-dialog.component';
 import { EditMenuDialogComponent } from './edit-menu/edit-menu-dialog.component';
+import { Router } from '@angular/router';
 
 class PagedMenusRequestDto extends PagedRequestDto {
   keyword: string;
@@ -33,7 +34,8 @@ export class MenusComponent extends PagedListingComponentBase<MenuDto> {
   constructor(
     injector: Injector,
     private _menuService: MenuServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _router: Router
   ) {
     super(injector);
   }
@@ -121,5 +123,10 @@ export class MenusComponent extends PagedListingComponentBase<MenuDto> {
     this.keyword = '';
     this.isActive = undefined;
     this.getDataPage(1);
+  }
+
+  viewMenu(menu:MenuDto): void {
+    const detailsUrl: string = `/app/menu/${menu.id}`;
+    this._router.navigate([detailsUrl]);
   }
 }

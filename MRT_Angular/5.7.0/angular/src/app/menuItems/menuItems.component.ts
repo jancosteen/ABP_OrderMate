@@ -21,7 +21,8 @@ class PagedMenuItemsRequestDto extends PagedRequestDto {
 
 @Component({
   templateUrl: './menuItems.component.html',
-  animations: [appModuleAnimation()]
+  animations: [appModuleAnimation()],
+  selector: 'app-menuItems'
 })
 export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
   menuItems: MenuItemDto[] = [];

@@ -1,0 +1,120 @@
+<form
+  class="form-horizontal"
+  autocomplete="off"
+  #editMenuForm="ngForm"
+  (ngSubmit)="save()"
+>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">View Menu Details</h1>
+    <p class="lead">{{menu.menuName}}</p>
+  </div>
+</div>
+<div class="card" style="margin: 0 auto; float:none; margin-bottom: 10px; width: 95%;">
+  <div class="card-body">
+    <div class="form-group row">
+      <label for="menuName" class="col-sm-2 col-form-label">Menu:</label>
+      <div class="col-sm-10">
+        <input type="text"
+        class="form-control"
+        id="menuName"
+        disabled
+        [(ngModel)]="menu.menuName"
+        name="menuName">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="menuDescription" class="col-sm-2 col-form-label">Description:</label>
+      <div class="col-sm-10">
+        <input type="text"
+          class="form-control"
+          id="menuDes"
+          name="menuDes"
+          disabled
+          [(ngModel)]="menu.menuDescription">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="menuTimeFrom" class="col-sm-2 col-form-label">Time Active From:</label>
+      <div class="col-sm-10">
+        <input type="text"
+        class="form-control"
+        id="menuTimeFrom"
+        disabled
+        [(ngModel)]="menu.menuTimeActiveFrom"
+        name="menuTimeFrom">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="menuTimeTo" class="col-sm-2 col-form-label">Time Active To:</label>
+      <div class="col-sm-10">
+        <input type="text"
+          class="form-control"
+          id="menuTimeTo"
+          name="menuTimeTo"
+          disabled
+          [(ngModel)]="menu.menuTimeActiveTo">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="restaurant" class="col-sm-2 col-form-label">Restaurant:</label>
+      <div class="col-sm-10">
+        <input type="text"
+          class="form-control"
+          id="restaurant"
+          name="restaurant"
+          disabled
+          [(ngModel)]="restautrant.restaurantName">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</form>
+
+<!--
+  <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="tenancyName">
+        {{ "Menu Id" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          name="tenancyName"
+          id="tenancyName"
+          minlength="2"
+          maxlength="64"
+          required
+          [(ngModel)]="menu.id"
+          #tenancyNameModel="ngModel"
+          #tenancyNameEl
+        />
+        <abp-validation-summary
+          [control]="tenancyNameModel"
+          [controlEl]="tenancyNameEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+  <div class="form-group row mb-0">
+      <label class="col-md-3 col-form-label">
+        {{ "IsActive" | localize }}
+      </label>
+      <div class="col-md-9">
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            name="isActive"
+            id="isActive"
+            [(ngModel)]="menu.isActive"
+          />
+          <label class="custom-control-label mt-2" for="isActive"></label>
+        </div>
+      </div>
+    </div>
+-->

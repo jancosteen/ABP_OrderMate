@@ -108,6 +108,7 @@ import { CreateQrCodeDialogComponent } from './qrCodes/create-qrCode/create-qrCo
 import { MenusComponent } from './menus/menus.component';
 import { CreateMenuDialogComponent } from './menus/create-menu/create-menu-dialog.component';
 import { EditMenuDialogComponent } from './menus/edit-menu/edit-menu-dialog.component';
+import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 
 
 
@@ -214,7 +215,8 @@ import { EditMenuDialogComponent } from './menus/edit-menu/edit-menu-dialog.comp
     //menu
     MenusComponent,
     CreateMenuDialogComponent,
-    EditMenuDialogComponent
+    EditMenuDialogComponent,
+    MenuDetailComponent
   ],
   imports: [
     CommonModule,

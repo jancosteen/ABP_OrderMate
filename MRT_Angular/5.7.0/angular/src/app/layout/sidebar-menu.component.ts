@@ -97,18 +97,6 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
             'Pages.MIP'
           ),
           new MenuItem(
-            this.l('Specials'),
-            '/app/specials',
-            'fas fa-users',
-            'Pages.SP'
-          ),
-          new MenuItem(
-            this.l('Special Prices'),
-            '/app/specialPrices',
-            'fas fa-users',
-            'Pages.SPP'
-          ),
-          new MenuItem(
             this.l('Types'),
             '/app/miTypes',
             'fas fa-users',
