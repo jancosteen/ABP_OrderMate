@@ -12,6 +12,8 @@ import {
   AllergyDto,
   AllergyDtoPagedResultDto,
   AllergyServiceProxy,
+  MenuDto,
+  MenuDtoPagedResultDto,
   MenuItemAllergyDto,
   MenuItemAllergyServiceProxy,
   MenuItemCategoryDto,
@@ -21,7 +23,8 @@ import {
   MenuItemPriceDto,
   MenuItemPriceDtoPagedResultDto,
   MenuItemPriceServiceProxy,
-  MenuItemServiceProxy
+  MenuItemServiceProxy,
+  MenuServiceProxy
 } from '../../../shared/service-proxies/service-proxies';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
@@ -44,6 +47,7 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
   filtered:[];
   currentDate;
   sCurrentDate: string;
+  menus: MenuDto[]=[];
 
 
 
@@ -57,7 +61,8 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
     public _allergyService: AllergyServiceProxy,
     public _menuItemAllergyService: MenuItemAllergyServiceProxy,
     public bsModalRef: BsModalRef,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private _menuService: MenuServiceProxy
   ) {
     super(injector);
   }
@@ -71,7 +76,7 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
     .getAll(
       '',
       0,
-      100
+      1000
     )
     .pipe(
       finalize(() => {
@@ -84,6 +89,21 @@ export class CreateMenuItemDialogComponent extends AppComponentBase
       //this.showPaging(result, pageNumber);
     });
 
+    this._menuService
+    .getAll(
+      '',
+      0,
+      1000
+    )
+    .pipe(
+      finalize(() => {
+        console.log('menus');
+      })
+    )
+    .subscribe((result: MenuDtoPagedResultDto) => {
+      this.menus = result.items;
+      console.log(this.menus);
+    });
 
 
     this._menuItemCategoryService

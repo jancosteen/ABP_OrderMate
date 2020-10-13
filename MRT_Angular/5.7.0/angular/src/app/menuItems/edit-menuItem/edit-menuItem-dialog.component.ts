@@ -10,7 +10,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   MenuItemServiceProxy,
-  MenuItemDto, MenuItemCategoryDtoPagedResultDto, MenuItemCategoryServiceProxy, MenuItemCategoryDto, MenuItemPriceDto, MenuItemPriceServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto, AllergyDto, AllergyServiceProxy, AllergyDtoPagedResultDto
+  MenuItemDto, MenuItemCategoryDtoPagedResultDto, MenuItemCategoryServiceProxy, MenuItemCategoryDto, MenuItemPriceDto, MenuItemPriceServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto, AllergyDto, AllergyServiceProxy, AllergyDtoPagedResultDto, MenuDtoPagedResultDto, MenuServiceProxy, MenuDto
 } from '../../../shared/service-proxies/service-proxies';
 import { ElementSchemaRegistry } from '@angular/compiler';
 
@@ -34,6 +34,8 @@ export class EditMenuItemDialogComponent extends AppComponentBase
   filtered=[];
   menuItemAllergy: MenuItemAllergyDto = new MenuItemAllergyDto();
   uniqueSet=[];
+  menus:MenuDto[]=[];
+  changed:boolean=false;
 
   @Output() onSave = new EventEmitter<any>();
 
@@ -44,7 +46,8 @@ export class EditMenuItemDialogComponent extends AppComponentBase
     public _allergiesService: AllergyServiceProxy,
     public _menuItemCategoryService: MenuItemCategoryServiceProxy,
     public _menuItemPriceService: MenuItemPriceServiceProxy,
-    public _menuItemAllergyService: MenuItemAllergyServiceProxy
+    public _menuItemAllergyService: MenuItemAllergyServiceProxy,
+    public _menuService: MenuServiceProxy
   ) {
     super(injector);
   }
@@ -55,6 +58,8 @@ export class EditMenuItemDialogComponent extends AppComponentBase
       this.menuItemId2 = this.menuItem.id;
       localStorage.setItem('menuItemId2', this.menuItemId2.toString());
     });
+
+    console.log(this.changed);
 
     this._menuItemAllergyService.getByMenuItemId(this.id).subscribe((result: MenuItemAllergyDto[]) => {
       this.menuItemAllergies = result;
@@ -110,6 +115,22 @@ export class EditMenuItemDialogComponent extends AppComponentBase
       this.menuItemPrices = result.items;
       //this.showPaging(result, pageNumber);
     });
+
+    this._menuService
+    .getAll(
+      '',
+      0,
+      1000
+    )
+    .pipe(
+      finalize(() => {
+        console.log('menus');
+      })
+    )
+    .subscribe((result: MenuDtoPagedResultDto) => {
+      this.menus = result.items;
+      console.log(this.menus);
+    });
   }
 
   isChecked(id){
@@ -148,6 +169,8 @@ export class EditMenuItemDialogComponent extends AppComponentBase
   }
 
   show(id){
+    this.changed=true;
+    console.log(this.changed);
     this.allergyIds2.push(id);
     console.log('add aIds2',this.allergyIds2);
     var count = 0
@@ -185,17 +208,19 @@ updateMenuItemAllergy(){
     console.log('deleted menuItemId',this.menuItemAllergy.menuItemIdFk);
     //console.log('object MI',this.menuItemAllergy);
 
-    this._menuItemAllergyService
-        .delete(this.menuItemAllergy.id)
-        .pipe(
-          finalize(() => {
-            console.log('removed allergy', this.menuItemAllergy.allergyIdFk)
-          })
-        )
-        .subscribe(() => {});
-
+    if(this.changed != false){
+      this._menuItemAllergyService
+      .delete(this.menuItemAllergy.id)
+      .pipe(
+        finalize(() => {
+          console.log('removed allergy', this.menuItemAllergy.allergyIdFk)
+        })
+      )
+      .subscribe(() => {});
     }
+  }
 
+  if(this.changed !=false){
     for(let y=0;y<this.uniqueSet.length;y++){
 
       this.menuItemAllergy.menuItemIdFk =+ localStorage.getItem('menuItemId2');
@@ -215,6 +240,8 @@ updateMenuItemAllergy(){
         this.onSave.emit();
       });
     }
+  }
+
 
 
 

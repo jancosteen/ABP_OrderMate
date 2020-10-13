@@ -46,12 +46,34 @@
           maxlength="128"
           required
           [(ngModel)]="menuItem.menuItemDescription"
-          #nameModel="ngModel"
-          #nameEl
+          #mDesModel="ngModel"
+          #mDesEl
         />
         <abp-validation-summary
-          [control]="nameModel"
-          [controlEl]="nameEl"
+          [control]="mDesModel"
+          [controlEl]="mDesEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="menu">
+        {{ "Menu" | localize }}
+      </label>
+      <div class="col-md-9">
+        <select
+          class="form-control"
+          name="menu"
+          id="menu"
+          required
+          [(ngModel)]="menuItem.menuIdFk"
+          #menuModel="ngModel"
+          #menuEl>
+            <option *ngFor="let r of menus" value={{r.id}}>{{r.menuName}}</option>
+        </select>
+        <abp-validation-summary
+          [control]="menuModel"
+          [controlEl]="menuEl"
         ></abp-validation-summary>
       </div>
     </div>

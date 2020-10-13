@@ -155,7 +155,8 @@ export class MenuDetailComponent extends AppComponentBase
             .pipe(
               finalize(() => {
                 abp.notify.success(this.l('SuccessfullyDeleted'));
-                location.reload();
+                //location.reload();
+                this.getAllMenuItems();
               })
             )
             .subscribe(() => {});
@@ -205,7 +206,8 @@ export class MenuDetailComponent extends AppComponentBase
     }
 
     createOrEditMenuItemDialog.content.onSave.subscribe(() => {
-      location.reload();
+      //location.reload();
+      this.getAllMenuItems();
     });
   }
 
