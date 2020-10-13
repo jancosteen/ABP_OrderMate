@@ -58,9 +58,7 @@ export class EditMenuItemDialogComponent extends AppComponentBase
 
     this._menuItemAllergyService.getByMenuItemId(this.id).subscribe((result: MenuItemAllergyDto[]) => {
       this.menuItemAllergies = result;
-      this.allergyIds = this.menuItemAllergies;
-
-      console.log(this.allergyIds);
+      console.log('allergyId by MI',result);
       this.populateAllergyIds(result);
     });
 
@@ -115,22 +113,24 @@ export class EditMenuItemDialogComponent extends AppComponentBase
   }
 
   isChecked(id){
-    return this.allergyIds2.includes(id);
+    return this.allergyIds.includes(id);
   }
 
-  populateAllergyIds(res){
+  populateAllergyIds(res: MenuItemAllergyDto[]){
     for(let x=0;x<res.length;x++){
-      this.allergyIds2.push(res[x].allergyIdFk);
+      this.allergyIds.push(res[x].allergyIdFk);
       this.miAllergyIds.push(res[x].id);
     }
-    console.log('populated allergyIds',this.allergyIds2)
+    console.log('populated allergyIds',this.allergyIds);
+    this.allergyIds2 = this.allergyIds;
+    console.log('populated allergyIds2', this.allergyIds2);
   }
 
   save(): void {
     this.saving = true;
 
     this._menuItemService
-      .create(this.menuItem)
+      .update(this.menuItem)
       .pipe(
         finalize(() => {
           this.saving = false;
@@ -143,13 +143,13 @@ export class EditMenuItemDialogComponent extends AppComponentBase
         this.notify.info(this.l('SavedSuccessfully'));
         this.bsModalRef.hide();
         this.onSave.emit();
-        //this.updateMenuItemAllergy();
+        this.updateMenuItemAllergy();
       });
   }
 
   show(id){
     this.allergyIds2.push(id);
-    console.log('add',this.allergyIds2);
+    console.log('add aIds2',this.allergyIds2);
     var count = 0
   for(let x=0;x<this.allergyIds2.length;x++){
     if(id == this.allergyIds2[x]){
@@ -161,7 +161,7 @@ export class EditMenuItemDialogComponent extends AppComponentBase
          delete this.allergyIds2[index1];
          index2 = this.allergyIds2.indexOf(id);
          delete this.allergyIds2[index2];
-        console.log('delete',this.allergyIds2);
+        console.log('delete aIds2',this.allergyIds2);
       }
   }
 }
@@ -172,22 +172,35 @@ this.filtered = this.allergyIds2.filter(function (el){
 this.uniqueSet = this.filtered.filter(function(elem,index,self){
   return index === self.indexOf(elem);
 })
-console.log('final', this.uniqueSet);
+console.log('uniqueSet', this.uniqueSet);
 }
 
-/*updateMenuItemAllergy(){
-  for(let x=0;x<this.uniqueSet.length;x++){
+updateMenuItemAllergy(){
+  for(let x=0;x<this.allergyIds.length;x++){
     this.menuItemAllergy.id = this.miAllergyIds[x];
     this.menuItemAllergy.menuItemIdFk =+ localStorage.getItem('menuItemId2');
-    this.menuItemAllergy.allergyIdFk = this.uniqueSet[x];
+    this.menuItemAllergy.allergyIdFk = this.allergyIds[x];
 
-    console.log('allergyId',this.menuItemAllergy.allergyIdFk);
-    console.log('menuItemId',this.menuItemAllergy.menuItemIdFk);
-    console.log('object MI',this.menuItemAllergy);
+    console.log('delete aID',this.menuItemAllergy.allergyIdFk);
+    console.log('deleted menuItemId',this.menuItemAllergy.menuItemIdFk);
+    //console.log('object MI',this.menuItemAllergy);
 
-    if(this.menuItemAllergy.allergyIdFk == this.allergyIds2[x] ){
-      console.log('already allergy',this.menuItemAllergy.allergyIdFk)
-    }else if(this.uniqueSet.length>this.allergyIds2.length){
+    this._menuItemAllergyService
+        .delete(this.menuItemAllergy.id)
+        .pipe(
+          finalize(() => {
+            console.log('removed allergy', this.menuItemAllergy.allergyIdFk)
+          })
+        )
+        .subscribe(() => {});
+
+    }
+
+    for(let y=0;y<this.uniqueSet.length;y++){
+
+      this.menuItemAllergy.menuItemIdFk =+ localStorage.getItem('menuItemId2');
+      this.menuItemAllergy.allergyIdFk = this.uniqueSet[y];
+
       this._menuItemAllergyService
       .create(this.menuItemAllergy)
       .pipe(
@@ -201,17 +214,12 @@ console.log('final', this.uniqueSet);
         this.bsModalRef.hide();
         this.onSave.emit();
       });
-      }else if(this.uniqueSet.length<this.allergyIds2.length){
-        this._menuItemAllergyService
-            .delete(this.menuItemAllergy.id)
-            .pipe(
-              finalize(() => {
-                console.log('removed allergy', this.menuItemAllergy.allergyIdFk)
-              })
-            )
-            .subscribe(() => {});
-      }
     }
 
-}*/
+
+
+
+
+
+}
 }
