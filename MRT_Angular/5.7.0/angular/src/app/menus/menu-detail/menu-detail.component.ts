@@ -15,6 +15,8 @@ import {
 } from '../../../shared/service-proxies/service-proxies';
 import { EditMenuItemDialogComponent } from '../../menuItems/edit-menuItem/edit-menuItem-dialog.component';
 import { CreateMenuItemDialogComponent } from '../../menuItems/create-menuItem/create-menuItem-dialog.component';
+import { EditMenuDialogComponent } from '../edit-menu/edit-menu-dialog.component';
+import { CreateMenuDialogComponent } from '../create-menu/create-menu-dialog.component';
 
 
 
@@ -208,6 +210,42 @@ export class MenuDetailComponent extends AppComponentBase
     createOrEditMenuItemDialog.content.onSave.subscribe(() => {
       //location.reload();
       this.getAllMenuItems();
+    });
+  }
+
+  editMenu(menu: MenuDto): void {
+    this.showCreateOrEditMenuDialog(menu.id);
+  }
+
+  showCreateOrEditMenuDialog(id?: number): void {
+    let createOrEditMenuDialog: BsModalRef;
+    if (!id) {
+      createOrEditMenuDialog = this._modalService.show(
+        CreateMenuDialogComponent,
+        {
+          class: 'modal-lg',
+        }
+      );
+    } else {
+      createOrEditMenuDialog = this._modalService.show(
+        EditMenuDialogComponent,
+        {
+          class: 'modal-lg',
+          initialState: {
+            id: id,
+          },
+        }
+      );
+    }
+
+    createOrEditMenuDialog.content.onSave.subscribe(() => {
+      let id: string = this.activeRoute.snapshot.params['id'];
+      this.Iid =+ id;
+      this._menuService.get(this.Iid).subscribe((result: MenuDto) => {
+      this.menu = result;
+      this.restaurantdIdFk = this.menu.restaurantIdFk;
+      this.menuId = this.menu.id;
+    });
     });
   }
 
