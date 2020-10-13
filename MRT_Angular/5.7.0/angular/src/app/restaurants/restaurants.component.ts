@@ -13,6 +13,7 @@ import {
 } from '../../shared/service-proxies/service-proxies';
 import { CreateRestaurantDialogComponent } from './create-restaurant/create-restaurant-dialog.component';
 import { EditRestaurantDialogComponent } from './edit-restaurant/edit-restaurant-dialog.component';
+import { Router } from '@angular/router';
 
 class PagedRestaurantsRequestDto extends PagedRequestDto {
   keyword: string;
@@ -33,7 +34,8 @@ export class RestaurantsComponent extends PagedListingComponentBase<RestaurantDt
   constructor(
     injector: Injector,
     private _restaurantService: RestaurantServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _router: Router
   ) {
     super(injector);
   }
@@ -121,5 +123,10 @@ export class RestaurantsComponent extends PagedListingComponentBase<RestaurantDt
     this.keyword = '';
     this.isActive = undefined;
     this.getDataPage(1);
+  }
+
+  viewRestaurant(res:RestaurantDto): void {
+    const detailsUrl: string = `/app/restaurant/${res.id}`;
+    this._router.navigate([detailsUrl]);
   }
 }

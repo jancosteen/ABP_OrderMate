@@ -109,6 +109,7 @@ import { MenusComponent } from './menus/menus.component';
 import { CreateMenuDialogComponent } from './menus/create-menu/create-menu-dialog.component';
 import { EditMenuDialogComponent } from './menus/edit-menu/edit-menu-dialog.component';
 import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
+import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 
 
 
@@ -189,6 +190,7 @@ import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
     SocialMediasComponent,
     CreateSocialMediaDialogComponent,
     EditSocialMediaDialogComponent,
+    RestaurantDetailComponent,
     //orders
     EditOrderStatusDialogComponent,
     CreateOrderStatusDialogComponent,

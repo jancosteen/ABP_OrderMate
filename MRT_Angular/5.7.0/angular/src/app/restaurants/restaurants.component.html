@@ -91,6 +91,15 @@
                 <td>
                   <button
                     type="button"
+                    class="btn btn-sm bg-primary"
+                    style="margin-right: 10px;"
+                    (click)="viewRestaurant(restaurant)"
+                  >
+                  <i class="fas fa-pencil-alt"></i>
+                    {{ "Details" | localize }}
+                  </button>
+                  <button
+                    type="button"
                     class="btn btn-sm bg-secondary"
                     (click)="editRestaurant(restaurant)"
                   >
