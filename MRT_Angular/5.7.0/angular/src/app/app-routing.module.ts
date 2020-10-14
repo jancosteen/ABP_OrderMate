@@ -32,6 +32,7 @@ import { QrCodesComponent } from './qrCodes/qrCodes.component';
 import { MenusComponent } from './menus/menus.component';
 import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
+import { MenuItemDetailComponent } from './menuItems/menuItem-detail/menuItem-detail.component';
 
 @NgModule({
     imports: [
@@ -70,6 +71,7 @@ import { RestaurantDetailComponent } from './restaurants/restaurant-detail/resta
                     { path: 'menus', component: MenusComponent, data: { permission: 'Pages.M' }, canActivate: [AppRouteGuard] },
                     { path: 'menu/:id', component: MenuDetailComponent, data: { permission: 'Pages.M' }, canActivate: [AppRouteGuard] },
                     { path: 'restaurant/:id', component: RestaurantDetailComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
+                    { path: 'menuItem/:id', component: MenuItemDetailComponent, data: { permission: 'Pages.MI' }, canActivate: [AppRouteGuard] },
 
                 ]
             }

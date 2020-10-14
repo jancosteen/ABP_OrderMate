@@ -13,6 +13,7 @@ import {
 } from '../../shared/service-proxies/service-proxies';
 import { CreateMenuItemDialogComponent } from './create-menuItem/create-menuItem-dialog.component';
 import { EditMenuItemDialogComponent } from './edit-menuItem/edit-menuItem-dialog.component';
+import { Router } from '@angular/router';
 
 class PagedMenuItemsRequestDto extends PagedRequestDto {
   keyword: string;
@@ -41,7 +42,8 @@ export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
     private _menuItemPriceService: MenuItemPriceServiceProxy,
     private _menuItemCategoryService: MenuItemCategoryServiceProxy,
     private __menuItemAllergyService: MenuItemAllergyServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _router: Router
   ) {
     super(injector);
   }
@@ -171,6 +173,11 @@ export class MenuItemsComponent extends PagedListingComponentBase<MenuItemDto> {
     createOrEditMenuItemDialog.content.onSave.subscribe(() => {
       this.refresh();
     });
+  }
+
+  viewMenuItem(res:MenuItemDto): void {
+    const detailsUrl: string = `/app/menuItem/${res.id}`;
+    this._router.navigate([detailsUrl]);
   }
 
   clearFilters(): void {

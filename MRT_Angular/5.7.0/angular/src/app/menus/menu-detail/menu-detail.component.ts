@@ -50,10 +50,11 @@ export class MenuDetailComponent extends AppComponentBase
     public _menuService: MenuServiceProxy,
     public _restaurantService: RestaurantServiceProxy,
     private activeRoute: ActivatedRoute,
-    private router: Router,
+    private _router: Router,
     public _menuItemService:MenuItemServiceProxy,
     public __menuItemAllergyService: MenuItemAllergyServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+
   ) {
     super(injector);
   }
@@ -247,6 +248,11 @@ export class MenuDetailComponent extends AppComponentBase
       this.menuId = this.menu.id;
     });
     });
+  }
+
+  viewMenuItem(menuItem:MenuItemDto): void {
+    const detailsUrl: string = `/app/menu/${menuItem.id}`;
+    this._router.navigate([detailsUrl]);
   }
 
 

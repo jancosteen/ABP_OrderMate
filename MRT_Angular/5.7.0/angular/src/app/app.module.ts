@@ -110,7 +110,7 @@ import { CreateMenuDialogComponent } from './menus/create-menu/create-menu-dialo
 import { EditMenuDialogComponent } from './menus/edit-menu/edit-menu-dialog.component';
 import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
-
+import { MenuItemDetailComponent} from './menuItems/menuItem-detail/menuItem-detail.component';
 
 
 @NgModule({
@@ -168,6 +168,7 @@ import { RestaurantDetailComponent } from './restaurants/restaurant-detail/resta
     MenuItemsComponent,
     CreateMenuItemDialogComponent,
     EditMenuItemDialogComponent,
+    MenuItemDetailComponent,
     //restaurant
     RestaurantsComponent,
     CreateRestaurantDialogComponent,
