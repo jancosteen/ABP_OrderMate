@@ -44,6 +44,9 @@ export class MenuItemDetailComponent extends AppComponentBase
   miAllergies: MenuItemAllergyDto[]=[];
   allergies: AllergyDto[]=[];
   shownAllergies:AllergyDto[]=[];
+  allergyIds=[];
+  allergyIds2=[];
+  miAllergyIds=[];
 
 
 
@@ -121,6 +124,8 @@ export class MenuItemDetailComponent extends AppComponentBase
           this.getMiPrice(this.menuItemPriceIdFk);
         })
 
+
+
       this._allergyService
       .getAll(
         '',
@@ -134,7 +139,7 @@ export class MenuItemDetailComponent extends AppComponentBase
         this.allergies = res.items;
 
       });
-      this.getMiAllergies();
+
 
   }
 
@@ -171,14 +176,6 @@ export class MenuItemDetailComponent extends AppComponentBase
     }
   }
 
-  getMiAllergies(){
-    this._miAllergyService
-    .getByMenuItemId(this.Iid).subscribe((res:MenuItemAllergyDto[])=>{
-      this.miAllergies = res;
-      console.log('linked Allergies', this.miAllergies);
-    })
-    this.popShowAllergies();
-  }
 
   getMenu(mId){
     for(let x=0;x<this.menus.length;x++){
@@ -189,17 +186,6 @@ export class MenuItemDetailComponent extends AppComponentBase
     }
   }
 
-  popShowAllergies(){
-    console.log('popShow Allergies', this.allergies);
-    for(let x=0;x<this.allergies.length;x++){
-      if(this.miAllergies[x].allergyIdFk==this.allergies[x].id){
-        this.shownAllergies.push(this.allergies[x]);
-        console.log('Shown allergies',this.shownAllergies[x]);
-
-      }
-    }
-    this.loading=false;
-  }
 
   delete(menuItemAllergy: MenuItemAllergyDto): void {
 
@@ -213,7 +199,7 @@ export class MenuItemDetailComponent extends AppComponentBase
             .pipe(
               finalize(() => {
                 abp.notify.success(this.l('SuccessfullyDeleted'));
-                this.getMiAllergies();
+
               })
             )
             .subscribe(() => {});
