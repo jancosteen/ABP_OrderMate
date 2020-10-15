@@ -4,14 +4,16 @@ using MDR_Angular.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MDR_Angular.Migrations
 {
     [DbContext(typeof(MDR_AngularDbContext))]
-    partial class MDR_AngularDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201015080150_fixed advertisement table links")]
+    partial class fixedadvertisementtablelinks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3138,6 +3140,10 @@ namespace MDR_Angular.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RestaurantIdFk");
+
+                    b.HasIndex("RestaurantImageIdFk");
+
                     b.ToTable("RestaurantRestaurantImage");
                 });
 
@@ -4514,6 +4520,21 @@ namespace MDR_Angular.Migrations
                     b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "RestaurantIdFkNavigation")
                         .WithMany("RestaurantImage")
                         .HasForeignKey("RestaurantIdFk");
+                });
+
+            modelBuilder.Entity("MDR_Angular.OrderMate.RestaurantRestaurantImages.RestaurantRestaurantImage", b =>
+                {
+                    b.HasOne("MDR_Angular.OrderMate.Restaurants.Restaurant", "RestaurantIdFkNavigation")
+                        .WithMany()
+                        .HasForeignKey("RestaurantIdFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MDR_Angular.OrderMate.RestaurantImages.RestaurantImage", "RestaurantImageIdFkNavigation")
+                        .WithMany()
+                        .HasForeignKey("RestaurantImageIdFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MDR_Angular.OrderMate.RestaurantTypeReferences.RestaurantTypeRef", b =>

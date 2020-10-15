@@ -11,9 +11,9 @@ namespace MDR_Angular.OrderMate.RestaurantRestaurantImages
         public int RestaurantImageIdFk { get; set; }
         //public int RestaurantRestaurantImageId { get; set; }
 
-        [ForeignKey("RestaurantIdFk")]
-        public virtual Restaurant RestaurantIdFkNavigation { get; set; }
-        [ForeignKey("RestaurantImageIdFk")]
-        public virtual RestaurantImage RestaurantImageIdFkNavigation { get; set; }
+       // [ForeignKey("RestaurantIdFk")]
+        //public virtual Restaurant RestaurantIdFkNavigation { get; set; }
+        //[ForeignKey("RestaurantImageIdFk")]
+       // public virtual RestaurantImage RestaurantImageIdFkNavigation { get; set; }
     }
 }

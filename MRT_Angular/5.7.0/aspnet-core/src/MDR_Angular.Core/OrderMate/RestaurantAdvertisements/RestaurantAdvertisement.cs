@@ -11,9 +11,9 @@ namespace MDR_Angular.OrderMate.RestaurantAdvertisements
         public int RestaurantIdFk { get; set; }
         public int AdvertisementIdFk { get; set; }
 
-        [ForeignKey("AdvertisementIdFk")]
-        public virtual Advertisement AdvertisementIdFkNavigation { get; set; }
-        [ForeignKey("RestaurantIdFk")]
-        public virtual Restaurant RestaurantIdFkNavigation { get; set; }
+        //[ForeignKey("AdvertisementIdFk")]
+        //public virtual Advertisement AdvertisementIdFkNavigation { get; set; }
+        //[ForeignKey("RestaurantIdFk")]
+        //public virtual Restaurant RestaurantIdFkNavigation { get; set; }
     }
 }

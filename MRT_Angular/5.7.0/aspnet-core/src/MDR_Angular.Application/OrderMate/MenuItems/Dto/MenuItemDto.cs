@@ -26,7 +26,7 @@ namespace MDR_Angular.OrderMate.MenuItems.Dto
         public virtual MenuItemCategoryDto MenuItemCategoryIdFkNavigation { get; set; }
         public virtual MenuItemPriceDto MenuItemPriceIdFkNavigation { get; set; }
         public virtual ICollection<ItemTypeMenuItemDto> ItemTypeMenuMenuItem { get; set; }
-        public virtual ICollection<MenuItemAllergyDto> MenuItemAllergy { get; set; }
+        //public virtual ICollection<MenuItemAllergyDto> MenuItemAllergy { get; set; }
         public virtual ICollection<MenuItemSpecialDto> MenuItemSpecial { get; set; }
         [ForeignKey("MenuIdFk")]
         public virtual MenuDto Menu { get; set; }

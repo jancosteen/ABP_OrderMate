@@ -4,6 +4,8 @@ using Abp.Authorization;
 using Abp.Domain.Repositories;
 using MDR_Angular.Authorization;
 using MDR_Angular.OrderMate.AdvertisementPrices.Dto;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MDR_Angular.OrderMate.AdvertisementPrices
 {
@@ -12,5 +14,6 @@ namespace MDR_Angular.OrderMate.AdvertisementPrices
         AdvertisementPrice, AdvertisementPriceDto, int, PagedAndSortedResultRequestDto, AdvertisementPriceDto>, IAdvertisementPriceAppService
     {
         public AdvertisementPriceAppService(IRepository<AdvertisementPrice> repository) : base(repository) { }
+
     }
 }

@@ -21,6 +21,6 @@ namespace MDR_Angular.OrderMate.Advertisements
         public virtual AdvertisementDate AdvertisementDateIdFkNavigation { get; set; }
         [ForeignKey("AdvertisementPriceIdFk")]
         public virtual AdvertisementPrice AdvertisementPriceIdFkNavigation { get; set; }
-        public virtual ICollection<RestaurantAdvertisement> RestaurantAdvertisement { get; set; }
+        //public virtual ICollection<RestaurantAdvertisement> RestaurantAdvertisement { get; set; }
     }
 }

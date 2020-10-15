@@ -43,7 +43,7 @@ namespace MDR_Angular.OrderMate.Restaurants
         //public virtual ICollection<QrCodeDto> QrCode { get; set; }
         public virtual ICollection<RestaurantFacilityRefDto> ResaurantFacilityRef { get; set; }
         //public virtual ICollection<ReservationRestaurantDto> ReservationRestaurant { get; set; }
-        public virtual ICollection<RestaurantAdvertisementDto> RestaurantAdvertisement { get; set; }
+        //public virtual ICollection<RestaurantAdvertisementDto> RestaurantAdvertisement { get; set; }
         public virtual ICollection<RestaurantImageDto> RestaurantImage { get; set; }
         public virtual ICollection<RestaurantTypeRefDto> RestaurantTypeReference { get; set; }
         public virtual ICollection<SeatingLayoutDto> SeatingLayout { get; set; }

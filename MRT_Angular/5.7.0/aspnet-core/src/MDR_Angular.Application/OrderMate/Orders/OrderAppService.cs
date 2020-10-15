@@ -5,6 +5,7 @@ using Abp.Domain.Repositories;
 using MDR_Angular.Authorization;
 using MDR_Angular.OrderMate.Orders.Dto;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MDR_Angular.OrderMate.Orders
@@ -15,6 +16,19 @@ namespace MDR_Angular.OrderMate.Orders
     {
         public OrderAppService(IRepository<Order> repository) : base(repository) { }
 
+        public ListResultDto<OrderDto> GetOrderById(int id)
+        {
+            var order = Repository
+                .GetAll().Where(x => x.Id == id)
+                .Include(i => i.OrderLine)
+                .Include(i => i.OrderStatusIdFkNavigation)
+                .Include(i => i.QrCodeSeatingIdFk)
+                .Include(i => i.OrderLine).ThenInclude(i => i.UserIdFkNavigation)
+
+                .ToList();
+            return new ListResultDto<OrderDto>(ObjectMapper.Map<List<OrderDto>>(order));
+        }
+
         protected override IQueryable<Order> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
         {
             return base.CreateFilteredQuery(input)
@@ -22,6 +36,7 @@ namespace MDR_Angular.OrderMate.Orders
                 .Include(i => i.OrderStatusIdFkNavigation)
                 .Include(i => i.QrCodeSeating);
         }
+
     }
 
     

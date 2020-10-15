@@ -4,8 +4,11 @@ using Abp.Authorization;
 using Abp.Domain.Repositories;
 using MDR_Angular.Authorization;
 using MDR_Angular.OrderMate.MenuItemAllergies.Dto;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MDR_Angular.OrderMate.MenuItemAllergies
 {
@@ -15,10 +18,18 @@ namespace MDR_Angular.OrderMate.MenuItemAllergies
     {
         public MenuItemAllergyAppService(IRepository<MenuItemAllergy> repository) : base(repository) { }
 
-        public List<MenuItemAllergy> GetByMenuItemId(int id)
+        public ListResultDto<MenuItemAllergyDto> GetAllergyByMenuItemId(int id)
         {
-            var entity = Repository.GetAllIncluding().Where(x => x.MenuItemIdFk == id).ToList();
-            return entity;
+            var allergies = Repository
+                .GetAll()
+                .Where(x => x.MenuItemIdFk == id)
+                .Include(i => i.AllergyIdFkNavigation)
+                .ToList();
+
+            return new ListResultDto<MenuItemAllergyDto>(ObjectMapper.Map<List<MenuItemAllergyDto>>(allergies));
+
+
+
         }
     }
 }
