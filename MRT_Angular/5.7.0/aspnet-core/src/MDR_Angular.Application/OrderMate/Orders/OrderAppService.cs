@@ -23,7 +23,7 @@ namespace MDR_Angular.OrderMate.Orders
                 .Include(i => i.OrderLine)
                 .Include(i => i.OrderStatusIdFkNavigation)
                 .Include(i => i.QrCodeSeatingIdFk)
-                .Include(i => i.OrderLine).ThenInclude(i => i.UserIdFkNavigation)
+                //.Include(i => i.OrderLine).ThenInclude(i => i.UserIdFkNavigation)
 
                 .ToList();
             return new ListResultDto<OrderDto>(ObjectMapper.Map<List<OrderDto>>(order));
