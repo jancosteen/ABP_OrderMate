@@ -22,7 +22,7 @@
           id="dateCreated"
           maxlength="128"
           required
-          [min]="currentDate"
+          [min]="order.orderDateCreated"
           [(ngModel)]="order.orderDateCreated"
           #dateCreatedModel="ngModel"
           #dateCreatedEl
@@ -46,7 +46,7 @@
           id="dateCompleted"
           maxlength="128"
           required
-          [min]="currentDate"
+          [min]="order.orderDateCreated"
           [(ngModel)]="order.orderDateCompleted"
           #dateCompletedModel="ngModel"
           #dateCompletedEl

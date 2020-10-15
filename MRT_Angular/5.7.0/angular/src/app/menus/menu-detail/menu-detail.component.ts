@@ -144,8 +144,8 @@ export class MenuDetailComponent extends AppComponentBase
   }
 
   delete(menuItem: MenuItemDto): void {
-    this.__menuItemAllergyService.getByMenuItemId(menuItem.id).subscribe((result: MenuItemAllergyDto[]) => {
-      this.menuItemAllergies = result;
+    this.__menuItemAllergyService.getAllergyByMenuItemId(menuItem.id).subscribe((result) => {
+      this.menuItemAllergies = result.items;
       this.miAllergyIds = this.menuItemAllergies});
 
     abp.message.confirm(

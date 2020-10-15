@@ -10,7 +10,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   MenuItemServiceProxy,
-  MenuItemDto, MenuItemCategoryDtoPagedResultDto, MenuItemCategoryServiceProxy, MenuItemCategoryDto, MenuItemPriceDto, MenuItemPriceServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto, AllergyDto, AllergyServiceProxy, AllergyDtoPagedResultDto, MenuDtoPagedResultDto, MenuServiceProxy, MenuDto
+  MenuItemDto, MenuItemCategoryDtoPagedResultDto, MenuItemCategoryServiceProxy, MenuItemCategoryDto, MenuItemPriceDto, MenuItemPriceServiceProxy, MenuItemPriceDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto, AllergyDto, AllergyServiceProxy, AllergyDtoPagedResultDto, MenuDtoPagedResultDto, MenuServiceProxy, MenuDto, MenuItemAllergyDtoListResultDto
 } from '../../../shared/service-proxies/service-proxies';
 import { ElementSchemaRegistry } from '@angular/compiler';
 
@@ -61,10 +61,10 @@ export class EditMenuItemDialogComponent extends AppComponentBase
 
     console.log(this.changed);
 
-    this._menuItemAllergyService.getByMenuItemId(this.id).subscribe((result: MenuItemAllergyDto[]) => {
-      this.menuItemAllergies = result;
+    this._menuItemAllergyService.getAllergyByMenuItemId(this.id).subscribe((result) => {
+      this.menuItemAllergies = result.items;
       console.log('allergyId by MI',result);
-      this.populateAllergyIds(result);
+      this.populateAllergyIds(this.menuItemAllergies);
     });
 
 
