@@ -158,7 +158,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           ),
           new MenuItem(
             this.l('Star Rating Values'),
-            '/app/starRating',
+            '/app/starRatings',
             'fas fa-theater-masks',
             'Pages.SR'
           ),

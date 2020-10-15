@@ -33,6 +33,7 @@ import { MenusComponent } from './menus/menus.component';
 import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 import { MenuItemDetailComponent } from './menuItems/menuItem-detail/menuItem-detail.component';
+import { StarRatingsComponent } from './starRatings/starRatings.component';
 
 @NgModule({
     imports: [
@@ -72,6 +73,7 @@ import { MenuItemDetailComponent } from './menuItems/menuItem-detail/menuItem-de
                     { path: 'menu/:id', component: MenuDetailComponent, data: { permission: 'Pages.M' }, canActivate: [AppRouteGuard] },
                     { path: 'restaurant/:id', component: RestaurantDetailComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
                     { path: 'menuItem/:id', component: MenuItemDetailComponent, data: { permission: 'Pages.MI' }, canActivate: [AppRouteGuard] },
+                    { path: 'starRatings', component: StarRatingsComponent, data: { permission: 'Pages.SR' }, canActivate: [AppRouteGuard] },
 
                 ]
             }

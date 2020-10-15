@@ -251,7 +251,7 @@ export class MenuDetailComponent extends AppComponentBase
   }
 
   viewMenuItem(menuItem:MenuItemDto): void {
-    const detailsUrl: string = `/app/menu/${menuItem.id}`;
+    const detailsUrl: string = `/app/menuItem/${menuItem.id}`;
     this._router.navigate([detailsUrl]);
   }
 

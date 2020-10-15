@@ -111,6 +111,10 @@ import { EditMenuDialogComponent } from './menus/edit-menu/edit-menu-dialog.comp
 import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 import { MenuItemDetailComponent} from './menuItems/menuItem-detail/menuItem-detail.component';
+import { StarRatingsComponent} from './starRatings/starRatings.component';
+import { CreateStarRatingDialogComponent } from './starRatings/create-starRating/create-starRating-dialog.component';
+import { EditStarRatingDialogComponent } from './starRatings/edit-starRating/edit-starRating-dialog.component';
+
 
 
 @NgModule({
@@ -219,7 +223,11 @@ import { MenuItemDetailComponent} from './menuItems/menuItem-detail/menuItem-det
     MenusComponent,
     CreateMenuDialogComponent,
     EditMenuDialogComponent,
-    MenuDetailComponent
+    MenuDetailComponent,
+    StarRatingsComponent,
+    CreateStarRatingDialogComponent,
+    EditStarRatingDialogComponent
+
   ],
   imports: [
     CommonModule,
@@ -300,7 +308,9 @@ import { MenuItemDetailComponent} from './menuItems/menuItem-detail/menuItem-det
     CreateQrCodeDialogComponent,
     //menu
     CreateMenuDialogComponent,
-    EditMenuDialogComponent
+    EditMenuDialogComponent,
+    CreateStarRatingDialogComponent,
+    EditStarRatingDialogComponent
 
   ],
 })
