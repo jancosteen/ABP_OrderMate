@@ -4,14 +4,16 @@ using MDR_Angular.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MDR_Angular.Migrations
 {
     [DbContext(typeof(MDR_AngularDbContext))]
-    partial class MDR_AngularDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201016073846_added Total Sales By Menu Item Report")]
+    partial class addedTotalSalesByMenuItemReport
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

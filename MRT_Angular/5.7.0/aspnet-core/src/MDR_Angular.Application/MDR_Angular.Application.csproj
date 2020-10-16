@@ -12,6 +12,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\MDR_Angular.Core\MDR_Angular.Core.csproj" />
+    <ProjectReference Include="..\MDR_Angular.EntityFrameworkCore\MDR_Angular.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="OrderMate\AttendanceSheets\Dto\" />

@@ -30,6 +30,7 @@ using MDR_Angular.OrderMate.ProductsWrittenOff;
 using MDR_Angular.OrderMate.ProductTypes;
 using MDR_Angular.OrderMate.QrCodes;
 using MDR_Angular.OrderMate.QrCodeSeatings;
+using MDR_Angular.OrderMate.Reports;
 using MDR_Angular.OrderMate.ReservationRestaurants;
 using MDR_Angular.OrderMate.Reservations;
 using MDR_Angular.OrderMate.ReservationStatusses;
@@ -121,11 +122,13 @@ namespace MDR_Angular.EntityFrameworkCore
         public DbSet<UserComment> UserComment { get; set; }
         public DbSet<WriteOffReason> WriteOffReason { get; set; }
         public DbSet<WrittenOffStock> WrittenOffStock { get; set; }
+        public DbSet<TotalSalesByDayOfWeekReport> TotalSalesByDayOfWeekReport { get; set; }
 
 
         public MDR_AngularDbContext(DbContextOptions<MDR_AngularDbContext> options)
             : base(options)
         {
         }
+
     }
 }
