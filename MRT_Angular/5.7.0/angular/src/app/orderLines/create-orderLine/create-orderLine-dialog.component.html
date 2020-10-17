@@ -10,101 +10,172 @@
     <p class="lead">Select items and their amounts to be added to the order</p>
   </div>
 </div>
-    <div class="form-group row required">
-      <label class="col-md-3 col-form-label" for="name">
-        {{ "Order Line" | localize }}
-      </label>
-      <div class="card-body table-responsive p-0">
-        <table class="table table-hover text-nowrap" [busy]="loading == true">
-          <thead class="bg-light">
-            <tr>
-              <th>{{ "Id" | localize }}</th>
-              <th>{{ "Menu Item" | localize }}</th>
-              <th>{{ "Description" | localize }}</th>
-              <th>{{ "Price" | localize}}</th>
-              <th style="width: 100px;">{{ "Qty" | localize }}</th>
-              <th>{{"Line Amount"}}</th>
-              <th style="width: 200px;">{{ "Actions" | localize }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              *ngFor="
-                let x of lineAmounts
-                  | paginate
-                    : {
-                        id: 'server',
-                        itemsPerPage: menuItems.length,
-                        currentPage: 1,
-                        totalItems: menuItems.length
-                      }
-                      | grdFilter: {id: searchText, menuItemName:searchText
-                        , menuItemDescription:searchText}
-              "
-            >
-              <td>{{ x.menuItem.id }}</td>
-              <td>{{ x.menuItem.menuItemName }}</td>
-              <td>{{ x.menuItem.menuItemDescription}}</td>
-              <td>
-                {{x.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 | currency:'R '}}
-              </td>
-              <td>
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="qty{{x.id}}"
-                    id="qty{{x.id}}"
-                    maxlength="128"
-                    required
-                    [(ngModel)]="x.itemQty"
-                  />
+<section>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <button
+        type="button"
+        class="btn bg-blue"
 
-              </td>
-              <td id="total{{x.id}}">
-                {{x.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 * orderLine.itemQty | currency:'R '}}
-              </td>
-              <td>
-                <button
-                  type="button"
-                  class="btn btn-sm bg-primary mx-2"
-                  id="add{{x.id}}"
-                  onclick = disabled;
-                  (click)="addToOrderLine(x, orderLine.itemQty)"
-                >
-                  <i class="fas fa-plus"></i>
-                  {{ "Add To Order" | localize }}
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-12">
-        <label class="col-md-3 col-form-label" for="menu">
-          {{ "Item Comment" | localize }}
-        </label>
-        <input
-          type="text"
-          class="form-control"
-          name="comments"
-          id="comments"
-          maxlength="128"
-
-          [(ngModel)]="orderLine.itemComments"
-          #commentsModel="ngModel"
-          #commentsEl
-        />
-        <abp-validation-summary
-          [control]="commentsModel"
-          [controlEl]="commentsEl"
-        ></abp-validation-summary>
-      </div>
+      >
+        <i class="fas fa-search"></i>
+      </button>
     </div>
-    <abp-modal-footer
-    [cancelDisabled]="saving"
-    [saveDisabled]="!createOrderLineForm.form.valid || saving"
+    <input
+      type="text"
+      class="form-control"
+      name="keyword"
+      [placeholder]="'SearchWithThreeDot' | localize"
+      [(ngModel)]="searchText"
+    />
+    <div class="input-group-append">
+      <button
+        type="button"
+        class="btn btn-default"
 
-  ></abp-modal-footer>
+      >
+        <i
+          class="fas"
+
+        ></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="name">
+      {{ "Menu Items" | localize }}
+    </label>
+    <div class="card-body table-responsive p-1">
+      <table class="table table-hover text-nowrap" [busy]="loading == true">
+        <thead class="bg-light">
+          <tr>
+            <th>{{ "Id" | localize }}</th>
+            <th>{{ "Menu Item" | localize }}</th>
+            <th>{{ "Description" | localize }}</th>
+            <th>{{ "Price" | localize}}</th>
+            <th style="width: 100px;">{{ "Qty" | localize }}</th>
+            <th>{{"Line Amount"}}</th>
+            <th style="width: 200px;">{{ "Actions" | localize }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let x of menuItems
+                | paginate
+                  : {
+                      id: 'server',
+                      itemsPerPage: menuItems.length,
+                      currentPage: 1,
+                      totalItems: menuItems.length
+                    }
+                    | grdFilter: {id: searchText, menuItemName:searchText
+                      , menuItemDescription:searchText}
+            "
+          >
+            <td>{{ x.id }}</td>
+            <td>{{ x.menuItemName }}</td>
+            <td>{{ x.menuItemDescription}}</td>
+            <td>
+              {{x.menuItemPriceIdFkNavigation.menuItemPrice1 | currency:'R '}}
+            </td>
+            <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="qty{{x.id}}"
+                  id="qty{{x.id}}"
+                  maxlength="128"
+                  required
+                  min="0"
+                  required
+                  #qty
+                  [(ngModel)]="x.itemQty"
+                />
+
+            </td>
+            <td id="total{{x.id}}">
+              {{x.menuItemPriceIdFkNavigation.menuItemPrice1 * x.itemQty | currency:'R '}}
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-sm bg-primary mx-2"
+                id="add{{x.id}}"
+                (click)="addItem(x, x.itemQty)"
+              >
+                <i class="fas fa-plus"></i>
+                {{ "Add To Order" | localize }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section>
+  <label class="col-md-3 col-form-label" for="ol">
+    {{ "Items Added To Order" | localize }}
+  </label>
+  <div class="card-body table-responsive p-0">
+    <table class="table table-hover text-nowrap" [busy]="loading == true">
+      <thead class="bg-light">
+        <tr>
+          <th>{{ "Id" | localize }}</th>
+          <th>{{ "Menu Item" | localize }}</th>
+          <th>{{ "Description" | localize }}</th>
+          <th>{{ "Price" | localize}}</th>
+          <th style="width: 100px;">{{ "Qty" | localize }}</th>
+          <th>{{"Line Amount"}}</th>
+          <th style="width: 200px;">{{ "Actions" | localize }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let y of lineAmounts
+              | paginate
+                : {
+                    id: 'server',
+                    itemsPerPage: lineAmounts.length,
+                    currentPage: 1,
+                    totalItems: lineAmounts.length
+                  }
+                  | grdFilter: {id: searchText, menuItemName:searchText
+                    , menuItemDescription:searchText}
+          "
+        >
+          <td>{{ y.menuItem.id }}</td>
+          <td>{{ y.menuItem.menuItemName }}</td>
+          <td>{{ y.menuItem.menuItemDescription}}</td>
+          <td>
+            {{y.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 | currency:'R '}}
+          </td>
+          <td>
+            {{y.itemQty}}
+          </td>
+          <td id="total{{y.id}}">
+            {{y.total | currency:'R '}}
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-sm bg-primary mx-2"
+              (click)="removeItem(y)"
+            >
+              <i class="fas fa-plus"></i>
+              {{ "Remove From Order" | localize }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
 </form>
     <!--

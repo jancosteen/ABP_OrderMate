@@ -31,6 +31,7 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
   implements OnInit {
   saving = false;
   orderLine: OrderLineDto = new OrderLineDto();
+  addedOrderLine: OrderLineDto = new OrderLineDto();
   menuItems: MenuItemDto[]=[];
   public searchText: string;
   loading = true;
@@ -40,6 +41,7 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
   lineAmount: lineAmount = new lineAmount();
   orderId:number;
   itemQuantity:number;
+  clicked = false;
 
   @Output() onSave = new EventEmitter<any>();
 
@@ -53,7 +55,7 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
   }
 
   ngOnInit(): void {
-
+    localStorage.clear();
     this.orderId =+ localStorage.getItem('orderId')
 
 
@@ -72,11 +74,35 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
         this.menuItems = result.items;
         this.loading = false;
         console.log(this.menuItems);
-        this.populatedLineAmount();
+
       });
 
 
 
+  }
+
+  addItem(item: MenuItemDto, ItemQty){
+
+      this.lineAmount.menuItem = item;
+      this.lineAmount.itemQty = ItemQty;
+      this.lineAmount.total = this.lineAmount.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 * ItemQty;
+
+      console.log('lineAmount',this.lineAmount);
+      this.lineAmounts.push(this.lineAmount);
+      console.log(this.lineAmounts);
+
+
+
+
+  }
+
+  removeItem(item){
+    for(let x=0;x<this.lineAmounts.length;x++){
+      if(item.menuItem.id == this.lineAmounts[x].menuItem.id){
+        this.lineAmounts.splice(x,1);
+      }
+      console.log(this.lineAmounts);
+    }
   }
 
   save(): void {
@@ -99,23 +125,6 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
       });
   }
 
-  populatedLineAmount(){
-    for(let x=0;this.menuItems.length;x++){
-      this.lineAmount.menuItem = this.menuItems[x];
-      this.lineAmount.itemQty = 0;
-      this.lineAmount.total = 0;
-      this.lineAmounts.push(this.lineAmount);
-    }
-    console.log('pop',this.lineAmounts);
-  }
 
-  addToOrderLine(item, qty){
-    this.lineAmount.menuItem = item;
-    this.lineAmount.itemQty = qty;
-    this.lineAmount.total = this.lineAmount.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 * qty;
-    this.lineAmounts.push(this.lineAmount);
-    console.log('lineAmouns',this.lineAmounts);
-    console.log('MenuItem', this.lineAmounts[0].menuItem.menuItemName);
-  }
 
 }
