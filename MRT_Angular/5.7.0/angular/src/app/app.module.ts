@@ -114,7 +114,10 @@ import { MenuItemDetailComponent} from './menuItems/menuItem-detail/menuItem-det
 import { StarRatingsComponent} from './starRatings/starRatings.component';
 import { CreateStarRatingDialogComponent } from './starRatings/create-starRating/create-starRating-dialog.component';
 import { EditStarRatingDialogComponent } from './starRatings/edit-starRating/edit-starRating-dialog.component';
-
+import { OrderLinesComponent} from './orderLines/orderLines.component';
+import { EditOrderLineDialogComponent } from './orderLines/edit-orderLine/edit-orderLine-dialog.component';
+import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/create-orderLine-dialog.component';
+import { OrderDetailComponent} from './orders/order-detail/order-detail.component';
 
 
 @NgModule({
@@ -203,6 +206,10 @@ import { EditStarRatingDialogComponent } from './starRatings/edit-starRating/edi
     OrdersComponent,
     CreateOrderDialogComponent,
     EditOrderDialogComponent,
+    OrderLinesComponent,
+    EditOrderLineDialogComponent,
+    CreateOrderLineDialogComponent,
+    OrderDetailComponent,
     //reservations
     EditReservationStatusDialogComponent,
     CreateReservationStatusDialogComponent,
@@ -295,6 +302,9 @@ import { EditStarRatingDialogComponent } from './starRatings/edit-starRating/edi
     CreateOrderStatusDialogComponent,
     CreateOrderDialogComponent,
     EditOrderDialogComponent,
+    EditOrderLineDialogComponent,
+    CreateOrderLineDialogComponent,
+    OrderDetailComponent,
     //reservations
     EditReservationStatusDialogComponent,
     CreateReservationStatusDialogComponent,

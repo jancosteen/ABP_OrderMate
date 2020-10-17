@@ -1,0 +1,195 @@
+<form
+  class="form-horizontal"
+  autocomplete="off"
+  #createOrderLineForm="ngForm"
+  (ngSubmit)="save()"
+>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Add Item To Order</h1>
+    <p class="lead">Select items and their amounts to be added to the order</p>
+  </div>
+</div>
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="name">
+        {{ "Order Line" | localize }}
+      </label>
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap" [busy]="loading == true">
+          <thead class="bg-light">
+            <tr>
+              <th>{{ "Id" | localize }}</th>
+              <th>{{ "Menu Item" | localize }}</th>
+              <th>{{ "Description" | localize }}</th>
+              <th>{{ "Price" | localize}}</th>
+              <th style="width: 100px;">{{ "Qty" | localize }}</th>
+              <th>{{"Line Amount"}}</th>
+              <th style="width: 200px;">{{ "Actions" | localize }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let x of lineAmounts
+                  | paginate
+                    : {
+                        id: 'server',
+                        itemsPerPage: menuItems.length,
+                        currentPage: 1,
+                        totalItems: menuItems.length
+                      }
+                      | grdFilter: {id: searchText, menuItemName:searchText
+                        , menuItemDescription:searchText}
+              "
+            >
+              <td>{{ x.menuItem.id }}</td>
+              <td>{{ x.menuItem.menuItemName }}</td>
+              <td>{{ x.menuItem.menuItemDescription}}</td>
+              <td>
+                {{x.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 | currency:'R '}}
+              </td>
+              <td>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="qty{{x.id}}"
+                    id="qty{{x.id}}"
+                    maxlength="128"
+                    required
+                    [(ngModel)]="x.itemQty"
+                  />
+
+              </td>
+              <td id="total{{x.id}}">
+                {{x.menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 * orderLine.itemQty | currency:'R '}}
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-sm bg-primary mx-2"
+                  id="add{{x.id}}"
+                  onclick = disabled;
+                  (click)="addToOrderLine(x, orderLine.itemQty)"
+                >
+                  <i class="fas fa-plus"></i>
+                  {{ "Add To Order" | localize }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-12">
+        <label class="col-md-3 col-form-label" for="menu">
+          {{ "Item Comment" | localize }}
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          name="comments"
+          id="comments"
+          maxlength="128"
+
+          [(ngModel)]="orderLine.itemComments"
+          #commentsModel="ngModel"
+          #commentsEl
+        />
+        <abp-validation-summary
+          [control]="commentsModel"
+          [controlEl]="commentsEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+    <abp-modal-footer
+    [cancelDisabled]="saving"
+    [saveDisabled]="!createOrderLineForm.form.valid || saving"
+
+  ></abp-modal-footer>
+
+</form>
+    <!--
+<div class="form-group row">
+      <label class="col-md-3 col-form-label" for="connectionString">
+        {{ "DatabaseConnectionString" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          name="connectionString"
+          id="connectionString"
+          maxlength="1024"
+          [(ngModel)]="orderLine.connectionString"
+        />
+      </div>
+    </div>
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="tenancyName">
+        {{ "Id" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          name="tenancyName"
+          id="tenancyName"
+          minlength="2"
+          maxlength="64"
+          required
+          [(ngModel)]="orderLine.id"
+          #tenancyNameModel="ngModel"
+          #tenancyNameEl
+        />
+        <abp-validation-summary
+          [control]="tenancyNameModel"
+          [controlEl]="tenancyNameEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="adminEmailAddress">
+        {{ "AdminEmailAddress" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="email"
+          class="form-control"
+          name="adminEmailAddress"
+          id="adminEmailAddress"
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$"
+          maxlength="256"
+          required
+          [(ngModel)]="orderLine.adminEmailAddress"
+          #adminEmailAddressModel="ngModel"
+          #adminEmailAddressEl
+        />
+        <abp-validation-summary
+          [control]="adminEmailAddressModel"
+          [controlEl]="adminEmailAddressEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+    <div class="form-group row mb-0">
+      <label class="col-md-3 col-form-label">
+        {{ "IsActive" | localize }}
+      </label>
+      <div class="col-md-9">
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            name="isActive"
+            id="isActive"
+            [(ngModel)]="orderLine.isActive"
+          />
+          <label class="custom-control-label mt-2" for="isActive"></label>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-info mb-0">
+      {{ "DefaultPasswordIs" | localize: "123qwe" }}
+    </p>
+
+    -->
+
+

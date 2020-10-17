@@ -123,6 +123,8 @@ namespace MDR_Angular.EntityFrameworkCore
         public DbSet<WriteOffReason> WriteOffReason { get; set; }
         public DbSet<WrittenOffStock> WrittenOffStock { get; set; }
         public DbSet<TotalSalesByDayOfWeekReport> TotalSalesByDayOfWeekReport { get; set; }
+        public DbSet<TotalSalesByMenuItemReport> TotalSalesByMenuItemReport { get; set; }
+
 
 
         public MDR_AngularDbContext(DbContextOptions<MDR_AngularDbContext> options)

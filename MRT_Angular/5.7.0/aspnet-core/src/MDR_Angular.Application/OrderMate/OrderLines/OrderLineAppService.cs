@@ -21,8 +21,8 @@ namespace MDR_Angular.OrderMate.OrderLines
             var orderLines = Repository
                 .GetAll().Where(x => x.OrderIdFk == id)
                 .Include(i => i.MenuItemIdFkNavigation)
-                .Include(i => i.UserIdFkNavigation)
-                .Include(i => i.MenuItemIdFkNavigation).ThenInclude(i => i.MenuItemPriceIdFkNavigation)
+               .Include(i => i.UserIdFkNavigation)
+               .Include(i => i.MenuItemIdFkNavigation).ThenInclude(i => i.MenuItemPriceIdFkNavigation)
                 
                 .ToList();
             return new ListResultDto<OrderLineDto>(ObjectMapper.Map<List<OrderLineDto>>(orderLines));

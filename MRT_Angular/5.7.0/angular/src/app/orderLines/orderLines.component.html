@@ -3,10 +3,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-6">
-          <h1>{{ "Orders" | localize }}</h1>
+          <h1>{{ "OrderLines" | localize }}</h1>
         </div>
         <div class="col-6 text-right">
-          <a href="javascript:;" class="btn bg-blue" (click)="createOrder()">
+          <a href="javascript:;" class="btn bg-blue" (click)="createOrderLine()">
             <i class="fa fa-plus-square"></i>
             {{ "Create" | localize }}
           </a>
@@ -54,18 +54,19 @@
           <table class="table table-hover text-nowrap" [busy]="isTableLoading">
             <thead class="bg-light">
               <tr>
-                <th>{{ "Id" | localize }}</th>
-                <th>{{ "Date Created" | localize }}</th>
-                <th>{{ "Date Completed" | localize }}</th>
-                <th>{{ "Table No" | localize }}</th>
-                <th>{{ "Status" | localize }}</th>
+                <th>{{ "Order Id" | localize }}</th>
+                <th>{{ "OrderLine Id"}}</th>
+                <th>{{ "Menu Item Name" | localize }}</th>
+                <th>{{ "Price" | localize }}</th>
+                <th>{{ "Quantity" | localize }}</th>
+                <th>{{ "Line Amount" | localize }}</th>
                 <th style="width: 200px;">{{ "Actions" | localize }}</th>
               </tr>
             </thead>
             <tbody>
               <tr
                 *ngFor="
-                  let order of orders
+                  let orderLine of orderLines
                     | paginate
                       : {
                           id: 'server',
@@ -73,30 +74,21 @@
                           currentPage: pageNumber,
                           totalItems: totalItems
                         }
-                        | grdFilter: {id: searchText, orderDateCreated:searchText, orderDateCompleted:searchText}
+                        | grdFilter: {id: searchText, orderLine1:searchText}
                 "
               >
-                <td>{{ order.id }}</td>
-                <td>{{ order.orderDateCreated }}</td>
-                <td>{{ order.orderDateCompleted }}</td>
-                <td>{{ order.qrCodeSeating.id }}</td>
-                <td>{{order.orderStatusIdFkNavigation.orderStatus1}}</td>
+                <td>{{ orderLine.orderIdFk }}</td>
+                <td>{{ orderLine.id }}</td>
+                <td>{{ orderLine.menuItemIdFkNavigation.menuItemName }}</td>
+                <td>{{ orderLine.menuItemIdFkNavigation.menuItemPriceIdFkNavigation.menuItemPrice1 | currency:"R " }}</td>
+                <td>{{orderLine.itemQty}}</td>
+                <td>{{orderLine.menuItemIdFkNavigation.menuItemPriceIdFkNavigation.menuItemPrice1 * orderLine.itemQty | currency:"R "}}</td>
 
                 <td>
                   <button
                     type="button"
-                    class="btn btn-sm bg-primary"
-                    style="margin-right: 10px;"
-                    (click)="viewOrder(order)"
-                  >
-                  <i class="fas fa-pencil-alt"></i>
-                    {{ "Details" | localize }}
-                  </button>
-
-                  <button
-                    type="button"
                     class="btn btn-sm bg-secondary"
-                    (click)="editOrder(order)"
+                    (click)="editOrderLine(orderLine)"
                   >
                     <i class="fas fa-pencil-alt"></i>
                     {{ "Edit" | localize }}
@@ -104,7 +96,7 @@
                   <button
                     type="button"
                     class="btn btn-sm bg-danger mx-2"
-                    (click)="delete(order)"
+                    (click)="delete(orderLine)"
                   >
                     <i class="fas fa-trash"></i>
                     {{ "Delete" | localize }}

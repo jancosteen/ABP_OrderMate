@@ -27,6 +27,39 @@ namespace MDR_Angular.OrderMate.Reports.Repository
             _transactionProvider = transactionProvider;
         }
 
+        public async Task<List<TotalSalesByMenuItemReportDto>> GetTotSBMI(int miId, DateTime dateFrom, DateTime dateTo)
+        {
+            await EnsureConnectionOpenAsync();
+
+            var dbCommand = CreateCommand("SP_SalesByMenuItem", CommandType.StoredProcedure);
+
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@menuItemId", SqlDbType.Int){Value=miId },
+                new SqlParameter("@dateFrom", SqlDbType.DateTime){Value=dateFrom },
+                new SqlParameter("@dateTo", SqlDbType.DateTime){Value=dateTo}
+            };
+
+            dbCommand.Parameters.AddRange(sqlParameters);
+
+            var lst = new List<TotalSalesByMenuItemReportDto>();
+
+            using (var reader = dbCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var row = new TotalSalesByMenuItemReportDto();
+                    row.MenuIteMane = reader.GetString(0);
+                    row.MenuItemPrice1 = reader.GetDouble(1);
+                    row.TotalSalesAmount = reader.GetDouble(2);
+                    
+
+                    lst.Add(row);
+                }
+                return lst;
+            }
+        }
+
         public async Task<List<TotalSalesByDayOfWeekReportDto>> GetTotSDOW(int resId, DateTime dateFrom, DateTime dateTo)
         {
             await EnsureConnectionOpenAsync();

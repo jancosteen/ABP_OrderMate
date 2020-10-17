@@ -34,6 +34,9 @@ import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 import { MenuItemDetailComponent } from './menuItems/menuItem-detail/menuItem-detail.component';
 import { StarRatingsComponent } from './starRatings/starRatings.component';
+import { OrderLinesComponent } from './orderLines/orderLines.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
+import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/create-orderLine-dialog.component';
 
 @NgModule({
     imports: [
@@ -74,6 +77,10 @@ import { StarRatingsComponent } from './starRatings/starRatings.component';
                     { path: 'restaurant/:id', component: RestaurantDetailComponent, data: { permission: 'Pages.AD' }, canActivate: [AppRouteGuard] },
                     { path: 'menuItem/:id', component: MenuItemDetailComponent, data: { permission: 'Pages.MI' }, canActivate: [AppRouteGuard] },
                     { path: 'starRatings', component: StarRatingsComponent, data: { permission: 'Pages.SR' }, canActivate: [AppRouteGuard] },
+                    { path: 'orderLines', component: OrderLinesComponent, data: { permission: 'Pages.OL' }, canActivate: [AppRouteGuard] },
+                    { path: 'order/:id', component: OrderDetailComponent, data: { permission: 'Pages.O' }, canActivate: [AppRouteGuard] },
+                    { path: 'orderLine', component: CreateOrderLineDialogComponent, data: { permission: 'Pages.OL' }, canActivate: [AppRouteGuard] },
+
 
                 ]
             }

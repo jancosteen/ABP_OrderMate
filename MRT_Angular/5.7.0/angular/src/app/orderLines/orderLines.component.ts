@@ -7,25 +7,24 @@ import {
   PagedRequestDto,
 } from '../../shared/paged-listing-component-base';
 import {
-  OrderServiceProxy,
-  OrderDto,
-  OrderDtoPagedResultDto,
+  OrderLineServiceProxy,
+  OrderLineDto,
+  OrderLineDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
-import { CreateOrderDialogComponent } from './create-order/create-order-dialog.component';
-import { EditOrderDialogComponent } from './edit-order/edit-order-dialog.component';
-import { Router } from '@angular/router';
+import { CreateOrderLineDialogComponent } from './create-orderLine/create-orderLine-dialog.component';
+import { EditOrderLineDialogComponent } from './edit-orderLine/edit-orderLine-dialog.component';
 
-class PagedOrdersRequestDto extends PagedRequestDto {
+class PagedOrderLinesRequestDto extends PagedRequestDto {
   keyword: string;
   isActive: boolean | null;
 }
 
 @Component({
-  templateUrl: './orders.component.html',
+  templateUrl: './orderLines.component.html',
   animations: [appModuleAnimation()]
 })
-export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
-  orders: OrderDto[] = [];
+export class OrderLinesComponent extends PagedListingComponentBase<OrderLineDto> {
+  orderLines: OrderLineDto[] = [];
   keyword = '';
   isActive: boolean | null;
   advancedFiltersVisible = false;
@@ -33,22 +32,21 @@ export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
 
   constructor(
     injector: Injector,
-    private _orderService: OrderServiceProxy,
-    private _modalService: BsModalService,
-    private _router: Router
+    private _orderLineService: OrderLineServiceProxy,
+    private _modalService: BsModalService
   ) {
     super(injector);
   }
 
   list(
-    request: PagedOrdersRequestDto,
+    request: PagedOrderLinesRequestDto,
     pageNumber: number,
     finishedCallback: Function
   ): void {
     request.keyword = this.keyword;
     request.isActive = this.isActive;
 
-    this._orderService
+    this._orderLineService
       .getAll(
         request.keyword,
         request.skipCount,
@@ -59,20 +57,20 @@ export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
           finishedCallback();
         })
       )
-      .subscribe((result: OrderDtoPagedResultDto) => {
-        this.orders = result.items;
+      .subscribe((result: OrderLineDtoPagedResultDto) => {
+        this.orderLines = result.items;
         this.showPaging(result, pageNumber);
       });
   }
 
-  delete(order: OrderDto): void {
+  delete(orderLine: OrderLineDto): void {
     abp.message.confirm(
-      this.l('OrderDeleteWarningMessage', order.id),
+      this.l('OrderLineDeleteWarningMessage', orderLine.itemQty),
       undefined,
       (result: boolean) => {
         if (result) {
-          this._orderService
-            .delete(order.id)
+          this._orderLineService
+            .delete(orderLine.id)
             .pipe(
               finalize(() => {
                 abp.notify.success(this.l('SuccessfullyDeleted'));
@@ -85,26 +83,26 @@ export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
     );
   }
 
-  createOrder(): void {
-    this.showCreateOrEditOrderDialog();
+  createOrderLine(): void {
+    this.showCreateOrEditOrderLineDialog();
   }
 
-  editOrder(order: OrderDto): void {
-    this.showCreateOrEditOrderDialog(order.id);
+  editOrderLine(orderLine: OrderLineDto): void {
+    this.showCreateOrEditOrderLineDialog(orderLine.id);
   }
 
-  showCreateOrEditOrderDialog(id?: number): void {
-    let createOrEditOrderDialog: BsModalRef;
+  showCreateOrEditOrderLineDialog(id?: number): void {
+    let createOrEditOrderLineDialog: BsModalRef;
     if (!id) {
-      createOrEditOrderDialog = this._modalService.show(
-        CreateOrderDialogComponent,
+      createOrEditOrderLineDialog = this._modalService.show(
+        CreateOrderLineDialogComponent,
         {
           class: 'modal-lg',
         }
       );
     } else {
-      createOrEditOrderDialog = this._modalService.show(
-        EditOrderDialogComponent,
+      createOrEditOrderLineDialog = this._modalService.show(
+        EditOrderLineDialogComponent,
         {
           class: 'modal-lg',
           initialState: {
@@ -114,7 +112,7 @@ export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
       );
     }
 
-    createOrEditOrderDialog.content.onSave.subscribe(() => {
+    createOrEditOrderLineDialog.content.onSave.subscribe(() => {
       this.refresh();
     });
   }
@@ -123,10 +121,5 @@ export class OrdersComponent extends PagedListingComponentBase<OrderDto> {
     this.keyword = '';
     this.isActive = undefined;
     this.getDataPage(1);
-  }
-
-  viewOrder(order:OrderDto): void {
-    const detailsUrl: string = `/app/order/${order.id}`;
-    this._router.navigate([detailsUrl]);
   }
 }
