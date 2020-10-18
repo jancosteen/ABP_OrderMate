@@ -14,8 +14,10 @@ import {
   MenuItemDtoPagedResultDto,
   MenuItemServiceProxy,
   OrderLineDto,
+  OrderLineDtoListResultDto,
   OrderLineServiceProxy
 } from '../../../shared/service-proxies/service-proxies';
+import { Router } from '@angular/router';
 
 export class lineAmount{
   menuItem:MenuItemDto;
@@ -49,14 +51,15 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
     injector: Injector,
     public _orderLineService: OrderLineServiceProxy,
     //public bsModalRef: BsModalRef,
-    public _menuItemService: MenuItemServiceProxy
+    public _menuItemService: MenuItemServiceProxy,
+    public _router:Router
   ) {
     super(injector);
   }
 
   ngOnInit(): void {
-    localStorage.clear();
     this.orderId =+ localStorage.getItem('orderId')
+    console.log(this.orderId);
 
 
     this._menuItemService
@@ -77,8 +80,10 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
 
       });
 
-
-
+      this._orderLineService
+        .getOrderLineByOrderId(this.orderId).subscribe((results:OrderLineDtoListResultDto)=>{
+          this.selectedOL = results.items;
+        })
   }
 
   addItem(item: MenuItemDto, ItemQty){
@@ -90,39 +95,58 @@ export class CreateOrderLineDialogComponent extends AppComponentBase
       console.log('lineAmount',this.lineAmount);
       this.lineAmounts.push(this.lineAmount);
       console.log(this.lineAmounts);
-
-
-
-
   }
 
-  removeItem(item){
-    for(let x=0;x<this.lineAmounts.length;x++){
-      if(item.menuItem.id == this.lineAmounts[x].menuItem.id){
-        this.lineAmounts.splice(x,1);
+  delete(orderLine: OrderLineDto): void {
+    abp.message.confirm(
+      this.l('OrderDeleteWarningMessage', orderLine.id),
+      undefined,
+      (result: boolean) => {
+        if (result) {
+          this._orderLineService
+            .delete(orderLine.id)
+            .pipe(
+              finalize(() => {
+                abp.notify.success(this.l('SuccessfullyDeleted'));
+                this._orderLineService
+                  .getOrderLineByOrderId(this.orderId).subscribe((results:OrderLineDtoListResultDto)=>{
+                  this.selectedOL = results.items;
+        })
+              })
+            )
+            .subscribe(() => {});
+        }
       }
-      console.log(this.lineAmounts);
-    }
+    );
   }
 
-  save(): void {
+  save(item: MenuItemDto, qty): void {
     this.saving = true;
 
     this.orderLine.orderIdFk = this.orderId;
-    this.orderLine.menuItemIdFk = this.selectedMenuItems[0].id;
+    this.orderLine.menuItemIdFk = item.id;
     this.orderLine.userIdFk = this.appSession.userId;
+    this.orderLine.itemQty = qty;
 
     this._orderLineService
       .create(this.orderLine)
       .pipe(
         finalize(() => {
           this.saving = false;
+          this._orderLineService
+        .getOrderLineByOrderId(this.orderId).subscribe((results:OrderLineDtoListResultDto)=>{
+          this.selectedOL = results.items;
+        })
         })
       )
       .subscribe(() => {
         this.notify.info(this.l('SavedSuccessfully'));
-
       });
+  }
+
+  viewOrder(): void {
+    const detailsUrl: string = `/app/order/${this.orderId}`;
+    this._router.navigate([detailsUrl]);
   }
 
 

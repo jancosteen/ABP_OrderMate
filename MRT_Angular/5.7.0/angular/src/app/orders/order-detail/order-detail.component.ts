@@ -60,6 +60,9 @@ export class OrderDetailComponent extends AppComponentBase
   ngOnInit(): void {
     let id: string = this.activeRoute.snapshot.params['id'];
     this.Iid =+ id;
+    localStorage.setItem('orderId',id);
+    this.orderId =+ localStorage.getItem('orderId');
+    console.log(this.orderId);
     this._orderService.getOrderById(this.Iid).subscribe((result: OrderDtoListResultDto) => {
       this.orders = result.items;
       this.orderStatusIdFk = this.orders[0].orderStatusIdFk;
@@ -153,8 +156,6 @@ export class OrderDetailComponent extends AppComponentBase
   }
 
   addToOrder(){
-    let id: string = this.activeRoute.snapshot.params['id'];
-      localStorage.setItem('orderId',id);
       const detailsUrl: string = `/app/orderLine`;
       this._router.navigate([detailsUrl]);
   }
