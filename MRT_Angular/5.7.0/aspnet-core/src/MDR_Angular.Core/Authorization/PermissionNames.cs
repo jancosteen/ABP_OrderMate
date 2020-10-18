@@ -105,6 +105,7 @@
         public const string Pages_UC = "Pages.WOR";
 
         public const string Pages_WOS = "Pages.WOS";
+        public const string Pages_Customer = "Pages.CUSTOMER";
 
     }
 }

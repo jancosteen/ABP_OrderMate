@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.Restaurants
 {
-    [AbpAuthorize(PermissionNames.Pages_REST)]
+    
     public class RestaurantAppService : AsyncCrudAppService<
          Restaurant, RestaurantDto, int, PagedAndSortedResultRequestDto, RestaurantDto>, IRestaurantAppService
     {

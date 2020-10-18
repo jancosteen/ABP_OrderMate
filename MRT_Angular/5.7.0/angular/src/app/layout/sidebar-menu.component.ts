@@ -44,7 +44,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
   getMenuItems(): MenuItem[] {
     return [
       new MenuItem(this.l('HomePage'), '/app/home', 'fas fa-home'),
-      new MenuItem(this.l('Administration'), '','fas fa-circle','',[
+      new MenuItem(this.l('Administration'), '','fas fa-circle','Pages.Tenants',[
         new MenuItem(
           this.l('Tenants'),
           '/app/tenants',
@@ -64,7 +64,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           'Pages.Roles'
         ),
       ]),
-      new MenuItem(this.l('Setup'),'', 'fas fa-circle','',[
+      new MenuItem(this.l('Setup'),'', 'fas fa-circle','Pages.M',[
         new MenuItem(this.l('Menus'),'','fas fa-circle','Pages.M',[
           new MenuItem(
             this.l('Menus'),
@@ -214,13 +214,13 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
         this.l('Manage Reservations'),
         '/app/reservations',
         'fas fa-users',
-        "Pages.R"
+        "Pages.Users"
       ),
       new MenuItem(
         this.l('Manage Orders'),
         '/app/orders',
         'fas fa-users',
-        "Pages.O"
+        "Pages.Users"
       )
     ]
   }
