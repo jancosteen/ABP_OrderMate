@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.SocialMediaTypes
 {
-    [AbpAuthorize(PermissionNames.Pages_SMT)]
+    //[AbpAuthorize(PermissionNames.Pages_SMT)]
     public class SocialMediaTypeAppService : AsyncCrudAppService<
         SocialMediaType, SocialMediaTypeDto, int, PagedAndSortedResultRequestDto, SocialMediaTypeDto>, ISocialMediaTypeAppService
     {

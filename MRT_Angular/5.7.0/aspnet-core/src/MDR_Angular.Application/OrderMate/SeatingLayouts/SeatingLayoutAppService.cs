@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.SeatingLayouts
 {
-    [AbpAuthorize(PermissionNames.Pages_SL)]
+    //[AbpAuthorize(PermissionNames.Pages_SL)]
     public class SeatingLayoutAppService : AsyncCrudAppService<
         SeatingLayout, SeatingLayoutDto, int, PagedAndSortedResultRequestDto, SeatingLayoutDto>, ISeatingLayoutAppService
     {

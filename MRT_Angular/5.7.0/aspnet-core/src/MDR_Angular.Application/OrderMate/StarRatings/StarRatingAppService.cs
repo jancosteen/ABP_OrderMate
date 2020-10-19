@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.StarRatings
 {
-    [AbpAuthorize(PermissionNames.Pages_SR)]
+    //[AbpAuthorize(PermissionNames.Pages_SR)]
     public class StarRatingAppService : AsyncCrudAppService<
         StarRating, StarRatingDto, int, PagedAndSortedResultRequestDto, StarRatingDto>, IStarRatingAppService
     {

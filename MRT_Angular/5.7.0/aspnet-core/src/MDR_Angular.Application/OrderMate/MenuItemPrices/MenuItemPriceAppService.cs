@@ -7,7 +7,7 @@ using MDR_Angular.OrderMate.MenuItemPrices.Dto;
 
 namespace MDR_Angular.OrderMate.MenuItemPrices
 {
-    [AbpAuthorize(PermissionNames.Pages_MIP)]
+    //[AbpAuthorize(PermissionNames.Pages_MIP)]
     public class MenuItemPriceAppService : AsyncCrudAppService<
         MenuItemPrice, MenuItemPriceDto, int, PagedAndSortedResultRequestDto, MenuItemPriceDto>, IMenuItemPriceAppService
     {

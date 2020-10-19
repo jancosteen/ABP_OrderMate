@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.UserComments
 {
-    [AbpAuthorize(PermissionNames.Pages_UC)]
+    //[AbpAuthorize(PermissionNames.Pages_UC)]
     public class UserCommentAppService : AsyncCrudAppService<
         UserComment, UserCommentDto, int, PagedAndSortedResultRequestDto, UserCommentDto>, IUserCommentAppService
     {

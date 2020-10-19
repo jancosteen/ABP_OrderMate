@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.QrCodes
 {
-    [AbpAuthorize(PermissionNames.Pages_QC)]
+    //[AbpAuthorize(PermissionNames.Pages_QC)]
     public class QrCodeAppService : AsyncCrudAppService<
         QrCode, QrCodeDto, int, PagedAndSortedResultRequestDto, QrCodeDto>, IQrCodeAppService
     {

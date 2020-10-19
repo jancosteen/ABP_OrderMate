@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.QrCodeSeatings
 {
-    [AbpAuthorize(PermissionNames.Pages_QCS)]
+    //[AbpAuthorize(PermissionNames.Pages_QCS)]
     public class QrCodeSeatingAppService : AsyncCrudAppService<
         QrCodeSeating, QrCodeSeatingDto, int, PagedAndSortedResultRequestDto, QrCodeSeatingDto>, IQrCodeSeatingAppService
     {

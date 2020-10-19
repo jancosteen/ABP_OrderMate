@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.SpecialPrices
 {
-    [AbpAuthorize(PermissionNames.Pages_SPP)]
+    //[AbpAuthorize(PermissionNames.Pages_SPP)]
     public class SpecialPriceAppService : AsyncCrudAppService<
         SpecialPrice, SpecialPriceDto, int, PagedAndSortedResultRequestDto, SpecialPriceDto>, ISpecialPriceAppService
     {

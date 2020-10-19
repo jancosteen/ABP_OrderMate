@@ -7,7 +7,7 @@ using MDR_Angular.OrderMate.OrderStatusses.Dto;
 
 namespace MDR_Angular.OrderMate.OrderStatusses
 {
-    [AbpAuthorize(PermissionNames.Pages_OS)]
+    //[AbpAuthorize(PermissionNames.Pages_OS)]
     public class OrderStatusAppService : AsyncCrudAppService<
         OrderStatus, OrderStatusDto, int, PagedAndSortedResultRequestDto, OrderStatusDto>, IOrderStatusAppService
     {

@@ -106,6 +106,8 @@
 
         public const string Pages_WOS = "Pages.WOS";
         public const string Pages_Customer = "Pages.CUSTOMER";
+        public const string Pages_SYSTEM_ADMIN = "Pages.SYSTEM_ADMIN";
+        public const string Pages_EMPLOYEE = "Pages.EMPLOYEE";
 
     }
 }

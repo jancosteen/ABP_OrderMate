@@ -14,7 +14,7 @@ using System.Text;
 
 namespace MDR_Angular.OrderMate.ItemTypeMenuItems
 {
-    [AbpAuthorize(PermissionNames.Pages_MI)]
+    //[AbpAuthorize(PermissionNames.Pages_MI)]
     public class ItemTypeMenuItemAppService : AsyncCrudAppService<
         ItemTypeMenuItem, ItemTypeMenuItemDto, int, PagedAndSortedResultRequestDto, ItemTypeMenuItemDto>, IItemTypeMenuItemAppService
     {

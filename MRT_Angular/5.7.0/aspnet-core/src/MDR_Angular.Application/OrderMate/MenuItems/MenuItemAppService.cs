@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.MenuItems
 {
-    [AbpAuthorize(PermissionNames.Pages_MI)]
+    //[AbpAuthorize(PermissionNames.Pages_MI)]
     public class MenuItemAppService : AsyncCrudAppService<
         MenuItem, MenuItemDto, int, PagedAndSortedResultRequestDto, MenuItemDto>, IMenuItemAppService
     {

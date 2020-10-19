@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.Specials
 {
-    [AbpAuthorize(PermissionNames.Pages_S)]
+    //[AbpAuthorize(PermissionNames.Pages_S)]
     public class SpecialAppService : AsyncCrudAppService<
         Special, SpecialDto, int, PagedAndSortedResultRequestDto, SpecialDto>, ISpecialAppService
     {

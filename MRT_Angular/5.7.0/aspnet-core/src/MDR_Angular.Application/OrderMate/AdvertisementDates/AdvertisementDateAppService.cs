@@ -7,7 +7,7 @@ using MDR_Angular.OrderMate.AdvertisementDates.Dto;
 
 namespace MDR_Angular.OrderMate.AdvertisementDates
 {
-    [AbpAuthorize(PermissionNames.Pages_AD)]
+    //[AbpAuthorize(PermissionNames.Pages_AD)]
     public class AdvertisementDateAppService : AsyncCrudAppService<
         AdvertisementDate, AdvertisementDateDto, int, PagedAndSortedResultRequestDto, AdvertisementDateDto>, IAdvertisementDateAppService
     {

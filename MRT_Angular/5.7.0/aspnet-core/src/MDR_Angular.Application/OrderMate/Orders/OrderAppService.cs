@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.Orders
 {
-    [AbpAuthorize(PermissionNames.Pages_O)]
+    //[AbpAuthorize(PermissionNames.Pages_O)]
     public class OrderAppService : AsyncCrudAppService<
         Order, OrderDto, int, PagedAndSortedResultRequestDto, OrderDto>, IOrderAppService
     {

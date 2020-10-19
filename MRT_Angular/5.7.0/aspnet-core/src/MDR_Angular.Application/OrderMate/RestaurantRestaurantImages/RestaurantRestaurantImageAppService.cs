@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.RestaurantRestaurantImages
 {
-    [AbpAuthorize(PermissionNames.Pages_RRI)]
+    //[AbpAuthorize(PermissionNames.Pages_RRI)]
     public class RestaurantRestaurantImageAppService : AsyncCrudAppService<
         RestaurantRestaurantImage, RestaurantRestaurantImageDto, int, PagedAndSortedResultRequestDto, RestaurantRestaurantImageDto>, IRestaurantRestaurantImageAppService
     {

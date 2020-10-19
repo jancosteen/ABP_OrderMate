@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace MDR_Angular.OrderMate.MenuItemAllergies
 {
-    [AbpAuthorize(PermissionNames.Pages_MIA)]
+    //[AbpAuthorize(PermissionNames.Pages_MIA)]
     public class MenuItemAllergyAppService : AsyncCrudAppService<
         MenuItemAllergy, MenuItemAllergyDto, int, PagedAndSortedResultRequestDto, MenuItemAllergyDto>, IMenuItemAllergyAppService
     {

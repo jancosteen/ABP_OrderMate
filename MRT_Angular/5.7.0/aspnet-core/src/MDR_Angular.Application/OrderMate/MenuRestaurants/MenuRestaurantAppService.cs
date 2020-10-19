@@ -7,7 +7,7 @@ using MDR_Angular.OrderMate.MenuRestaurants.Dto;
 
 namespace MDR_Angular.OrderMate.MenuRestaurants
 {
-    [AbpAuthorize(PermissionNames.Pages_MR)]
+    //[AbpAuthorize(PermissionNames.Pages_MR)]
     public class MenuRestaurantAppService : AsyncCrudAppService<
         MenuRestaurant, MenuRestaurantDto, int, PagedAndSortedResultRequestDto, MenuRestaurantDto>, IMenuRestaurantAppService
     {

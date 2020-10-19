@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.AttendanceSheets
 {
-    [AbpAuthorize(PermissionNames.Pages_AS)]
+    //[AbpAuthorize(PermissionNames.Pages_AS)]
     public class AttendanceSheetAppService : AsyncCrudAppService<
         AttendanceSheet, AttendanceSheetDto, int, PagedAndSortedResultRequestDto, AttendanceSheetDto>, IAttendanceSheetAppService
     {

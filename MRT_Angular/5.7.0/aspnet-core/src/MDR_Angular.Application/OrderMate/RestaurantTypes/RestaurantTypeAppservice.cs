@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.RestaurantTypes
 {
-    [AbpAuthorize(PermissionNames.Pages_RT)]
+    //[AbpAuthorize(PermissionNames.Pages_RT)]
     public class RestaurantTypeAppService : AsyncCrudAppService<
         RestaurantType, RestaurantTypeDto, int, PagedAndSortedResultRequestDto, RestaurantTypeDto>, IRestaurantTypeAppService
     {

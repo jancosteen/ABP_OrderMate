@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.Reservations
 {
-    [AbpAuthorize(PermissionNames.Pages_R)]
+    //[AbpAuthorize(PermissionNames.Pages_R)]
     public class ReservationAppService : AsyncCrudAppService<
         Reservation, ReservationDto, int, PagedAndSortedResultRequestDto, ReservationDto>, IReservationAppService
     {

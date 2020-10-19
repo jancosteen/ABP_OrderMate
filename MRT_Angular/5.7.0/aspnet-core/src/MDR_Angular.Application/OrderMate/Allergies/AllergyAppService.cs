@@ -7,7 +7,7 @@ using MDR_Angular.OrderMate.Allergies.Dto;
 
 namespace MDR_Angular.OrderMate.Allergies
 {
-    [AbpAuthorize(PermissionNames.Pages_Al)]
+    //[AbpAuthorize(PermissionNames.Pages_Al)]
     public class AllergyAppService : AsyncCrudAppService<
         Allergy, AllergyDto, int, PagedAndSortedResultRequestDto, AllergyDto>, IAllergyAppService
     {

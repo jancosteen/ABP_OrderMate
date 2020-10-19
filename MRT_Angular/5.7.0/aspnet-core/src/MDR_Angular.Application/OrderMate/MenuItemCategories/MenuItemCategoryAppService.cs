@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.MenuItemCategories
 {
-    [AbpAuthorize(PermissionNames.Pages_MIC)]
+    //[AbpAuthorize(PermissionNames.Pages_MIC)]
     public class MenuItemCategoryAppService : AsyncCrudAppService<
         MenuItemCategory, MenuItemCategoryDto, int, PagedAndSortedResultRequestDto, MenuItemCategoryDto>, IMenuItemCategoryAppService
     {

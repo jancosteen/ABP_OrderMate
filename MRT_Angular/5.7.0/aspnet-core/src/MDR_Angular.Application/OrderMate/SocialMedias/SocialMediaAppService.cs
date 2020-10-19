@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace MDR_Angular.OrderMate.SocialMedias
 {
-    [AbpAuthorize(PermissionNames.Pages_SM)]
+    //[AbpAuthorize(PermissionNames.Pages_SM)]
     public class SocialMediaAppService : AsyncCrudAppService<
         SocialMedia, SocialMediaDto, int, PagedAndSortedResultRequestDto, SocialMediaDto>, ISocialMediaAppService
     {

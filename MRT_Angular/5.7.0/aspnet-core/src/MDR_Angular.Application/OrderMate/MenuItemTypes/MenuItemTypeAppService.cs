@@ -7,7 +7,7 @@ using MDR_Angular.OrderMate.MenuItemTypes.Dto;
 
 namespace MDR_Angular.OrderMate.MenuItemTypes
 {
-    [AbpAuthorize(PermissionNames.Pages_MIT)]
+    //[AbpAuthorize(PermissionNames.Pages_MIT)]
     public class MenuItemTypeAppService : AsyncCrudAppService<
         MenuItemType, MenuItemTypeDto, int, PagedAndSortedResultRequestDto, MenuItemTypeDto>, IMenuItemTypeAppService
     {

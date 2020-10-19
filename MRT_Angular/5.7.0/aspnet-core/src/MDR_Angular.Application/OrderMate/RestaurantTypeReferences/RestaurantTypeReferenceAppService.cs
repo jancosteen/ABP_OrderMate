@@ -6,7 +6,7 @@ using MDR_Angular.Authorization;
 
 namespace MDR_Angular.OrderMate.RestaurantTypeReferences
 {
-    [AbpAuthorize(PermissionNames.Pages_RTR)]
+    //[AbpAuthorize(PermissionNames.Pages_RTR)]
     public class RestaurantTypeReferenceAppService : AsyncCrudAppService<
         RestaurantTypeRef, RestaurantTypeRefDto, int, PagedAndSortedResultRequestDto, RestaurantTypeRefDto>, IRestaurantTypeReferenceAppService
     {

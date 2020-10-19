@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MDR_Angular.OrderMate.AdvertisementPrices
 {
-    [AbpAuthorize(PermissionNames.Pages_AP)]
+    //[AbpAuthorize(PermissionNames.Pages_AP)]
     public class AdvertisementPriceAppService : AsyncCrudAppService<
         AdvertisementPrice, AdvertisementPriceDto, int, PagedAndSortedResultRequestDto, AdvertisementPriceDto>, IAdvertisementPriceAppService
     {
