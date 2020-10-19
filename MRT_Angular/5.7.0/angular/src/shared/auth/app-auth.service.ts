@@ -39,6 +39,7 @@ export class AppAuthService {
         if (reload !== false) {
             location.href = AppConsts.appBaseUrl;
         }
+        localStorage.clear();
     }
 
     authenticate(finallyCallback?: () => void): void {

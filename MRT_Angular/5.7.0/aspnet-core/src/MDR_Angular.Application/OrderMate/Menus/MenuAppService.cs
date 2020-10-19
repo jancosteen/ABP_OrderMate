@@ -28,6 +28,18 @@ namespace MDR_Angular.OrderMate.Menus
             return new ListResultDto<MenuDto>(ObjectMapper.Map<List<MenuDto>>(menus));
         }
 
+        public ListResultDto<MenuDto> GetMenuByResId(int id)
+        {
+            var menus = Repository
+                .GetAll().Where(x => x.RestaurantIdFk == id)
+                .Include(i => i.RestaurantIdFkNavigation)
+                .Include(i => i.MenuItem)
+                .Include(i => i.MenuItem).ThenInclude(i => i.MenuItemCategoryIdFkNavigation)
+                .Include(i => i.MenuItem).ThenInclude(i => i.MenuItemPriceIdFkNavigation)
+                .ToList();
+            return new ListResultDto<MenuDto>(ObjectMapper.Map<List<MenuDto>>(menus));
+        }
+
         protected override IQueryable<Menu> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
         {
             return base.CreateFilteredQuery(input)

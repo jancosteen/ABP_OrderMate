@@ -12,7 +12,7 @@
   <div class="container-fluid content-row">
     <div class="row">
       <div class="col-sm-12 col-md-auto" *ngFor="let r of restaurants" ><!---->
-        <div class="card h-100">
+        <div class="card h-100" (click)="goToMenu(r)">
         <div class="card-header d-flex flex-column">
           <div class="card-title">{{r.restaurantName}}</div><!---->
         </div>

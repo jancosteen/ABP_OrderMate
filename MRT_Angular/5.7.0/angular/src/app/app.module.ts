@@ -14,6 +14,7 @@ import { ServiceProxyModule } from '@shared/service-proxies/service-proxy.module
 import { SharedModule } from '@shared/shared.module';
 import { HomeComponent } from '@app/home/home.component';
 import { AboutComponent } from '@app/about/about.component';
+import { BrowserModule } from '@angular/platform-browser'
 // tenants
 import { TenantsComponent } from '@app/tenants/tenants.component';
 import { CreateTenantDialogComponent } from './tenants/create-tenant/create-tenant-dialog.component';
@@ -118,6 +119,8 @@ import { OrderLinesComponent} from './orderLines/orderLines.component';
 import { EditOrderLineDialogComponent } from './orderLines/edit-orderLine/edit-orderLine-dialog.component';
 import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/create-orderLine-dialog.component';
 import { OrderDetailComponent} from './orders/order-detail/order-detail.component';
+import { CustomerMenuComponent} from './customerMenu/customerMenu.component';
+import { CartModalComponent} from './customerMenu/cart-modal/cartModal.component';
 
 
 @NgModule({
@@ -125,6 +128,7 @@ import { OrderDetailComponent} from './orders/order-detail/order-detail.componen
     AppComponent,
     HomeComponent,
     AboutComponent,
+    CartModalComponent,
     //filter
     FilterPipe,
     // tenants
@@ -233,7 +237,8 @@ import { OrderDetailComponent} from './orders/order-detail/order-detail.componen
     MenuDetailComponent,
     StarRatingsComponent,
     CreateStarRatingDialogComponent,
-    EditStarRatingDialogComponent
+    EditStarRatingDialogComponent,
+    CustomerMenuComponent
 
   ],
   imports: [
@@ -250,7 +255,8 @@ import { OrderDetailComponent} from './orders/order-detail/order-detail.componen
     ServiceProxyModule,
     SharedModule,
     NgxPaginationModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+
 
   ],
   providers: [],
@@ -320,7 +326,8 @@ import { OrderDetailComponent} from './orders/order-detail/order-detail.componen
     CreateMenuDialogComponent,
     EditMenuDialogComponent,
     CreateStarRatingDialogComponent,
-    EditStarRatingDialogComponent
+    EditStarRatingDialogComponent,
+    CartModalComponent
 
   ],
 })

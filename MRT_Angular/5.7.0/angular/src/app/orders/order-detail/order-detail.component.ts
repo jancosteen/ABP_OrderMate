@@ -89,30 +89,22 @@ export class OrderDetailComponent extends AppComponentBase
       });
   }
 
-  editOrder(order: OrderDto): void {
-    this.showCreateOrEditOrderDialog(order.id);
+  editOrder(): void {
+    this.showCreateOrEditOrderDialog();
   }
 
-  showCreateOrEditOrderDialog(id?: number): void {
+  showCreateOrEditOrderDialog(): void {
     let createOrEditOrderDialog: BsModalRef;
-    if (!id) {
-      createOrEditOrderDialog = this._modalService.show(
-        CreateOrderDialogComponent,
-        {
-          class: 'modal-lg',
-        }
-      );
-    } else {
       createOrEditOrderDialog = this._modalService.show(
         EditOrderDialogComponent,
         {
           class: 'modal-lg',
           initialState: {
-            id: id,
+            id: this.Iid,
           },
         }
       );
-    }
+
 
     createOrEditOrderDialog.content.onSave.subscribe(() => {
       let id: string = this.activeRoute.snapshot.params['id'];

@@ -37,6 +37,7 @@ import { StarRatingsComponent } from './starRatings/starRatings.component';
 import { OrderLinesComponent } from './orderLines/orderLines.component';
 import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/create-orderLine-dialog.component';
+import { CustomerMenuComponent } from './customerMenu/customerMenu.component';
 
 @NgModule({
     imports: [
@@ -80,6 +81,7 @@ import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/cr
                     { path: 'orderLines', component: OrderLinesComponent, data: { permission: 'Pages.EMPLOYEE' }, canActivate: [AppRouteGuard] },
                     { path: 'order/:id', component: OrderDetailComponent, data: { permission: 'Pages.EMPLOYEE' }, canActivate: [AppRouteGuard] },
                     { path: 'orderLine', component: CreateOrderLineDialogComponent, data: { permission: 'Pages.EMPLOYEE' }, canActivate: [AppRouteGuard] },
+                    { path: 'cusMenu/:id', component: CustomerMenuComponent, data: { permission: '' }, canActivate: [AppRouteGuard] },
 
 
                 ]

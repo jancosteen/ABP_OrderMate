@@ -3,14 +3,20 @@ import { Injectable } from '@angular/core';
 import {
     ApplicationInfoDto,
     GetCurrentLoginInformationsOutput,
+    MenuItemDto,
     SessionServiceProxy,
     TenantLoginInfoDto,
     UserLoginInfoDto
 } from '@shared/service-proxies/service-proxies';
+import { BehaviorSubject } from 'rxjs';
+
 
 @Injectable()
 export class AppSessionService {
 
+    private cart = [];
+    private cartCount:number = 0;
+    private cartItemCount = new BehaviorSubject(0);
     private _user: UserLoginInfoDto;
     private _tenant: TenantLoginInfoDto;
     private _application: ApplicationInfoDto;
@@ -39,6 +45,7 @@ export class AppSessionService {
     get tenantId(): number {
         return this.tenant ? this.tenant.id : null;
     }
+
 
     getShownLoginName(): string {
         const userName = this._user.userName;
@@ -82,4 +89,55 @@ export class AppSessionService {
 
         return true;
     }
+
+    getCart() {
+        return this.cart;
+      }
+
+      getCartItemCount() {
+        return this.cartCount;
+      }
+
+      addProduct(item) {
+        let added=false;
+        for(let x of this.cart){
+            if(x.item.id === item.id){
+                x.qty +=1;
+                added=true;
+                break;
+            }
+        }
+        if(!added){
+        this.cart.push({item, qty:1});
+        }
+
+        this.cartCount += 1;
+        console.log(this.cart);
+      }
+
+      decreaseProduct(product) {
+        for (let x=0;x<this.cart.length;x++) {
+          if (this.cart[x].item.id === product.item.id) {
+            this.cart[x].qty -= 1;
+            if (this.cart[x].qty == 0) {
+              this.cart.splice(x, 1);
+            }
+          }
+        }
+        this.cartCount = this.cartCount-1;
+      }
+
+      clearCart(){
+          this.cart = [];
+      }
+
+      removeProduct(product) {
+        for (let [index, p] of this.cart) {
+          if (p.id === product.id) {
+            this.cartCount = this.cartCount - p.qty;
+            this.cart.splice(index, 1);
+          }
+        }
+      }
 }
+

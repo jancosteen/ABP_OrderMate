@@ -4,6 +4,8 @@ import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { PagedListingComponentBase, PagedRequestDto } from '@shared/paged-listing-component-base';
 import { RestaurantDto, RestaurantDtoPagedResultDto, RestaurantServiceProxy } from '@shared/service-proxies/service-proxies';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { AppSessionService } from '@shared/session/app-session.service';
 
 
 class PagedRestaurantsRequestDto extends PagedRequestDto {
@@ -16,10 +18,13 @@ class PagedRestaurantsRequestDto extends PagedRequestDto {
 })
 export class HomeComponent extends PagedListingComponentBase<RestaurantDto> {
 
+  cart=[];
   restaurants: RestaurantDto[]=[];
 
   constructor(injector: Injector
-    ,public _restaurantService: RestaurantServiceProxy) {
+    ,public _restaurantService: RestaurantServiceProxy
+    ,public _router:Router
+    ,public _appSessionService: AppSessionService) {
     super(injector);
   }
 
@@ -59,6 +64,9 @@ export class HomeComponent extends PagedListingComponentBase<RestaurantDto> {
 
       //this.restaurantImages[i].imageFile = this.images;
     }
+    this.cart = this._appSessionService.getCart();
+    console.log(this.cart);
+
   }
 
   delete(restaurant: RestaurantDto): void {
@@ -79,6 +87,11 @@ export class HomeComponent extends PagedListingComponentBase<RestaurantDto> {
         }
       }
     );
+  }
+
+  goToMenu(res:RestaurantDto){
+    const detailsUrl: string = `/app/cusMenu/${res.id}`;
+    this._router.navigate([detailsUrl]);
   }
 
 

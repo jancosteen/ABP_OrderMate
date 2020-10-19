@@ -182,34 +182,6 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
             'Pages.SYSTEM_ADMIN')
         ])
       ]),
-
-
-      new MenuItem(this.l('Advertisements'), '', 'fas fa-circle','Pages.SYSTEM_ADMIN',[
-        new MenuItem(
-          this.l('OrderLines'),
-          '/app/orderLines',
-          'fas fa-building',
-          'Pages.SYSTEM_ADMIN'
-        ),
-        new MenuItem(
-          this.l('Advertisements'),
-          '/app/advertisement',
-          'fas fa-building',
-          'Pages.SYSTEM_ADMIN'
-        ),
-        new MenuItem(
-          this.l('Dates'),
-          '/app/advDates',
-          'fas fa-users',
-          'Pages.SYSTEM_ADMIN'
-        ),
-        new MenuItem(
-          this.l('Prices'),
-          '/app/advPrices',
-          'fas fa-theater-masks',
-          'Pages.SYSTEM_ADMIN'
-        )
-      ]),
       new MenuItem(
         this.l('Manage Reservations'),
         '/app/reservations',
