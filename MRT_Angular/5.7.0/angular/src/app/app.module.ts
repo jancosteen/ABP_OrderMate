@@ -121,10 +121,15 @@ import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/cr
 import { OrderDetailComponent} from './orders/order-detail/order-detail.component';
 import { CustomerMenuComponent} from './customerMenu/customerMenu.component';
 import { CartModalComponent} from './customerMenu/cart-modal/cartModal.component';
-
+import { CustomerReservationsComponent} from './customerReservations/customerReservations.component';
+import { EditCustomerReservationDialogComponent} from './customerReservations/edit-customerReservation/edit-customerReservation-dialogcomponent'
+import { CreateCustomerReservationDialogComponent} from './customerReservations/create-customerReservation/create-customerReservation-dialog.component';
 
 @NgModule({
   declarations: [
+    CustomerReservationsComponent,
+    EditCustomerReservationDialogComponent,
+    CreateCustomerReservationDialogComponent,
     AppComponent,
     HomeComponent,
     AboutComponent,
@@ -261,6 +266,8 @@ import { CartModalComponent} from './customerMenu/cart-modal/cartModal.component
   ],
   providers: [],
   entryComponents: [
+    EditCustomerReservationDialogComponent,
+    CreateCustomerReservationDialogComponent,
     // tenants
     CreateTenantDialogComponent,
     EditTenantDialogComponent,

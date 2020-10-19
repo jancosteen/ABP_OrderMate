@@ -66,6 +66,7 @@
           class="form-control"
           name="userId"
           id="userId"
+
           maxlength="1024"
           value={{iUserId}}
           [(ngModel)]="reservation.userIdFk"
@@ -89,6 +90,7 @@
           class="form-control"
           name="pQty"
           id="pQty"
+          [min]="0"
           maxlength="1024"
           [(ngModel)]="reservation.reservationPartyQty"
           #pQtyModel="ngModel"
@@ -110,6 +112,7 @@
           type="number"
           class="form-control"
           name="nrBill"
+          [min]="1"
           id="nrBill"
           maxlength="1024"
           [(ngModel)]="reservation.reservationNumberOfBills"

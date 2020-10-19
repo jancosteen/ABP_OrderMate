@@ -108,7 +108,7 @@ export class CartModalComponent extends AppComponentBase
   sendToKitchen(){
     if(this.orderId === 0){
         this.order.orderDateCreated = this.sDate;
-        this.order.qrCodeSeatingIdFk = 2;
+        this.order.qrCodeSeatingIdFk = 1;
         this.order.orderStatusIdFk = 1;
       this._orderService
         .create(this.order)

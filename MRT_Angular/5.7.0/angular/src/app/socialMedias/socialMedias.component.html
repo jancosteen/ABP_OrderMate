@@ -58,6 +58,8 @@
                 <th>{{ "Id" | localize }}</th>
                 <th>{{ "Social Media Type" | localize }}</th>
                 <th>{{ "Social Media Address" | localize }}</th>
+                <th>{{ "Restaurant" | localize }}</th>
+
                 <th style="width: 200px;">{{ "Actions" | localize }}</th>
               </tr>
             </thead>
@@ -82,6 +84,7 @@
                 <td>{{ socialMedia.id }}</td>
                 <td>{{ socialMedia.socialMediaTypeIdFkNavigation.socialMediaType1}}</td>
                 <td>{{ socialMedia.socialMediaAddress }}</td>
+                <td>{{ socialMedia.restaurantIdFkNavigation.restaurantName }}</td>
 
 
                 <td>

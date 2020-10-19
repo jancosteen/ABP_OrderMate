@@ -1,14 +1,15 @@
 <form
   class="form-horizontal"
   autocomplete="off"
-  #createReservationForm="ngForm"
+  #editCustomerReservationForm="ngForm"
   (ngSubmit)="save()"
 >
   <abp-modal-header
-    [title]="'CreateNewReservation' | localize"
+    [title]="'Edit CustomerReservation' | localize"
     (onCloseClick)="bsModalRef.hide()"
   ></abp-modal-header>
   <div class="modal-body">
+
     <div class="form-group row required">
       <label class="col-md-3 col-form-label" for="rest">
         {{ "Restaurant" | localize }}
@@ -32,7 +33,7 @@
     </div>
     <div class="form-group row required">
       <label class="col-md-3 col-form-label" for="resDate">
-        {{ "Reservation Date " | localize }}
+        {{ "CustomerReservation Date " | localize }}
       </label>
       <div class="col-md-9">
         <input
@@ -65,6 +66,7 @@
           class="form-control"
           name="userId"
           id="userId"
+
           maxlength="1024"
           value={{iUserId}}
           [(ngModel)]="reservation.userIdFk"
@@ -87,8 +89,8 @@
           type="number"
           class="form-control"
           name="pQty"
-          [min]="0"
           id="pQty"
+          [min]="0"
           maxlength="1024"
           [(ngModel)]="reservation.reservationPartyQty"
           #pQtyModel="ngModel"
@@ -125,54 +127,38 @@
     </div>
 
     <div class="form-group row required">
-      <label class="col-md-3 col-form-label" for="stat">
-        {{ "Status" | localize }}
-      </label>
       <div class="col-md-9">
-        <select
+        <input
+          type="text"
+          style="display: none;"
           class="form-control"
-          name="stat"
-          id="stat"
-          required
+          name="status"
+          id="status"
+          maxlength="1024"
+          value={{defaultResStatusID}}
           [(ngModel)]="reservation.reservationStatusIdFk"
-          #statModel="ngModel"
-          #statEl>
-            <option *ngFor="let r of reservationStatusses" value={{r.id}}>{{r.reservationStatus1}}</option>
-        </select>
+          #statusModel="ngModel"
+          #statusEl
+        />
         <abp-validation-summary
-          [control]="statModel"
-          [controlEl]="statEl"
+          [control]="statusModel"
+          [controlEl]="statusEl"
         ></abp-validation-summary>
       </div>
     </div>
 
-    <abp-modal-footer
+  </div>
+  <abp-modal-footer
     [cancelDisabled]="saving"
-    [saveDisabled]="!createReservationForm.form.valid || saving"
+    [saveDisabled]="!editCustomerReservationForm.form.valid || saving"
     (onCancelClick)="bsModalRef.hide()"
   ></abp-modal-footer>
-
-</div>
 </form>
-    <!--
-<div class="form-group row">
-      <label class="col-md-3 col-form-label" for="connectionString">
-        {{ "DatabaseConnectionString" | localize }}
-      </label>
-      <div class="col-md-9">
-        <input
-          type="text"
-          class="form-control"
-          name="connectionString"
-          id="connectionString"
-          maxlength="1024"
-          [(ngModel)]="reservation.connectionString"
-        />
-      </div>
-    </div>
-    <div class="form-group row required">
+
+<!--
+  <div class="form-group row required">
       <label class="col-md-3 col-form-label" for="tenancyName">
-        {{ "Id" | localize }}
+        {{ "CustomerReservation Id" | localize }}
       </label>
       <div class="col-md-9">
         <input
@@ -183,7 +169,7 @@
           minlength="2"
           maxlength="64"
           required
-          [(ngModel)]="reservation.id"
+          [(ngModel)]="customerReservation.id"
           #tenancyNameModel="ngModel"
           #tenancyNameEl
         />
@@ -193,30 +179,7 @@
         ></abp-validation-summary>
       </div>
     </div>
-    <div class="form-group row required">
-      <label class="col-md-3 col-form-label" for="adminEmailAddress">
-        {{ "AdminEmailAddress" | localize }}
-      </label>
-      <div class="col-md-9">
-        <input
-          type="email"
-          class="form-control"
-          name="adminEmailAddress"
-          id="adminEmailAddress"
-          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$"
-          maxlength="256"
-          required
-          [(ngModel)]="reservation.adminEmailAddress"
-          #adminEmailAddressModel="ngModel"
-          #adminEmailAddressEl
-        />
-        <abp-validation-summary
-          [control]="adminEmailAddressModel"
-          [controlEl]="adminEmailAddressEl"
-        ></abp-validation-summary>
-      </div>
-    </div>
-    <div class="form-group row mb-0">
+  <div class="form-group row mb-0">
       <label class="col-md-3 col-form-label">
         {{ "IsActive" | localize }}
       </label>
@@ -227,16 +190,10 @@
             class="custom-control-input"
             name="isActive"
             id="isActive"
-            [(ngModel)]="reservation.isActive"
+            [(ngModel)]="customerReservation.isActive"
           />
           <label class="custom-control-label mt-2" for="isActive"></label>
         </div>
       </div>
     </div>
-    <p class="text-center text-info mb-0">
-      {{ "DefaultPasswordIs" | localize: "123qwe" }}
-    </p>
-
-    -->
-
-
+-->

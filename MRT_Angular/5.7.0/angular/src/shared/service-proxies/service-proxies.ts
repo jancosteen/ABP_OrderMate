@@ -5703,6 +5703,62 @@ export class QrCodeServiceProxy {
      * @param id (optional)
      * @return Success
      */
+    getQrCodeByRestId(id: number | undefined): Observable<QrCodeDtoListResultDto> {
+        let url_ = this.baseUrl + "/api/services/app/QrCode/GetQrCodeByRestId?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetQrCodeByRestId(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetQrCodeByRestId(<any>response_);
+                } catch (e) {
+                    return <Observable<QrCodeDtoListResultDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<QrCodeDtoListResultDto>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGetQrCodeByRestId(response: HttpResponseBase): Observable<QrCodeDtoListResultDto> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = QrCodeDtoListResultDto.fromJS(resultData200);
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<QrCodeDtoListResultDto>(<any>null);
+    }
+
+    /**
+     * @param id (optional)
+     * @return Success
+     */
     get(id: number | undefined): Observable<QrCodeDto> {
         let url_ = this.baseUrl + "/api/services/app/QrCode/Get?";
         if (id === null)
@@ -6326,6 +6382,62 @@ export class ReservationServiceProxy {
     }
 
     protected processGetReservationById(response: HttpResponseBase): Observable<ReservationDtoListResultDto> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = ReservationDtoListResultDto.fromJS(resultData200);
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<ReservationDtoListResultDto>(<any>null);
+    }
+
+    /**
+     * @param id (optional)
+     * @return Success
+     */
+    getReservationByUserId(id: number | undefined): Observable<ReservationDtoListResultDto> {
+        let url_ = this.baseUrl + "/api/services/app/Reservation/GetReservationByUserId?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetReservationByUserId(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetReservationByUserId(<any>response_);
+                } catch (e) {
+                    return <Observable<ReservationDtoListResultDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<ReservationDtoListResultDto>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGetReservationByUserId(response: HttpResponseBase): Observable<ReservationDtoListResultDto> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -15176,7 +15288,7 @@ export interface IAdvertisementDateDto {
 
 export class AdvertisementPriceDto implements IAdvertisementPriceDto {
     advertismentPrice: number;
-    advertisementPriceDateUpdated: string;
+    advertisementPriceDateUpdated:string;
     isDeleted: boolean;
     deleterUserId: number | undefined;
     deletionTime: moment.Moment | undefined;
@@ -17098,7 +17210,7 @@ export interface ISeatingLayoutDto {
 
 export class UserCommentDto implements IUserCommentDto {
     userComment1: string | undefined;
-    userCommentDateCreated: string;
+    userCommentDateCreated: moment.Moment;
     restaurantIdFk: number | undefined;
     starRatingIdFk: number | undefined;
     isDeleted: boolean;
@@ -17122,7 +17234,7 @@ export class UserCommentDto implements IUserCommentDto {
     init(_data?: any) {
         if (_data) {
             this.userComment1 = _data["userComment1"];
-            this.userCommentDateCreated = _data["userCommentDateCreated"];// ? moment(_data["userCommentDateCreated"].toString()) : <any>undefined;
+            this.userCommentDateCreated = _data["userCommentDateCreated"] ? moment(_data["userCommentDateCreated"].toString()) : <any>undefined;
             this.restaurantIdFk = _data["restaurantIdFk"];
             this.starRatingIdFk = _data["starRatingIdFk"];
             this.isDeleted = _data["isDeleted"];
@@ -17146,7 +17258,7 @@ export class UserCommentDto implements IUserCommentDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["userComment1"] = this.userComment1;
-        data["userCommentDateCreated"] = this.userCommentDateCreated;// ? this.userCommentDateCreated.toISOString() : <any>undefined;
+        data["userCommentDateCreated"] = this.userCommentDateCreated ? this.userCommentDateCreated.toISOString() : <any>undefined;
         data["restaurantIdFk"] = this.restaurantIdFk;
         data["starRatingIdFk"] = this.starRatingIdFk;
         data["isDeleted"] = this.isDeleted;
@@ -17170,7 +17282,7 @@ export class UserCommentDto implements IUserCommentDto {
 
 export interface IUserCommentDto {
     userComment1: string | undefined;
-    userCommentDateCreated: string;
+    userCommentDateCreated: moment.Moment;
     restaurantIdFk: number | undefined;
     starRatingIdFk: number | undefined;
     isDeleted: boolean;
@@ -17349,7 +17461,7 @@ export interface IRestaurantDto {
     restaurantName: string | undefined;
     restaurantUrl: string | undefined;
     restaurantDescription: string | undefined;
-    restaurantDateCreated: string| undefined;
+    restaurantDateCreated: string | undefined;
     restaurantAddressLine1: string | undefined;
     resaturantAddressLine2: string | undefined;
     restaurantCity: string | undefined;
@@ -19053,6 +19165,57 @@ export interface IQrCodeDto {
     id: number;
 }
 
+export class QrCodeDtoListResultDto implements IQrCodeDtoListResultDto {
+    items: QrCodeDto[] | undefined;
+
+    constructor(data?: IQrCodeDtoListResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            if (Array.isArray(_data["items"])) {
+                this.items = [] as any;
+                for (let item of _data["items"])
+                    this.items.push(QrCodeDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): QrCodeDtoListResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new QrCodeDtoListResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        if (Array.isArray(this.items)) {
+            data["items"] = [];
+            for (let item of this.items)
+                data["items"].push(item.toJSON());
+        }
+        return data;
+    }
+
+    clone(): QrCodeDtoListResultDto {
+        const json = this.toJSON();
+        let result = new QrCodeDtoListResultDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface IQrCodeDtoListResultDto {
+    items: QrCodeDto[] | undefined;
+}
+
 export class QrCodeDtoPagedResultDto implements IQrCodeDtoPagedResultDto {
     totalCount: number;
     items: QrCodeDto[] | undefined;
@@ -19389,7 +19552,7 @@ export class ReservationDto implements IReservationDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["reservationDateCreated"] = this.reservationDateCreated;// ? this.reservationDateCreated.toISOString() : <any>undefined;
-        data["reservationDateReserved"] = this.reservationDateReserved;// ? this.reservationDateReserved.toISOString() : <any>undefined;
+        data["reservationDateReserved"] = this.reservationDateReserved ;//? this.reservationDateReserved.toISOString() : <any>undefined;
         data["reservationPartyQty"] = this.reservationPartyQty;
         data["userIdFk"] = this.userIdFk;
         data["reservationStatusIdFk"] = this.reservationStatusIdFk;

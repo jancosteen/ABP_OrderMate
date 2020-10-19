@@ -29,6 +29,20 @@ namespace MDR_Angular.OrderMate.Reservations
             return new ListResultDto<ReservationDto>(ObjectMapper.Map<List<ReservationDto>>(reservation));
         }
 
+        public ListResultDto<ReservationDto> GetReservationByUserId(int id)
+        {
+            var reservation = Repository
+                .GetAll().Where(x => x.UserIdFk == id)
+                .Include(i => i.UserIdFkNavigation)
+                .Include(i => i.RestaurantIdFkNavigation)
+                .Include(i => i.ReservationStatusIdFkNavigation)
+                .Include(i => i.Seating)
+
+
+                .ToList();
+            return new ListResultDto<ReservationDto>(ObjectMapper.Map<List<ReservationDto>>(reservation));
+        }
+
         protected override IQueryable<Reservation> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
         {
             return base.CreateFilteredQuery(input)

@@ -39,7 +39,7 @@ export class CreateSeatingDialogComponent extends AppComponentBase
   }
 
   ngOnInit(): void {
-    this.currentDate = new Date().toISOString().substring(0, 16);
+    this.currentDate =  new Date().toISOString().substring(0, 16);
     this.currentTime = Date.now();
 
     this._reservationService

@@ -44,6 +44,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
   getMenuItems(): MenuItem[] {
     return [
       new MenuItem(this.l('HomePage'), '/app/home', 'fas fa-home'),
+      new MenuItem(this.l('My Reservations'), '/app/cusReser', 'fas fa-home'),
       new MenuItem(this.l('Administration'), '','fas fa-circle','Pages.SYSTEM_ADMIN',[
         new MenuItem(
           this.l('Tenants'),
@@ -191,6 +192,12 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
       new MenuItem(
         this.l('Manage Orders'),
         '/app/orders',
+        'fas fa-users',
+        "Pages.EMPLOYEE"
+      ),
+      new MenuItem(
+        this.l('Generate Qr Code'),
+        '/app/qrGen',
         'fas fa-users',
         "Pages.EMPLOYEE"
       )

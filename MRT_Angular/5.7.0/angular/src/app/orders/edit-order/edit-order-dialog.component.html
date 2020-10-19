@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="form-group row required">
+    <div class="form-group row">
       <label class="col-md-3 col-form-label" for="dateCompleted">
         {{ "Date Completed " | localize }}
       </label>
@@ -45,7 +45,7 @@
           name="dateCompleted"
           id="dateCompleted"
           maxlength="128"
-          required
+
           [min]="order.orderDateCreated"
           [(ngModel)]="order.orderDateCompleted"
           #dateCompletedModel="ngModel"

@@ -1,11 +1,11 @@
 <form
   class="form-horizontal"
   autocomplete="off"
-  #createReservationForm="ngForm"
+  #createCustomerReservationForm="ngForm"
   (ngSubmit)="save()"
 >
   <abp-modal-header
-    [title]="'CreateNewReservation' | localize"
+    [title]="'CreateNewCustomerReservation' | localize"
     (onCloseClick)="bsModalRef.hide()"
   ></abp-modal-header>
   <div class="modal-body">
@@ -32,7 +32,7 @@
     </div>
     <div class="form-group row required">
       <label class="col-md-3 col-form-label" for="resDate">
-        {{ "Reservation Date " | localize }}
+        {{ "CustomerReservation Date " | localize }}
       </label>
       <div class="col-md-9">
         <input
@@ -125,30 +125,29 @@
     </div>
 
     <div class="form-group row required">
-      <label class="col-md-3 col-form-label" for="stat">
-        {{ "Status" | localize }}
-      </label>
       <div class="col-md-9">
-        <select
+        <input
+          type="text"
+          style="display: none;"
           class="form-control"
-          name="stat"
-          id="stat"
-          required
+          name="status"
+          id="status"
+          maxlength="1024"
+          value={{defaultResStatusID}}
           [(ngModel)]="reservation.reservationStatusIdFk"
-          #statModel="ngModel"
-          #statEl>
-            <option *ngFor="let r of reservationStatusses" value={{r.id}}>{{r.reservationStatus1}}</option>
-        </select>
+          #statusModel="ngModel"
+          #statusEl
+        />
         <abp-validation-summary
-          [control]="statModel"
-          [controlEl]="statEl"
+          [control]="statusModel"
+          [controlEl]="statusEl"
         ></abp-validation-summary>
       </div>
     </div>
 
     <abp-modal-footer
     [cancelDisabled]="saving"
-    [saveDisabled]="!createReservationForm.form.valid || saving"
+    [saveDisabled]="!createCustomerReservationForm.form.valid || saving"
     (onCancelClick)="bsModalRef.hide()"
   ></abp-modal-footer>
 
@@ -166,7 +165,7 @@
           name="connectionString"
           id="connectionString"
           maxlength="1024"
-          [(ngModel)]="reservation.connectionString"
+          [(ngModel)]="customerReservation.connectionString"
         />
       </div>
     </div>
@@ -183,7 +182,7 @@
           minlength="2"
           maxlength="64"
           required
-          [(ngModel)]="reservation.id"
+          [(ngModel)]="customerReservation.id"
           #tenancyNameModel="ngModel"
           #tenancyNameEl
         />
@@ -206,7 +205,7 @@
           pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$"
           maxlength="256"
           required
-          [(ngModel)]="reservation.adminEmailAddress"
+          [(ngModel)]="customerReservation.adminEmailAddress"
           #adminEmailAddressModel="ngModel"
           #adminEmailAddressEl
         />
@@ -227,7 +226,7 @@
             class="custom-control-input"
             name="isActive"
             id="isActive"
-            [(ngModel)]="reservation.isActive"
+            [(ngModel)]="customerReservation.isActive"
           />
           <label class="custom-control-label mt-2" for="isActive"></label>
         </div>

@@ -4,6 +4,7 @@ using Abp.Authorization;
 using Abp.Domain.Repositories;
 using MDR_Angular.Authorization;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MDR_Angular.OrderMate.QrCodes
@@ -19,6 +20,17 @@ namespace MDR_Angular.OrderMate.QrCodes
             return base.CreateFilteredQuery(input)
                 //.Include(i => i.ReservationRestaurant).ThenInclude(x => x.RestaurantIdFkNavigation)
                 .Include(i => i.RestaurantIdFkNavigation);
+        }
+
+        public ListResultDto<QrCodeDto> GetQrCodeByRestId(int id)
+        {
+            var reservation = Repository
+                .GetAll().Where(x => x.RestaurantIdFk == id)
+                .Include(i => i.RestaurantIdFkNavigation)
+
+
+                .ToList();
+            return new ListResultDto<QrCodeDto>(ObjectMapper.Map<List<QrCodeDto>>(reservation));
         }
     }
 }
