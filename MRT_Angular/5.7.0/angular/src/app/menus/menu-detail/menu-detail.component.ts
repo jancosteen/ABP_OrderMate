@@ -11,13 +11,18 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '../../../shared/app-component-base';
 import {
   MenuServiceProxy,
-  MenuDto, RestaurantServiceProxy, RestaurantDtoPagedResultDto, RestaurantDto, MenuItemServiceProxy, MenuItemDto, MenuItemDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto
+  MenuDto, RestaurantServiceProxy, RestaurantDtoPagedResultDto, RestaurantDto, MenuItemServiceProxy, MenuItemDto, MenuItemDtoPagedResultDto, MenuItemAllergyServiceProxy, MenuItemAllergyDto, MenuDtoListResultDto
 } from '../../../shared/service-proxies/service-proxies';
 import { EditMenuItemDialogComponent } from '../../menuItems/edit-menuItem/edit-menuItem-dialog.component';
 import { CreateMenuItemDialogComponent } from '../../menuItems/create-menuItem/create-menuItem-dialog.component';
 import { EditMenuDialogComponent } from '../edit-menu/edit-menu-dialog.component';
 import { CreateMenuDialogComponent } from '../create-menu/create-menu-dialog.component';
+import { PagedRequestDto } from '@shared/paged-listing-component-base';
 
+class PagedMenuItemsRequestDto extends PagedRequestDto {
+  keyword: string;
+  isActive: boolean | null;
+}
 
 
 
@@ -31,6 +36,7 @@ export class MenuDetailComponent extends AppComponentBase
   Iid: number;
   restaurants: RestaurantDto[]=[];
   restautrant: RestaurantDto = new RestaurantDto();
+  restaurant: RestaurantDto = new RestaurantDto();
   restaurantdIdFk:number;
   menuItems: MenuItemDto[]=[];
   linkedMenuItems:MenuItemDto[]=[];
@@ -40,6 +46,10 @@ export class MenuDetailComponent extends AppComponentBase
   public searchText:string;
   loading:boolean = true;
   advancedFiltersVisible = false;
+  menuItemCount:number;
+  keyword = '';
+  isActive: boolean | null;
+  menus:MenuDto[]=[];
 
 
 
@@ -62,30 +72,15 @@ export class MenuDetailComponent extends AppComponentBase
   ngOnInit(): void {
     let id: string = this.activeRoute.snapshot.params['id'];
     this.Iid =+ id;
-    this._menuService.get(this.Iid).subscribe((result: MenuDto) => {
-      this.menu = result;
-      this.restaurantdIdFk = this.menu.restaurantIdFk;
-      this.menuId = this.menu.id;
+    this._menuService.getMenuById(this.Iid).subscribe((result: MenuDtoListResultDto) => {
+      this.menus = result.items;
+      this.restaurant = this.menus[0].restaurantIdFkNavigation;
+      this.menuId = this.menus[0].id;
+      this.loading = false;
+      this.menuItems = this.menus[0].menuItem;
+      console.log('menuItems',this.menus[0].menuItem);
     });
 
-    this._restaurantService
-    .getAll(
-      '',
-      0,
-      100
-    )
-    .pipe(
-      finalize(() => {
-        console.log('Restaurant pipe');
-      })
-    )
-    .subscribe((result: RestaurantDtoPagedResultDto) => {
-      this.restaurants = result.items;
-      this.getRestaurant(this.restaurantdIdFk);
-      //this.showPaging(result, pageNumber);
-    });
-
-    this.getAllMenuItems();
 
   }
 
@@ -104,44 +99,7 @@ export class MenuDetailComponent extends AppComponentBase
       });
   }
 
-  getRestaurant(resId){
-    for(let x=0;x<this.restaurants.length;x++){
-      if(resId==this.restaurants[x].id){
-        this.restautrant=this.restaurants[x];
-        console.log(resId,this.restaurants[x]);
-      }
-    }
-  }
 
-  getAllMenuItems(){
-    this._menuItemService
-    .getAll(
-      '',
-      0,
-      100
-    )
-    .pipe(
-      finalize(() => {
-        console.log('menuItems pipe');
-      })
-    )
-    .subscribe((result: MenuItemDtoPagedResultDto) => {
-      this.menuItems = result.items;
-      this.getMenuItems(this.menuId);
-      //this.showPaging(result, pageNumber);
-    });
-  }
-
-  getMenuItems(mId){
-    console.log(this.menuItems,mId);
-    for(let x=0;x<this.menuItems.length;x++){
-      if(mId==this.menuItems[x].menuIdFk){
-        this.linkedMenuItems.push(this.menuItems[x]);
-        console.log(mId,this.linkedMenuItems[x]);
-      }
-    }
-    this.loading = false;
-  }
 
   delete(menuItem: MenuItemDto): void {
     this.__menuItemAllergyService.getAllergyByMenuItemId(menuItem.id).subscribe((result) => {
@@ -158,8 +116,17 @@ export class MenuDetailComponent extends AppComponentBase
             .pipe(
               finalize(() => {
                 abp.notify.success(this.l('SuccessfullyDeleted'));
-                //location.reload();
-                this.getAllMenuItems();
+                let id: string = this.activeRoute.snapshot.params['id'];
+              this.Iid =+ id;
+    this._menuService.getMenuById(this.Iid).subscribe((result: MenuDtoListResultDto) => {
+      this.menus = result.items;
+      this.restaurant = this.menus[0].restaurantIdFkNavigation;
+      this.menuId = this.menus[0].id;
+      this.loading = false;
+      this.menuItems = this.menus[0].menuItem;
+      console.log('menuItems',this.menus[0].menuItem);
+    });
+
               })
             )
             .subscribe(() => {});
@@ -209,8 +176,16 @@ export class MenuDetailComponent extends AppComponentBase
     }
 
     createOrEditMenuItemDialog.content.onSave.subscribe(() => {
-      //location.reload();
-      this.getAllMenuItems();
+      let id: string = this.activeRoute.snapshot.params['id'];
+    this.Iid =+ id;
+    this._menuService.getMenuById(this.Iid).subscribe((result: MenuDtoListResultDto) => {
+      this.menus = result.items;
+      this.restaurant = this.menus[0].restaurantIdFkNavigation;
+      this.menuId = this.menus[0].id;
+      this.loading = false;
+      this.menuItems = this.menus[0].menuItem;
+      console.log('menuItems',this.menus[0].menuItem);
+    });
     });
   }
 

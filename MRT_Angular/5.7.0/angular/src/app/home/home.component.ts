@@ -49,6 +49,7 @@ export class HomeComponent extends PagedListingComponentBase<RestaurantDto> {
       )
       .subscribe((result: RestaurantDtoPagedResultDto) => {
         this.restaurants = result.items;
+        console.log(this.restaurants);
         this.convertImage(this.restaurants);
         //this.showPaging(result, pageNumber);
       });

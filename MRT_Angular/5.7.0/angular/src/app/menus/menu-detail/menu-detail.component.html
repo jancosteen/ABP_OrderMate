@@ -7,14 +7,14 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">View Menu Details</h1>
-    <p class="lead">{{menu.menuName}}</p>
+    <p class="lead">{{menus[0].menuName}}</p>
   </div>
 </div>
 <div class="card" style="margin: 0 auto; float:none; margin-bottom: 10px; width: 95%;">
   <div class="card-body">
     <div class="row">
       <div class="col-6">
-        <h1>{{menu.menuName}}</h1>
+        <h1>{{menus[0].menuName}}</h1>
       </div>
       <div class="col-6 text-right">
         <a href="javascript:;" class="btn bg-blue" (click)="editMenu(menu)">
@@ -42,7 +42,7 @@
           id="menuDes"
           name="menuDes"
           disabled
-          [(ngModel)]="menu.menuDescription">
+          [(ngModel)]="menus[0].menuDescription">
       </div>
     </div>
 
@@ -53,7 +53,7 @@
         class="form-control"
         id="menuTimeFrom"
         disabled
-        [(ngModel)]="menu.menuTimeActiveFrom"
+        [(ngModel)]="menus[0].menuTimeActiveFrom"
         name="menuTimeFrom">
       </div>
     </div>
@@ -65,7 +65,7 @@
           id="menuTimeTo"
           name="menuTimeTo"
           disabled
-          [(ngModel)]="menu.menuTimeActiveTo">
+          [(ngModel)]="menus[0].menuTimeActiveTo">
       </div>
     </div>
     <div class="form-group row">
@@ -76,7 +76,7 @@
           id="restaurant"
           name="restaurant"
           disabled
-          [(ngModel)]="restautrant.restaurantName">
+          [(ngModel)]="restaurant.restaurantName">
       </div>
     </div>
   </div>
@@ -149,13 +149,13 @@
             <tr
               *ngFor="
                 let menuItem of menuItems
-                  | paginate
-                    : {
-                        id: 'server',
-                        itemsPerPage: linkedMenuItems.length,
-                        currentPage: 1,
-                        totalItems: linkedMenuItems.length
-                      }
+                | paginate
+                : {
+                    id: 'server',
+                    itemsPerPage: menuItems.length,
+                    currentPage: 1,
+                    totalItems: menuItems.length
+                  }
                       | grdFilter: {id: searchText, menuItemName:searchText
                         , menuItemDescription:searchText}
               "
@@ -164,7 +164,7 @@
               <td>{{ menuItem.menuItemName }}</td>
               <td>{{menuItem.menuItemDescription}}</td>
               <td>{{menuItem.menuItemCategoryIdFkNavigation.menuItemCategory1}}</td>
-              <td>{{menuItem.menuItemPriceIdFkNavigation.menuItemPrice1}}</td>
+              <td>{{menuItem.menuItemPriceIdFkNavigation.menuItemPrice1 | currency:"R "}}</td>
               <td>
                 <button
                     type="button"
@@ -208,12 +208,12 @@
           </div>
           <div class="col-sm-4 col-12">
             <div class="float-sm-right m-auto">
-              <abp-pagination-controls
-                id="server"
-
-              >
-              </abp-pagination-controls>
             </div>
+            <abp-pagination-controls
+                  id="server"
+
+                >
+                </abp-pagination-controls>
           </div>
         </div>
       </div>

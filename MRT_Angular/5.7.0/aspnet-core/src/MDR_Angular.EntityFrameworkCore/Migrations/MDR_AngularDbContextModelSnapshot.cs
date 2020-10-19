@@ -2822,8 +2822,8 @@ namespace MDR_Angular.Migrations
                     b.Property<int>("Thursday")
                         .HasColumnType("int");
 
-                    b.Property<float>("TotalAmount")
-                        .HasColumnType("real");
+                    b.Property<double>("TotalAmount")
+                        .HasColumnType("float");
 
                     b.Property<int>("TotalSales")
                         .HasColumnType("int");
@@ -2837,6 +2837,27 @@ namespace MDR_Angular.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TotalSalesByDayOfWeekReport");
+                });
+
+            modelBuilder.Entity("MDR_Angular.OrderMate.Reports.TotalSalesByMenuItemReport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("MenuIteMane")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("MenuItemPrice1")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSalesAmount")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TotalSalesByMenuItemReport");
                 });
 
             modelBuilder.Entity("MDR_Angular.OrderMate.ReservationRestaurants.ReservationRestaurant", b =>

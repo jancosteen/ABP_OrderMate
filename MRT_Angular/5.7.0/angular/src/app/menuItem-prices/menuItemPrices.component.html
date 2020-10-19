@@ -56,7 +56,6 @@
               <tr>
                 <th>{{ "Id" | localize }}</th>
                 <th>{{ "MenuItem Price" | localize }}</th>
-                <th>{{ "Active" | localize }}</th>
                 <th style="width: 200px;">{{ "Actions" | localize }}</th>
               </tr>
             </thead>
@@ -75,18 +74,7 @@
                 "
               >
                 <td>{{ menuItemPrice.id }}</td>
-                <td>{{ menuItemPrice.menuItemPrice1 }}</td>
-                <td>
-                  <div class="custom-control custom-checkbox">
-                    <input
-                      type="checkbox"
-                      class="custom-control-input"
-                      disabled
-                      [checked]="menuItemPrice.isActive"
-                    />
-                    <label class="custom-control-label"></label>
-                  </div>
-                </td>
+                <td>{{ menuItemPrice.menuItemPrice1 | currency:"R "}}</td>
                 <td>
                   <button
                     type="button"
