@@ -10,6 +10,9 @@ import {
   MenuItemCategoryServiceProxy,
   MenuItemCategoryDto,
   MenuItemCategoryDtoPagedResultDto,
+  MenuItemDto,
+  MenuItemServiceProxy,
+  MenuItemDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateMenuItemCategoryDialogComponent } from './create-menuItemCategory/create-menuItemCategory-dialog.component';
 import { EditMenuItemCategoryDialogComponent } from './edit-menuItemCategory/edit-menuItemCategory-dialog.component';
@@ -29,11 +32,14 @@ export class MenuItemCategoriesComponent extends PagedListingComponentBase<MenuI
   isActive: boolean | null;
   advancedFiltersVisible = false;
   public searchText:string;
+  isRelated=false;
+  menuItems:MenuItemDto[]=[];
 
   constructor(
     injector: Injector,
     private _menuItemCategoryService: MenuItemCategoryServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _menuItemService: MenuItemServiceProxy
   ) {
     super(injector);
   }
@@ -41,7 +47,8 @@ export class MenuItemCategoriesComponent extends PagedListingComponentBase<MenuI
   list(
     request: PagedMenuItemCategorysRequestDto,
     pageNumber: number,
-    finishedCallback: Function
+    finishedCallback: Function,
+
   ): void {
     request.keyword = this.keyword;
     request.isActive = this.isActive;
@@ -61,26 +68,60 @@ export class MenuItemCategoriesComponent extends PagedListingComponentBase<MenuI
         this.menuItemCategorys = result.items;
         this.showPaging(result, pageNumber);
       });
+
+      this._menuItemService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: MenuItemDtoPagedResultDto) => {
+        this.menuItems = result.items;
+        console.log(this.menuItems);
+      });
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.menuItems.length;x++){
+      if(this.menuItems[x].menuItemCategoryIdFk === id){
+        this.isRelated=true;
+        console.log(this.isRelated);
+      }
+    }
   }
 
   delete(menuItemCategory: MenuItemCategoryDto): void {
-    abp.message.confirm(
-      this.l('MenuItemCategoryDeleteWarningMessage', menuItemCategory.menuItemCategory1),
-      undefined,
-      (result: boolean) => {
-        if (result) {
-          this._menuItemCategoryService
-            .delete(menuItemCategory.id)
-            .pipe(
-              finalize(() => {
-                abp.notify.success(this.l('SuccessfullyDeleted'));
-                this.refresh();
-              })
-            )
-            .subscribe(() => {});
+    this.checkIfRelated(menuItemCategory.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Category, it has related menu items', menuItemCategory.menuItemCategory1)
+      )
+    }
+    if(this.isRelated === false){
+      abp.message.confirm(
+        this.l('Are you sure you want to delete this record?', menuItemCategory.menuItemCategory1),
+        undefined,
+        (result: boolean) => {
+          if (result) {
+            this._menuItemCategoryService
+              .delete(menuItemCategory.id)
+              .pipe(
+                finalize(() => {
+                  abp.notify.success(this.l('SuccessfullyDeleted'));
+                  this.refresh();
+                })
+              )
+              .subscribe(() => {});
+          }
         }
-      }
-    );
+      );
+    }
+
   }
 
   createMenuItemCategory(): void {

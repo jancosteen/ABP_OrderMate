@@ -10,6 +10,9 @@ import {
   AllergyServiceProxy,
   AllergyDto,
   AllergyDtoPagedResultDto,
+  MenuItemAllergyServiceProxy,
+  MenuItemAllergyDto,
+  MenuItemAllergyDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateAllergyDialogComponent } from './create-allergy/create-allergy-dialog.component';
 import { EditAllergyDialogComponent } from './edit-allergy/edit-allergy-dialog.component';
@@ -29,11 +32,14 @@ export class AllergiesComponent extends PagedListingComponentBase<AllergyDto> {
   isActive: boolean | null;
   advancedFiltersVisible = false;
   public searchText: string;
+  menuItemAllergies: MenuItemAllergyDto[]=[];
+  isRelated=false;
 
   constructor(
     injector: Injector,
     private _allergyService: AllergyServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _menuItemAllergyService: MenuItemAllergyServiceProxy
   ) {
     super(injector);
   }
@@ -61,26 +67,61 @@ export class AllergiesComponent extends PagedListingComponentBase<AllergyDto> {
         this.allergys = result.items;
         this.showPaging(result, pageNumber);
       });
+
+      this._menuItemAllergyService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: MenuItemAllergyDtoPagedResultDto) => {
+        this.menuItemAllergies = result.items;
+
+      });
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.menuItemAllergies.length;x++){
+      if(this.menuItemAllergies[x].allergyIdFk === id){
+        this.isRelated=true;
+        console.log(this.isRelated);
+      }
+    }
   }
 
   delete(allergy: AllergyDto): void {
-    abp.message.confirm(
-      this.l('AllergyDeleteWarningMessage', allergy.allergy1),
-      undefined,
-      (result: boolean) => {
-        if (result) {
-          this._allergyService
-            .delete(allergy.id)
-            .pipe(
-              finalize(() => {
-                abp.notify.success(this.l('SuccessfullyDeleted'));
-                this.refresh();
-              })
-            )
-            .subscribe(() => {});
+
+    this.checkIfRelated(allergy.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Allergy, it has related menu items', allergy.allergy1)
+      )
+    }
+    if(this,this.isRelated === false){
+      abp.message.confirm(
+        this.l('Are you sure you want to delete this record?', allergy.allergy1),
+        undefined,
+        (result: boolean) => {
+          if (result) {
+            this._allergyService
+              .delete(allergy.id)
+              .pipe(
+                finalize(() => {
+                  abp.notify.success(this.l('SuccessfullyDeleted'));
+                  this.refresh();
+                })
+              )
+              .subscribe(() => {});
+          }
         }
-      }
-    );
+      );
+    }
+
   }
 
   createAllergy(): void {

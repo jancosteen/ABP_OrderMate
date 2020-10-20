@@ -85,7 +85,7 @@ export class CustomerReservationsComponent extends PagedListingComponentBase<Res
 
   delete(customerReservation: ReservationDto): void {
     abp.message.confirm(
-      this.l('CustomerReservationDeleteWarningMessage', customerReservation.id),
+      this.l('Are you sure you want to delete this record?', customerReservation.id),
       undefined,
       (result: boolean) => {
         if (result) {

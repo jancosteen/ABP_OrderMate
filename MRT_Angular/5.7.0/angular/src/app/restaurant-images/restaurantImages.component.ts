@@ -35,6 +35,8 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
   restaurants: RestaurantDto[] = [];
   images:any =[];
   public searchText: string;
+  isRelated=false;
+
 
 
 
@@ -82,9 +84,28 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
     }
   }
 
+  checkIfRelated(id){
+    for(let x=0;x<this.restaurants.length;x++){
+      for(let y=0;y<this.restaurants[x].restaurantImage.length;y++){
+        if(this.restaurants[x].restaurantImage[y].id === id){
+          this.isRelated=true;
+          console.log(this.isRelated);
+        }
+      }
+
+    }
+  }
+
   delete(restaurantImage: RestaurantImageDto): void {
+    this.checkIfRelated(restaurantImage.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Image, it has related restaurants', restaurantImage.imageDescription)
+      )
+    }
+    if(this.isRelated === false){
     abp.message.confirm(
-      this.l('RestaurantImageDeleteWarningMessage', restaurantImage.imageDescription),
+      this.l('Are you sure you want to delete this record?', restaurantImage.imageDescription),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -99,7 +120,7 @@ export class RestaurantImagesComponent extends PagedListingComponentBase<Restaur
             .subscribe(() => {});
         }
       }
-    );
+    );}
   }
 
   createRestaurantImage(): void {

@@ -80,9 +80,9 @@ request1.keyword1 = this.keyword;
 
       this._socialMediaTypeService
       .getAll(
-        request.keyword,
-        request.skipCount,
-        request.maxResultCount
+        '',
+        0,
+        1000
       )
       .pipe(
         finalize(() => {
@@ -91,14 +91,14 @@ request1.keyword1 = this.keyword;
       )
       .subscribe((result: SocialMediaTypeDtoPagedResultDto) => {
         this.socialMediaTypes = result.items;
-        this.showPaging(result, pageNumber);
+
       });
 
       this._restaurantService
       .getAll(
-        request.keyword,
-        request.skipCount,
-        request.maxResultCount
+        '',
+        0,
+        1000
       )
       .pipe(
         finalize(() => {
@@ -107,14 +107,16 @@ request1.keyword1 = this.keyword;
       )
       .subscribe((result: RestaurantDtoPagedResultDto) => {
         this.restaurants = result.items;
-        this.showPaging(result, pageNumber);
+
       });
   }
 
 
+
+
   delete(socialMedia: SocialMediaDto): void {
     abp.message.confirm(
-      this.l('SocialMediaDeleteWarningMessage', socialMedia.socialMediaAddress),
+      this.l('Are you sure you want to delete this record?', socialMedia.socialMediaAddress),
       undefined,
       (result: boolean) => {
         if (result) {

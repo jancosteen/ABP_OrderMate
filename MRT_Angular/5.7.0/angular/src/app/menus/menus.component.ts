@@ -10,6 +10,9 @@ import {
   MenuServiceProxy,
   MenuDto,
   MenuDtoPagedResultDto,
+  MenuItemDto,
+  MenuItemServiceProxy,
+  MenuItemDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateMenuDialogComponent } from './create-menu/create-menu-dialog.component';
 import { EditMenuDialogComponent } from './edit-menu/edit-menu-dialog.component';
@@ -30,12 +33,15 @@ export class MenusComponent extends PagedListingComponentBase<MenuDto> {
   isActive: boolean | null;
   advancedFiltersVisible = false;
   public searchText: string;
+  isRelated=false;
+  menuItems:MenuItemDto[]=[];
 
   constructor(
     injector: Injector,
     private _menuService: MenuServiceProxy,
     private _modalService: BsModalService,
-    private _router: Router
+    private _router: Router,
+    private _menuItemService:MenuItemServiceProxy
   ) {
     super(injector);
   }
@@ -63,11 +69,43 @@ export class MenusComponent extends PagedListingComponentBase<MenuDto> {
         this.menus = result.items;
         this.showPaging(result, pageNumber);
       });
+
+      this._menuItemService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: MenuItemDtoPagedResultDto) => {
+        this.menuItems = result.items;
+
+      });
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.menuItems.length;x++){
+      if(this.menuItems[x].menuIdFk === id){
+        this.isRelated=true;
+        console.log(this.isRelated);
+      }
+    }
   }
 
   delete(menu: MenuDto): void {
+    this.checkIfRelated(menu.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Menu, it has related menu items', menu.menuName)
+      )
+    }
+    if(this.isRelated === false){
     abp.message.confirm(
-      this.l('MenuDeleteWarningMessage', menu.menuName),
+      this.l('Are you sure you want to delete this record?', menu.menuName),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -83,6 +121,7 @@ export class MenusComponent extends PagedListingComponentBase<MenuDto> {
         }
       }
     );
+    }
   }
 
   createMenu(): void {

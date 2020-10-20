@@ -43,25 +43,25 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
 
   getMenuItems(): MenuItem[] {
     return [
-      new MenuItem(this.l('HomePage'), '/app/home', 'fas fa-home'),
-      new MenuItem(this.l('My Reservations'), '/app/cusReser', 'fas fa-home'),
+      new MenuItem(this.l('HomePage'), '/app/home', 'fas fa-circle'),
+      new MenuItem(this.l('My Reservations'), '/app/cusReser', 'fas fa-circle'),
       new MenuItem(this.l('Administration'), '','fas fa-circle','Pages.SYSTEM_ADMIN',[
         new MenuItem(
           this.l('Tenants'),
           '/app/tenants',
-          'fas fa-building',
+          'fas fa-circle',
           'Pages.SYSTEM_ADMIN'
         ),
         new MenuItem(
           this.l('Users'),
           '/app/users',
-          'fas fa-users',
+          'fas fa-circle',
           'Pages.SYSTEM_ADMIN'
         ),
         new MenuItem(
           this.l('Roles'),
           '/app/roles',
-          'fas fa-theater-masks',
+          'fas fa-circle',
           'Pages.SYSTEM_ADMIN'
         ),
       ]),
@@ -70,45 +70,40 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           new MenuItem(
             this.l('Menus'),
             '/app/menus',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Menu Items'),
             '/app/menuItems',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Allergies'),
             '/app/allergies',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Categories'),
             '/app/miCat',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Prices'),
             '/app/miPrice',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
-          new MenuItem(
-            this.l('Types'),
-            '/app/miTypes',
-            'fas fa-users',
-            'Pages.SYSTEM_ADMIN'
-          ),
+
         ]),
         new MenuItem(this.l('Orders'),'','fas fa-circle','Pages.SYSTEM_ADMIN',[
           new MenuItem(
             this.l('Status'),
             '/app/orderStatus',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
         ]),
@@ -116,7 +111,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           new MenuItem(
             this.l('Status'),
             '/app/resStatus',
-            'fas fa-users',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
         ]),
@@ -124,81 +119,64 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
           new MenuItem(
             this.l('Restaurants'),
             '/app/restaurants',
-            'fas fa-theater-masks',
-            'Pages.SYSTEM_ADMIN'
-          ),
-          new MenuItem(
-            this.l('Facilities'),
-            '/app/resFacs',
-            'fas fa-theater-masks',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Images'),
             '/app/resImages',
-            'fas fa-theater-masks',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Restaurant Status'),
             '/app/resStat',
-            'fas fa-theater-masks',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Social Media'),
             '/app/socialMedia',
-            'fas fa-theater-masks',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
           new MenuItem(
             this.l('Social Media Types'),
             '/app/smTypes',
-            'fas fa-theater-masks',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'
           ),
-          new MenuItem(
-            this.l('Star Rating Values'),
-            '/app/starRatings',
-            'fas fa-theater-masks',
-            'Pages.SYSTEM_ADMIN'
-          ),
-          new MenuItem(
-            this.l('Types'),
-            '/app/resTypes',
-            'fas fa-theater-masks',
-            'Pages.SYSTEM_ADMIN'
-          ),
+
         ]),
         new MenuItem(this.l('Tables'),'','fas fa-circle','Pages.SYSTEM_ADMIN',[
           new MenuItem(
             this.l('Tables'),
             '/app/seating',
-            'fas fa-building',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN'),
           new MenuItem(
             this.l('QrCodes'),
             '/app/qrCodes',
-            'fas fa-building',
+            'fas fa-circle',
             'Pages.SYSTEM_ADMIN')
         ])
       ]),
       new MenuItem(
         this.l('Manage Reservations'),
         '/app/reservations',
-        'fas fa-users',
+        'fas fa-circle',
         "Pages.EMPLOYEE"
       ),
       new MenuItem(
         this.l('Manage Orders'),
         '/app/orders',
-        'fas fa-users',
+        'fas fa-circle',
         "Pages.EMPLOYEE"
       ),
       new MenuItem(
         this.l('Generate Qr Code'),
         '/app/qrGen',
-        'fas fa-users',
+        'fas fa-circle',
         "Pages.EMPLOYEE"
       )
     ]

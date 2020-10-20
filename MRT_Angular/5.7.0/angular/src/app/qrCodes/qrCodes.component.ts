@@ -65,7 +65,7 @@ export class QrCodesComponent extends PagedListingComponentBase<QrCodeDto> {
 
   delete(qrCode: QrCodeDto): void {
     abp.message.confirm(
-      this.l('QrCodeDeleteWarningMessage', qrCode.id),
+      this.l('Are you sure you want to delete this record?', qrCode.id),
       undefined,
       (result: boolean) => {
         if (result) {

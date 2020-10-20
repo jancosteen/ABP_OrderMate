@@ -10,6 +10,9 @@ import {
   SocialMediaTypeServiceProxy,
   SocialMediaTypeDto,
   SocialMediaTypeDtoPagedResultDto,
+  SocialMediaDto,
+  SocialMediaServiceProxy,
+  SocialMediaDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateSocialMediaTypeDialogComponent } from './create-socialMediaType/create-socialMediaType-dialog.component';
 import { EditSocialMediaTypeDialogComponent } from './edit-socialMediaType/edit-socialMediaType-dialog.component';
@@ -29,11 +32,14 @@ export class SocialMediaTypesComponent extends PagedListingComponentBase<SocialM
   isActive: boolean | null;
   advancedFiltersVisible = false;
   searchText:string;
+  isRelated=false;
+  socialMedias:SocialMediaDto[]=[];
 
   constructor(
     injector: Injector,
     private _socialMediaTypeService: SocialMediaTypeServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _socialMediaService:SocialMediaServiceProxy
   ) {
     super(injector);
   }
@@ -61,11 +67,43 @@ export class SocialMediaTypesComponent extends PagedListingComponentBase<SocialM
         this.socialMediaTypes = result.items;
         this.showPaging(result, pageNumber);
       });
+
+      this._socialMediaService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: SocialMediaDtoPagedResultDto) => {
+        this.socialMedias = result.items;
+
+      });
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.socialMedias.length;x++){
+      if(this.socialMedias[x].socialMediaTypeIdFk === id){
+        this.isRelated=true;
+        console.log(this.isRelated);
+      }
+    }
   }
 
   delete(socialMediaType: SocialMediaTypeDto): void {
+    this.checkIfRelated(socialMediaType.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Social Media Type, it has related accounts', socialMediaType.socialMediaType1)
+      )
+    }
+    if(this.isRelated === false){
     abp.message.confirm(
-      this.l('SocialMediaTypeDeleteWarningMessage', socialMediaType.socialMediaType1),
+      this.l('Are you sure you want to delete this record?', socialMediaType.socialMediaType1),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -81,6 +119,7 @@ export class SocialMediaTypesComponent extends PagedListingComponentBase<SocialM
         }
       }
     );
+    }
   }
 
   createSocialMediaType(): void {

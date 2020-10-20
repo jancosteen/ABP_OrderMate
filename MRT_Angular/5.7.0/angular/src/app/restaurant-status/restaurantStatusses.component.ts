@@ -65,7 +65,7 @@ export class RestaurantStatussesComponent extends PagedListingComponentBase<Rest
 
   delete(restaurantStatus: RestaurantStatusDto): void {
     abp.message.confirm(
-      this.l('RestaurantStatusDeleteWarningMessage', restaurantStatus.restaurantStatus1),
+      this.l('Are you sure you want to delete this record?', restaurantStatus.restaurantStatus1),
       undefined,
       (result: boolean) => {
         if (result) {

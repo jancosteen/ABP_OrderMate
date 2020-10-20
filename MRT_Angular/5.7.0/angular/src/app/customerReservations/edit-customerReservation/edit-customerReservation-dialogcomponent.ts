@@ -86,6 +86,10 @@ export class EditCustomerReservationDialogComponent extends AppComponentBase
   }
 
   save(): void {
+
+    abp.message.success(
+      this.l("Successfully Updated Reservation")
+    );
     this.saving = true;
 
     this.reservation.reservationStatusIdFk=1;

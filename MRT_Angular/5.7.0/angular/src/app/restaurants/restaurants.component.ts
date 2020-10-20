@@ -10,6 +10,9 @@ import {
   RestaurantServiceProxy,
   RestaurantDto,
   RestaurantDtoPagedResultDto,
+  MenuServiceProxy,
+  MenuDto,
+  MenuDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateRestaurantDialogComponent } from './create-restaurant/create-restaurant-dialog.component';
 import { EditRestaurantDialogComponent } from './edit-restaurant/edit-restaurant-dialog.component';
@@ -30,12 +33,15 @@ export class RestaurantsComponent extends PagedListingComponentBase<RestaurantDt
   isActive: boolean | null;
   advancedFiltersVisible = false;
   searchText:string;
+  menus:MenuDto[]=[];
+  isRelated=false;
 
   constructor(
     injector: Injector,
     private _restaurantService: RestaurantServiceProxy,
     private _modalService: BsModalService,
-    private _router: Router
+    private _router: Router,
+    private _menuService: MenuServiceProxy
   ) {
     super(injector);
   }
@@ -63,11 +69,43 @@ export class RestaurantsComponent extends PagedListingComponentBase<RestaurantDt
         this.restaurants = result.items;
         this.showPaging(result, pageNumber);
       });
+
+      this._menuService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: MenuDtoPagedResultDto) => {
+        this.menus = result.items;
+
+      });
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.menus.length;x++){
+      if(this.menus[x].restaurantIdFk === id){
+        this.isRelated=true;
+        console.log(this.isRelated);
+      }
+    }
   }
 
   delete(restaurant: RestaurantDto): void {
+    this.checkIfRelated(restaurant.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Category, it has related menu items', restaurant.restaurantName)
+      )
+    }
+    if(this.isRelated === false){
     abp.message.confirm(
-      this.l('RestaurantDeleteWarningMessage', restaurant.restaurantName),
+      this.l('Are you sure you want to delete this record?', restaurant.restaurantName),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -83,6 +121,7 @@ export class RestaurantsComponent extends PagedListingComponentBase<RestaurantDt
         }
       }
     );
+    }
   }
 
   createRestaurant(): void {

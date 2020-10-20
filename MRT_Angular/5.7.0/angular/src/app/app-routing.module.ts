@@ -39,6 +39,7 @@ import { OrderDetailComponent } from './orders/order-detail/order-detail.compone
 import { CreateOrderLineDialogComponent } from './orderLines/create-orderLine/create-orderLine-dialog.component';
 import { CustomerMenuComponent } from './customerMenu/customerMenu.component';
 import { CustomerReservationsComponent } from './customerReservations/customerReservations.component';
+import { CheckInComponent } from './checkIn/checkIn.component';
 
 @NgModule({
     imports: [
@@ -84,6 +85,7 @@ import { CustomerReservationsComponent } from './customerReservations/customerRe
                     { path: 'orderLine', component: CreateOrderLineDialogComponent, data: { permission: 'Pages.EMPLOYEE' }, canActivate: [AppRouteGuard] },
                     { path: 'cusMenu/:id', component: CustomerMenuComponent, data: { permission: '' }, canActivate: [AppRouteGuard] },
                     { path: 'cusReser', component: CustomerReservationsComponent, data: { permission: '' }, canActivate: [AppRouteGuard] },
+                    { path: 'checkIn', component: CheckInComponent, data: { permission: '' }, canActivate: [AppRouteGuard] },
 
 
                 ]

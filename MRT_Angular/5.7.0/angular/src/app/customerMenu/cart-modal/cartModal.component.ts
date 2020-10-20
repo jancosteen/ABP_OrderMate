@@ -102,10 +102,15 @@ export class CartModalComponent extends AppComponentBase
           this.bsModalRef.hide();
           this.onSave.emit()
         });
+
+
     }
   }
 
   sendToKitchen(){
+    abp.message.success(
+      this.l("Order Sent To The Kitchen")
+    );
     if(this.orderId === 0){
         this.order.orderDateCreated = this.sDate;
         this.order.qrCodeSeatingIdFk = 1;
@@ -123,7 +128,6 @@ export class CartModalComponent extends AppComponentBase
           localStorage.setItem('orderId', this.tempOrderId)
           this.notify.info(this.l('SavedSuccessfully'));
           console.log(this.tempOrderId);
-          this.bsModalRef.hide();
           this.onSave.emit();
           this.createOrderLines(result.id);
         });

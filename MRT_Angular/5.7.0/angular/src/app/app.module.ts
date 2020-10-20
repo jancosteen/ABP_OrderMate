@@ -124,12 +124,16 @@ import { CartModalComponent} from './customerMenu/cart-modal/cartModal.component
 import { CustomerReservationsComponent} from './customerReservations/customerReservations.component';
 import { EditCustomerReservationDialogComponent} from './customerReservations/edit-customerReservation/edit-customerReservation-dialogcomponent'
 import { CreateCustomerReservationDialogComponent} from './customerReservations/create-customerReservation/create-customerReservation-dialog.component';
+import { CheckInComponent} from './checkIn/checkIn.component';
+
+
 
 @NgModule({
   declarations: [
     CustomerReservationsComponent,
     EditCustomerReservationDialogComponent,
     CreateCustomerReservationDialogComponent,
+    CheckInComponent,
     AppComponent,
     HomeComponent,
     AboutComponent,

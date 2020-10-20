@@ -58,14 +58,24 @@ export class CustomerMenuComponent extends PagedListingComponentBase<MenuItemDto
   advancedFiltersVisible = false;
   finalMenuItems:MenuItemDto[]=[];
   restaurant:RestaurantDto = new RestaurantDto();
-  miMains:MenuItemDto[]=[];
-  miPizzas:MenuItemDto[]=[];
-  miDesserts:MenuItemDto[]=[];
-  miStarters:MenuItemDto[]=[];
+  miBEER:MenuItemDto[]=[];
+  miLAGERS:MenuItemDto[]=[];
+  miPILSNER:MenuItemDto[]=[];
+  miWEIS:MenuItemDto[]=[];
+  miGOLDEN:MenuItemDto[]=[];
+  miAMBER:MenuItemDto[]=[];
+  miBLONDE:MenuItemDto[]=[];
+  miSTRONG:MenuItemDto[]=[];
+  miIPA:MenuItemDto[]=[];
+  miPALE:MenuItemDto[]=[];
+  miSTOUT:MenuItemDto[]=[];
+  miTRAPPIST:MenuItemDto[]=[];
+  miCIDER:MenuItemDto[]=[];
   cartCount:number=0;
   cart=[];
   cartItem:Cart=new Cart();
   startQty:number = 0;
+  menuItemCategories:MenuItemCategoryDto[]=[];
 
   cart3 = [];
   cartItemCount: BehaviorSubject<number>;
@@ -117,31 +127,60 @@ export class CustomerMenuComponent extends PagedListingComponentBase<MenuItemDto
       this.cartCount = this._sessionService.getCartItemCount();
   }
 
+  popCategories(){
+    for(let x=0;x<this.menuItems.length;x++){
+      this.menuItemCategories.push(this.menuItems[x].menuItemCategoryIdFkNavigation);
+    }
+  }
+
 
   populateMenuItems(menu:MenuDto){
       this.finalMenuItems= [];
-      this.miStarters = [];
-      this.miPizzas = [];
-      this.miMains = [];
-      this.miDesserts = [];
+      this.miBEER=[];
+  this.miLAGERS=[];
+  this.miPILSNER=[];
+  this.miWEIS=[];
+  this.miGOLDEN=[];
+  this.miAMBER=[];
+  this.miBLONDE=[];
+  this.miSTRONG=[];
+  this.miIPA=[];
+  this.miPALE=[];
+  this.miSTOUT=[];
+  this.miTRAPPIST=[];
+  this.miCIDER=[];
       this.finalMenuItems = menu.menuItem;
 
       for(let x=0;x<this.finalMenuItems.length;x++){
-        if(this.finalMenuItems[x].menuItemCategoryIdFk === 2){
-          this.miPizzas.push(this.finalMenuItems[x]);
-        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 3){
-          this.miMains.push(this.finalMenuItems[x]);
-        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 4){
-          this.miDesserts.push(this.finalMenuItems[x]);
-        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 5){
-          this.miStarters.push(this.finalMenuItems[x]);
+        if(this.finalMenuItems[x].menuItemCategoryIdFk === 14){
+          this.miBEER.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 15){
+          this.miLAGERS.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 16){
+          this.miPILSNER.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 17){
+          this.miWEIS.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 18){
+          this.miGOLDEN.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 19){
+          this.miAMBER.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 20){
+          this.miBLONDE.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 21){
+          this.miSTRONG.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 22){
+          this.miIPA.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 23){
+          this.miPALE.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 24){
+          this.miSTOUT.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 25){
+          this.miTRAPPIST.push(this.finalMenuItems[x]);
+        }else if(this.finalMenuItems[x].menuItemCategoryIdFk === 26){
+          this.miCIDER.push(this.finalMenuItems[x]);
         }
       }
 
-      console.log("pizzas", this.miPizzas);
-      console.log("Mains", this.miMains);
-      console.log("Desserts", this.miDesserts);
-      console.log("starters", this.miStarters);
   }
 
   delete(menuItem: MenuItemDto): void {
@@ -150,7 +189,7 @@ export class CustomerMenuComponent extends PagedListingComponentBase<MenuItemDto
       this.miAllergyIds = this.menuItemAllergies});
 
     abp.message.confirm(
-      this.l('MenuItemDeleteWarningMessage', menuItem.menuItemName),
+      this.l('Are you sure you want to delete this record?', menuItem.menuItemName),
       undefined,
       (result: boolean) => {
         if (result) {

@@ -92,6 +92,9 @@ export class CreateCustomerReservationDialogComponent extends AppComponentBase
   }
 
   save(): void {
+    abp.message.success(
+      this.l("Successfully Created Reservation")
+    );
     this.saving = true;
 
     this.reservation.reservationStatusIdFk=1;

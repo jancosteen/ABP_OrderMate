@@ -10,6 +10,9 @@ import {
   SeatingServiceProxy,
   SeatingDto,
   SeatingDtoPagedResultDto,
+  ReservationDto,
+  ReservationServiceProxy,
+  ReservationDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateSeatingDialogComponent } from './create-seating/create-seating-dialog.component';
 import { EditSeatingDialogComponent } from './edit-seating/edit-seating-dialog.component';
@@ -29,11 +32,14 @@ export class SeatingsComponent extends PagedListingComponentBase<SeatingDto> {
   isActive: boolean | null;
   advancedFiltersVisible = false;
   public searchText: string;
+  isRelated=false;
+  reservations:ReservationDto[]=[];
 
   constructor(
     injector: Injector,
     private _seatingService: SeatingServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _reservationService: ReservationServiceProxy
   ) {
     super(injector);
   }
@@ -61,11 +67,45 @@ export class SeatingsComponent extends PagedListingComponentBase<SeatingDto> {
         this.seatings = result.items;
         this.showPaging(result, pageNumber);
       });
+
+      this._reservationService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: ReservationDtoPagedResultDto) => {
+        this.reservations = result.items;
+
+      });
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.reservations.length;x++){
+      for(let y=0;y<this.reservations[x].seating.length;y++){
+        if(this.reservations[x].seating[y].id === id){
+          this.isRelated=true;
+          console.log(this.isRelated);
+        }
+      }
+    }
   }
 
   delete(seating: SeatingDto): void {
+    this.checkIfRelated(seating.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Category, it has related menu items', seating.id)
+      )
+    }
+    if(this.isRelated === false){
     abp.message.confirm(
-      this.l('SeatingDeleteWarningMessage', seating.id),
+      this.l('Are you sure you want to delete this record?', seating.id),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -81,6 +121,7 @@ export class SeatingsComponent extends PagedListingComponentBase<SeatingDto> {
         }
       }
     );
+    }
   }
 
   createSeating(): void {

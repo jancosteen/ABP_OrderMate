@@ -10,6 +10,9 @@ import {
   ReservationServiceProxy,
   ReservationDto,
   ReservationDtoPagedResultDto,
+  SeatingServiceProxy,
+  SeatingDto,
+  SeatingDtoPagedResultDto,
 } from '../../shared/service-proxies/service-proxies';
 import { CreateReservationDialogComponent } from './create-reservation/create-reservation-dialog.component';
 import { EditReservationDialogComponent } from './edit-reservation/edit-reservation-dialog.component';
@@ -29,11 +32,14 @@ export class ReservationsComponent extends PagedListingComponentBase<Reservation
   isActive: boolean | null;
   advancedFiltersVisible = false;
   public searchText: string;
+  isRelated=false;
+  seatings: SeatingDto[]=[];
 
   constructor(
     injector: Injector,
     private _reservationService: ReservationServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _seatingService: SeatingServiceProxy
   ) {
     super(injector);
   }
@@ -62,11 +68,43 @@ export class ReservationsComponent extends PagedListingComponentBase<Reservation
         this.showPaging(result, pageNumber);
       });
       console.log(this.appSession.userId);
+
+      this._seatingService
+      .getAll(
+        '',
+        0,
+        1000
+      )
+      .pipe(
+        finalize(() => {
+          finishedCallback();
+        })
+      )
+      .subscribe((result: SeatingDtoPagedResultDto) => {
+        this.seatings = result.items;
+      });
+
+  }
+
+  checkIfRelated(id){
+    for(let x=0;x<this.seatings.length;x++){
+      if(this.seatings[x].reservationIdFk === id){
+        this.isRelated=true;
+        console.log(this.isRelated);
+      }
+    }
   }
 
   delete(reservation: ReservationDto): void {
+    this.checkIfRelated(reservation.id);
+    if(this.isRelated === true){
+      abp.message.error(
+        this.l('Unable to delete Reservation, it has related table bookings', reservation.id)
+      )
+    }
+    if(this.isRelated === false){
     abp.message.confirm(
-      this.l('ReservationDeleteWarningMessage', reservation.id),
+      this.l('Are you sure you want to delete this record?', reservation.id),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -82,6 +120,7 @@ export class ReservationsComponent extends PagedListingComponentBase<Reservation
         }
       }
     );
+    }
   }
 
   createReservation(): void {
